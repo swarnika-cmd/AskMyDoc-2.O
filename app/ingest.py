@@ -43,7 +43,7 @@ def ingest_document(file_path: str, collection_name: str, original_file_name: st
             
             if not docs or not has_text:
                 print("PyPDFLoader found no extractable text. Attempting OCR fallback...")
-                raise ValueError('PDF has no extractable text')
+                docs = run_ocr_fallback(file_path, original_file_name)
             else:
                 # Update source metadata for loaded docs
                 for doc in docs:
@@ -52,7 +52,7 @@ def ingest_document(file_path: str, collection_name: str, original_file_name: st
         except Exception as pdf_error:
             print(f"PyPDFLoader error: {pdf_error}. Trying OCR fallback...")
             try:
-                raise ValueError('PDF has no extractable text')
+                docs = run_ocr_fallback(file_path, original_file_name)
             except Exception as ocr_error:
                 raise ValueError(f"Failed to parse PDF and OCR fallback failed: {ocr_error}")
 
@@ -132,3 +132,52 @@ def get_local_embeddings(model_name: str):
         encode_kwargs={'normalize_embeddings': True} # normalized for cosine similarity
     )
 
+def run_ocr_fallback(file_path: str, original_file_name: str) -> list:
+    """
+    Sends the PDF file to OCR.space API and returns a list containing one Document.
+    """
+    api_key = os.getenv("OCR_API_KEY", "helloworld")
+    try:
+        with open(file_path, "rb") as f:
+            pdf_base64 = base64.b64encode(f.read()).decode("utf-8")
+        
+        payload = {
+            'base64Image': f"data:application/pdf;base64,{pdf_base64}",
+            'language': 'eng',
+            'isOverlayRequired': 'false',
+            'OCREngine': '2'
+        }
+        headers = {
+            'apikey': api_key
+        }
+        
+        print("Sending request to OCR.space...")
+        response = requests.post(
+            'https://api.ocr.space/parse/image',
+            data=payload,
+            headers=headers,
+            timeout=180
+        )
+        
+        if response.status_code != 200:
+            raise ValueError(f"OCR Service returned status code {response.status_code}")
+            
+        data = response.json()
+        if data.get("IsErroredOnProcessing"):
+            raise ValueError(f"OCR API Error: {data.get('ErrorMessage') or 'Unknown error'}")
+            
+        parsed_results = data.get("ParsedResults", [])
+        extracted_text = "\n".join(r.get("ParsedText", "") for r in parsed_results)
+        
+        if extracted_text.strip():
+            print("Loaded 1 document via OCR fallback.")
+            return [Document(
+                page_content=extracted_text, 
+                metadata={"source": original_file_name or file_path, "ocr": True}
+            )]
+        else:
+            print("OCR fallback yielded no text.")
+            return []
+    except Exception as e:
+        print(f"OCR fallback error: {e}")
+        raise
