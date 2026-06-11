@@ -30,9 +30,36 @@ def ask_question(query: str, namespaces: list, history: list = None) -> dict:
         temperature=0,
     )
     
-        standalone_query = query
+    # Reformulate query if history exists
+    standalone_query = query
+    if history:
+        history_lines = []
+        for msg in history:
+            role = "User" if msg.get("role") == "user" else "Assistant"
+            history_lines.append(f"{role}: {msg.get('content', '')}")
+            
+        history_text = "\n".join(history_lines)
+        reformulate_prompt = f"""Given the following chat history and a follow-up question, rephrase the follow-up question to be a concise, standalone search query.
+Do NOT include any introduction, explanation, or quotes. Output ONLY the rephrased standalone question.
 
-# Initialize Embeddings function
+Chat History:
+{history_text}
+
+Follow-up Input: {query}
+
+Standalone question:"""
+        
+        try:
+            reformulate_response = model.invoke([HumanMessage(content=reformulate_prompt)])
+            standalone_query = reformulate_response.content.strip()
+            # Clean up potential leading/trailing quotes from the LLM
+            standalone_query = re.sub(r'^["\']|["\']$', '', standalone_query).strip()
+            print(f"Reformulated query: '{standalone_query}'")
+        except Exception as e:
+            print(f"Query reformulation failed: {e}. Using original query.")
+            standalone_query = query
+
+    # Initialize Embeddings function
     hf_token = os.getenv("HF_TOKEN")
     model_name = "sentence-transformers/all-MiniLM-L6-v2"
     if hf_token:
