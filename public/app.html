@@ -604,7 +604,38 @@ async function sendMessage() {
   sendBtn.disabled = chatInput.value.trim() === '';
 }
 
-async function runEvaluation(query, answer, sources, msgRow) { console.log('eval stub'); }
+async function runEvaluation(query, answer, sources, msgRow) {
+  const container = msgRow.querySelector('.faithfulness-container');
+  if (!container) return;
+
+  const contextText = (sources || [])
+    .map((chunk, i) => `[Source ${i + 1} - ${chunk.metadata.source || 'Document'}]:\n${chunk.metadata.parentContent || chunk.pageContent}`)
+    .join('\n\n');
+
+  try {
+    const res = await fetch('/api/evaluate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: query, context: contextText, answer: answer })
+    });
+    
+    if (!res.ok) throw new Error("Evaluation request failed");
+    const evalData = await res.json();
+    
+    const score = evalData.score;
+    const pct = Math.round(score * 100);
+    
+    if (score >= 0.8) {
+      container.innerHTML = `<div class="faithfulness-badge badge-faithful-high" title="${escHtml(evalData.explanation || '')}"><span class="dot"></span>Faithfulness: ${pct}% (Grounded)</div>`;
+    } else {
+      container.innerHTML = `<div class="faithfulness-badge badge-faithful-low" title="${escHtml(evalData.explanation || '')}"><span class="dot"></span>Faithfulness: ${pct}% (Low)</div>`;
+    }
+  } catch (err) {
+    console.error("Evaluation error:", err);
+    container.innerHTML = ''; // Hide badge if it failed
+  }
+}
+
 function clearChat() {
   messages = [];
   chatArea.innerHTML = '';
