@@ -4,6 +4,10 @@
     <strong>A production-ready RAG application that lets you upload, chat, and evaluate your documents.</strong>
   </p>
   
+  <p align="center">
+    <strong>🔗 Live Demo: <a href="https://askmydoc-2-o.onrender.com" target="_blank">askmydoc-2-o.onrender.com</a></strong>
+  </p>
+  
   <br />
   
   <p><em>Turn any static PDF into an intelligent conversation in seconds. Now powered by Python FastAPI.</em></p>
