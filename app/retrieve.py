@@ -1,34 +1,28 @@
 import os
+import time
 import json
 import re
 from dotenv import load_dotenv
-from langchain_groq import ChatGroq
 from langchain_core.messages import SystemMessage, HumanMessage
 from app.database import get_vector_store, vector_store_type
 from app.ingest import get_local_embeddings
+from app.llm import get_llm
+from app.metrics import metrics
 
 load_dotenv()
 
 def ask_question(query: str, namespaces: list, history: list = None) -> dict:
     """
     Searches the vector store across multiple namespaces, reformulates the query if history is present,
-    asks Groq for a grounded answer, and returns the answer, sources, score, and confidence.
+    asks the configured LLM (Ollama or Groq) for a grounded answer, and records infrastructure metrics.
     """
     if history is None:
         history = []
         
     print(f"Searching for context to answer: '{query}' across {len(namespaces)} documents")
     
-    groq_api_key = os.getenv("GROQ_API_KEY")
-    if not groq_api_key:
-        raise ValueError("GROQ_API_KEY environment variable is not set.")
-        
-    # Initialize Groq LLM
-    model = ChatGroq(
-        api_key=groq_api_key,
-        model_name="llama-3.1-8b-instant",
-        temperature=0,
-    )
+    # Initialize configured LLM (ChatOllama or ChatGroq)
+    model = get_llm()
     
     # Reformulate query if history exists
     standalone_query = query
@@ -69,7 +63,6 @@ Standalone question:"""
                 api_key=hf_token,
                 model_name=model_name
             )
-            # Test connection
             embeddings.embed_query("test")
         except Exception as e:
             print(f"Embeddings API connection failed in retriever: {e}. Falling back to local Embeddings.")
@@ -77,26 +70,25 @@ Standalone question:"""
     else:
         embeddings = get_local_embeddings(model_name)
 
-    # Search across all namespaces
+    # Search across all namespaces with latency timing
+    retrieval_start = time.time()
     all_chunks_with_score = []
     for ns in namespaces:
         try:
             vector_store = get_vector_store(embeddings, ns)
-            # Fetch top 5 from each namespace with score
             chunks = vector_store.similarity_search_with_score(standalone_query, 5)
             
-            # Map distance/score to cosine similarity (0 to 1) for uniform comparison
             for doc, raw_score in chunks:
                 if vector_store_type == "chromadb":
-                    # Chroma returns squared L2 distance (smaller is better).
-                    # Map distance to similarity score: similarity = 1 - distance / 2
                     score = max(0.0, min(1.0, 1.0 - raw_score / 2.0))
                 else:
-                    # Pinecone returns cosine similarity directly
                     score = raw_score
                 all_chunks_with_score.append((doc, score))
         except Exception as e:
             print(f"Error searching namespace {ns}: {e}")
+
+    retrieval_latency_ms = (time.time() - retrieval_start) * 1000
+    metrics.record_retrieval_latency(retrieval_latency_ms)
 
     # Sort all chunks by score descending
     all_chunks_with_score.sort(key=lambda x: x[1], reverse=True)
@@ -104,10 +96,8 @@ Standalone question:"""
     max_score = all_chunks_with_score[0][1] if all_chunks_with_score else 0.0
     print(f"Maximum similarity score: {max_score}")
     
-    # Take absolute top 5 most relevant child chunks
     top_child_chunks = [c[0] for c in all_chunks_with_score[:5]]
     
-    # Deduplicate parent chunks using parentId or source
     unique_parents = {}
     for chunk in top_child_chunks:
         parent_id = chunk.metadata.get("parentId") or chunk.metadata.get("source") or str(hash(chunk.page_content))
@@ -148,14 +138,12 @@ Document Context:
         SystemMessage(content=system_prompt),
     ]
     
-    # Append conversation history
     for msg in history:
         role = msg.get("role")
         content = msg.get("content")
         if role == "user":
             messages.append(HumanMessage(content=content))
         elif role == "assistant":
-            # Format assistant messages as JSON to stay consistent with the SystemMessage instructions
             from langchain_core.messages import AIMessage
             is_conv = any(greet in content.lower() for greet in ["hello", "hi ", "hey", "thanks", "thank you"])
             assistant_json = json.dumps({
@@ -165,14 +153,17 @@ Document Context:
             })
             messages.append(AIMessage(content=assistant_json))
             
-    # Add final user query
     messages.append(HumanMessage(content=query))
     
     try:
+        llm_start = time.time()
         response = model.invoke(messages)
-        content_str = response.content.strip()
+        llm_latency_ms = (time.time() - llm_start) * 1000
         
-        # Clean JSON wrappers if LLM returned markdown codeblock
+        content_str = response.content.strip()
+        approx_tokens = int(len(content_str.split()) * 1.3)
+        metrics.record_llm_inference(llm_latency_ms, approx_tokens)
+        
         if content_str.startswith("```"):
             content_str = re.sub(r"^```(?:json)?", "", content_str)
             content_str = re.sub(r"```$", "", content_str).strip()
@@ -180,7 +171,6 @@ Document Context:
         try:
             result_json = json.loads(content_str)
         except json.JSONDecodeError:
-            # Fallback regex parsing if JSON parsing fails
             match = re.search(r"\{.*\}", content_str, re.DOTALL)
             if match:
                 try:
@@ -208,20 +198,16 @@ Document Context:
     if result_json.get("isConversational"):
         confidence = 'HIGH'
     else:
-        # Check if query is a summary or general document query
         q_clean = query.lower().strip()
         is_summary_query = any(k in q_clean for k in ["summar", "overview", "about", "outline", "main topic", "key point", "key finding", "conclus", "gist", "synopsis"])
         
-        # Confidence logic based on score threshold
         if max_score >= 0.7:
             confidence = 'HIGH'
         elif max_score >= 0.4:
             confidence = 'LOW'
         elif is_summary_query and max_score >= 0.1:
-            # Relax threshold for general/summary requests as they lack specific term-level matches
             confidence = 'LOW'
         elif not result_json.get("noEvidence") and max_score >= 0.2:
-            # If the LLM asserts it has evidence and the score is reasonable, allow the answer
             confidence = 'LOW'
         else:
             confidence = 'NOT_FOUND'
@@ -232,7 +218,6 @@ Document Context:
         if confidence == 'NOT_FOUND':
             answer = "I couldn't find sufficient evidence in the provided document to answer this question."
 
-    # Return serialized version of documents for API response
     serialized_sources = []
     for chunk in top_chunks:
         serialized_sources.append({

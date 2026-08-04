@@ -1,0 +1,40 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: askmydoc-ollama
+    ports:
+      - "11434:11434"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: askmydoc-backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - ollama
+    environment:
+      - LLM_PROVIDER=ollama
+      - LLM_BASE_URL=http://ollama:11434
+      - OLLAMA_MODEL=llama3.1:8b-instruct-q4_K_M
+      - VECTOR_STORE_TYPE=chromadb
+      - CHROMA_DB_PATH=./chroma_db
+      - EMBEDDING_BATCH_SIZE=32
+    volumes:
+      - ./chroma_db:/app/chroma_db
+      - ./uploads:/app/uploads
+    restart: unless-stopped
+
+volumes:
+  ollama_data:

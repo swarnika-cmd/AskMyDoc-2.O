@@ -6,3 +6,6 @@ uploads/
 venv/
 chroma_db/
 scratch/
+__pycache__/
+*.pyc
+.pytest_cache/

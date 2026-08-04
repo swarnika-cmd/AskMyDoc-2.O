@@ -127,9 +127,11 @@ def ingest_document(file_path: str, collection_name: str, original_file_name: st
 
 def get_local_embeddings(model_name: str):
     from langchain_community.embeddings import HuggingFaceEmbeddings
+    batch_size = int(os.getenv("EMBEDDING_BATCH_SIZE", "32"))
+    print(f"Initializing local HuggingFace embeddings ({model_name}) with batch size: {batch_size}")
     return HuggingFaceEmbeddings(
         model_name=model_name,
-        encode_kwargs={'normalize_embeddings': True} # normalized for cosine similarity
+        encode_kwargs={'normalize_embeddings': True, 'batch_size': batch_size}
     )
 
 def run_ocr_fallback(file_path: str, original_file_name: str) -> list:

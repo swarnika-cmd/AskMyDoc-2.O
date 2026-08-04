@@ -13,8 +13,9 @@ from app.ingest import ingest_document
 from app.retrieve import ask_question
 from app.evaluate import evaluate_faithfulness
 from app.database import delete_namespace
+from app.metrics import metrics
 
-app = FastAPI(title="AskMyDoc Backend", version="1.0.0")
+app = FastAPI(title="AskMyDoc Backend (Self-Hosted)", version="2.0.0")
 
 # Enable CORS
 app.add_middleware(
@@ -25,7 +26,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Custom Exception Handlers to match Express JSON error format {"error": "..."}
+@app.middleware("http")
+async def track_metrics_middleware(request: Request, call_next):
+    metrics.start_request()
+    try:
+        response = await call_next(request)
+        return response
+    finally:
+        metrics.end_request()
+
+# Custom Exception Handlers
 @app.exception_handler(HTTPException)
 async def http_exception_handler(request: Request, exc: HTTPException):
     return JSONResponse(
@@ -56,23 +66,24 @@ class EvaluateRequest(BaseModel):
 
 @app.get("/api/health")
 async def health_check():
-    return {"status": "ok", "timestamp": datetime.datetime.now().isoformat()}
+    return {
+        "status": "ok",
+        "timestamp": datetime.datetime.now().isoformat(),
+        "provider": os.getenv("LLM_PROVIDER", "ollama"),
+        "vector_store": os.getenv("VECTOR_STORE_TYPE", "chromadb")
+    }
+
+@app.get("/api/metrics")
+async def get_metrics_endpoint():
+    """Exposes real-time token throughput, memory utilization, latency, and queue depth metrics."""
+    return metrics.get_metrics()
 
 @app.post("/api/upload")
 async def upload_document(
     document: UploadFile = File(...),
     collectionName: str = Form("DefaultCollection")
 ):
-    # Retrieve configuration and check
-    pinecone_api_key = os.getenv("PINECONE_API_KEY")
-    pinecone_index = os.getenv("PINECONE_INDEX")
     vector_store_type = os.getenv("VECTOR_STORE_TYPE", "chromadb").lower()
-    
-    if vector_store_type == "pinecone" and (not pinecone_api_key or not pinecone_index):
-        raise HTTPException(
-            status_code=500, 
-            detail="Pinecone is not configured. Please set PINECONE_API_KEY and PINECONE_INDEX environment variables."
-        )
 
     if not document.filename:
         raise HTTPException(status_code=400, detail="No file uploaded")
@@ -83,11 +94,9 @@ async def upload_document(
     file_path = os.path.join(uploads_dir, f"{int(time.time())}_{document.filename}")
     
     try:
-        # Save file to disk
         with open(file_path, "wb") as buffer:
             shutil.copyfileobj(document.file, buffer)
             
-        # Check size
         if os.path.getsize(file_path) == 0:
             raise HTTPException(
                 status_code=400, 
@@ -101,7 +110,6 @@ async def upload_document(
         
         result = ingest_document(file_path, collectionName, document.filename)
         
-        # Check if text was extracted
         if result.get("chunksCount", 0) == 0:
             print("Upload completed but 0 chunks extracted (scanned/image PDF?)\n")
             raise HTTPException(
@@ -118,7 +126,6 @@ async def upload_document(
         print(f"\nUpload failed: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
     finally:
-        # Cleanup file
         if os.path.exists(file_path):
             try:
                 os.remove(file_path)
@@ -168,7 +175,6 @@ async def evaluate_endpoint(req: EvaluateRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 # Mount static files (served at root '/')
-# This must be mounted last so API endpoints are processed first.
 if os.path.exists("public"):
     app.mount("/", StaticFiles(directory="public", html=True), name="static")
 else:

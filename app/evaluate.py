@@ -2,8 +2,8 @@ import os
 import json
 import re
 from dotenv import load_dotenv
-from langchain_groq import ChatGroq
 from langchain_core.messages import SystemMessage, HumanMessage
+from app.llm import get_llm
 
 load_dotenv()
 
@@ -13,7 +13,6 @@ def evaluate_faithfulness(query: str, context: str, answer: str) -> dict:
     using an LLM-as-a-judge approach. Returns a score between 0.0 and 1.0, a list of claims evaluated,
     and a summary explanation.
     """
-    # Quick bypass for refusal and conversational responses
     refusal_phrases = [
         "couldn't find sufficient evidence",
         "insufficient evidence",
@@ -30,7 +29,6 @@ def evaluate_faithfulness(query: str, context: str, answer: str) -> dict:
             "explanation": "The assistant correctly refused to answer because no evidence was found. Refusal is 100% faithful."
         }
         
-    # Standard greetings bypass
     greetings = ["hello", "hi ", "hey there", "greetings", "good morning", "good afternoon"]
     is_greeting_only = len(answer.strip()) < 80 and any(g in answer.lower() for g in greetings)
     if is_greeting_only:
@@ -40,15 +38,7 @@ def evaluate_faithfulness(query: str, context: str, answer: str) -> dict:
             "explanation": "Conversational response is 100% faithful."
         }
 
-    groq_api_key = os.getenv("GROQ_API_KEY")
-    if not groq_api_key:
-        raise ValueError("GROQ_API_KEY environment variable is not set.")
-        
-    model = ChatGroq(
-        api_key=groq_api_key,
-        model_name="llama-3.1-8b-instant",
-        temperature=0,
-    )
+    model = get_llm()
     
     system_prompt = """You are an expert evaluator assessing the faithfulness (groundedness) of a generated answer.
 A faithful answer is one where every claim or fact stated in the answer is directly supported by the provided context. No claims should be made that cannot be found in the context (i.e. no assumptions, hallucinations, or external knowledge).
@@ -90,7 +80,6 @@ You MUST respond strictly in the following JSON format:
         response = model.invoke(messages)
         content_str = response.content.strip()
         
-        # Clean markdown code block wraps if present
         if content_str.startswith("```"):
             content_str = re.sub(r"^```(?:json)?", "", content_str)
             content_str = re.sub(r"```$", "", content_str).strip()
@@ -98,19 +87,16 @@ You MUST respond strictly in the following JSON format:
         try:
             result = json.loads(content_str)
         except json.JSONDecodeError:
-            # Try parsing by extracting JSON substring
             match = re.search(r"\{.*\}", content_str, re.DOTALL)
             if match:
                 result = json.loads(match.group(0))
             else:
                 raise ValueError("Could not parse LLM output as JSON.")
                 
-        # Validate structure
         score = result.get("score", 1.0)
         claims = result.get("claims", [])
         explanation = result.get("explanation", "Evaluation completed.")
         
-        # Clamp score between 0.0 and 1.0
         score = max(0.0, min(1.0, float(score)))
         
         return {
@@ -121,7 +107,6 @@ You MUST respond strictly in the following JSON format:
         
     except Exception as e:
         print(f"Error during faithfulness evaluation: {e}")
-        # Default safety return in case of failure
         return {
             "score": 0.5,
             "claims": [],
