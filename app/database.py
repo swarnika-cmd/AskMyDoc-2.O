@@ -10,23 +10,14 @@ def get_vector_store(embeddings, namespace: str):
     """
     Returns a LangChain VectorStore instance (ChromaDB) configured for the given namespace.
     """
-    if vector_store_type == "chromadb":
-        from langchain_community.vectorstores import Chroma
-        persist_directory = os.getenv("CHROMA_DB_PATH", "./chroma_db")
-        return Chroma(
-            persist_directory=persist_directory,
-            embedding_function=embeddings,
-            collection_name=namespace
-        )
-    else:
-        # Default fallback to ChromaDB for localized self-hosting
-        from langchain_community.vectorstores import Chroma
-        persist_directory = os.getenv("CHROMA_DB_PATH", "./chroma_db")
-        return Chroma(
-            persist_directory=persist_directory,
-            embedding_function=embeddings,
-            collection_name=namespace
-        )
+    from langchain_community.vectorstores import Chroma
+    persist_directory = os.getenv("CHROMA_DB_PATH", "./chroma_db")
+    os.makedirs(persist_directory, exist_ok=True)
+    return Chroma(
+        persist_directory=persist_directory,
+        embedding_function=embeddings,
+        collection_name=namespace
+    )
 
 def save_documents_to_store(documents, embeddings, namespace: str):
     """
@@ -34,6 +25,7 @@ def save_documents_to_store(documents, embeddings, namespace: str):
     """
     from langchain_community.vectorstores import Chroma
     persist_directory = os.getenv("CHROMA_DB_PATH", "./chroma_db")
+    os.makedirs(persist_directory, exist_ok=True)
     
     start_time = time.time()
     Chroma.from_documents(
@@ -53,9 +45,9 @@ def delete_namespace(namespace: str):
     try:
         import chromadb
         persist_directory = os.getenv("CHROMA_DB_PATH", "./chroma_db")
+        os.makedirs(persist_directory, exist_ok=True)
         client = chromadb.PersistentClient(path=persist_directory)
         
-        # Check if collection exists before deleting to avoid errors
         collections = [c.name for c in client.list_collections()]
         if namespace in collections:
             client.delete_collection(name=namespace)

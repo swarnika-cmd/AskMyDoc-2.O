@@ -123,6 +123,8 @@ async def upload_document(
     except HTTPException:
         raise
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         print(f"\nUpload failed: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
     finally:
