@@ -8,8 +8,8 @@ Thank you for showing interest in contributing to AskMyDoc! We welcome contribut
 1. Fork the repository on GitHub.
 2. Clone your fork locally:
    ```bash
-   git clone https://github.com/your-username/AskMyDoc.git
-   cd AskMyDoc
+   git clone https://github.com/your-username/AskMyDoc-2.O.git
+   cd AskMyDoc-2.O
    ```
 
 ### 2. Set Up Environment
@@ -17,28 +17,27 @@ Thank you for showing interest in contributing to AskMyDoc! We welcome contribut
    ```bash
    cp .env.example .env
    ```
-2. Enter your API credentials (Groq, Pinecone, and HuggingFace tokens) into the `.env` file.
+2. Enter your API credentials (optionally a Groq key and a HuggingFace token) into the `.env` file.
 
 ### 3. Install Dependencies
-Install packages using `--legacy-peer-deps` to handle peer dependency resolutions correctly:
 ```bash
-npm install --legacy-peer-deps
+python -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 ### 4. Running Locally
-Start the development server:
 ```bash
-npm start
+uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
-Go to `http://localhost:3000` to interact with your local server.
+Go to `http://localhost:8000`. Or use `docker compose up --build`.
 
 ---
 
 ## 🛠️ Code Guidelines
 
-* **Linting & Formatting:** We use [Prettier](.prettierrc) for unified formatting. Make sure your changes are clean.
+* **Formatting:** Follow PEP 8 and keep changes focused.
 * **Separation of Concerns:** 
-  * Keep RAG retrieval logic isolated in `retrieve.js`.
-  * Keep document parsing and chunking in `ingest.js`.
-  * Keep routing and API handlers in `server.js`.
-* **Testing:** Test new code locally by uploading sample files (e.g. `demo/sample.pdf`) and running conversational queries.
+  * Keep RAG retrieval logic isolated in `app/retrieve.py`.
+  * Keep document parsing and chunking in `app/ingest.py`.
+  * Keep routing and API handlers in `app/main.py`.
+* **Testing:** Test new code locally by uploading sample files (a small PDF or TXT file) and running conversational queries.

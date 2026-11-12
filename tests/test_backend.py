@@ -29,7 +29,7 @@ def test_upload_and_chat():
     test_content = (
         "AskMyDoc is an advanced document assistant built on Python, FastAPI, and LangChain. "
         "It supports parent-child chunking for high accuracy retrieval. "
-        "It allows users to toggle between local ChromaDB and cloud Pinecone databases. "
+        "It allows users to store chunks in a local ChromaDB database. "
         "The project was created by developer Swarnika."
     )
     with open(test_filepath, "w", encoding="utf-8") as f:
