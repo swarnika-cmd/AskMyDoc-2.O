@@ -4,6 +4,7 @@ import random
 import string
 import base64
 import requests
+from functools import lru_cache
 from dotenv import load_dotenv
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -94,27 +95,8 @@ def ingest_document(file_path: str, collection_name: str, original_file_name: st
     if not child_chunks:
         return {"success": True, "chunksCount": 0}
 
-    # 3. Embeddings: Initialize HuggingFace embeddings
-    hf_token = os.getenv("HF_TOKEN")
-    model_name = "sentence-transformers/all-MiniLM-L6-v2"
-    
-    use_serverless = hf_token and hf_token.startswith("hf_") and "your_huggingface_token" not in hf_token
-    if use_serverless:
-        print("Initializing HuggingFace Serverless embeddings...")
-        try:
-            from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
-            embeddings = HuggingFaceInferenceAPIEmbeddings(
-                api_key=hf_token,
-                model_name=model_name
-            )
-            embeddings.embed_query("test")
-            print("Serverless Embeddings API ready")
-        except Exception as e:
-            print(f"Serverless Embeddings API failed: {e}. Falling back to local Embeddings.")
-            embeddings = get_local_embeddings(model_name)
-    else:
-        print("Initializing local HuggingFace embeddings...")
-        embeddings = get_local_embeddings(model_name)
+    # 3. Embeddings (cached; built once per process)
+    embeddings = get_embeddings()
 
     # 4. Storage
     try:
@@ -125,6 +107,14 @@ def ingest_document(file_path: str, collection_name: str, original_file_name: st
         print(f"Vector store saving error: {e}")
         raise RuntimeError(f"Vector store error: {e}")
 
+EMBEDDING_MODEL_DEFAULT = "sentence-transformers/all-MiniLM-L6-v2"
+
+
+def embedding_model_name() -> str:
+    return os.getenv("EMBEDDING_MODEL", EMBEDDING_MODEL_DEFAULT)
+
+
+@lru_cache(maxsize=4)
 def get_local_embeddings(model_name: str):
     from langchain_community.embeddings import HuggingFaceEmbeddings
     batch_size = int(os.getenv("EMBEDDING_BATCH_SIZE", "32"))
@@ -133,6 +123,26 @@ def get_local_embeddings(model_name: str):
         model_name=model_name,
         encode_kwargs={'normalize_embeddings': True, 'batch_size': batch_size}
     )
+
+
+@lru_cache(maxsize=4)
+def _get_api_embeddings(model_name: str, hf_token: str):
+    from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
+    return HuggingFaceInferenceAPIEmbeddings(api_key=hf_token, model_name=model_name)
+
+
+def get_embeddings():
+    """
+    Returns the shared embeddings object. Local by default. The Hugging Face Inference API is used
+    only when EMBEDDING_BACKEND=hf_api is set explicitly (then HF_TOKEN is required).
+    """
+    model_name = embedding_model_name()
+    if os.getenv("EMBEDDING_BACKEND", "local").lower() == "hf_api":
+        hf_token = os.getenv("HF_TOKEN", "")
+        if not hf_token:
+            raise ValueError("EMBEDDING_BACKEND=hf_api requires HF_TOKEN to be set.")
+        return _get_api_embeddings(model_name, hf_token)
+    return get_local_embeddings(model_name)
 
 def run_pdfplumber_fallback(file_path: str, original_file_name: str) -> list:
     """Fallback PDF parser using pdfplumber."""

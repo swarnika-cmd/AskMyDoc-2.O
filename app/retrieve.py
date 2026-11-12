@@ -5,8 +5,8 @@ import re
 from dotenv import load_dotenv
 from langchain_core.messages import SystemMessage, HumanMessage
 from app.database import get_vector_store, vector_store_type
-from app.ingest import get_local_embeddings
-from app.llm import get_llm
+from app.ingest import get_embeddings
+from app.llm import get_llm, message_text
 from app.metrics import metrics
 
 load_dotenv()
@@ -45,7 +45,7 @@ Standalone question:"""
         
         try:
             reformulate_response = model.invoke([HumanMessage(content=reformulate_prompt)])
-            standalone_query = reformulate_response.content.strip()
+            standalone_query = message_text(reformulate_response)
             # Clean up potential leading/trailing quotes from the LLM
             standalone_query = re.sub(r'^["\']|["\']$', '', standalone_query).strip()
             print(f"Reformulated query: '{standalone_query}'")
@@ -53,22 +53,7 @@ Standalone question:"""
             print(f"Query reformulation failed: {e}. Using original query.")
             standalone_query = query
 
-    # Initialize Embeddings function
-    hf_token = os.getenv("HF_TOKEN")
-    model_name = "sentence-transformers/all-MiniLM-L6-v2"
-    if hf_token:
-        try:
-            from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
-            embeddings = HuggingFaceInferenceAPIEmbeddings(
-                api_key=hf_token,
-                model_name=model_name
-            )
-            embeddings.embed_query("test")
-        except Exception as e:
-            print(f"Embeddings API connection failed in retriever: {e}. Falling back to local Embeddings.")
-            embeddings = get_local_embeddings(model_name)
-    else:
-        embeddings = get_local_embeddings(model_name)
+    embeddings = get_embeddings()
 
     # Search across all namespaces with latency timing
     retrieval_start = time.time()
@@ -160,7 +145,7 @@ Document Context:
         response = model.invoke(messages)
         llm_latency_ms = (time.time() - llm_start) * 1000
         
-        content_str = response.content.strip()
+        content_str = message_text(response)
         approx_tokens = int(len(content_str.split()) * 1.3)
         metrics.record_llm_inference(llm_latency_ms, approx_tokens)
         
