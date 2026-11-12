@@ -1,7 +1,9 @@
 import os
+import re
 import time
 import threading
 from typing import Dict, Any, List
+from app.llm import last_served, groq_model_name, DEFAULT_OLLAMA_MODEL
 
 class MetricsTracker:
     def __init__(self):
@@ -37,7 +39,7 @@ class MetricsTracker:
             self.total_llm_time += (latency_ms / 1000.0)
 
     def get_memory_info() -> Dict[str, Any]:
-        """Attempt to fetch GPU memory; fallback to system RAM via psutil."""
+        """Memory of this app process: torch GPU allocation if CUDA is available, else process RSS. Not Ollama's memory."""
         try:
             import torch
             if torch.cuda.is_available():
@@ -55,12 +57,14 @@ class MetricsTracker:
 
         try:
             import psutil
-            mem = psutil.virtual_memory()
+            proc = psutil.Process()
+            rss = proc.memory_info().rss
+            total = psutil.virtual_memory().total
             return {
-                "type": "CPU_RAM",
-                "used_mb": round(mem.used / (1024 * 1024), 2),
-                "total_mb": round(mem.total / (1024 * 1024), 2),
-                "utilization_pct": mem.percent
+                "type": "PROCESS_RSS",
+                "used_mb": round(rss / (1024 * 1024), 2),
+                "total_mb": round(total / (1024 * 1024), 2),
+                "utilization_pct": round(rss / total * 100, 2)
             }
         except Exception:
             return {"type": "Unknown", "used_mb": 0, "total_mb": 0, "utilization_pct": 0}
@@ -80,23 +84,29 @@ class MetricsTracker:
                 if self.total_llm_time > 0 else 0.0
             )
 
-            provider = os.getenv("LLM_PROVIDER", "ollama").lower()
-            model = os.getenv("OLLAMA_MODEL", "llama3.1:8b-instruct-q4_K_M") if provider == "ollama" else "llama-3.1-8b-instant (Groq)"
-            
-            # Infer quantization from model tag if present
-            quantization = "Q4_K_M"
-            if "q8" in model.lower() or "q8_0" in model.lower():
-                quantization = "Q8_0"
-            elif "q4" in model.lower():
-                quantization = "Q4_K_M"
-            elif "f16" in model.lower() or "fp16" in model.lower():
-                quantization = "FP16"
-            elif provider == "groq":
-                quantization = "Cloud API (FP16)"
+            configured_provider = os.getenv("LLM_PROVIDER", "ollama").lower()
+            served = last_served()
+            # Report what actually served the last request; before any request, the configured provider.
+            provider = served["provider"] or configured_provider
+            if served["model"]:
+                model = served["model"]
+            elif configured_provider == "ollama":
+                model = os.getenv("OLLAMA_MODEL", DEFAULT_OLLAMA_MODEL)
+            else:
+                model = groq_model_name()
+            model_label = f"{model} (Groq)" if provider == "groq" else model
+
+            # Quantization is only known if an Ollama tag states it (e.g. ...-q4_K_M, ...-q8_0, ...-fp16).
+            quantization = "unknown"
+            if provider == "ollama":
+                m = re.search(r"(q\d(?:_[a-z0-9]+)*|fp16|f16|bf16)$", model.lower())
+                if m:
+                    quantization = m.group(1).upper()
 
             return {
                 "provider": provider,
-                "model_name": model,
+                "configured_provider": configured_provider,
+                "model_name": model_label,
                 "quantization": quantization,
                 "active_requests_queue_depth": self.active_requests,
                 "total_requests_handled": self.total_requests,
