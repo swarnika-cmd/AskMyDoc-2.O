@@ -3,14 +3,14 @@ import json
 import re
 from dotenv import load_dotenv
 from langchain_core.messages import SystemMessage, HumanMessage
-from app.llm import get_llm
+from app.llm import get_llm, message_text
 
 load_dotenv()
 
 def evaluate_faithfulness(query: str, context: str, answer: str) -> dict:
     """
     Evaluates the faithfulness (groundedness) of the generated answer against the retrieved context
-    using an LLM-as-a-judge approach. Returns a score between 0.0 and 1.0, a list of claims evaluated,
+    using an LLM-as-a-judge approach. Returns a score between 0.0 and 1.0 (supported claims / total claims, or None if the judge failed), a list of claims evaluated,
     and a summary explanation.
     """
     refusal_phrases = [
@@ -46,8 +46,7 @@ A faithful answer is one where every claim or fact stated in the answer is direc
 Your task is to:
 1. Break down the Generated Answer into a list of independent factual claims.
 2. For each claim, check if it is directly and fully supported by the Context.
-3. Compute the overall Faithfulness Score: (number of supported claims) / (total number of claims). If there are no claims, the score is 1.0.
-4. Provide a brief explanation for your evaluation.
+3. Provide a brief explanation for your evaluation.
 
 You MUST respond strictly in the following JSON format:
 {
@@ -58,8 +57,7 @@ You MUST respond strictly in the following JSON format:
       "reason": "why it is or is not supported by the context"
     }
   ],
-  "score": 0.85,
-  "explanation": "overall summary explaining the score"
+  "explanation": "overall summary of the evaluation"
 }
 """
 
@@ -78,7 +76,7 @@ You MUST respond strictly in the following JSON format:
         ]
         
         response = model.invoke(messages)
-        content_str = response.content.strip()
+        content_str = message_text(response)
         
         if content_str.startswith("```"):
             content_str = re.sub(r"^```(?:json)?", "", content_str)
@@ -93,22 +91,25 @@ You MUST respond strictly in the following JSON format:
             else:
                 raise ValueError("Could not parse LLM output as JSON.")
                 
-        score = result.get("score", 1.0)
         claims = result.get("claims", [])
         explanation = result.get("explanation", "Evaluation completed.")
-        
-        score = max(0.0, min(1.0, float(score)))
-        
+
+        # Score is computed here from the judge's per-claim verdicts, not taken from the model.
+        verdicts = [c.get("supported") for c in claims if isinstance(c, dict) and isinstance(c.get("supported"), bool)]
+        if not verdicts:
+            return {"score": None, "claims": claims, "explanation": "Judge returned no usable claim verdicts."}
+        score = sum(verdicts) / len(verdicts)
+
         return {
             "score": score,
             "claims": claims,
             "explanation": explanation
         }
-        
+
     except Exception as e:
         print(f"Error during faithfulness evaluation: {e}")
         return {
-            "score": 0.5,
+            "score": None,
             "claims": [],
             "explanation": f"Evaluation system error: {str(e)}"
         }

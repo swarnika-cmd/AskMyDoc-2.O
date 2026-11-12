@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>NotebookLM — AskDoc</title>
+<title>AskMyDoc</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
@@ -202,10 +202,10 @@ main{flex:1;display:flex;flex-direction:column;overflow:hidden;background:var(--
     <div class="logo-mark">
       <svg viewBox="0 0 20 20"><path d="M4 3h12v2H4zM4 7h8v2H4zM4 11h12v2H4zM4 15h6v2H4z"/></svg>
     </div>
-    <span class="nav-brand">NotebookLM</span>
+    <span class="nav-brand">AskMyDoc</span>
   </div>
   <div class="nav-right">
-    <span class="nav-badge">Powered by Groq &amp; Gemini</span>
+    <span class="nav-badge">Ollama / Groq</span>
     <button class="nav-btn" onclick="clearChat()">New chat</button>
     <label class="nav-btn primary" style="cursor:pointer">
       Upload Document
@@ -233,7 +233,7 @@ main{flex:1;display:flex;flex-direction:column;overflow:hidden;background:var(--
     </div>
  
     <div class="sidebar-footer">
-      <div class="powered-by">Powered by <span>Groq</span> &amp; <span>Gemini</span> embeddings</div>
+      <div class="powered-by">LLM: <span>Ollama</span> or <span>Groq</span> &middot; Embeddings: <span>all-MiniLM-L6-v2</span></div>
     </div>
   </aside>
  
@@ -244,11 +244,7 @@ main{flex:1;display:flex;flex-direction:column;overflow:hidden;background:var(--
           <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
         </div>
         <div class="empty-title">Welcome to your workspace</div>
-        <div class="empty-sub">Upload a document source on the left to begin. I'll read it and answer your questions with citations.</div>
-        <div style="margin-top: 1rem; margin-bottom: 0.5rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-          <div style="font-size: 12px; color: var(--muted); font-weight: 500;">Or try with a preloaded compliance document:</div>
-          <button class="nav-btn primary" onclick="loadDemoCompliance()" style="padding: 6px 16px; font-size: 13px; font-weight: 500; border-radius: 8px;">Try with RBI Guidelines</button>
-        </div>
+        <div class="empty-sub">Upload a document source on the left to begin. I'll read it and answer your questions from its content.</div>
         <div class="suggestion-chips" id="chips">
           <button class="chip" onclick="sendChip('Summarize this document')">Summarize this document</button>
           <button class="chip" onclick="sendChip('What are the key findings?')">What are the key findings?</button>
@@ -314,7 +310,7 @@ function showToast(msg, duration = 3000) {
   setTimeout(() => t.classList.remove('show'), duration);
 }
 
-// Generate a unique Pinecone namespace per document
+// Generate a unique ChromaDB collection name per document
 function makeNamespace(fileName) {
   const clean = fileName.replace(/[^a-zA-Z0-9_-]/g, '_').substring(0, 40);
   return `doc_${clean}_${Date.now()}`;
@@ -324,7 +320,7 @@ function makeNamespace(fileName) {
 async function handleUpload(file) {
   if (!file) return;
 
-  // Enforce document limit (max 3 documents including the demo doc)
+  // Enforce document limit (max 3 documents)
   const docCount = Object.keys(documents).length;
   if (docCount >= 3) {
     showToast('Maximum of 3 documents allowed. Please remove a document to upload a new one.');
@@ -440,7 +436,7 @@ async function removeDoc(id) {
   // Remove from UI immediately
   cardEl?.remove();
 
-  // If it had a namespace, delete from Pinecone
+  // If it had a namespace, delete the ChromaDB collection
   if (doc?.namespace && doc.status === 'ready') {
     try {
       await fetch('/api/delete', {
@@ -473,7 +469,7 @@ function addAIMessage(html, showActions = false, confidence = null, faithfulness
   row.innerHTML = `
     <div class="msg-avatar ai">AI</div>
     <div>
-      <div class="msg-name">NotebookLM</div>
+      <div class="msg-name">AskMyDoc</div>
       <div class="msg-bubble ai">
         <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center;">
           ${badgeHtml}
@@ -511,7 +507,7 @@ function showTyping() {
   row.innerHTML = `
     <div class="msg-avatar ai">AI</div>
     <div>
-      <div class="msg-name">NotebookLM</div>
+      <div class="msg-name">AskMyDoc</div>
       <div class="msg-bubble ai" style="padding:12px 16px">
         <div class="typing"><span></span><span></span><span></span></div>
       </div>
@@ -623,6 +619,10 @@ async function runEvaluation(query, answer, sources, msgRow) {
     const evalData = await res.json();
     
     const score = evalData.score;
+    if (score === null || score === undefined) {
+      container.innerHTML = `<div class="faithfulness-badge badge-faithful-low" title="${escHtml(evalData.explanation || '')}"><span class="dot"></span>Faithfulness: unavailable</div>`;
+      return;
+    }
     const pct = Math.round(score * 100);
     
     if (score >= 0.8) {
@@ -661,45 +661,6 @@ document.addEventListener('drop', e => {
   const file = e.dataTransfer.files[0];
   if (file?.type === 'application/pdf' || file?.type === 'text/plain' || file?.name.endsWith('.txt')) handleUpload(file);
   else showToast('Please drop a PDF or Text file');
-});
-
-function loadDemoCompliance() {
-  const demoId = 'demo-compliance';
-  if (documents[demoId]) {
-    showToast('RBI Guidelines demo is already loaded.');
-    return;
-  }
-  
-  // Enforce document limit (max 3 documents including the demo doc)
-  const docCount = Object.keys(documents).length;
-  if (docCount >= 3) {
-    showToast('Maximum of 3 documents allowed. Please remove a document to load the demo.');
-    return;
-  }
-
-  // Clean empty state if present
-  const es = document.getElementById('empty-state');
-  if (es) es.remove();
-
-  documents[demoId] = {
-    name: 'RBI Integrated Ombudsman Scheme 2021.pdf',
-    namespace: 'demo-compliance',
-    status: 'ready',
-    selected: true
-  };
-
-  addDocCard(demoId, 'RBI Integrated Ombudsman Scheme 2021.pdf', 'ready', true);
-  
-  addAIMessage(`I've loaded the pre-indexed <strong>RBI Integrated Ombudsman Scheme 2021</strong> guidelines. Ask me any compliance or policy questions about it!`);
-  showToast('RBI Guidelines demo loaded');
-}
-
-// Auto-load demo mode if ?demo=compliance query param is present
-window.addEventListener('DOMContentLoaded', () => {
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('demo') === 'compliance') {
-    setTimeout(loadDemoCompliance, 300);
-  }
 });
 </script>
 </body>
