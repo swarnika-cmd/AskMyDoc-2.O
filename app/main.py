@@ -78,6 +78,14 @@ async def get_metrics_endpoint():
     """Exposes real-time token throughput, memory utilization, latency, and queue depth metrics."""
     return metrics.get_metrics()
 
+def safe_upload_name(filename: str) -> str:
+    """Strips any directory part from a client-supplied filename; rejects empty or dot-only names."""
+    name = os.path.basename((filename or "").replace("\\", "/")).strip()
+    if name in ("", ".", "..") or name.strip(".") == "":
+        raise HTTPException(status_code=400, detail="Invalid file name")
+    return name
+
+
 @app.post("/api/upload")
 async def upload_document(
     document: UploadFile = File(...),
@@ -87,11 +95,12 @@ async def upload_document(
 
     if not document.filename:
         raise HTTPException(status_code=400, detail="No file uploaded")
+    safe_name = safe_upload_name(document.filename)
         
-    uploads_dir = "/tmp" if os.getenv("VERCEL") else "uploads"
+    uploads_dir = "uploads"
     os.makedirs(uploads_dir, exist_ok=True)
     
-    file_path = os.path.join(uploads_dir, f"{int(time.time())}_{document.filename}")
+    file_path = os.path.join(uploads_dir, f"{int(time.time())}_{safe_name}")
     
     try:
         with open(file_path, "wb") as buffer:
@@ -104,11 +113,11 @@ async def upload_document(
             )
             
         print(f"\n=== Starting Upload ===")
-        print(f"File: {document.filename} ({os.path.getsize(file_path)} bytes)")
+        print(f"File: {safe_name} ({os.path.getsize(file_path)} bytes)")
         print(f"Collection/Namespace: {collectionName}")
         print(f"Vector Store: {vector_store_type}")
         
-        result = ingest_document(file_path, collectionName, document.filename)
+        result = ingest_document(file_path, collectionName, safe_name)
         
         if result.get("chunksCount", 0) == 0:
             print("Upload completed but 0 chunks extracted (scanned/image PDF?)\n")
@@ -153,10 +162,6 @@ async def delete_endpoint(req: DeleteRequest):
     namespace = req.namespace
     if not namespace:
         raise HTTPException(status_code=400, detail="Namespace is required")
-        
-    if namespace == 'demo-compliance':
-        print("Prevented deletion of preloaded demo-compliance namespace.")
-        return {"message": "Demo compliance namespace cannot be deleted."}
         
     try:
         success = delete_namespace(namespace)
