@@ -75,9 +75,17 @@ class TrackedLLM:
             return result
 
 
+# gpt-oss models on Groq take a reasoning effort; "low" keeps reasoning tokens (and latency) down.
+# Other Groq models reject the parameter, so it is only sent for gpt-oss.
+GROQ_REASONING_EFFORT = "low"
+
+
 def _groq(groq_model: str, groq_key: str):
     from langchain_groq import ChatGroq
-    return ChatGroq(api_key=groq_key, model_name=groq_model, temperature=0)
+    kwargs = {}
+    if "gpt-oss" in groq_model:
+        kwargs["reasoning_effort"] = GROQ_REASONING_EFFORT
+    return ChatGroq(api_key=groq_key, model_name=groq_model, temperature=0, **kwargs)
 
 
 def _env_float(name: str, default: Optional[float]) -> Optional[float]:
