@@ -1,0 +1,17 @@
+{
+  "currency_note": "Prices are Groq list prices in USD per 1M tokens, read 2026-11-13 from https://console.groq.com/docs/models. No other estimates.",
+  "prices_usd_per_1m_tokens": {
+    "openai/gpt-oss-20b": {"input": 0.075, "output": 0.30},
+    "openai/gpt-oss-120b": {"input": 0.15, "output": 0.60}
+  },
+  "prices_source_url": "https://console.groq.com/docs/models",
+  "prices_read_on": "2026-11-13",
+  "usd_to_inr": {
+    "rate": 94.04,
+    "rate_date": "2026-11-12",
+    "fetched_on": "2026-11-13",
+    "source": "frankfurter",
+    "requested_url": "https://api.frankfurter.app/latest?from=USD&to=INR",
+    "final_url_after_redirect": "https://api.frankfurter.dev/v1/latest?from=USD&to=INR"
+  }
+}
