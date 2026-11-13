@@ -1,0 +1,112 @@
+name: eval
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+env:
+  # Model revisions the evaluation is pinned to (also the HF cache key).
+  EMBED_REV: 1110a243fdf4706b3f48f1d95db1a4f5529b4d41
+  RERANK_REV: 2cfc18c9415c912f9d8155881c133215df768a70
+
+jobs:
+  retrieval:
+    name: retrieval
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-eval.txt
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-${{ env.EMBED_REV }}-${{ env.RERANK_REV }}
+
+      - name: Install dependencies
+        run: pip install -r requirements-eval.txt
+
+      - name: Validate the golden set
+        run: python eval/validate_golden.py
+
+      - name: Validator self-test
+        run: python -m unittest eval.test_validate_golden
+
+      - name: Metric and harness unit tests
+        run: python -m unittest discover -s eval/tests -t .
+
+      - name: Runtime judge test (fake store)
+        run: python -m unittest tests.test_judge_chunk_ids
+
+      - name: Retrieval eval on the CI subset and regression check
+        run: make eval-ci
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: retrieval-ci-results
+          path: |
+            eval/results/retrieval_ci.json
+            eval/results/retrieval_ci.md
+            eval/results/raw/retrieval_ci_*.jsonl
+
+  llm-judged:
+    name: llm-judged
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      # Secrets cannot be read in a job-level `if`, so expose only whether the secret exists and gate later steps on it.
+      - name: Check for GROQ_API_KEY
+        id: gate
+        env:
+          HAS_KEY: ${{ secrets.GROQ_API_KEY != '' }}
+        run: |
+          echo "available=${HAS_KEY}" >> "$GITHUB_OUTPUT"
+          if [ "${HAS_KEY}" != "true" ]; then
+            echo "::notice::GROQ_API_KEY secret is not set (or not available to this event): skipping the LLM-judged evaluation."
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.available == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.available == 'true'
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-eval.txt
+
+      - uses: actions/cache@v4
+        if: steps.gate.outputs.available == 'true'
+        with:
+          path: ~/.cache/huggingface
+          key: hf-${{ env.EMBED_REV }}-${{ env.RERANK_REV }}
+
+      - name: Install dependencies
+        if: steps.gate.outputs.available == 'true'
+        run: pip install -r requirements-eval.txt
+
+      # Responses come from eval/cache/ when present; at most 10 uncached calls per model are made.
+      - name: Small resumable LLM-judged run (P2 pilot ids)
+        if: steps.gate.outputs.available == 'true'
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: make eval-llm PIPELINE=P2 IDS=pilot MAX_CALLS=10
+
+      - uses: actions/upload-artifact@v4
+        if: steps.gate.outputs.available == 'true' && always()
+        with:
+          name: llm-pilot-results
+          path: |
+            eval/results/llm_P2_pilot.json
+            eval/results/llm_P2_pilot.md
+            eval/results/llm_progress.json
