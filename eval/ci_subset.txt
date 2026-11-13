@@ -1,0 +1,34 @@
+# CI subset: 30 golden ids (14 factual, 6 table, 6 multi-hop, 4 unanswerable).
+# Method: per type, items grouped by document, groups and items shuffled with random.Random(seed), then picked round-robin across documents.
+# Re-derived with the same seed and method after golden items q012, q025, q028, q029, q042, q050, q061, q069, q072, q083, q122, q131 and q141 were replaced or rewritten.
+# seed: 20261113
+q003
+q010
+q014
+q015
+q016
+q019
+q020
+q024
+q029
+q030
+q032
+q039
+q040
+q046
+q051
+q054
+q057
+q061
+q067
+q070
+q086
+q087
+q088
+q122
+q137
+q140
+q141
+q144
+q147
+q148
