@@ -1,0 +1,98 @@
+[
+  {
+    "id": "es1980-81",
+    "title": "Economic Survey 1980-81, Chapter 9 (Problems and Prospects) with Statistical Appendix",
+    "source_url": "https://www.indiabudget.gov.in/budget_archive/es1980-81/9%20Problems%20and%20Prospects.pdf",
+    "publisher": "Ministry of Finance, Government of India (Union Budget archive)",
+    "licence_or_status": "No explicit licence found. Published by Ministry of Finance, Government of India for public access; only extracted text is stored for evaluation, PDFs are not redistributed.",
+    "sha256": "08192e760301a45fcaff45885644bec92ab93d5d302d2842bc1c272db7f68366",
+    "pages": 80,
+    "kind": "scanned",
+    "extraction": "tesseract",
+    "retrieved": "2026-11-13"
+  },
+  {
+    "id": "pay-allowances-2023-24",
+    "title": "Annual Report on Pay and Allowances of Central Government Civilian Employees 2023-24",
+    "source_url": "https://doe.gov.in/files/annual_reports_documents/AnnualReportonPayAllowance202324.pdf",
+    "publisher": "Pay Research Unit, Department of Expenditure, Ministry of Finance, Government of India",
+    "licence_or_status": "No explicit licence found. Published by Department of Expenditure, Ministry of Finance for public access; only extracted text is stored for evaluation, PDFs are not redistributed. Cover is marked \"For official use only\" despite publication on doe.gov.in.",
+    "sha256": "62d974944a26d0b0fed46fa249a1e6e2920930a1250eab42390fdf75352105af",
+    "pages": 47,
+    "kind": "table-heavy",
+    "extraction": "pypdf+tesseract",
+    "retrieved": "2026-11-13"
+  },
+  {
+    "id": "cusb-ug-ordinance",
+    "title": "Ordinance Governing Five-Year Integrated UG-PG Programme (Science, Arts and Commerce), Central University of South Bihar",
+    "source_url": "https://cusb.ac.in/images/studentmenu/integrated_ug_ord.pdf",
+    "publisher": "Central University of South Bihar",
+    "licence_or_status": "No explicit licence found. Published by Central University of South Bihar for public access; only extracted text is stored for evaluation, PDFs are not redistributed.",
+    "sha256": "0f70a64d008c9d9798fd25a95f5692154f9ee9c713063447a29815406063bee5",
+    "pages": 61,
+    "kind": "text",
+    "extraction": "pypdf",
+    "retrieved": "2026-11-13"
+  },
+  {
+    "id": "nitrkl-btech-regs",
+    "title": "Regulations for B.Tech., Dual Degree, B.Arch. and Integrated M.Sc. Programmes (summarised version), NIT Rourkela",
+    "source_url": "https://www.nitrkl.ac.in/docs/AcademicRegulation/04012020192115698.pdf",
+    "publisher": "National Institute of Technology Rourkela",
+    "licence_or_status": "No explicit licence found. Published by NIT Rourkela for public access; only extracted text is stored for evaluation, PDFs are not redistributed.",
+    "sha256": "c282f776def79edaac9a248a09be6da08e51d67b2dda1e7341cd1b3ceaa8c00e",
+    "pages": 31,
+    "kind": "text",
+    "extraction": "pypdf",
+    "retrieved": "2026-11-13"
+  },
+  {
+    "id": "dea-frbm-h2-2023-24",
+    "title": "Statement on half yearly review of the trends in receipts and expenditure, end of FY 2023-24 (FRBM Act s.7(1))",
+    "source_url": "https://dea.gov.in/files/budget_division_documents/H2%202023-24%20English%20FRBM.pdf",
+    "publisher": "Department of Economic Affairs, Ministry of Finance, Government of India",
+    "licence_or_status": "No explicit licence found. Published by Department of Economic Affairs, Ministry of Finance for public access; only extracted text is stored for evaluation, PDFs are not redistributed.",
+    "sha256": "b6dd071683104fcf40cdd41dc30ef040f595dac3d5e6e93838614eae29021431",
+    "pages": 13,
+    "kind": "table-heavy",
+    "extraction": "pypdf+tesseract",
+    "retrieved": "2026-11-13"
+  },
+  {
+    "id": "sebi-cra-circular-2016",
+    "title": "SEBI circular: Enhanced Standards for Credit Rating Agencies (SEBI/HO/MIRSD/MIRSD4/CIR/P/2016/119, 1 Nov 2016)",
+    "source_url": "https://www.sebi.gov.in/sebi_data/attachdocs/1477999985100.pdf",
+    "publisher": "Securities and Exchange Board of India",
+    "licence_or_status": "No explicit licence found. Published by SEBI for public access; only extracted text is stored for evaluation, PDFs are not redistributed.",
+    "sha256": "b280ea08fcf55af988c9ce7454316a38c9fe02b99c90b691b8d08ae7f9a525ee",
+    "pages": 14,
+    "kind": "text",
+    "extraction": "pypdf",
+    "retrieved": "2026-11-13"
+  },
+  {
+    "id": "sebi-cra-consultation-2017",
+    "title": "SEBI consultation paper on Review of the Regulatory Framework for Credit Rating Agencies (2017)",
+    "source_url": "https://www.sebi.gov.in/sebi_data/attachdocs/oct-2017/1509259338723.pdf",
+    "publisher": "Securities and Exchange Board of India",
+    "licence_or_status": "No explicit licence found. Published by SEBI for public access; only extracted text is stored for evaluation, PDFs are not redistributed.",
+    "sha256": "9aa65e9fbd8260dd08e3177e2ee43cd5d988501dbd98b2a00aa4bd0c058eb759",
+    "pages": 15,
+    "kind": "text",
+    "extraction": "pypdf",
+    "retrieved": "2026-11-13"
+  },
+  {
+    "id": "sebi-mf-master-2011",
+    "title": "SEBI Master Circular for Mutual Funds (SEBI/IMD/MC No.2/836/2011, 7 Jan 2011; circulars up to 31 Dec 2010)",
+    "source_url": "https://www.sebi.gov.in/sebi_data/attachdocs/1295932761762.pdf",
+    "publisher": "Securities and Exchange Board of India",
+    "licence_or_status": "No explicit licence found. Published by SEBI for public access; only extracted text is stored for evaluation, PDFs are not redistributed.",
+    "sha256": "17da6270df5f054dfac0f6b3c682f211652092988fb75b41b991a717c714f6e5",
+    "pages": 152,
+    "kind": "text",
+    "extraction": "pypdf",
+    "retrieved": "2026-11-13"
+  }
+]
