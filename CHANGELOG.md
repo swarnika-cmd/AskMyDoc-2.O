@@ -5,7 +5,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased] - 2026-11-13
 
+### Added
+- Evaluation harness (`eval/`): four retrieval pipelines, a 150-item golden set over 8 public PDFs, retrieval metrics, a CI regression check, and a resumable LLM-judged run on Groq (see the README "Evaluation" section).
+- Groq requests for `gpt-oss` models send `reasoning_effort="low"`.
+- `/api/chat` returns `chunkIds`; chunks are stored under a deterministic id.
+
 ### Fixed
+- `/api/evaluate` builds its context on the server from the stored chunks (ids from `/api/chat`) and ignores client-supplied context. **Breaking:** the request body is now `{query, answer, chunkIds, namespaces}`; clients that send `context` get 422. Documents ingested before this change have no chunk ids and must be re-uploaded for the judge to work.
 - Groq fallback now applies at request time: if Ollama is unreachable or errors and `GROQ_API_KEY` is set, the call is retried on Groq (it previously only covered client construction). Ollama timeouts are configurable: `OLLAMA_CONNECT_TIMEOUT` (default 3 s) and `OLLAMA_READ_TIMEOUT` (default none, as before).
 - Embeddings are local unless `EMBEDDING_BACKEND=hf_api` is set explicitly; a merely present `HF_TOKEN` no longer switches to the Inference API (which had no fallback once the per-request probe was removed).
 - `/api/metrics` no longer invents a quantization (`unknown` unless the Ollama tag states one), reports the provider that actually served the last request, and reports app-process memory (CUDA allocation or RSS).
