@@ -154,8 +154,23 @@ def main(argv=None):
     ap.add_argument("--subset", choices=("full", "ci"), default="full")
     ap.add_argument("--pipelines", default="P1,P2,P3,P4")
     ap.add_argument("--out", default=None, help="results json path (default eval/results/retrieval_<subset>.json)")
-    ap.add_argument("--note", default=None, help="free text stored in the results and the .md")
+    ap.add_argument("--note", "--latency-note", dest="note", default=None,
+                    help="free text stored in the results and the .md (default: a provisional-latency note)")
+    ap.add_argument("--render-md", metavar="JSON", default=None,
+                    help="rewrite the .md next to an existing results json (optionally with --note, which is also "
+                         "written back to the json) and exit; no retrieval is run")
     args = ap.parse_args(argv)
+    if args.render_md:
+        with open(args.render_md, encoding="utf-8") as f:
+            data = json.load(f)
+        if args.note is not None:
+            data["meta"]["note"] = args.note
+            with open(args.render_md, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+                f.write("\n")
+        write_md(os.path.splitext(args.render_md)[0] + ".md", data)
+        print("rendered %s" % (os.path.splitext(args.render_md)[0] + ".md"))
+        return 0
     if args.note is None:
         args.note = ("Latency is provisional: it is measured on a shared machine as a by-product of this run and is "
                      "not a benchmark. Recall, MRR, context size and the other quality numbers are deterministic.")
