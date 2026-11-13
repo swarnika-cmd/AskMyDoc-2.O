@@ -1,0 +1,374 @@
+{
+  "meta": {
+    "subset": "ci",
+    "ids": [
+      "q010",
+      "q015",
+      "q016",
+      "q019",
+      "q020",
+      "q024",
+      "q029",
+      "q032",
+      "q039",
+      "q040",
+      "q051",
+      "q054",
+      "q057",
+      "q061",
+      "q067",
+      "q070",
+      "q086",
+      "q087",
+      "q088",
+      "q122",
+      "q137",
+      "q140",
+      "q141",
+      "q144",
+      "q147",
+      "q148"
+    ],
+    "note": "Latency is provisional: it is measured on a shared machine as a by-product of this run and is not a benchmark. Recall, MRR, context size and the other quality numbers are deterministic.",
+    "latency_method": "time.perf_counter around pipeline.retrieve() only (query embedding, search, fusion, rerank, parent mapping); index build excluded. Warm-up: the first 3 questions are run once, untimed and discarded; then each question is run once and timed. Percentiles use linear interpolation. Single process, pipelines run one after another.",
+    "parameters": {
+      "top_k": 5,
+      "candidates_per_retriever": 20,
+      "rrf_k": 60,
+      "p1_chunk": [
+        800,
+        100
+      ],
+      "parent": [
+        3000,
+        300
+      ],
+      "child": [
+        400,
+        100
+      ],
+      "bm25": "rank_bm25.BM25Okapi over children, lowercase \\w+ tokens, zero-score children excluded",
+      "vector_store": "chromadb EphemeralClient, default L2 space, normalised embeddings, HNSW {\"num_threads\": 1, \"max_neighbors\": 32, \"ef_construction\": 400, \"ef_search\": 400}"
+    },
+    "environment": {
+      "date_utc": "2026-11-13T01:02:24Z",
+      "vcs": "none: run from a build copy (not a git checkout)",
+      "python": "3.11.18",
+      "libraries": {
+        "torch": "2.15.0+cpu",
+        "sentence-transformers": "6.3.0",
+        "transformers": "5.22.2",
+        "chromadb": "1.5.9",
+        "rank-bm25": "0.2.2",
+        "langchain-text-splitters": "1.1.3",
+        "langchain-core": "1.8.0",
+        "numpy": "2.4.6",
+        "httpx": "0.28.1"
+      },
+      "models": {
+        "sentence-transformers/all-MiniLM-L6-v2": {
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "role": "embeddings (all pipelines)"
+        },
+        "BAAI/bge-reranker-base": {
+          "revision": "2cfc18c9415c912f9d8155881c133215df768a70",
+          "role": "cross-encoder rerank (P4)"
+        }
+      },
+      "os": "Linux-7.0.14-linuxkit-aarch64-with-glibc2.41",
+      "cpu": {
+        "host_cpu": "Apple M4 Pro",
+        "container_cpuinfo_model": null,
+        "machine": "aarch64"
+      },
+      "docker": {
+        "visible_cpus": 12,
+        "affinity_cpus": 12,
+        "cgroup_cpu_limit": 4.0,
+        "torch_threads": 4,
+        "host_note": "Docker Desktop VM (12 CPUs, ~8 GB) on macOS arm64; container limited to 4 CPUs; machine shared with other jobs"
+      },
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "EVAL_MODEL_ROOT": "/models",
+        "HF_HUB_OFFLINE": "1"
+      }
+    }
+  },
+  "n_items": 26,
+  "pipelines": {
+    "P1": {
+      "name": "fixed 800/100 chunks + dense",
+      "metrics": {
+        "n": 26,
+        "recall_at_5": 0.6153846153846154,
+        "mrr_at_5": 0.5032051282051282,
+        "mean_context_chars": 3174.576923076923,
+        "latency_ms": {
+          "p50": 6.081312500555214,
+          "p95": 7.078218249716883,
+          "mean": 6.215875038448687,
+          "n": 26
+        }
+      },
+      "multi_hop_all_refs_recall_at_5": {
+        "value": 0.5,
+        "n": 6
+      },
+      "ceiling": {
+        "recall_ceiling": 0.9615384615384616,
+        "n": 26,
+        "items_not_in_any_unit": [
+          "q040"
+        ]
+      },
+      "hits_off_gold_page": 0,
+      "by_type": {
+        "factual": {
+          "n": 14,
+          "recall_at_5": 0.5714285714285714,
+          "mrr_at_5": 0.5,
+          "mean_context_chars": 3326.0,
+          "latency_ms": {
+            "p50": 6.0130000001663575,
+            "p95": 6.90685790009411,
+            "mean": 6.132907714345492,
+            "n": 14
+          }
+        },
+        "multi-hop": {
+          "n": 6,
+          "recall_at_5": 0.6666666666666666,
+          "mrr_at_5": 0.47222222222222227,
+          "mean_context_chars": 3198.3333333333335,
+          "latency_ms": {
+            "p50": 6.411729500086949,
+            "p95": 7.078218249716883,
+            "mean": 6.425055666568369,
+            "n": 6
+          }
+        },
+        "table": {
+          "n": 6,
+          "recall_at_5": 0.6666666666666666,
+          "mrr_at_5": 0.5416666666666666,
+          "mean_context_chars": 2797.5,
+          "latency_ms": {
+            "p50": 6.1782080001648865,
+            "p95": 6.567760499365249,
+            "mean": 6.200284833236462,
+            "n": 6
+          }
+        }
+      },
+      "index": {
+        "units": 1306,
+        "build_seconds": 22.03
+      }
+    },
+    "P2": {
+      "name": "parent-child + dense (current app design)",
+      "metrics": {
+        "n": 26,
+        "recall_at_5": 0.8461538461538461,
+        "mrr_at_5": 0.625,
+        "mean_context_chars": 7515.115384615385,
+        "latency_ms": {
+          "p50": 5.928811999638128,
+          "p95": 7.051312750263605,
+          "mean": 5.963331692363192,
+          "n": 26
+        }
+      },
+      "multi_hop_all_refs_recall_at_5": {
+        "value": 0.6666666666666666,
+        "n": 6
+      },
+      "ceiling": {
+        "recall_ceiling": 1.0,
+        "n": 26,
+        "items_not_in_any_unit": []
+      },
+      "hits_off_gold_page": 0,
+      "by_type": {
+        "factual": {
+          "n": 14,
+          "recall_at_5": 0.9285714285714286,
+          "mrr_at_5": 0.738095238095238,
+          "mean_context_chars": 7244.5,
+          "latency_ms": {
+            "p50": 5.850687500242202,
+            "p95": 6.635368649722295,
+            "mean": 5.845907785702106,
+            "n": 14
+          }
+        },
+        "multi-hop": {
+          "n": 6,
+          "recall_at_5": 0.8333333333333334,
+          "mrr_at_5": 0.48611111111111116,
+          "mean_context_chars": 7149.0,
+          "latency_ms": {
+            "p50": 5.980208500659501,
+            "p95": 7.304260000410068,
+            "mean": 6.2476388335805195,
+            "n": 6
+          }
+        },
+        "table": {
+          "n": 6,
+          "recall_at_5": 0.6666666666666666,
+          "mrr_at_5": 0.5,
+          "mean_context_chars": 8512.666666666666,
+          "latency_ms": {
+            "p50": 5.891666500247084,
+            "p95": 6.333760249617626,
+            "mean": 5.953013666688396,
+            "n": 6
+          }
+        }
+      },
+      "index": {
+        "parents": 457,
+        "children": 2689,
+        "build_seconds": 37.21
+      }
+    },
+    "P3": {
+      "name": "parent-child + BM25 + dense, RRF k=60",
+      "metrics": {
+        "n": 26,
+        "recall_at_5": 0.9230769230769231,
+        "mrr_at_5": 0.7576923076923077,
+        "mean_context_chars": 7240.846153846154,
+        "latency_ms": {
+          "p50": 11.793186999966565,
+          "p95": 15.030156499733494,
+          "mean": 12.053740307657371,
+          "n": 26
+        }
+      },
+      "multi_hop_all_refs_recall_at_5": {
+        "value": 0.8333333333333334,
+        "n": 6
+      },
+      "ceiling": {
+        "recall_ceiling": 1.0,
+        "n": 26,
+        "items_not_in_any_unit": []
+      },
+      "hits_off_gold_page": 0,
+      "by_type": {
+        "factual": {
+          "n": 14,
+          "recall_at_5": 1.0,
+          "mrr_at_5": 0.8928571428571429,
+          "mean_context_chars": 7312.0,
+          "latency_ms": {
+            "p50": 11.525624500336562,
+            "p95": 14.5461396997689,
+            "mean": 11.955490999948129,
+            "n": 14
+          }
+        },
+        "multi-hop": {
+          "n": 6,
+          "recall_at_5": 0.8333333333333334,
+          "mrr_at_5": 0.4916666666666667,
+          "mean_context_chars": 6744.0,
+          "latency_ms": {
+            "p50": 12.183458499748667,
+            "p95": 14.903593749977517,
+            "mean": 12.347117999828091,
+            "n": 6
+          }
+        },
+        "table": {
+          "n": 6,
+          "recall_at_5": 0.8333333333333334,
+          "mrr_at_5": 0.7083333333333334,
+          "mean_context_chars": 7571.666666666667,
+          "latency_ms": {
+            "p50": 11.72983349988499,
+            "p95": 13.457551500323461,
+            "mean": 11.989611000141545,
+            "n": 6
+          }
+        }
+      },
+      "index": {
+        "parents": 457,
+        "children": 2689,
+        "build_seconds": 1.15
+      }
+    },
+    "P4": {
+      "name": "P3 + cross-encoder rerank (bge-reranker-base, top-20)",
+      "metrics": {
+        "n": 26,
+        "recall_at_5": 0.9230769230769231,
+        "mrr_at_5": 0.7532051282051282,
+        "mean_context_chars": 6320.0,
+        "latency_ms": {
+          "p50": 1240.1407504999042,
+          "p95": 1601.3050005003606,
+          "mean": 1303.8574748845629,
+          "n": 26
+        }
+      },
+      "multi_hop_all_refs_recall_at_5": {
+        "value": 0.6666666666666666,
+        "n": 6
+      },
+      "ceiling": {
+        "recall_ceiling": 1.0,
+        "n": 26,
+        "items_not_in_any_unit": []
+      },
+      "hits_off_gold_page": 0,
+      "by_type": {
+        "factual": {
+          "n": 14,
+          "recall_at_5": 1.0,
+          "mrr_at_5": 0.9285714285714286,
+          "mean_context_chars": 6033.214285714285,
+          "latency_ms": {
+            "p50": 1224.9428125001032,
+            "p95": 1387.35897140009,
+            "mean": 1249.5436641428828,
+            "n": 14
+          }
+        },
+        "multi-hop": {
+          "n": 6,
+          "recall_at_5": 0.6666666666666666,
+          "mrr_at_5": 0.38888888888888884,
+          "mean_context_chars": 6168.333333333333,
+          "latency_ms": {
+            "p50": 1428.4264589996383,
+            "p95": 1825.8011679997708,
+            "mean": 1457.7616673332159,
+            "n": 6
+          }
+        },
+        "table": {
+          "n": 6,
+          "recall_at_5": 1.0,
+          "mrr_at_5": 0.7083333333333334,
+          "mean_context_chars": 7140.833333333333,
+          "latency_ms": {
+            "p50": 1250.545812999917,
+            "p95": 1496.5170007494635,
+            "mean": 1276.68550749983,
+            "n": 6
+          }
+        }
+      },
+      "index": {
+        "parents": 457,
+        "children": 2689,
+        "build_seconds": 1.12
+      }
+    }
+  }
+}

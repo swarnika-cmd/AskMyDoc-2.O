@@ -1,0 +1,479 @@
+{
+  "meta": {
+    "subset": "full",
+    "ids": [
+      "q001",
+      "q002",
+      "q004",
+      "q005",
+      "q006",
+      "q007",
+      "q008",
+      "q009",
+      "q010",
+      "q012",
+      "q013",
+      "q015",
+      "q016",
+      "q018",
+      "q019",
+      "q020",
+      "q021",
+      "q022",
+      "q024",
+      "q025",
+      "q027",
+      "q028",
+      "q029",
+      "q032",
+      "q033",
+      "q034",
+      "q035",
+      "q036",
+      "q037",
+      "q038",
+      "q039",
+      "q040",
+      "q041",
+      "q042",
+      "q043",
+      "q044",
+      "q045",
+      "q048",
+      "q049",
+      "q050",
+      "q051",
+      "q052",
+      "q053",
+      "q054",
+      "q055",
+      "q056",
+      "q057",
+      "q058",
+      "q059",
+      "q060",
+      "q061",
+      "q062",
+      "q063",
+      "q064",
+      "q065",
+      "q066",
+      "q067",
+      "q068",
+      "q069",
+      "q070",
+      "q071",
+      "q072",
+      "q073",
+      "q074",
+      "q075",
+      "q076",
+      "q077",
+      "q078",
+      "q079",
+      "q080",
+      "q081",
+      "q082",
+      "q083",
+      "q084",
+      "q086",
+      "q087",
+      "q088",
+      "q090",
+      "q093",
+      "q094",
+      "q095",
+      "q096",
+      "q097",
+      "q098",
+      "q099",
+      "q101",
+      "q102",
+      "q103",
+      "q104",
+      "q106",
+      "q107",
+      "q108",
+      "q109",
+      "q110",
+      "q112",
+      "q113",
+      "q114",
+      "q115",
+      "q116",
+      "q117",
+      "q118",
+      "q120",
+      "q121",
+      "q122",
+      "q123",
+      "q124",
+      "q125",
+      "q126",
+      "q127",
+      "q128",
+      "q129",
+      "q130",
+      "q131",
+      "q132",
+      "q133",
+      "q134",
+      "q135",
+      "q136",
+      "q137",
+      "q138",
+      "q139",
+      "q140",
+      "q141",
+      "q144",
+      "q145",
+      "q146",
+      "q147",
+      "q148",
+      "q149",
+      "q150"
+    ],
+    "note": "PROVISIONAL LATENCY: measured on a machine shared with other running jobs (container limited to 4 CPUs; an LLM run was active at the same time). Recall, MRR, context size and the other quality numbers are deterministic; the latency column will be replaced by an idle-machine re-run.",
+    "latency_method": "time.perf_counter around pipeline.retrieve() only (query embedding, search, fusion, rerank, parent mapping); index build excluded. Warm-up: the first 3 questions are run once, untimed and discarded; then each question is run once and timed. Percentiles use linear interpolation. Single process, pipelines run one after another.",
+    "parameters": {
+      "top_k": 5,
+      "candidates_per_retriever": 20,
+      "rrf_k": 60,
+      "p1_chunk": [
+        800,
+        100
+      ],
+      "parent": [
+        3000,
+        300
+      ],
+      "child": [
+        400,
+        100
+      ],
+      "bm25": "rank_bm25.BM25Okapi over children, lowercase \\w+ tokens, zero-score children excluded",
+      "vector_store": "chromadb EphemeralClient, default L2 space, normalised embeddings, HNSW {\"num_threads\": 1, \"max_neighbors\": 32, \"ef_construction\": 400, \"ef_search\": 400}"
+    },
+    "environment": {
+      "date_utc": "2026-11-13T00:59:51Z",
+      "vcs": "none: run from a build copy (not a git checkout)",
+      "python": "3.11.18",
+      "libraries": {
+        "torch": "2.15.0+cpu",
+        "sentence-transformers": "6.3.0",
+        "transformers": "5.22.2",
+        "chromadb": "1.5.9",
+        "rank-bm25": "0.2.2",
+        "langchain-text-splitters": "1.1.3",
+        "langchain-core": "1.8.0",
+        "numpy": "2.4.6",
+        "httpx": "0.28.1"
+      },
+      "models": {
+        "sentence-transformers/all-MiniLM-L6-v2": {
+          "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "role": "embeddings (all pipelines)"
+        },
+        "BAAI/bge-reranker-base": {
+          "revision": "2cfc18c9415c912f9d8155881c133215df768a70",
+          "role": "cross-encoder rerank (P4)"
+        }
+      },
+      "os": "Linux-7.0.14-linuxkit-aarch64-with-glibc2.41",
+      "cpu": {
+        "host_cpu": "Apple M4 Pro",
+        "container_cpuinfo_model": null,
+        "machine": "aarch64"
+      },
+      "docker": {
+        "visible_cpus": 12,
+        "affinity_cpus": 12,
+        "cgroup_cpu_limit": 4.0,
+        "torch_threads": 4,
+        "host_note": "Docker Desktop VM (12 CPUs, ~8 GB) on macOS arm64; container limited to 4 CPUs; machine shared with other jobs"
+      },
+      "env": {
+        "OMP_NUM_THREADS": "4",
+        "EVAL_MODEL_ROOT": "/models",
+        "HF_HUB_OFFLINE": "1"
+      }
+    }
+  },
+  "n_items": 130,
+  "pipelines": {
+    "P1": {
+      "name": "fixed 800/100 chunks + dense",
+      "metrics": {
+        "n": 130,
+        "recall_at_5": 0.6307692307692307,
+        "mrr_at_5": 0.47102564102564115,
+        "mean_context_chars": 3220.0384615384614,
+        "latency_ms": {
+          "p50": 5.791083499843808,
+          "p95": 7.569893600611977,
+          "mean": 5.916894230827333,
+          "n": 130
+        }
+      },
+      "multi_hop_all_refs_recall_at_5": {
+        "value": 0.36666666666666664,
+        "n": 30
+      },
+      "ceiling": {
+        "recall_ceiling": 0.9846153846153847,
+        "n": 130,
+        "items_not_in_any_unit": [
+          "q040",
+          "q132"
+        ]
+      },
+      "hits_off_gold_page": 0,
+      "by_type": {
+        "factual": {
+          "n": 70,
+          "recall_at_5": 0.7,
+          "mrr_at_5": 0.5404761904761904,
+          "mean_context_chars": 3348.1,
+          "latency_ms": {
+            "p50": 5.5210830000760325,
+            "p95": 6.755151900460987,
+            "mean": 5.734013100027369,
+            "n": 70
+          }
+        },
+        "multi-hop": {
+          "n": 30,
+          "recall_at_5": 0.5,
+          "mrr_at_5": 0.33722222222222226,
+          "mean_context_chars": 3179.4,
+          "latency_ms": {
+            "p50": 6.01502050039926,
+            "p95": 7.4536248505410185,
+            "mean": 6.198550066801545,
+            "n": 30
+          }
+        },
+        "table": {
+          "n": 30,
+          "recall_at_5": 0.6,
+          "mrr_at_5": 0.44277777777777777,
+          "mean_context_chars": 2961.866666666667,
+          "latency_ms": {
+            "p50": 5.939374999798019,
+            "p95": 7.886327300184348,
+            "mean": 6.061961033386372,
+            "n": 30
+          }
+        }
+      },
+      "index": {
+        "units": 1306,
+        "build_seconds": 24.86
+      }
+    },
+    "P2": {
+      "name": "parent-child + dense (current app design)",
+      "metrics": {
+        "n": 130,
+        "recall_at_5": 0.8,
+        "mrr_at_5": 0.6162820512820514,
+        "mean_context_chars": 7176.823076923077,
+        "latency_ms": {
+          "p50": 5.786417000308575,
+          "p95": 7.19234169991978,
+          "mean": 5.909390723088738,
+          "n": 130
+        }
+      },
+      "multi_hop_all_refs_recall_at_5": {
+        "value": 0.5333333333333333,
+        "n": 30
+      },
+      "ceiling": {
+        "recall_ceiling": 1.0,
+        "n": 130,
+        "items_not_in_any_unit": []
+      },
+      "hits_off_gold_page": 1,
+      "by_type": {
+        "factual": {
+          "n": 70,
+          "recall_at_5": 0.8,
+          "mrr_at_5": 0.6916666666666668,
+          "mean_context_chars": 7137.528571428571,
+          "latency_ms": {
+            "p50": 5.620561999876372,
+            "p95": 7.0557482499225435,
+            "mean": 5.743763714261669,
+            "n": 70
+          }
+        },
+        "multi-hop": {
+          "n": 30,
+          "recall_at_5": 0.7333333333333333,
+          "mrr_at_5": 0.4233333333333334,
+          "mean_context_chars": 7281.966666666666,
+          "latency_ms": {
+            "p50": 6.06149999975969,
+            "p95": 7.348917000126676,
+            "mean": 6.248741699982929,
+            "n": 30
+          }
+        },
+        "table": {
+          "n": 30,
+          "recall_at_5": 0.8666666666666667,
+          "mrr_at_5": 0.6333333333333333,
+          "mean_context_chars": 7163.366666666667,
+          "latency_ms": {
+            "p50": 5.798083499939821,
+            "p95": 7.098464249884273,
+            "mean": 5.956502766791043,
+            "n": 30
+          }
+        }
+      },
+      "index": {
+        "parents": 457,
+        "children": 2689,
+        "build_seconds": 37.63
+      }
+    },
+    "P3": {
+      "name": "parent-child + BM25 + dense, RRF k=60",
+      "metrics": {
+        "n": 130,
+        "recall_at_5": 0.8692307692307693,
+        "mrr_at_5": 0.7043589743589745,
+        "mean_context_chars": 6895.076923076923,
+        "latency_ms": {
+          "p50": 12.381500000628876,
+          "p95": 18.416658550313514,
+          "mean": 12.984238430810645,
+          "n": 130
+        }
+      },
+      "multi_hop_all_refs_recall_at_5": {
+        "value": 0.4666666666666667,
+        "n": 30
+      },
+      "ceiling": {
+        "recall_ceiling": 1.0,
+        "n": 130,
+        "items_not_in_any_unit": []
+      },
+      "hits_off_gold_page": 1,
+      "by_type": {
+        "factual": {
+          "n": 70,
+          "recall_at_5": 0.9,
+          "mrr_at_5": 0.7611904761904762,
+          "mean_context_chars": 7004.114285714286,
+          "latency_ms": {
+            "p50": 11.487624999972468,
+            "p95": 17.396148099760467,
+            "mean": 12.293019028597232,
+            "n": 70
+          }
+        },
+        "multi-hop": {
+          "n": 30,
+          "recall_at_5": 0.7333333333333333,
+          "mrr_at_5": 0.5011111111111111,
+          "mean_context_chars": 7196.133333333333,
+          "latency_ms": {
+            "p50": 13.458146000175475,
+            "p95": 17.721914550065776,
+            "mean": 13.814145866763283,
+            "n": 30
+          }
+        },
+        "table": {
+          "n": 30,
+          "recall_at_5": 0.9333333333333333,
+          "mrr_at_5": 0.775,
+          "mean_context_chars": 6339.6,
+          "latency_ms": {
+            "p50": 13.041521000104694,
+            "p95": 18.616710449805396,
+            "mean": 13.7671762666893,
+            "n": 30
+          }
+        }
+      },
+      "index": {
+        "parents": 457,
+        "children": 2689,
+        "build_seconds": 1.14
+      }
+    },
+    "P4": {
+      "name": "P3 + cross-encoder rerank (bge-reranker-base, top-20)",
+      "metrics": {
+        "n": 130,
+        "recall_at_5": 0.8692307692307693,
+        "mrr_at_5": 0.715,
+        "mean_context_chars": 6679.723076923077,
+        "latency_ms": {
+          "p50": 1296.9793550000759,
+          "p95": 1771.3764861999152,
+          "mean": 1325.0427817076968,
+          "n": 130
+        }
+      },
+      "multi_hop_all_refs_recall_at_5": {
+        "value": 0.5333333333333333,
+        "n": 30
+      },
+      "ceiling": {
+        "recall_ceiling": 1.0,
+        "n": 130,
+        "items_not_in_any_unit": []
+      },
+      "hits_off_gold_page": 1,
+      "by_type": {
+        "factual": {
+          "n": 70,
+          "recall_at_5": 0.9571428571428572,
+          "mrr_at_5": 0.8702380952380953,
+          "mean_context_chars": 6587.228571428572,
+          "latency_ms": {
+            "p50": 1235.856042499563,
+            "p95": 1713.407755499838,
+            "mean": 1273.7380238142323,
+            "n": 70
+          }
+        },
+        "multi-hop": {
+          "n": 30,
+          "recall_at_5": 0.6666666666666666,
+          "mrr_at_5": 0.44166666666666665,
+          "mean_context_chars": 7255.4,
+          "latency_ms": {
+            "p50": 1323.7830420002865,
+            "p95": 1964.430008849877,
+            "mean": 1415.2092368333495,
+            "n": 30
+          }
+        },
+        "table": {
+          "n": 30,
+          "recall_at_5": 0.8666666666666667,
+          "mrr_at_5": 0.6261111111111112,
+          "mean_context_chars": 6319.866666666667,
+          "latency_ms": {
+            "p50": 1331.6780010000002,
+            "p95": 1707.7620190502785,
+            "mean": 1354.5874283334645,
+            "n": 30
+          }
+        }
+      },
+      "index": {
+        "parents": 457,
+        "children": 2689,
+        "build_seconds": 1.13
+      }
+    }
+  }
+}

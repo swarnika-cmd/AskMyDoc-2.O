@@ -1,0 +1,96 @@
+{
+  "environment": {
+    "date_utc": "2026-11-13T01:00:38Z",
+    "vcs": "none: run from a build copy (not a git checkout)",
+    "python": "3.11.18",
+    "libraries": {
+      "torch": "2.15.0+cpu",
+      "sentence-transformers": "6.3.0",
+      "transformers": "5.22.2",
+      "chromadb": "1.5.9",
+      "rank-bm25": "0.2.2",
+      "langchain-text-splitters": "1.1.3",
+      "langchain-core": "1.8.0",
+      "numpy": "2.4.6",
+      "httpx": "0.28.1"
+    },
+    "models": {
+      "sentence-transformers/all-MiniLM-L6-v2": {
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "role": "embeddings"
+      }
+    },
+    "os": "Linux-7.0.14-linuxkit-aarch64-with-glibc2.41",
+    "cpu": {
+      "host_cpu": "Apple M4 Pro",
+      "container_cpuinfo_model": null,
+      "machine": "aarch64"
+    },
+    "docker": {
+      "visible_cpus": 12,
+      "affinity_cpus": 12,
+      "cgroup_cpu_limit": 4.0,
+      "torch_threads": 4,
+      "host_note": "Docker Desktop VM (12 CPUs, ~8 GB) on macOS arm64; container limited to 4 CPUs; machine shared with other jobs"
+    },
+    "env": {
+      "OMP_NUM_THREADS": "4",
+      "EVAL_MODEL_ROOT": "/models",
+      "HF_HUB_OFFLINE": "1"
+    }
+  },
+  "hnsw": {
+    "pipeline": "P2 child search, top-5",
+    "n_questions": 130,
+    "eval_config": {
+      "num_threads": 1,
+      "max_neighbors": 32,
+      "ef_construction": 400,
+      "ef_search": 400
+    },
+    "identical_top5_sets": {
+      "eval_vs_exact": 130,
+      "default_vs_exact": 130,
+      "default_vs_eval": 130
+    },
+    "identical_top5_ordered_lists": {
+      "eval_vs_exact": 130,
+      "default_vs_exact": 130,
+      "default_vs_eval": 130
+    }
+  },
+  "refusal_gate": {
+    "n_questions": 150,
+    "min_best_cosine": 0.5111063804243146,
+    "mean_best_cosine": 0.6774088532073156,
+    "below_0.2": 0,
+    "below_0.4": 0,
+    "lowest_5": [
+      {
+        "id": "q017",
+        "type": "unanswerable",
+        "best_cosine": 0.5111
+      },
+      {
+        "id": "q030",
+        "type": "unanswerable",
+        "best_cosine": 0.516
+      },
+      {
+        "id": "q077",
+        "type": "factual",
+        "best_cosine": 0.5203
+      },
+      {
+        "id": "q014",
+        "type": "unanswerable",
+        "best_cosine": 0.5213
+      },
+      {
+        "id": "q045",
+        "type": "multi-hop",
+        "best_cosine": 0.5289
+      }
+    ]
+  }
+}
