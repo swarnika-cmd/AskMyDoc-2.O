@@ -11,6 +11,16 @@ from app.metrics import metrics
 
 load_dotenv()
 
+def format_context(chunks) -> str:
+    """Context block sent to the LLM: the parent text of each retrieved chunk, in rank order."""
+    contexts = []
+    for i, chunk in enumerate(chunks):
+        source = chunk.metadata.get("source", "Document")
+        content = chunk.metadata.get("parentContent") or chunk.page_content
+        contexts.append(f"[Source {i + 1} - {source}]:\n{content}")
+    return "\n\n".join(contexts)
+
+
 def ask_question(query: str, namespaces: list, history: list = None) -> dict:
     """
     Searches the vector store across multiple namespaces, reformulates the query if history is present,
@@ -92,13 +102,7 @@ Standalone question:"""
     top_chunks = list(unique_parents.values())
 
     # Build the strictly grounded System Prompt requesting JSON output
-    contexts = []
-    for i, chunk in enumerate(top_chunks):
-        source = chunk.metadata.get("source", "Document")
-        content = chunk.metadata.get("parentContent") or chunk.page_content
-        contexts.append(f"[Source {i + 1} - {source}]:\n{content}")
-        
-    context_text = "\n\n".join(contexts)
+    context_text = format_context(top_chunks)
     
     system_prompt = f"""You are a helpful AI Assistant.
 
@@ -213,6 +217,8 @@ Document Context:
     return {
         "answer": answer,
         "sources": serialized_sources,
+        # Ids of the chunks whose text was sent to the LLM; POST /api/evaluate takes these, not client text.
+        "chunkIds": [c.metadata["chunkId"] for c in top_chunks if c.metadata.get("chunkId")],
         "score": max_score,
         "confidence": confidence
     }

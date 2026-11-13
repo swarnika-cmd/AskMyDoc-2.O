@@ -45,10 +45,14 @@ def save_documents_to_store(documents, embeddings, namespace: str):
     os.makedirs(persist_directory, exist_ok=True)
     
     _evict(namespace)
+    # Chunks carry a deterministic chunkId (see app.ingest.make_chunk_id); the store keeps it as the row id,
+    # so the judge endpoint can fetch the exact text later.
+    ids = [d.metadata["chunkId"] for d in documents] if all("chunkId" in d.metadata for d in documents) else None
     start_time = time.time()
     Chroma.from_documents(
         documents=documents,
         embedding=embeddings,
+        ids=ids,
         persist_directory=persist_directory,
         collection_name=namespace
     )
@@ -76,4 +80,18 @@ def delete_namespace(namespace: str):
         return False
     except Exception as e:
         print(f"Error deleting Chroma collection {namespace}: {e}")
+        return False
+
+
+def namespace_exists(namespace: str) -> bool:
+    """True if a Chroma collection with this name exists. Read-only: it never creates a collection."""
+    try:
+        import chromadb
+        persist_directory = os.getenv("CHROMA_DB_PATH", "./chroma_db")
+        if not os.path.isdir(persist_directory):
+            return False
+        client = chromadb.PersistentClient(path=persist_directory)
+        return namespace in [c.name for c in client.list_collections()]
+    except Exception as e:
+        print(f"Error checking Chroma collection {namespace}: {e}")
         return False

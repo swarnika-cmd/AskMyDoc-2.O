@@ -11,7 +11,7 @@ from typing import List, Optional, Dict, Any
 
 from app.ingest import ingest_document
 from app.retrieve import ask_question
-from app.evaluate import evaluate_faithfulness
+from app.evaluate import evaluate_faithfulness, context_from_chunk_ids, ChunkLookupError
 from app.database import delete_namespace
 from app.metrics import metrics
 
@@ -60,9 +60,12 @@ class DeleteRequest(BaseModel):
     namespace: str
 
 class EvaluateRequest(BaseModel):
+    # The judge reads its context from the store, using the ids returned by /api/chat.
+    # A `context` field sent by a client is ignored (extra fields are dropped).
     query: str
-    context: str
     answer: str
+    chunkIds: List[str]
+    namespaces: Optional[List[str]] = None
 
 @app.get("/api/health")
 async def health_check():
@@ -176,8 +179,10 @@ async def delete_endpoint(req: DeleteRequest):
 @app.post("/api/evaluate")
 async def evaluate_endpoint(req: EvaluateRequest):
     try:
-        result = evaluate_faithfulness(req.query, req.context, req.answer)
-        return result
+        context = context_from_chunk_ids(req.chunkIds, req.namespaces)
+        return evaluate_faithfulness(req.query, context, req.answer)
+    except ChunkLookupError as e:
+        raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

@@ -3,6 +3,7 @@ import time
 import random
 import string
 import base64
+import hashlib
 import requests
 from functools import lru_cache
 from dotenv import load_dotenv
@@ -11,6 +12,19 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from app.database import save_documents_to_store
 
 load_dotenv()
+
+# Parent-child chunking sizes (characters). The evaluation harness (eval/pipelines.py) imports these.
+PARENT_CHUNK_SIZE = 3000
+PARENT_CHUNK_OVERLAP = 300
+CHILD_CHUNK_SIZE = 400
+CHILD_CHUNK_OVERLAP = 100
+
+
+def make_chunk_id(namespace: str, source: str, index: int, text: str) -> str:
+    """Deterministic id for a stored child chunk: the same input always yields the same id."""
+    raw = f"{namespace}\n{source}\n{index}\n{text}".encode("utf-8")
+    return hashlib.sha256(raw).hexdigest()[:24]
+
 
 def ingest_document(file_path: str, collection_name: str, original_file_name: str = "") -> dict:
     """
@@ -65,12 +79,12 @@ def ingest_document(file_path: str, collection_name: str, original_file_name: st
 
     # 2. Chunking: Parent Document Strategy
     parent_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=3000,
-        chunk_overlap=300
+        chunk_size=PARENT_CHUNK_SIZE,
+        chunk_overlap=PARENT_CHUNK_OVERLAP
     )
     child_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=400,
-        chunk_overlap=100
+        chunk_size=CHILD_CHUNK_SIZE,
+        chunk_overlap=CHILD_CHUNK_OVERLAP
     )
 
     parent_docs = parent_splitter.split_documents(docs)
@@ -88,6 +102,9 @@ def ingest_document(file_path: str, collection_name: str, original_file_name: st
             child.metadata["source"] = parent.metadata.get("source", original_file_name or file_path)
             if "ocr" in parent.metadata:
                 child.metadata["ocr"] = True
+            child.metadata["chunkId"] = make_chunk_id(
+                collection_name, child.metadata["source"], len(child_chunks), child.page_content
+            )
             child_chunks.append(child)
 
     print(f"Split document into {len(parent_docs)} parent chunks and {len(child_chunks)} child chunks.")

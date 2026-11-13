@@ -580,8 +580,8 @@ async function sendMessage() {
     const isConv = data.isConversational || (reply.toLowerCase().includes("hello") || reply.toLowerCase().includes("hi "));
     let initFaithHtml = '';
     
-    // Only evaluate if it's document-based (i.e. confidence != 'NOT_FOUND' and not conversational and has sources)
-    const deservesEval = confidence !== 'NOT_FOUND' && !isConv && data.sources && data.sources.length > 0;
+    // Only evaluate if it's document-based (i.e. confidence != 'NOT_FOUND' and not conversational and has chunk ids)
+    const deservesEval = confidence !== 'NOT_FOUND' && !isConv && data.chunkIds && data.chunkIds.length > 0;
     if (deservesEval) {
       initFaithHtml = `<div class="faithfulness-badge badge-faithful-loading"><span class="dot"></span>Evaluating Faithfulness...</div>`;
     }
@@ -589,7 +589,7 @@ async function sendMessage() {
     const msgRow = addAIMessage(escHtml(reply).replace(/\[p\.(\d+)\]/g, '<span class="citation-badge">p.$1</span>'), true, confidence, initFaithHtml);
     
     if (deservesEval) {
-      runEvaluation(text, reply, data.sources, msgRow);
+      runEvaluation(text, reply, data.chunkIds, namespaces, msgRow);
     }
   } catch (err) {
     removeTyping();
@@ -600,19 +600,15 @@ async function sendMessage() {
   sendBtn.disabled = chatInput.value.trim() === '';
 }
 
-async function runEvaluation(query, answer, sources, msgRow) {
+async function runEvaluation(query, answer, chunkIds, namespaces, msgRow) {
   const container = msgRow.querySelector('.faithfulness-container');
   if (!container) return;
-
-  const contextText = (sources || [])
-    .map((chunk, i) => `[Source ${i + 1} - ${chunk.metadata.source || 'Document'}]:\n${chunk.metadata.parentContent || chunk.pageContent}`)
-    .join('\n\n');
 
   try {
     const res = await fetch('/api/evaluate', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ query: query, context: contextText, answer: answer })
+      body: JSON.stringify({ query: query, answer: answer, chunkIds: chunkIds, namespaces: namespaces })
     });
     
     if (!res.ok) throw new Error("Evaluation request failed");

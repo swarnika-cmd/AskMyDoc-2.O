@@ -2,10 +2,70 @@ import os
 import json
 import re
 from dotenv import load_dotenv
+from langchain_core.documents import Document
 from langchain_core.messages import SystemMessage, HumanMessage
+from app.database import get_vector_store, namespace_exists
+from app.ingest import get_embeddings
 from app.llm import get_llm, message_text
+from app.retrieve import format_context
 
 load_dotenv()
+
+MAX_CHUNK_IDS = 10
+MAX_NAMESPACES = 10
+# Namespaces are created by the web page as doc_<name>_<timestamp>; the default is DefaultCollection.
+NAMESPACE_RE = re.compile(r"^[A-Za-z0-9_-]{3,100}$")
+
+
+class ChunkLookupError(ValueError):
+    """Raised when chunk ids or namespaces are missing, invalid, too many, unknown, or not found in the store."""
+
+
+def _validated_namespaces(namespaces) -> list:
+    names = namespaces or ["DefaultCollection"]
+    if not isinstance(names, list) or not all(isinstance(n, str) for n in names):
+        raise ChunkLookupError("namespaces must be a list of strings.")
+    if len(names) > MAX_NAMESPACES:
+        raise ChunkLookupError(f"At most {MAX_NAMESPACES} namespaces are accepted.")
+    for n in names:
+        if not NAMESPACE_RE.match(n):
+            raise ChunkLookupError(f"Invalid namespace name: {n[:40]!r}")
+    # Check existence first: opening a store for an unknown name would create an empty collection.
+    for n in names:
+        if not namespace_exists(n):
+            raise ChunkLookupError(f"Unknown namespace: {n}")
+    return names
+
+
+def context_from_chunk_ids(chunk_ids: list, namespaces: list) -> str:
+    """
+    The context comes from the store for the given chunk ids, in the given order. Nothing a client sends as
+    text is used. chunk_ids are the `chunkIds` of a /api/chat response.
+    """
+    ids = [i for i in (chunk_ids or []) if isinstance(i, str) and i]
+    if not ids:
+        raise ChunkLookupError("chunkIds is required. Re-upload the document if it was ingested before chunk ids existed.")
+    if len(ids) > MAX_CHUNK_IDS:
+        raise ChunkLookupError(f"At most {MAX_CHUNK_IDS} chunk ids are accepted.")
+    names = _validated_namespaces(namespaces)
+
+    found = {}
+    # The store is cached per namespace and shared with chat retrieval, so it must be built with the real embeddings.
+    embeddings = get_embeddings()
+    for ns in names:
+        missing = [i for i in ids if i not in found]
+        if not missing:
+            break
+        store = get_vector_store(embeddings, ns)
+        got = store.get(ids=missing)
+        for cid, text, meta in zip(got.get("ids", []), got.get("documents", []), got.get("metadatas", [])):
+            found[cid] = Document(page_content=text or "", metadata=meta or {})
+
+    unknown = [i for i in ids if i not in found]
+    if unknown:
+        raise ChunkLookupError(f"Unknown chunk id(s): {', '.join(unknown)}")
+    return format_context([found[i] for i in ids])
+
 
 def evaluate_faithfulness(query: str, context: str, answer: str) -> dict:
     """
