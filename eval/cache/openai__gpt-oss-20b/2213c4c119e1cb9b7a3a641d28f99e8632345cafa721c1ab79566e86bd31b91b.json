@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"The student must submit a written objection to the concerned Head of the Department within 15 days from the last examination conducted in the semester.\"\n}",
+ "created_utc": "2026-11-13T00:11:01Z",
+ "finish_reason": "stop",
+ "key": "2213c4c119e1cb9b7a3a641d28f99e8632345cafa721c1ab79566e86bd31b91b",
+ "latency_s": 0.812,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - cusb-ug-ordinance.pdf]:\n47 \n \n \n15.8If a student fails t he End -Semester Examination, he/ she may apply for a \nsupplementary examination. The supplementary exam will be announced and \nconducted under the guidance of the Office of the Controller of Examinations and the \nconcerned Department, within three weeks of result declaration. \n \n15.9 To facilitate the process outlined in sub -clause 15.8, the concerned Department is to \nprepare two sets of moderated question papers and provide them to the Controller of \nExaminations well in advance during the question paper setting and moderation \nprocess. \n \n \n \n15.10 Making Evaluated Answer-scripts Available to the Students: \n \n15.10.1All the examination answer -scripts shall be made available to the students \nafter evaluation by the respective teachers as per the schedule decided by the \nconcerned teachers or the University. In the case of the End -Semester \nExamination, the evaluated answer scripts shall be made available to the \nstudents within 10 days of the last examination for the semester. Thereafter, \nwithin a week, all the answer scripts along with the statement of marks shall \nbe sent by the concerned teacher through her/his Department to the Office of \nthe Controller of Examinations for declaration of the results. \n15.10.2If a student is not satisfied with the evaluation of her/his answer script, she/he \nmust submit a written objection to the concerned Head of the Department \n(offering the course) within 15 days from the last examination conducted in a \nsemester. Such complaint shall be looked after by a panel of t wo faculty \nmembers, excluding the concerned teacher, to be nominated by the Head of \nthe Department, whose decision shall be final.  The revised marks, if any, shall \nbe submitted by the panel to the concerned Head of Department who shall \nfurther submit it to the Controller of Examinations. This complete process of \nGrievance Redressal by the panel and the further submission of marks by the \nHead of Department, generally, should not take more than 7 days from the \ndate of receipt of the grievance. However, in case of any controversy, the \nmatter shall be referred to the Vice-Chancellor for final decision and action.\n\n[Source 2 - cusb-ug-ordinance.pdf]:\n5 \n \n \n \n \n \n \n \nGuiding Ordinances/ Regulations/Act/ Guidelines \n \nCentral Universities Act: 2009 \nCUSB/First Ordinance/2016 \nCentral University of South Bihar Examination Manual: 2022 \nCUSB Regulations Relating to Unfair Means in the Examinations: 2019 \nDraft National Higher Education Qualifications Framework (NHEQF):2022 \nGuidelines for Multiple Entry and Exit in Academic Programmes Offered in Higher \nEducation Institutions, UGC, 2021 \nNational Education Policy: 2020 \nOrdinance Governing Master’s Degree Programme in Science, Arts, and Commerce-2022 \n \n \n \nIn exercise of the powers conferred by Section 28 (1) (b) o f the Central Universities Act, \n2009, Central University of South Bihar, in pursuance of N ational Educational Policy -2020 \nof the Government of India, and the University Grants Commission's Guidelines for Multiple  \nEntry & Multiple Exit , Academic Bank of Credit, hereby frames this Ordinance for ‘Five \nyear Integrated UG -PG Programmes’  of Studies  leading to the award of Certificate, \nDiploma, and Degree in Science, Arts and Commerce Disciplines offered by the university. \n \n1. Short Title and Commencement: \n \n1.1. This Ordinance shall be called CUSB Ordinance Governing Five-year Integrated \nUG-PG Programmes in Science, Arts and Commerce, 2022. \n \n1.2. This Ordinance shall come into force from the Academic Year 2024-2025. \n \n2. Scope and Coverage \n \n2.1. This Ordinance shall govern the Five -Year Integrated UG -PG Programme to be \ncommenced from the academic session, 2024-25.\n",
+   "role": "system"
+  },
+  {
+   "content": "Under the CUSB integrated UG-PG ordinance, a student unhappy with the evaluation of an answer script must object to whom, and within how many days?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "987",
+  "x-ratelimit-remaining-tokens": "2516",
+  "x-ratelimit-reset-requests": "18m43.2s",
+  "x-ratelimit-reset-tokens": "41.13s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.121063628,
+  "completion_tokens": 91,
+  "completion_tokens_details": {
+   "reasoning_tokens": 33
+  },
+  "prompt_time": 0.061591526,
+  "prompt_tokens": 1148,
+  "queue_time": 0.518169758,
+  "total_time": 0.182655154,
+  "total_tokens": 1239
+ }
+}

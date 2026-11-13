@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"The SGPA is calculated as 100 divided by 13, which equals 7.69.\"\n}",
+ "created_utc": "2026-11-13T00:42:43Z",
+ "finish_reason": "stop",
+ "key": "da0c106f664d1f9f53c9a9cda3cec2f24292dd0288952dad9d0d77368fe979c6",
+ "latency_s": 0.348,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - cusb-ug-ordinance.pdf]:\n10 \n \neducation institutions into large multidisciplinary universities, colleges, and HEI \nclusters/Knowledge Hubs. \n \n3.24. Programme of Studies:  A Programme of Studies shall mean an academic \nprogramme leading to the award of a degree or diploma. It comprises a fixed set \nof Core Courses and some choice-based Elective Courses with a minimum \nCredit requirement. \n \n3.25. Semester Grade Point Average (SGPA): It is a measure of performance of the \nwork done in a semester. It is the ratio of total credit points secured by a student \nin various courses registered in a semester and the total course credits taken \nduring that semester. It shall be expressed up to two decimal places. \n \n3.26. Semester: Each Semester shall consist of 15 -18 weeks of academic work \nequivalent to 90 actual teaching days. The odd semester may be scheduled from \nJuly to December and even semester from January to June. The credit -based \nsemester system provides flexibility in designing the curriculum and assigning \ncredits based on the course content and hours of teaching. \n \n3.27. Transcript/ Grade Report / Certificate:  Based on the grades earned, a Grade \ncertificate shall be issued to all the registered students after every semester. The \ngrade certificate will display the course details (code, title, number of credits, \ngrade and/or marks secured) along with the SGPA of that semester. \n \n3.28. University: The University in this Ordinance means the Central University of \nSouth Bihar. \n \n3.29. Levels of Courses:  Courses shall be coded based on the learning outcomes, \nlevel of difficulty, and academic rigor. The coding structure is as follows: \n \n3.29.1 100-199: Foundation or introductory courses that are intended for \nstudents to gain an understanding and basic knowledge about the subjects and \nhelp decide the subject or discipline of interest. \n3.29.2 200-299: Intermediate-level courses including subject -specific courses \nintended to meet the credit requirements for minor or major areas of learning.\n\n[Source 2 - cusb-ug-ordinance.pdf]:\n56 \n \nstudent in the ith course. \n20.3The SGPA and CGPA shall be rounded off to 2 decimal points. \n \n21 Illustration of Computation of SGPA and CGPA: \n \n21.1Illustration for computing SGPA: \nCourse Credit Grade Letter Grade Point Credit Point \nCourse I 3 A 8 3 x 8 = 24 \nCourse II 4 B+ 7 4 x 7 = 28 \nCourse III 3 B 6 3 x 6 = 18 \nCourse IV 3 O 10 3 x 10 =30 \n \nTotal credits for \nthe semester = 13 \n  \nTotal Credit points \nEarned = 100 \n \nThus, SGPA = 100/13 = 7.69 \n \n21.2Illustrations for computing CGPA: \nCourses Considered \nfor the Award of the \nDegree \nCompleted \nin the month \n(Year) \nCredit \nGrade \nLetter \nGrade \nPoint \nCredit Point \nCourse I Dec 2018 4 A 8 4 x 8 = 32 \nCourse II Dec 2018 4 B+ 7 4 x 7 = 28 \nCourse III June 2019 4 B 6 4 x 6 = 24 \nCourse IV June 2020 4 o 10 4 x 10 = 40 \n \nTotal credits for the \nsemester = 16 \n  \nTotal Credit points \nEarned = 124 \n \nThus, CGPA= 124/16= 7.75 \n \nNote: Formula to calculate percentage from CGPA/SGPA= CGPA or SGPA x 10; and\n\n[Source 3 - cusb-ug-ordinance.pdf]:\n55 \n \ncase where a student of the final semester (within the minimum prescribed duration \nof the Programme) fails to appear or to achieve a ‘P’ grade in the maximum of four \n(04) courses including all backlogs after the result declaration of the final semester, \nthe Department may ask the concerned course Teacher(s) to conduct re -\nexamination of End-Semester Examinations of such course(s) within a month from \ncommencement of the next semester relaxing the condition of odd/even semester as \ngiven in 16.2.3.  The student shall have to pay a fee of Rs. 2000/- per course.  \n \n18.8 If a candidate is repeating a course in an academic session, whatever may be the \nreason, it shall not be counted in the total number of seats and shall not affect the \nfresh intake of the Programme in that academic session.   \n \n19. A student shall be required to earn appropriate credits for the award of the final degree \nafter the completion of 200 credits governed by the relevant clauses within a maximum \nduration of eight years. \n \n \n20 Computation of SGPA and CGPA:  \nThe University shall follow the following procedure to compute the Semester Grade \nPoint Average (SGPA) and Cumulative Grade Point Average (CGPA): \n20.1The SGPA is the ratio of the sum of the product of the number of credits with the \ngrade points scored by a student in all the courses taken by a student in a particular \nsemester and the sum of the number of credits of all the courses undergone by a \nstudent in that semester, i.e., \nSGPA (Si) = ∑(Ci x Gi)/∑Ci \nWhere, Ci is the number of credits of the i th course and Gi is the grade point \nscored by the student in the ith course. \n20.2The CGPA is also calculated in the same manner taking into account all the \nconsiderable courses as per the provision laid down in this ordinance out of the total \ncourses undergone by a student over all the semesters of a Programme, i.e., \nCGPA = ∑(Ci x Gi)/∑Ci \nWhere, Ci is the number of credits of the ith course (which is to be considered \nfor the award of the PG Degree) and G i is the grade point scored by the\n",
+   "role": "system"
+  },
+  {
+   "content": "In the CUSB ordinance's worked SGPA example, what SGPA results from 13 credits and 100 credit points?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "983",
+  "x-ratelimit-remaining-tokens": "1138",
+  "x-ratelimit-reset-requests": "24m28.8s",
+  "x-ratelimit-reset-tokens": "51.465s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.07807826,
+  "completion_tokens": 73,
+  "completion_tokens_details": {
+   "reasoning_tokens": 22
+  },
+  "prompt_time": 0.114547776,
+  "prompt_tokens": 1581,
+  "queue_time": 0.053041653,
+  "total_time": 0.192626036,
+  "total_tokens": 1654
+ }
+}

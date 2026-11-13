@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"Late semester registration is not allowed after 30 calendar days from the scheduled date.\"\n}",
+ "created_utc": "2026-11-13T00:51:46Z",
+ "finish_reason": "stop",
+ "key": "6d8d8b75f05b1764c48f4ac1d27f14ab8d1909ed379b466f4ff31dcfdd12bfde",
+ "latency_s": 0.647,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - nitrkl-btech-regs.pdf]:\nPage 9 of 31 \n \n (d) Selection of courses to be studied during the semester.  \n For selection of courses, a “Pre-Registration” process shall be organized during the previous \nsemester. \n Semester fees including hostel dues are to be paid during the period as decided by the institute. \nIn deserving cases, particularly students receiving an external scholarship or a bank loan, the \nInstitute may permit deferment of payment of fees beyond the date notified with a late fee. If a \nstudent fails to  pay the fees, his result for the semester will remain withheld and he will not be \nin a position of registering for the next semester, unless specifically approved by the competent \nauthority. \n5.2 The registration will be done online in respective departments, the subject details being verified \nby the Faculty Adviser of the batch.  Once registered, a student may request to faculty adviser \nto amend the registration within 10 working days of original registration date.  \n5.3 Students who does not register on the scheduled registration date  \nA student who does not register on the day announced for the purpose can register within next \n10 working days on payment of late fine  as prescribed by the Institute . Normally no late \nregistration shall be pe rmitted after the tenth working day from the scheduled date, except in \nspecial cases like those directed by MHRD or MHRD approved authorities in 1 st semester, a \nserious medical problem, a family calamity or partici pation in a national event, if approved by  \nthe Director on recommendation of Dean (AA ).  \n5.4    Registration after 30 calendar days \nUnder no circumstances, even with approved leave, late registration after 30 calendar days from \nthe scheduled date of registration is allowed. A student must repeat the semester in the following \nyear. In case of late registration, all classes between the expected date of registration and the \nactual date will be considered as absence. The student may , however, apply for leave to Dean \n(AA), if admissible under leave rul es. No special allowance may be claimed in the matter of \nassessment / evaluation or grading.  \n5.5 Registration of only those students will be approved who have:  \n  (i) Completed their pre-registration \n  (ii) Cleared all Institute and Hall dues of the previous semester(s)  \n  (iii) Paid all prescribed fees for the current semester during the period notified (unless \notherwise permitted) \n  (iv) Not been debarred from registering for a specified period on disciplinary or any other \ngrounds \n  (v) Satisfied the academic requirements  \n  (vi) Not been struck off the rolls of the Institute.  \n5.6 Academic requirement for promotion to 3rd semester \n To be able to register in the 2 nd year (3rd semester) and continue his/her study in the Institute at \nthe end of 1st year, a student must \n (i) satisfactorily complete at least 40 credits of courses prescribed for the two semesters,\n\n[Source 2 - cusb-ug-ordinance.pdf]:\n42 \n \nnot put in at least 40% of aggregate attendance in the first semester, she/he shall have \nto leave the programme without claiming a refund of any fees, and her/his admission \nshall be treated as cancelled. \n \n14.5The attendance of a newly admitted candidate shall be counted from the date of \nher/his admission or the date of commencement classes, whichever is later. In the case \nof promoted candidates, attendance shall be counted from the date on which the \nrespective class begins. However, if a new student is admitted late after the \ncommencement of the classes, s/he must get herself/himself registered in the desired \ncourses following the due procedure within 5  (Five) working days after the admission \nfailing which her/his attendance shall be counted after 5  (Five) working days from the \ndate of admission. \n \n14.6In the case of changed registration as per the clause 1 3.3 of this ordinance the total \nclasses held for calculating the percentage of attendance in the newly registered course \nfor a particular student shall be counted from the fresh registration in that particular \ncourse.  \n \n14.7Monthly records of attendance of students in each of the courses taught by a teacher \nare to be prepared and submitted by the concerned teacher to the Office of the Head/In \ncharge of the Department (HoD) and the Controller of Examinations’ (CoE) office by \nthe 10 th day of the next month after displaying it to the students in the course and \ntaking their signatures . The teacher will keep the original record of attendance with \nher/him and submit it finally to both offices with her/his remarks regarding the \neligibility of a student for appearing in the end -semester examination within three \nworking days or as per the academic calendar after the last class or teaching day in the \nsemester, whichever is later. Any failure in compliance in this matter must be \ninformed by the concerned teacher to the Head of Department  and the Controller of \nExaminations with justification. \nOR \nAll the concerned teachers will mark the attendance of students on SAMARTH after \neach class, so that students can check their attendance themselves as per subject/paper \nand act accordingly. \n \n14.8There shall be an Attendance Monitoring Committee in the Department under the \nChairpersonship of the Head or her/his nominee for proper monitoring of attendance\n",
+   "role": "system"
+  },
+  {
+   "content": "At NIT Rourkela, after how many calendar days from the scheduled date is late semester registration not allowed under any circumstances?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "961",
+  "x-ratelimit-remaining-tokens": "2527",
+  "x-ratelimit-reset-requests": "56m9.6s",
+  "x-ratelimit-reset-tokens": "41.047s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.098013415,
+  "completion_tokens": 96,
+  "completion_tokens_details": {
+   "reasoning_tokens": 49
+  },
+  "prompt_time": 0.09077966,
+  "prompt_tokens": 1427,
+  "queue_time": 0.320622186,
+  "total_time": 0.188793075,
+  "total_tokens": 1523
+ }
+}

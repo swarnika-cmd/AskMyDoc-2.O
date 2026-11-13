@@ -1,0 +1,53 @@
+{
+ "attempts": 1,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"The system answer matches the reference answer of 32 credits.\",\"is_refusal\":false,\"claims\":[{\"claim\":\"A student must earn a total of 32 credits in minor subjects over the entire programme.\",\"supported\":true}]}",
+ "created_utc": "2026-11-13T00:55:47Z",
+ "finish_reason": "stop",
+ "key": "839e555f8e38b1479d592c0f92fcac305f518afb2587b261ce79430bfedbc34a",
+ "latency_s": 0.702,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: answerable (factual)\n\nQuestion:\nUnder the CUSB integrated UG-PG ordinance, how many credits in minor subjects must a student earn over the whole programme?\n\nReference answer:\n32 credits.\n\nSystem answer:\nA student must earn a total of 32 credits in minor subjects over the entire programme.\n\nContext shown to the system:\n[Source 1 - cusb-ug-ordinance.pdf]:\n29 \n \n \nThus, a student shall earn 20 credits each from Semester 1 and Semester 2, thus a total \nof 40 credits from both semesters and shall be eligible for a UG Certificate provided \nhe/she should earn an additional 4 credits through Summer Internship or Fieldwork \netc. as decided by the BoS. Each Course of these two semesters will be of 100 Level. \n \n \n \n \n \n9.8.2 Semester 3& 4  \nTable 2: Course Structure for UG Diploma \n \nCourse \nType \nSemester \nMajor \n(4 credits) \n \nMinor \n(4 Credits) \nMultidisciplinary \n(3 Credits) \nACE \n(2 \nCredits) \nSEC \n(3 Credits) \nSummer \nInternship \nB \nTotal \nCredits \nIII \nCourse 1 \nCourse 2 \nOne Major \neach Semester \nis declared as \nMinor for \nstudents of \nother Major \nOne Course \nOne \nCourse \nOne \nCourse \n 20 \nIV \nCourse 1 \nCourse 2 \nCourse 3 \nCourse 4* \n(*2 credits) \n \nOne \nCourse \n  20 \nAfter Two \nSemester`s \nSummer \nVacation  \n(8 weeks) \n     4 Credits  \n \nIt is also to be noted that a student shall be eligible for the award of UG diploma after \nsuccessful completion of 80 credits from semester 1 to semester 4 provided he/she \nshould earn additional 4 credits through Summer Internship (either A or B) or\n\n[Source 2 - cusb-ug-ordinance.pdf]:\n5 \n \n \n \n \n \n \n \nGuiding Ordinances/ Regulations/Act/ Guidelines \n \nCentral Universities Act: 2009 \nCUSB/First Ordinance/2016 \nCentral University of South Bihar Examination Manual: 2022 \nCUSB Regulations Relating to Unfair Means in the Examinations: 2019 \nDraft National Higher Education Qualifications Framework (NHEQF):2022 \nGuidelines for Multiple Entry and Exit in Academic Programmes Offered in Higher \nEducation Institutions, UGC, 2021 \nNational Education Policy: 2020 \nOrdinance Governing Master’s Degree Programme in Science, Arts, and Commerce-2022 \n \n \n \nIn exercise of the powers conferred by Section 28 (1) (b) o f the Central Universities Act, \n2009, Central University of South Bihar, in pursuance of N ational Educational Policy -2020 \nof the Government of India, and the University Grants Commission's Guidelines for Multiple  \nEntry & Multiple Exit , Academic Bank of Credit, hereby frames this Ordinance for ‘Five \nyear Integrated UG -PG Programmes’  of Studies  leading to the award of Certificate, \nDiploma, and Degree in Science, Arts and Commerce Disciplines offered by the university. \n \n1. Short Title and Commencement: \n \n1.1. This Ordinance shall be called CUSB Ordinance Governing Five-year Integrated \nUG-PG Programmes in Science, Arts and Commerce, 2022. \n \n1.2. This Ordinance shall come into force from the Academic Year 2024-2025. \n \n2. Scope and Coverage \n \n2.1. This Ordinance shall govern the Five -Year Integrated UG -PG Programme to be \ncommenced from the academic session, 2024-25.\n\n[Source 3 - cusb-ug-ordinance.pdf]:\n18 \n \n(b) He/she must have secured at least 6.5  Cumulative Grade Point Average \n(CGPA) or 65% marks in the last qualifying exam. \n \n6.4.3 It shall be the duty of the  CoE in consultation with the respective Department \nAdmission Committee to decide the  number of vacant seats for admission in \nsemester 7. Vacant seats will be determined by the committee in view of the \navailability of the seats out of the total sanctioned seats along with the \nreservation policy. \n \n6.4.4 Notwithstanding sub clause  4.3 of Clause 6, the Department Admission \nCommittee may consider an additional augmentation of 50 percent seats over \nthe total sanctioned seats for the accommodation of students seeking \nadmission in semester 7 through a multiple-entry system. \n \n6.4.5 The Department Admission Committee may consider counseling -cum- \ninteraction mechanism of assessment comprising 100 marks  of the students \nseeking admission through multiple entry modes in semester 7 and fulfilling \nthe eligibility criteria under sub-clause 4.1-4.2 of Clause 6.  \n \n6.5 A student is eligible for admission in Semester 9 of the ongoing Five-Year Integrated \nUG-PG Programme under the multiple entry mode provided he/she meets the \nfollowing conditions: \n6.5.1 A student should be from a university with a NAAC A  grade or / and an \ninstitution falling under the NIRF 200 ranking at the time of admission. \n \n6.5.2 He/she must have been preferably a student of the Five-Year Integrated UG-\nPG Programme running in his/her previous institution. \n \n6.5.3 Subject to the sub clauses 6.5 .1 or 6.5 .2, a student must have earned a \nminimum of 160 credits and must have the award of Degree of Bachelor of \nArts/ Science/ Commerce with Honors or Research.\n\n[Source 4 - cusb-ug-ordinance.pdf]:\n8 \n \n3.10. Minor Course:  This is a compulsory course that a student must complete to \nfulfill the requirements of the study program. A student can choose any subject \nas a minor. A student must earn a total of 32 credits in minor subjects during the \nentire program. Although student must earn 20 credits/1 6 credits (in four/three \nyears) as minor from one stream Science/Arts/ Commerce. Preferably, a student \nshould earn 20 credits/16 credits (in four/three years) as minor from one subject.   \n \n3.11. Course learning outcomes. A course may be designed to be delivered through \nlectures/tutorials/laboratory work/field work/outreach activities/project \nwork/vocational training/viva/seminars/ term papers/assignments /presentations \n/ self-study work, etc., or a combination of some of these. \n \n3.12. Credit Point: It is the product of Grade Point and  the number of Credits for a \ncourse. \n \n3.13. Credit: A unit by which the course work is measured. It determines the number \nof hours of instructions required per week. One credit is equivalent to one hour \nof teaching (lecture or tutorial) or two hours of practical work/field work per \nweek. \n \n3.14. Credit transfer:  A process that provides students with agreed and consistent \ncredit outcomes for components of a qualification based on identified \nequivalence in content and learning outcomes between matched qualifications. \n \n3.15. Cumulative Grade Point Average (CGPA):  It is a measure of the overall \ncumulative performance of a student over all semesters. The CGPA is the ratio \nof total credit points secured by a student in various courses in all semesters and \nthe sum of the total credits of all courses in all semesters. It shall be expressed \nup to two decimal places. \n \n3.16. Department: The Department means the Department under Schools of Studies \noffering Programme of Studies.",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "932",
+  "x-ratelimit-remaining-tokens": "3106",
+  "x-ratelimit-reset-requests": "1h37m55.2s",
+  "x-ratelimit-reset-tokens": "36.705s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 0.287283975,
+  "completion_tokens": 140,
+  "completion_tokens_details": {
+   "reasoning_tokens": 75
+  },
+  "prompt_time": 0.067262139,
+  "prompt_tokens": 2132,
+  "prompt_tokens_details": {
+   "cached_tokens": 512
+  },
+  "queue_time": 0.05266294,
+  "total_time": 0.354546114,
+  "total_tokens": 2272
+ }
+}

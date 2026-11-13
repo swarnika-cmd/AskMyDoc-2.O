@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"The final grade in a course is composed of 30% from Continuous Internal Assessment and 70% from the End‑Semester Examination.\"\n}",
+ "created_utc": "2026-11-13T17:39:50Z",
+ "finish_reason": "stop",
+ "key": "43555ed89284430f746b56865a014ccb4685379bce727a1a2638605d52c38e30",
+ "latency_s": 0.642,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - cusb-ug-ordinance.pdf]:\n52 \n \nsubsequent odd/even semester(s), whenever the examination of the particular \ncourse(s) is held, on payment of Rs.  3000.00 (may be revised time to time by \nthe University) per course in addition to the prescribed semester fee of the \nsemester in which she/he has been promoted/provisionally promoted, within \nthe maximum permissible duration for the Programme of study of the student.  \n \n16.3.2 A student may improve her/his points/grade by reappearing in the End -\nSemester Examination of a course as per the provisions of reappearing \nmentioned above.  In such cases points obtained by the student in the \nContinuous Internal Assessment of the particular course shall be carried \nforward to the subsequent End-Semester Examination of the course. However, \nin such case, the points/grades obtained in the End -Semester Examination \nappeared later shall be considered for the calculation of the final CGPA of the \nProgramme. \n  \n16.3.3 The re-examination of a course for improvement of grade shall be based on \nthe syllabi of the course in force at the time of initial registration to the \ncourse. \n \n16.3.4 A student who has got the Migration/Transfer Certificate issued from the \nUniversity shall not be allowed to re -appear in any examination for \nimprovement of grade. \n \n16.4 Repeating course(s):  \n \n16.4.1 A student having an attendance shortage in any course may repeat the course \nby taking re -admission/re-registration in that course in subsequent odd/even \nsemester(s), whenever the course is being offered, within the maximum \npermissible duration of the Programme.  \n \n16.4.2 If a student repeats a course, she/he has to fulfill all the desired requirements \nafresh including attendance, Continuous Internal Assessment and the End -\nSemester Examination. In such case the course content shall be based on the \nsyllabi of the course in force at the time of repeat of the course . However, at\n\n[Source 2 - cusb-ug-ordinance.pdf]:\n43 \n \nrecords and taking suitable action(s) as per requirements /this ordinance. The Office of \nthe CoE shall notify the attendance in each course  as received  from the respective \nAttendance Monitoring Committee each month.  \n \n15 Conduct of Examination, Assessment and Evaluation: \n \n15.1The examination of all the courses required for a Five- Year UG – PG Integrated \nProgramme shall be internal in nature and generally consis t of Continuous Internal \nAssessment and End -Semester Examination. For the preparation of final grade in a \nparticular course, the Continuous Internal Assessment (Formative in nature) and the \nEnd-Semester Examination (Summative in nature) shall have a weightage of 30% and \n70%, respectively. \n \n15.2Each course, irrespective of credits assigned to it, shall be evaluated out of 100 points . \nThese points should not be construed with the traditional system of marks. The points \nobtained by a student in a course are indicator s of the percentage of marks and not the \nraw marks. Both marks (%) and grades shall be reflected in the mark-sheet.  \n \n \n15.3Continuous Internal Assessment:  \n \n15.3.1 The Continuous Internal Assessment of the student ’s learning and \nperformance shall be carried out by the Course Teacher(s)  / Instructor(s) . \nConsidering the nature of the course, the teacher(s) shall decide the mode of \nContinuous Internal Assessment, which may include one or more assessment \ntools, such as student’s class performance, assignments, class tests, take -home \ntests, term paper(s), presentations, oral -quizzes, case studies and laboratory \nwork etc. \n \n15.3.2 Each Course Teacher shall design the Continuous Internal Assessment system \nfor the course she/he offers with the approval of the Departmental Committee \n(DC). This approved design of Continuous Internal Assessment shall be \nannounced to the students of the respective courses at the beginning of each \nsemester by the concerned teacher.\n\n[Source 3 - cusb-ug-ordinance.pdf]:\n49 \n \nrequired to re-appear in the examination. \n \n(ii) The minimum qualifying Grade Point for a course shall be 4.5 (i.e., a ‘P’ \ngrade). \n \n(iii) Students will have to pass the Continuou s Internal Assessment and End \nSemester examinations taken together. \n \n(iv) Before assigning a numerical grade to the marks obtained in a course, the total \nof both the Continuous Internal Assessment and the End -Semester \nExamination shall be rounded off to eliminate decimal marks. Therefore, the \nmarks obtained in the individual components of the Continuous Internal \nAssessment and End -Semester Examination shall NOT be rounded off \nseparately. \n \n(v) SGPA / CGPA shall be rounded off to two decimal places. \n \n(vi) The SGPA / CGPA obtained by a student shall be on a scale of 10 points. To \nbe eligible for the award of any certificate or degree mentioned in a Five -Year \nUG-PG Integrated program, a student must achieve a CGPA of at least 4.50 by \nthe end of the program.  \n \n(vii) The Cumulative Grade Point Average (CGPA) obtained by a student will be \nclassified into the following divisions/classes: \n \n \nCGPA Class/ Division \nAbove 9 Outstanding \nAbove 8 to 9 First Class (With Distinction) \n6 to 8 First Class \n5.5 to < 6 High-Second Class \n5 to < 5.5 Second Class \n4.5 to < 5 Pass\n\n[Source 4 - cusb-ug-ordinance.pdf]:\n44 \n \n15.3.3 Generally, each course shall be taught by one teacher only, who shall    \nmaintain all the records related to attendance, teaching and assessment in a \nsystematic manner. If a teacher is assisted in teaching by another teacher, the \nteacher (in -charge /senior teacher of the course) shall be responsible for \ncoordinating teaching and assessment including the award of the final grade. \n \n15.3.4 In case a student fails to appear in any Continuous Internal Assessment \nconducted by the Course Teacher, it will be taken care of by the concerned \nCourse Teacher at her/his level by conducting the test before the End-\nSemester Examination.  \n \n15.4End-Semester Examination: \nGenerally, End-Semester theory question paper shall include a limited number of very \nshort answer type questions followed by short and long answer type questions \ncovering the entire syllabus in such a way that the question paper ensures assessing \nstudents' knowledge, understanding, application and analysis-synthesis / reflection of \nthe subject. \n \nA standard model format of the End-Semester Examination of  a 4-credit paper  \nconsisting of 70 points shall be as under — \n \nSection-A: \nThis section will consist of 10 very -short/objective-type questions covering the entire \nsyllabus, with each question worth 1 point, for a total of 10 points. Candidates are \nrequired to answer all questions, with each answer written in approximately 20 words. \n \nSection-B:  \nThis section will consist of 6 short -type questions, each worth 6 points, totaling 30 \npoints. Candidates are required to answer 5 out of the 6 questions. Each answer \nshould be written in approximately 200 words. \n \nSection-C: \nThis section will include 3 long -answer questions covering the entire syllabus, with \neach question worth 15 points, for a total of 30 points. Candidates are required to\n",
+   "role": "system"
+  },
+  {
+   "content": "At CUSB, how is the final grade in a course split between internal assessment and the end-semester exam?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "995",
+  "x-ratelimit-remaining-tokens": "3937",
+  "x-ratelimit-reset-requests": "7m12s",
+  "x-ratelimit-reset-tokens": "30.472s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.084718138,
+  "completion_tokens": 80,
+  "completion_tokens_details": {
+   "reasoning_tokens": 22
+  },
+  "prompt_time": 0.148909799,
+  "prompt_tokens": 1886,
+  "queue_time": 0.315888897,
+  "total_time": 0.233627937,
+  "total_tokens": 1966
+ }
+}

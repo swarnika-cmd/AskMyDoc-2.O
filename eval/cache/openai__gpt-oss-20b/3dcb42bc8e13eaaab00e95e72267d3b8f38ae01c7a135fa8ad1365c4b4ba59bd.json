@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"GST collection grew faster in FY 2023‑24, with a 12.7 % increase over FY 2022‑23, compared to a 10.3 % increase in corporation tax collection.\"\n}",
+ "created_utc": "2026-11-13T00:07:58Z",
+ "finish_reason": "stop",
+ "key": "3dcb42bc8e13eaaab00e95e72267d3b8f38ae01c7a135fa8ad1365c4b4ba59bd",
+ "latency_s": 0.802,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - dea-frbm-h2-2023-24.pdf]:\nPage 5 of 9 \n \n2.1.4.1 Goods and Services Tax  \n GST for the Central Government comprises of CGST, IGST, UTGST and GST \nCompensation cess. GST collection was budgeted at ₹9.61 lakh crore for FY 2023-24 and kept at \nthe same level in RE 2023 -24. The total collection under GST in FY 2023 -24 (Provisional) was \n₹9.62 lakh crore. It indicates the growth of 12.7 per cent over the GST collections of ₹8.54 lakh \ncrore in FY 2022-23.  \n2.1.4.2 Customs \nThe Budget for 2023 -24 estimated tax receipts from Customs at ₹2.33 lakh crore. It was \nrevised to ₹2.19 lakh crore in R E 2023 -24. The actual (Provisional) receipts under Customs \nstood at ₹2.33 lakh crore for FY 2023-24, recording a growth of 9.2 per cent over FY 2022-23.  \n2.1.4.3 Union Excise Duty \n Union Budget 2023 -24 estimated Union Excise Duty collection at ₹3.39 lakh c rore, \nwhich was revised to ₹3.04 lakh crore in RE 2023 -24. Actual (Provisional) tax receipts under \nUnion Excise Duty were ₹3.05 lakh crore for FY 2023-24. \n2.1.5 Non-Tax Revenue \nNon-Tax Revenues of Centre mainly comprises of interest and dividend receipts o f \nthe Government from Public Sector Banks, Public Sector Undertakings and Reserve Bank of \nIndia, receipts from services provided by Central Ministries and Departments such as the \nsupply of Central Police Forces to various agencies, issue of passport and vi sa, registration of \ncompanies, patent and license fees, royalty from off -shore oil fields, various receipts from \ntelecom sector, etc.  \nThe Budget Estimate of 2023 -24 for Non -Tax Revenue was pegged at ₹3.02 lakh crore.   \nIt was revised at the RE stage to ₹3.76 lakh crore and actual (provisional) receipts of NTR were \n₹4.02 lakh crore.\n\n[Source 2 - dea-frbm-h2-2023-24.pdf]:\nPage 4 of 9 \n \n2.1.2  Revenue receipts \nRevenue receipts of the Centre comprise of Tax Revenue (Net to Centre) and Non -Tax \nRevenue. In BE 2023-24, total revenue receipts were estimated at ₹26.32 lakh crore and the same \nwas revised to ₹27.0 lakh crore in RE 2023 -24. The Revenue Receipts for FY 20 23-24 \n(Provisional) were ₹27.28 lakh crore comprising of Tax Revenue (Net to Centre ) of ₹23.27 lakh \ncrore and Non-Tax revenue of ₹4.02 lakh crore.  \n2.1.3 Direct Taxes \n  The main components of Direct Tax receipts are Corporation tax and Taxes on Income. \nDirect Taxes were estimated to be ₹18.24 lakh crore in BE 2023 -24, which was revised to \n₹19.45 lakh crore in RE 2023 -24. Direct Tax receipts for FY 2023 -24 (Provisional) we re \n₹19.57 lakh crore.  \n2.1.3.1 Corporation Tax \nBE 2023-24 for Corporation tax was ₹9.23 lakh crore which was kept at the same level in \nRE 2023 -24. Corporation tax collection for FY 2023 -24 (Provisional) was ₹9.11 lakh crore \nrecording a growth of 10.3 per cent over FY 2022-23. \n2.1.3.2 Taxes on Income \nTaxes on Income is the other major sub -component of Direct Taxes.  In BE 2023 -24, \nTaxes on Income were estimated to be ₹9.01 lakh crore (₹8.73 lakh crore from Taxes on Income \nother than Corporation Tax and ₹27,625 crore from Securities Transaction Tax). This was \nrevised upward to ₹10.22 lakh crore in RE 2023 -24. As per provisional estimates for FY 2023 -\n24, the receipts under this head were ₹10.45 lakh crore, comprising of ₹10.11 lakh crore from \nTaxes on Income ot her than Corporation Tax and ₹33,778 crore from STT, and registering a \ngrowth of 25.4 per cent over actual receipts of FY 2022-23 (i.e. ₹8.33 lakh crore).  \n2.1.4  Indirect Taxes  \nIndirect tax collection for FY 2023 -24, mainly comprising of Goods and Servic es Tax \n(GST), Customs and Union Excise Duties, was estimated at ₹15.37 lakh crore. Against the \nbudgeted target, the actual receipts for FY 2023-24 (Provisional) were ₹15.08 lakh crore.\n\n[Source 3 - dea-frbm-h2-2023-24.pdf]:\nContent \n Page \nMacro-Economic Backdrop 1 \nReview of Trends in Receipts and Expenditure in FY 2023-24 2 \nReceipts 3 \nGross Tax Revenue 3 \nRevenue receipts 3 \nDirect Taxes 3 \nCorporation Tax 3 \nTaxes on Income 3 \nIndirect Taxes 3 \nGoods and Services Tax 5 \nCustoms 5 \nUnion Excise Duty 5 \nNon-Tax Revenue 5 \nNon-Debt Capital Receipts (NDCR) 6 \nExpenditure 6 \nRevenue Expenditure 6 \nCapital Expenditure 7 \nDeficit 8 \nFiscal Deficit 8 \nRevenue Deficit 8 \nFinancing of deficit 8 \nLiabilities 9 \nCash Management 9 \nConclusion 9\n\n[Source 4 - dea-frbm-h2-2023-24.pdf]:\nPage 9 of 9 \n \n2.4  Liabilities \n  The Government of India had a cumulative Public Debt of ₹153.43 lakh crore, at the end \nof 31st March 2024. Total cumulative Government liabilities (including that of Public Account) \nas on 31 st March 2024 were ₹162.91 lakh crore. This was an increase of ₹16.79 lakh crore over \nthe course of the year (₹146.12 lakh crore at the beginning of FY 2023-24). \n 2.5 Cash Management  \n  The Government began FY 2023 -24 with cash balance of ₹4,879 crore and ended the \nfinancial year with a cash balance of ₹4,506 crore. There was an investment surplus of                  \n₹1,72,172 crore at the end of F Y 2023 -24 compared to the end FY 2022 -23 when the \nGovernment had borrowed from the RBI under Ways & Means advance, an amount of                 \n₹48,677 crore. \n4.  Conclusion \n At the commencement of FY 2023 -24, the fiscal policy stance of the government was  to \nmake the domestic economy more resilient to exogenous shocks and to mitigate the risks of \nglobal economic downturn. The Government has steered the economy in that direction and has \ncontinued on the path of fiscal consolidation by taking measures to rat ionalize expenditure as \nwell as improve the quality of expenditure through higher allocation for capital expenditure. \n The Fiscal Deficit in FY 2023 -24 (Provisional) at 5.6 per cent of GDP indicates fiscal \nconsolidation of 0.8 percentage points compared to  Fiscal Deficit of 6.4 percent in FY 2022 -23. \nFurther, the fiscal consolidation was also well aligned with better quality of expenditure as the \nRevenue Deficit declined by 1.4 percentage points from 4.0 percent in FY 2022-23 to 2.6 percent \nin FY 2023-24 (provisional).  \n The fiscal consolidation achieved in FY 2023 -24 was on account of buoyant revenue \ncollection and prioritization of expenditure. The Gross Tax Revenue stood at 11.7 per cent of \nGDP in FY 2023 -24 as compared to 11.3 and 11.5 per cent of GDP in  FY 2022 -23 and                       \nFY 2021-22, respectively. On other hand, t otal Expenditure in FY 2023 -24 (Provisional) was at \n15.0 per cent of GDP as compared to 15.6 per cent in FY 2022 -23. In the process of managing \nthe total expenditure, Governmen t also ensured improvement in the quality of expenditure to \nboost economic growth through enhancement in effective capital expenditure as proportion to \ntotal expenditure.   \n*****\n",
+   "role": "system"
+  },
+  {
+   "content": "Which grew faster in FY 2023-24 over the previous year, GST collection or corporation tax collection?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "995",
+  "x-ratelimit-remaining-tokens": "3829",
+  "x-ratelimit-reset-requests": "7m12s",
+  "x-ratelimit-reset-tokens": "31.282s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.153449401,
+  "completion_tokens": 139,
+  "completion_tokens_details": {
+   "reasoning_tokens": 64
+  },
+  "prompt_time": 0.150595293,
+  "prompt_tokens": 2150,
+  "queue_time": 0.367998122,
+  "total_time": 0.304044694,
+  "total_tokens": 2289
+ }
+}

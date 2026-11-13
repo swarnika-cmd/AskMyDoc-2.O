@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"For a term loan (long‑term), a default is defined as a delay of even one day, even of one rupee, of principal or interest from the scheduled repayment date.\"\n}",
+ "created_utc": "2026-11-13T17:42:51Z",
+ "finish_reason": "stop",
+ "key": "64224921adc1e0c53111727ff93d16c43b7d6c2a8780f17d6118e891fa7866e2",
+ "latency_s": 0.474,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - sebi-cra-consultation-2017.pdf]:\nPage 8 of 15 \n \nRationale: \n \nThe disclosures need to be such that are easily comprehensible to the investors. For ease \nof understanding by the investors,  the current disclosures need to be segregated for \nratings of securities and financial instruments other than securities.  \n \nThe disclosures also need to reflect the promptness of the CRA in taking the rating action.  \nIt is , thereby, proposed to include the following additional information in the various \ndisclosures mandated vide Circular dated May 03, 2010. \n \n Type of Instrument being rated (e.g. NCD/ Preference Shares/ CP/ CD, etc.) being \nrated and Issue Size \n Sector of the Issuer  \n Whether the instrument is listed or not \n Separate tables for upgrades and dow ngrades i n the disclosure pertaining to \nmovement of ratings \n Trigger event that resulted in the rating movement \n Current Outstanding Rating in disclosure of History of Outstanding Ratings \n Date of event/date of intimation triggering change in rating in case of default cases \n Debt-weighted default rates in case of average default rates for last 5 financial \nyears \n \nWith respect to disclosure of debt -weighted default rates , it may be noted that CRAs are \nrequired to disclose default rates in accordance with Point 2.2.3 of the said Circular, which \nis the number of defaults among rated entities in the static pool as a percentage of the \ntotal number of entities in the static pool . It is proposed that in addition to this, CRAs shall \nalso disclose the debt-weighted default rate which shall be defined as the amount of rated \ndebt that defaulted in the static pool as a percentage of the total amount of rated debt in \nthe static pool . The averaging for debt -weighted default rate shall be based on the \nweighted average method whe re weights shall be the amount of debt rated in each static \nperiod. This will help reflect the significance of a default from an issuer with high quantum \nof rated debt on the overall default statistics. \n \nFurther, it is proposed to delete Annexure IV of the said Circular as the information in this \nAnnexure has been incorporated in the proposed modified Annexure II.  \n \nIn accordance with the above suggested modifications, the proposed formats of the \nmodified disclosures, with the added columns highlighted in bold, are presented at \nAnnexure B.\n\n[Source 2 - sebi-cra-circular-2016.pdf]:\nPage 1 of 14 \n \n \nCIRCULAR \n \nSEBI/HO/MIRSD/MIRSD4/CIR/P/2016/119   November 1, 2016 \n \nTo \nAll Credit Rating Agencies Registered with SEBI \n \nDear Sir/ Madam, \n \n \nSub: Enhanced Standards for Credit Rating Agencies (CRAs) \n \n \n1. SEBI constituted a committee on “ Strengthening the Guidelines and Raising \nIndustry Standards for Credit Rating Agencies (CRAs) ”, which included \nrepresentatives from all the CRAs . The objective of the Committee was to \ndeliberate upon measures and guidelines to bring about greater transparency in \nthe policie s of the CRAs,  enhance the standards followed by the industry \nand,thereby, facilitate ease of understanding of the ratings by the investors. \n \n2. With a view to implement ing the recommendations  of the said Committee, the \nguidelines as annexed to this C ircular are being issued. These guidelines cover \nthe following broad areas: \n \nI. Formulation of Rating Criteria and rating p rocesses and public \ndisclosure of the same. \n \nII. Accountability of RatingAnalysts \n \nIII. Standardisationof Press Releasefor rating actions. \n \nIV. Functioning and evaluation of Rating Committees/Sub-Committees. \n \nV. Disclosure of ratings in case of non-acceptance by an issuer \n \nVI. Disclosure in case of delay in periodic review of ratings. \n \nVII. Policy in respectofnon-co-operation by the issuer. \n \nVIII. Strengthening and enhancing the relevance of Internal Audit of CRAs, \nviz.appointmentand rotation of auditors and scope of the audit. \n \n3. The CRAs shall effectively implement these guidelines within 60 days from the \ndate of issue of this circular.\n\n[Source 3 - sebi-cra-consultation-2017.pdf]:\nPage 15 of 15 \n \nRating prior to default - A4 category \n1                       \n2                       \n \n \nAnnexure VII – Average Default Rates for the last 5-Financial Year Period  \nAnnexure VII A- STRUCTURED INSTRUMENTS \n Weighted by No. of Issuers in Static \nPool \nWeighted by Amount of Debt in \nStatic Pool  \nRating Category 1-Year Default \nRate \n3-Year \nCumulative \nDefault Rate \n1-Year Default \nRate \n3-Year \nCumulative \nDefault Rate \nAAA     \nAA     \nA     \nBBB     \nBB     \nB     \nC     \n \nAnnexure VII B- NON - STRUCTURED INSTRUMENTS \n Weighted by No. of Issuers in Static \nPool \nWeighted by Amount of Debt in \nStatic Pool  \nRating Category 1-Year Default \nRate \n3-Year \nCumulative \nDefault Rate \n1-Year Default \nRate \n3-Year \nCumulative \nDefault Rate \nAAA     \nAA     \nA     \nBBB     \nBB     \nB     \nC\n\n[Source 4 - sebi-cra-circular-2016.pdf]:\nPage 10 of 14 \n \nAnnexure-A1: Instrument-wise definition of default \n \nNon fund-based facilities  \nLetter of credit (LC) Short Term  Overdue for more than 30 days from the day of devolvement. \nBank Guarantee (BG)(Performance/ \nFinancial) Short Term \nAmount remaining unpaid from 30 \ndays from invocation of the facility. \nOther Scenarios  \nWhen rated instrument is \nrescheduled: \n  Non-servicing of the debt (principal as \nwell as interest) as per the existing \nrepayment terms in anticipation of a \nfavourable response from the banks \nof accepting their restructuring \napplication/ proposal shallbe \nconsidered as a default. \nRescheduling of th e debt instrument \nby the lenders prior to the due date \nof payment will not be treated as \ndefault, unless the same is done to \navoid default or bankruptcy. \nCuring Period  90 Days – for Default to Speculative \nGrade and generally 365 Days for \nDefault to Investment Grade \n*For bank loan ratings, default recognition will need to be in line with the RBI guidance   \nFacilities Rating Scale Proposed Definition of Default \nFund-based facilities & Facilities with pre-defined repayment schedule  \nTerm Loan \nLong Term \nA delay of 1 day even of 1 rupee (of \nprincipal or interest)   from the \nscheduled repayment date. \nWorking Capital Term Loan  \nWorking Capital Demand Loan \n(WCDL)  \nDebentures/Bonds  \nCertificate of Deposits (CD)/ Fixed \nDeposits (FD) \nShort Term/  Long \nterm \nCommercial Paper Short term \nPacking Credit (pre-shipment credit) Short Term Overdue/unpaid for more than 30 \ndays.     \nBuyer’s Credit  Short Term Continuously overdrawn for more \nthan 30 days.  \nBill Purchase/Bill discounting/Foreign \nbill discounting /Negotiation \n(BP/BD/FBP/FBDN)  \nShort Term Overdue/unpaid for more than 30 \ndays.     \nFund-based facilities & No Pre Defined Repayment Schedule  \n      \nCash Credit Long Term Continuously overdrawn for more \nthan 30 days.  \nOverdraft  Short Term Continuously overdrawn for more \nthan 30 days.\n",
+   "role": "system"
+  },
+  {
+   "content": "Under SEBI's 2016 circular on credit rating agencies, how is default defined for a term loan in the instrument-wise default table?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "987",
+  "x-ratelimit-remaining-tokens": "5997",
+  "x-ratelimit-reset-requests": "18m43.2s",
+  "x-ratelimit-reset-tokens": "15.022s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.124375921,
+  "completion_tokens": 120,
+  "completion_tokens_details": {
+   "reasoning_tokens": 52
+  },
+  "prompt_time": 0.101839656,
+  "prompt_tokens": 1872,
+  "queue_time": 0.157496526,
+  "total_time": 0.226215577,
+  "total_tokens": 1992
+ }
+}

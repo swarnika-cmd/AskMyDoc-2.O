@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"NIT Rourkela’s B.Tech. degree requires a minimum of 160–170 credits, depending on the course structure, whereas CUSB’s Bachelor’s degree with Honours or Research requires exactly 160 credits. Thus, the B.Tech. program allows a slightly higher credit range, but both programs are centered around the 160‑credit threshold.\"\n}",
+ "created_utc": "2026-11-13T17:38:51Z",
+ "finish_reason": "stop",
+ "key": "c77e64dfec63eb8b62834249c2b19302457ab4889620a8f407a96535142ee1e9",
+ "latency_s": 1.54,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - nitrkl-btech-regs.pdf]:\nPage 18 of 31 \n \nto look into psychological cases. Such counseling service may be provided to psychologically \ndepressed, demotivated and academically weak students to bring them into the main stream, \nalbeit slowly and methodically. If identified by the counseling cell, and if situation demands, the \nparents of the student will b e informed and advised to seek p rofessional counselling help and \ntreatment (if so required). In case of prolonged psychological treatment, the studentship may be \nconverted to “Dies Non” status and parents should approach the Institute only when (as per \ntreating professional counsellor opinion), the psychological condition has improved for restarting \nthe academic programme.  \n9. Graduation Requirement \n9.1 In order to qualify for a degree of the Institute covered under these Regulations, a student must:  \n (a) Complete all the credit requirements for the degree, as laid down in the prescribed \ncurriculum of the discipline, with a minimum grade ‘P’ scored in every subject.  \n (b) Obtain a CGPA of 6.00 or higher at the end of the semester in which he/she completes \nall the requirements for the degree.  \n (c) Have cleared all dues of the Institute, the Hall of Residence, the Library, the D epartment, \nNCC, NSS and Student Activity Centre.  \n9.2 The minimum total credit requirements that has to be satisfactorily completed for the award of \nB.Tech. degree will vary between 160 – 170 depending on the course structure of various \ndepartments or as decided by the Senate from time to time, and that for Integrated M.Sc. and \nDual degree between 190 - 210. \n9.3 Normally, a student should complete all the requirements consecutively in eight se mesters for \nB.Tech. degree and ten semesters for B.Arch, Dual degree and Integrated M.Sc.. Academically \nweaker students may, however, be granted additional time of 2 years to complete all the \nrequirements for the degree.  However, in special cases the Senate may further extend this limit \nfor completion of all requirements for the degree by one more year, depending upon the merit \nof the case, particularly for students with superior attendance record and/or record of \ncontributing to the Institute’s academic o r cultural life  only if the arithmetic of the grade card at \nthe end of 6 th year (7 th year for B.Arch, Dual degree  and Integrated M.Sc. ) dictates that the \nremaining courses can be completed in two semesters.  \n9.4 All graduating students are required to submit their suggestion for improvement of courses to \nthe Director  in Form AC/123. The suggestions will be summarized on Form AC/124 and \npresented before the Senate.  \n10  Award of Degree \n10.1 A student who satisfies graduation requirement (Clause 9.1) and hence qualifies for the B.Tech, \nB.Arch, Dual Degree B.Tech. & M.Tech. or Integrated M.Sc. degree, is awarded the division as \nper the following norms :  \n CGPA ≥ 8.00 - Honours \n 6.50 ≤ CGPA < 8.00 - 1st Class \n 6.00 ≤ CGPA < 6.50   - 2nd Class\n\n[Source 2 - cusb-ug-ordinance.pdf]:\n20 \n \nwith Research 100 marks 45 \nNote: The seat matrix is for initial 3 years and is subject to revision thereafter. \nNote: The seat matrix is the initial method suggested to meet the admission quota of 45. The \ndepartment may adjust the number of admission seats as needed, after obtaining approval from the \nDepartmental Committee and permission from the competent University authority. \n \n7 Award of Certificate/ Diploma/ Degree along with multiple Exit Options. \n \n7.1    A student shall be awarded  a Certificate/ Diploma/ Degree, as the case may be, \nfollowing the multiple Exit Options. \n \n7.2    The nomenclature of the final degree to be awarded after successful completion of \n200 Credits shall be Master of Arts/Science/  Commerce (Integrated) in ( Specific \nProgramme).  \n \n7.3    A nomenclature of the degree to be awarded after successful completion of 120 \ncredits shall be Bachelor of Arts/ Science/Commerce in (Specific Programme). \n \n7.4    A nomenclature of the degree to be awarded after successful completion of 160 \ncredits shall be Bachelor of Arts/ Science/Commerce with Honors/Research in \n(Specific Programme). \n \n7.5    A nomenclature of the Diploma to be awarded after successful completion of 80 \ncredits along with  an exit 4 credit skills enhancement course shall be UG \nDiploma in (specific programme) with specialization in (specific skill). \n \n7.6    A nomenclature of the Certificate to be awarded after successful completion of 40 \ncredits along with an exit 4 credit skills enhancement course  of 4 credits shall be \nUG Certificate Course in (specific programme)  with specialization in (specific \nskill).  \n \n7.7    A student, he/she may be awarded a degree of a Two-year Master of Arts/ \nScience/Commerce degree if he/she has taken admission through the multiple \nentry option in Semester 7 under clauses 6.4.1 and 6.4.2, and completes a further \n80 credits in four semesters as from semester 7 to Semester 10.\n\n[Source 3 - nitrkl-btech-regs.pdf]:\nPage 1 of 31 \n \nRegulations  \nfor \nBachelor of Technology (B.Tech.) \n5 year Dual Degree B.Tech. & M.Tech. \nBachelor of Architecture (B.Arch.) & \n5 year Integrated M.Sc. Programmes \n (Summarised Version as approved vide resolution Senate-87[2019]-02 \ndated  Nov 15, 2019 for information only)\n",
+   "role": "system"
+  },
+  {
+   "content": "How does the credit requirement for NIT Rourkela's B.Tech. degree compare with CUSB's Bachelor's degree with Honours or Research?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "998",
+  "x-ratelimit-remaining-tokens": "4951",
+  "x-ratelimit-reset-requests": "2m52.8s",
+  "x-ratelimit-reset-tokens": "22.867s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.180405464,
+  "completion_tokens": 151,
+  "completion_tokens_details": {
+   "reasoning_tokens": 48
+  },
+  "prompt_time": 0.105269599,
+  "prompt_tokens": 1521,
+  "queue_time": 0.367153856,
+  "total_time": 0.285675063,
+  "total_tokens": 1672
+ }
+}

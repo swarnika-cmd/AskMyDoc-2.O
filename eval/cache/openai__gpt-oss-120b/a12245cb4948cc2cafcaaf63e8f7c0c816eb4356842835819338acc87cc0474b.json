@@ -1,0 +1,50 @@
+{
+ "attempts": 1,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"Matches reference answer exactly\",\"is_refusal\":false,\"claims\":[{\"claim\":\"The provisional revenue deficit for FY 2023‑24 was 2.6 % of GDP\",\"supported\":true},{\"claim\":\"It is 0.3 percentage points below the budgeted figure of 2.9 % of GDP\",\"supported\":true}]}",
+ "created_utc": "2026-11-13T17:48:49Z",
+ "finish_reason": "stop",
+ "key": "a12245cb4948cc2cafcaaf63e8f7c0c816eb4356842835819338acc87cc0474b",
+ "latency_s": 1.158,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: answerable (multi-hop)\n\nQuestion:\nBy how many percentage points of GDP was the provisional revenue deficit for FY 2023-24 below the budgeted figure?\n\nReference answer:\n0.3 percentage points: budgeted at 2.9 per cent of GDP, provisional 2.6 per cent.\n\nSystem answer:\nThe provisional revenue deficit for FY 2023‑24 was 2.6 % of GDP, which is 0.3 percentage points below the budgeted figure of 2.9 % of GDP.\n\nContext shown to the system:\n[Source 1 - dea-frbm-h2-2023-24.pdf]:\nPage 2 of 9 \n \n2. Review of Trends in Receipts and Expenditure in FY 2023-24 \nThe Fiscal Deficit for FY 2023-24 was budgeted at ₹17.87 lakh crore or 5.9 per cent of GDP. \nIt was 0.5 percentage points lower than the actuals of FY 2022-23 (6.4 per cent of GDP). Against \nthe BE 2023-24 target of Fiscal deficit at 5.9 percent of GDP, the fiscal deficit was estimated at \n5.8 per cent of GDP in RE 2023 -24. In this regard, a statement of deviation explaining the \nreasons for the deviation and the path of return to annual prescribed targets, as per the p rovisions \nof Section 4(5) of the FRBM Act 2003, was included in the Medium -Term Fiscal Policy cum \nFiscal Policy Strategy Statement (MTFP cum FPSS) that was laid in Parliament along with the \nInterim Union Budget FY 2024-25.  \nFiscal Deficit in FY 2023-24 (Provisional) stood at ₹16.54 lakh crore which was 5.6 per cent \nof GDP. Total Revenue Receipts (Provisional) were ₹27.28 lakh crore at the end of FY 2023 -24 \nagainst ₹23.83 lakh crore in FY 2022 -23. It shows a growth of 14.5 per cent over FY 2022 -23. \nTax Revenue (Net to Centre) at the end of FY 2023 -24 was ₹23.27 lakh crore while Non -Tax \nRevenue was ₹4.02 lakh crore. Total Expenditure at the end of FY 2023 -24 (Provisional) was \n₹44.43 lakh crore against the revised estimates of ₹44.90 lakh crore for the year (Table 1). \nTable 1: Key Fiscal Indicators, FY 2023-24 \nS. \nNo. \nParticulars \nBE \n2023-24 \nRE \n2023-24 \nProv. \n2023-24 \nFinal \n2022-23 \n% growth in \nFY 2023-24 \n(prov.) over \n2022-23 (₹ in crore) \n    1 2 3 4 5 \n1. Revenue Receipts (2+3) 2,632,281 2,699,713 2,728,412 2,383,206 14.5% \n2. Tax Revenue (Net) 2,330,631 2,323,918 2,326,524 2,097,785 10.9% \n3. Non- Tax Revenue 301,650 375,795 401,888 285,421 40.8% \n4. Capital Receipts (5+8) 1,870,816 1,790,773 1,714,130 1,809,951 -5.3% \n5. \nNon- Debt Capital Receipts \n(6+7) \n84,000 56,000 60,460 72,196 -16.3% \n6. Recovery of Loans 23,000 26,000 27,338 26,161 4.5% \n7. Other Receipts 61,000 30,000 33,122 46,035 -28.1%\n\n[Source 2 - dea-frbm-h2-2023-24.pdf]:\nPage 8 of 9 \n \n2.3 Deficit \n2.3.1  Fiscal Deficit \n  Fiscal deficit (FD) was estimated at ₹17.87 lakh crore  (5.9 per cent of GDP) in BE              \n2023-24. It was revised to ₹17.35 lakh crore (5.8 per cent of GDP) at RE stage . Against the \nrevised target, the actual (provisional) fiscal deficit for FY 2023-24 was ₹16.54 lakh crore, which \nwas 5.6 per cent of GDP.  \n2.3.2  Revenue Deficit  \n  Revenue Deficit (RD) for FY 2023 -24 was budgeted at ₹8.70 lakh crore (2.9 per cent of \nGDP). It was revised to ₹8.41 lakh crore (2.8 per cent of GDP) at RE stage. At the end of FY \n2023-24, RD (provisional) was ₹7.66 lakh crore (2.6 per cent of GDP). \n2.3.3  Financing of deficit \n  Fiscal Deficit of ₹16.54 lakh crore (Provisional) in FY 2023 -24 was mostly financed by \nraising internal debt (Table–4).         \nTable 4: Sources of financing fiscal deficit \n            (₹ in crore) \n  \n2023-24 \n(Prov.) \n2022-23 2021-22 2020-21 \nFiscal Deficit 16,53,670 17,37,755 15,84,519 18,18,291 \nInternal   Debt (Net) excluding MSS 16,94,935 16,10,883 13,89,530 17,51,072 \nExternal Assistance including Revolving \nFund \n55,121 37,124 36,147 70,181 \nPublic Account (-)88,869 91,370 1,56,299 4,226 \nCash Balance (-)7,517 (-)1,622 2,543 (-)7,188 \n  The Progressive Internal Debt (gross) of the Government (excluding WMA and Central \nsecurities against Small Savings) grew by ₹13 lakh crore from ₹107.45 lakh crore at the beginning of \nFY 2023-24 to ₹120.45 lakh crore at the end of the financial year.  Fresh external loans of ₹1,20,429 \ncrore were contracted and past obligations to the tune of ₹47,317 crore were  discharged. The \nprogressive External debt (gross) at the end of the financial year was ₹5.66 lakh crore. Thus, External \nDebt (Gross) grew by ₹73,112 crore over the course of the year.\n\n[Source 3 - dea-frbm-h2-2023-24.pdf]:\nPage 3 of 9 \n \nS. \nNo. \nParticulars \nBE \n2023-24 \nRE \n2023-24 \nProv. \n2023-24 \nFinal \n2022-23 \n% growth in \nFY 2023-24 \n(prov.) over \n2022-23 (₹ in crore) \n    1 2 3 4 5 \n8. Borrowings and other liabilities 1,786,816 1,734,773 1,653,670 1,737,755 -4.8% \n9. Total Receipts (1+4) 4,503,097 4,490,486 4,442,542 4,193,157 5.9% \n10. Revenue Expenditure 3,502,136 3,540,239 3,494,036 3,453,132 1.2% \n10(i). - of which Interest Payments 1,079,971 1,055,427 1,063,871 928,517 14.6% \n10(ii). \n- of which Grants for creation of \nCapital Assets \n369,988 321,190 303,787 306,264 -0.8% \n11. Capital Expenditure 1,000,961 950,246 948,506 740,025 28.2% \n12. Total Expenditure (10+11) 4,503,097 4,490,486 4,442,542 4,193,157 5.9% \n13. Revenue Deficit (10-1) 869,855 840,527 765,624 1,069,926 -28.4% \n14. \nEffective Revenue Deficit{(13-\n10(ii)} \n499,867 519,337 461,837 763,662 -39.5% \n15. Fiscal Deficit {12-(1+5)} 1,786,816 1,734,773 1,653,670 1,737,755 -4.8% \n16. Primary Deficit {(15-10(i)} 706,845 679,346 589,799 809,238 -27.1% \nSource: Controller General of Accounts and Budget Documents. \nNotes: 1. The Figures are net as in Budget Documents; \n           2. Actuals for FY 2023-24 are unaudited provisional numbers and are subject to change; and \n           3. Individual items in the table may not sum up to the totals due to rounding off. \n2.1  Receipts \n2.1.1  Gross Tax Revenue \n In BE 2023 -24, Gross Tax Revenue (GTR) was estimated at ₹33.61 lakh crore. It \nwas revised to ₹34.37 lakh crore  in RE 2023 -24. GTR for FY 2023 -24 (Provisional) was \n₹34.65  lakh crore. It shows a year -on-year growth of 13.4 per cent over FY 2022 -23.",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "976",
+  "x-ratelimit-remaining-tokens": "4955",
+  "x-ratelimit-reset-requests": "34m33.6s",
+  "x-ratelimit-reset-tokens": "22.837s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 0.438505752,
+  "completion_tokens": 205,
+  "completion_tokens_details": {
+   "reasoning_tokens": 115
+  },
+  "prompt_time": 0.146125865,
+  "prompt_tokens": 2650,
+  "queue_time": 0.32326792,
+  "total_time": 0.584631617,
+  "total_tokens": 2855
+ }
+}

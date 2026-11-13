@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"For theory subjects at NIT Rourkela, the weights are: Teacher’s Assessment 20%, Mid‑Semester Examination 30%, and End‑Semester Examination 50%.\"\n}",
+ "created_utc": "2026-11-13T00:13:00Z",
+ "finish_reason": "stop",
+ "key": "7094cbd58973a6230d9d85fd605251d39c08eb56d3eff5e212367ecd42d388a3",
+ "latency_s": 0.49,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - nitrkl-btech-regs.pdf]:\nPage 15 of 31 \n \n6.4.3 Ordinarily leave must be sanctioned before the student leaves the campus. In case of \nemergency a student may leave campus without prior approval, but must inform his/her thesis \nsupervisor / faculty advisor over telephone/email at the first available opportunity. \n \n6.4.4 The total leave to be sanctioned shall not exceed 30 working days in a semester. \n7. Assessment of Performance \n7.1 There will be continuous assessment of a student’s performance throughout the semester and \ngrades will be awarded by the Subject Teacher / Coordination Committee formed for this \npurpose.  The constitution of the Coordination Committee in multi -section subjects is given in \nAppendix–III. \n7.2 In general, there is no strict marks -to-grade linkage.  The following should be taken as a \nguideline to ensure uniformity of grading among all courses.  \n (a) For arriving at a grade obtained by a student for a particular subject, initially a numeric \nmarks obtained by the student out of 100 (hundred) is to be determined and then, the \nsame is to be converted to letter grade following the guidelines given in Appendices–IV \n& V. \n (b) For theory subjects, the subcompo nents and the respective weights assigned to these \nare given below. \n  Subcomponent Weight \n  Teacher’s Assessment (T.A.)  20% \n  Mid-Semester Examination 30% \n  End-Semester Examination  50% \n (c) For assigning marks in Teacher’s Assessment (T.A.), performance in home assignments, \nclass tests, tutorials, viva -voce or quiz are to be considered.  It is recommended that at \nleast two class tests for 4 credit theory courses and 1 test for 3 credit theory courses ar e \nto be conducted for a subject, in addition to take home assignments and in class quizzes.  \nThe weights of different subcomponents of T.A. may be announced to the students by the \nteacher at the beginning of the Semester.   \n (d) For assignment of marks in design/laboratory component (P – component) the relevant \nsubcomponents that are to be considered are: regularity, day-to-day work, pre-class study, \npractical skill, quality of observation and quality of lab records etc. Percentage weights of \nthe different subcomponents in deciding the final marks are to  be announced at the \nbeginning of the Semester. The evaluation process must be completed before the \nbeginning of end semester examination.  \n7.3 The eight-week programme on Short-term Industrial or Research experience (SIRE) undergone \nby the students in the  summer vacation will be assessed in the 7 th semester.  The students are \nrequired to submit written reports on the programme and give a seminar, on the basis of which \na grade will be awarded.  The students are also required to submit to the Head of the Department \nor to the faculty member in -charge, a completion certificate in the prescribed form from the \ncompetent authority of the organization where the work was done, without which he/she will not\n\n[Source 2 - cusb-ug-ordinance.pdf]:\n43 \n \nrecords and taking suitable action(s) as per requirements /this ordinance. The Office of \nthe CoE shall notify the attendance in each course  as received  from the respective \nAttendance Monitoring Committee each month.  \n \n15 Conduct of Examination, Assessment and Evaluation: \n \n15.1The examination of all the courses required for a Five- Year UG – PG Integrated \nProgramme shall be internal in nature and generally consis t of Continuous Internal \nAssessment and End -Semester Examination. For the preparation of final grade in a \nparticular course, the Continuous Internal Assessment (Formative in nature) and the \nEnd-Semester Examination (Summative in nature) shall have a weightage of 30% and \n70%, respectively. \n \n15.2Each course, irrespective of credits assigned to it, shall be evaluated out of 100 points . \nThese points should not be construed with the traditional system of marks. The points \nobtained by a student in a course are indicator s of the percentage of marks and not the \nraw marks. Both marks (%) and grades shall be reflected in the mark-sheet.  \n \n \n15.3Continuous Internal Assessment:  \n \n15.3.1 The Continuous Internal Assessment of the student ’s learning and \nperformance shall be carried out by the Course Teacher(s)  / Instructor(s) . \nConsidering the nature of the course, the teacher(s) shall decide the mode of \nContinuous Internal Assessment, which may include one or more assessment \ntools, such as student’s class performance, assignments, class tests, take -home \ntests, term paper(s), presentations, oral -quizzes, case studies and laboratory \nwork etc. \n \n15.3.2 Each Course Teacher shall design the Continuous Internal Assessment system \nfor the course she/he offers with the approval of the Departmental Committee \n(DC). This approved design of Continuous Internal Assessment shall be \nannounced to the students of the respective courses at the beginning of each \nsemester by the concerned teacher.\n\n[Source 3 - nitrkl-btech-regs.pdf]:\nexamination is not satisfactory. This de-registration of course(s) can be done before t wo weeks \nprior to the start of end semester examination or any o ther date fixed by the Senate.  \n5.13 For the purpose of computing CGPA towards satisfying provisions of this section, summer \ncourses will be counted with the previous spring semester. Supplementary examinations, if any, \nwill also be taken into account before the provisions of this section are implemented.  \n6. Attendance and Leave \n6.1 (a)  Unlike many examining universities, NIT Rourkela’s academic programme is based \nprimarily on the teaching -learning process. Attendance in classes, participating in\n\n[Source 4 - cusb-ug-ordinance.pdf]:\n48 \n \n15.11 Letter Grades and Grade Points:  \nAn absolute grading system shall be adopted to grade the students. \n \n15.11.1Under the absolute grading system, points shall be converted to grades based \non pre-determined class intervals. \n \n15.11.2In the End -Semester theory or practical examinations, the examiner shall \naward the points and these points after adding the points of Continuous \nInternal Assessment shall be further converted into Numerical Grade points \nand Letter Grades in accordance with the provisions of this ordinance.  \n \n15.11.3Detail Grade Sheet issued by the Controller of Examinations office at the end \nof each semester shall carry points /percentage and equivalent grades \n(numerical and letter both). \n \n15.11.4The 10-point Grading System, with the Letter Grades as given under shall be  \nas followed: \n \nLetter Grade \nNumerical \nGrade Point \nClass Interval (in %) \nO (Outstanding) 10 90 to ≤ 100 \nA+ (Excellent) 9 80 to <90 \nA (Very Good) 8 70 to <80 \nB+ (Good) 7 60 to <70 \nB (Above Average) 6 50 to <60 \nC (Average) 5 45 to < 50 \nP (Pass) 4.5 40 to <45 \nF (Fail) 0 <40 \nAb (Absent) 0 Absent \nNote: \n(i) F= Fail, and the students graded with ‘F’ in a Programme or Course shall be\n",
+   "role": "system"
+  },
+  {
+   "content": "At NIT Rourkela, for theory subjects, what weights do the teacher's assessment, mid-semester exam and end-semester exam carry?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "981",
+  "x-ratelimit-remaining-tokens": "4119",
+  "x-ratelimit-reset-requests": "27m21.6s",
+  "x-ratelimit-reset-tokens": "29.107s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.118767225,
+  "completion_tokens": 102,
+  "completion_tokens_details": {
+   "reasoning_tokens": 34
+  },
+  "prompt_time": 0.12713941,
+  "prompt_tokens": 1862,
+  "queue_time": 0.047331129,
+  "total_time": 0.245906635,
+  "total_tokens": 1964
+ }
+}

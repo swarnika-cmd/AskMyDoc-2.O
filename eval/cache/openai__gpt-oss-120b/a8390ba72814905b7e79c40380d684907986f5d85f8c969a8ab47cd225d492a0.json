@@ -1,0 +1,53 @@
+{
+ "attempts": 1,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"The answer matches the reference stating two decimal places.\",\"is_refusal\":false,\"claims\":[{\"claim\":\"SGPA and CGPA are rounded off to two decimal places.\",\"supported\":true}]}",
+ "created_utc": "2026-11-13T00:46:47Z",
+ "finish_reason": "stop",
+ "key": "a8390ba72814905b7e79c40380d684907986f5d85f8c969a8ab47cd225d492a0",
+ "latency_s": 0.533,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: answerable (factual)\n\nQuestion:\nUnder the CUSB ordinance, to how many decimal places are SGPA and CGPA rounded?\n\nReference answer:\nTwo decimal places.\n\nSystem answer:\nSGPA and CGPA are rounded off to two decimal places.\n\nContext shown to the system:\n[Source 1 - cusb-ug-ordinance.pdf]:\n56 \n \nstudent in the ith course. \n20.3The SGPA and CGPA shall be rounded off to 2 decimal points. \n \n21 Illustration of Computation of SGPA and CGPA: \n \n21.1Illustration for computing SGPA: \nCourse Credit Grade Letter Grade Point Credit Point \nCourse I 3 A 8 3 x 8 = 24 \nCourse II 4 B+ 7 4 x 7 = 28 \nCourse III 3 B 6 3 x 6 = 18 \nCourse IV 3 O 10 3 x 10 =30 \n \nTotal credits for \nthe semester = 13 \n  \nTotal Credit points \nEarned = 100 \n \nThus, SGPA = 100/13 = 7.69 \n \n21.2Illustrations for computing CGPA: \nCourses Considered \nfor the Award of the \nDegree \nCompleted \nin the month \n(Year) \nCredit \nGrade \nLetter \nGrade \nPoint \nCredit Point \nCourse I Dec 2018 4 A 8 4 x 8 = 32 \nCourse II Dec 2018 4 B+ 7 4 x 7 = 28 \nCourse III June 2019 4 B 6 4 x 6 = 24 \nCourse IV June 2020 4 o 10 4 x 10 = 40 \n \nTotal credits for the \nsemester = 16 \n  \nTotal Credit points \nEarned = 124 \n \nThus, CGPA= 124/16= 7.75 \n \nNote: Formula to calculate percentage from CGPA/SGPA= CGPA or SGPA x 10; and\n\n[Source 2 - cusb-ug-ordinance.pdf]:\n49 \n \nrequired to re-appear in the examination. \n \n(ii) The minimum qualifying Grade Point for a course shall be 4.5 (i.e., a ‘P’ \ngrade). \n \n(iii) Students will have to pass the Continuou s Internal Assessment and End \nSemester examinations taken together. \n \n(iv) Before assigning a numerical grade to the marks obtained in a course, the total \nof both the Continuous Internal Assessment and the End -Semester \nExamination shall be rounded off to eliminate decimal marks. Therefore, the \nmarks obtained in the individual components of the Continuous Internal \nAssessment and End -Semester Examination shall NOT be rounded off \nseparately. \n \n(v) SGPA / CGPA shall be rounded off to two decimal places. \n \n(vi) The SGPA / CGPA obtained by a student shall be on a scale of 10 points. To \nbe eligible for the award of any certificate or degree mentioned in a Five -Year \nUG-PG Integrated program, a student must achieve a CGPA of at least 4.50 by \nthe end of the program.  \n \n(vii) The Cumulative Grade Point Average (CGPA) obtained by a student will be \nclassified into the following divisions/classes: \n \n \nCGPA Class/ Division \nAbove 9 Outstanding \nAbove 8 to 9 First Class (With Distinction) \n6 to 8 First Class \n5.5 to < 6 High-Second Class \n5 to < 5.5 Second Class \n4.5 to < 5 Pass\n\n[Source 3 - cusb-ug-ordinance.pdf]:\n55 \n \ncase where a student of the final semester (within the minimum prescribed duration \nof the Programme) fails to appear or to achieve a ‘P’ grade in the maximum of four \n(04) courses including all backlogs after the result declaration of the final semester, \nthe Department may ask the concerned course Teacher(s) to conduct re -\nexamination of End-Semester Examinations of such course(s) within a month from \ncommencement of the next semester relaxing the condition of odd/even semester as \ngiven in 16.2.3.  The student shall have to pay a fee of Rs. 2000/- per course.  \n \n18.8 If a candidate is repeating a course in an academic session, whatever may be the \nreason, it shall not be counted in the total number of seats and shall not affect the \nfresh intake of the Programme in that academic session.   \n \n19. A student shall be required to earn appropriate credits for the award of the final degree \nafter the completion of 200 credits governed by the relevant clauses within a maximum \nduration of eight years. \n \n \n20 Computation of SGPA and CGPA:  \nThe University shall follow the following procedure to compute the Semester Grade \nPoint Average (SGPA) and Cumulative Grade Point Average (CGPA): \n20.1The SGPA is the ratio of the sum of the product of the number of credits with the \ngrade points scored by a student in all the courses taken by a student in a particular \nsemester and the sum of the number of credits of all the courses undergone by a \nstudent in that semester, i.e., \nSGPA (Si) = ∑(Ci x Gi)/∑Ci \nWhere, Ci is the number of credits of the i th course and Gi is the grade point \nscored by the student in the ith course. \n20.2The CGPA is also calculated in the same manner taking into account all the \nconsiderable courses as per the provision laid down in this ordinance out of the total \ncourses undergone by a student over all the semesters of a Programme, i.e., \nCGPA = ∑(Ci x Gi)/∑Ci \nWhere, Ci is the number of credits of the ith course (which is to be considered \nfor the award of the PG Degree) and G i is the grade point scored by the\n\n[Source 4 - cusb-ug-ordinance.pdf]:\n57 \n \nformula to calculate percentage to CGPA or SGPA = Percentage/10, e.g., In case of \nexample mentioned in Table 16.2, the percentage of CGPA = 7.75 x 10 = 77.50%. \n \n21.3Transcript (Format):   Based on the above, letter grades, grade points, and the \nSGPA, the Transcripts/Detail Grades Certificates (DGCs) shall be issued to the \ncandidates for each semester and a consolidated transcript on completion of the \nProgramme indicating the performance in all the courses considered for calculating \nthe CGPA. Along with the CGPA, the percentage of marks obtained in the \nProgramme shall be reflected in this consolidated transcript on the basis of the \nCGPA. However, this system may be changed by the University at any point of \ntime without prior notice to the stakeholders as per the need. \n \n21.4Migration and Transfer Certificate (if required) shall be issued by the office of the \nController of Examination (CoE). \n \n22 Removal of Student Name from the Programme: \nThe name of a student falling under any one of the following categories shall \nautomatically stand removed from the rolls of the University: \n(i) A student who has failed to fulfill the minimum grade point requirements prescribed \nfor the Programme during the maximum duration of the Programme.  \n \n(ii) A student who has already exhausted the maximum duration allowed for completion \nof the Programme and has not fulfilled the requirements for the award of the degree.  \n \n(iii)A student who is found to be involved in misconduct, forgery, indiscipline or any \nother objectionable conduct, upon recommendation of the Disciplinary \nCommittee/Proctorial Board or any other procedure deemed fit by the University. \n \n(iv) A student who has failed to attend the classes as stipulated under the clause of \nattendance requirements in this ordinance. \n22. Feedback System: There will be a feedback system managed by the office of the CoE. \nThe student needs to fill the feedback form after each semester as prescribed by the \nuniversity.",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "950",
+  "x-ratelimit-remaining-tokens": "3606",
+  "x-ratelimit-reset-requests": "1h12m0s",
+  "x-ratelimit-reset-tokens": "32.955s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 0.243916835,
+  "completion_tokens": 117,
+  "completion_tokens_details": {
+   "reasoning_tokens": 59
+  },
+  "prompt_time": 0.139723508,
+  "prompt_tokens": 2207,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "queue_time": 0.054484621,
+  "total_time": 0.383640343,
+  "total_tokens": 2324
+ }
+}

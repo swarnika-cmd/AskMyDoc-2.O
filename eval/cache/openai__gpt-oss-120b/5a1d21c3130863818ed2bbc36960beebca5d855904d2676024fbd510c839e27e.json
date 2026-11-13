@@ -1,0 +1,50 @@
+{
+ "attempts": 1,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"Matches reference values and percentages\",\"is_refusal\":false,\"claims\":[{\"claim\":\"In 2023‑24, the expenditure on House Rent Allowance (HRA) for Y class cities was ₹4,050.87 crore\",\"supported\":true},{\"claim\":\"This represented 26.51 % of the total HRA expenditure\",\"supported\":true}]}",
+ "created_utc": "2026-11-13T00:42:47Z",
+ "finish_reason": "stop",
+ "key": "5a1d21c3130863818ed2bbc36960beebca5d855904d2676024fbd510c839e27e",
+ "latency_s": 1.044,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: answerable (table)\n\nQuestion:\nHow much HRA was spent on Y class cities in 2023-24, and what share of total HRA was that?\n\nReference answer:\n₹4050.87 crore, 26.51 per cent of the total of ₹15281.95 crore.\n\nSystem answer:\nIn 2023‑24, the expenditure on House Rent Allowance (HRA) for Y class cities was ₹4,050.87 crore, which represented 26.51 % of the total HRA expenditure.\n\nContext shown to the system:\n[Source 1 - pay-allowances-2023-24.pdf]:\n4\n7. Out of the total expenditure of ₹275083.75 crore on Pay and Allowances of\nCentral Government Civilian Employees including employees of UTs and Missions\nAbroad, the percentage expenditure on Pay, Dearness Allowance (DA), House Rent\nAllowance (HRA) and other allowances are 60.45%, 21.04%, 5.56% and 12.95%\nrespectively.\n8. Out of the total expenditure of ₹ 15285.50 crore on HRA in 2022-23, the HRA\nexpenditure for 'X' class cities is 5669.64 crore which is around 37.09% of the total\nexpenditure on HRA.\n9. The total number of regular Central Government Civilian Employees in\nposition (including UTs) as on 01.03.2023, is 30.62 lakh as against the sanctioned\nstrength of 40.40 lakh and approximately 24.21 % of the posts were vacant.\n10. Almost 92% of the total manpower is covered by five major\nMinistries/Departments viz, Railways, Defence (Civil), Home Affairs, Posts and\nRevenue. Of the total strength of 30.04 lakh (excluding UTs), the percentage share\nof the Railways is 39.06%, Home Affairs 32.78%, Defence (Civil) 11.11%, Posts\n5.91%, Revenue 3.55% and all other Ministries/ Departments 7.59%.\n11. Against the sanctioned strength of 10.37 lakh in Central Police Forces, 9.33\nlakh employees were in position as on 01.03.2023. In Union Territories (UTs) 0.58\nlakhs employees were in position as against a sanctioned strength of 0.79 lakhs as\non 01.03.2023.\n\n[Source 2 - pay-allowances-2023-24.pdf]:\n11\nSHARE OF MAJOR COMPONENTS IN TOTAL EXPENDITURE OF CENTRAL GOVERNMENT\nCIVILIAN EMPLOYEES INCLUDING EMPLOYEES OF THE UNION TERRITORIES AND MISSIONS\nABROAD DURING THE LAST FIVE YEARS (EXPRESSED AS PERCENTAGE TO TOTAL)\nYear Pay DA HRA Other\nAllowances Total\n2019-20 68.43 9.73 6.42 15.42 100.00\n2020-21 67.53 11.59 6.33 14.55 100.00\n2021-22 63.59 16.71 5.95 13.75 100.00\n2022-23 60.45 21.04 5.56 12.95 100.00\n2023-24 56.48 25.85 5.17 12.50 100.00\n\n[Source 3 - pay-allowances-2023-24.pdf]:\n10\nShare\n of\n Major\n Components\n in\n Total\n Expenditure\n (in\n %)\n120.00 100.00\n15.42\n14.55\n13.75\n12.95\n12.51\n6.42\n6.33\n5.95\n5.56\n5.16\n80.00\n9.73\n11.59\n16.71\n21.04\n25.85\n60.00 40.00\n68.43\n67.53\n63.59\n60.45\n56.48\n20.00 0.00\n2019-20\n2020-21\n2021-22\n2022-23\n2023-24\n■Pay\n■DA\nHRA\n■Other\n Allowances\n\n[Source 4 - pay-allowances-2023-24.pdf]:\n35\n\nEXPENDITURE ON HOUSE RENT ALLOWANCE (HRA) OF CENTRAL\nGOVERNMENT CIVILIAN EMPLOYEES INCLUDING EMPLOYEES\nOF UNION TERRITORIES\n\n(@ in crore)\n\nExpenditure on House Rent Allowance\n\nClass of City minaai\n\nxX 6401.09\n\n(41.89)\n\nY 4050.87\n\n(26.51)\n\nZz 4829.99\n\n(31.60)\n\nTotal 15281.95\n\n(100.00)\n\nN.B.: Figures in parentheses are the percentages to the total expenditure on House Rent Allowance.\n\nExpenditure on House Rent Allowance during the year 2023-24\n\nax mY uZ",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "959",
+  "x-ratelimit-remaining-tokens": "4352",
+  "x-ratelimit-reset-requests": "59m2.4s",
+  "x-ratelimit-reset-tokens": "27.36s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 0.387121093,
+  "completion_tokens": 186,
+  "completion_tokens_details": {
+   "reasoning_tokens": 91
+  },
+  "prompt_time": 0.071221755,
+  "prompt_tokens": 1607,
+  "queue_time": 0.370644294,
+  "total_time": 0.458342848,
+  "total_tokens": 1793
+ }
+}

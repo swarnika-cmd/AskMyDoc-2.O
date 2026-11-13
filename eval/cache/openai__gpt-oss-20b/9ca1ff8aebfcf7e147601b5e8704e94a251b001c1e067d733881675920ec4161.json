@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"The all‑commodities wholesale price index rose by 3.1 index points between the last week of 1978‑79 (117.2) and the last week of 1979‑80 (120.3).\"\n}",
+ "created_utc": "2026-11-13T17:59:02Z",
+ "finish_reason": "stop",
+ "key": "9ca1ff8aebfcf7e147601b5e8704e94a251b001c1e067d733881675920ec4161",
+ "latency_s": 0.985,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - es1980-81.pdf]:\n112\n\n5. Prices\n\n5.4: INDEX NUMBERS OF WHOLESALE PRICES—RELATIVE PRICES OF MANUFACTURED PRODUCTS AND\n\nAGRICULTURAL (Including Animal Husbandry) PRODUCTS\n(Base : 1970-71 = 100)\n\nGeneral Index Index for Index for ‘Prices of manufac-\nof Wholesale Manufactured Agricultural tured products\nPrices Products Products* as per cent of\nprices of Agricul-\ntural products Col.\n(3) over Col. (4)\nWeight 100.00 49.87 40.42\n1 2 3 4 5\nAverage of months :\n1971-72 105.6 109.5 100.4 109.1\n1972-73 116.2 121.9 110.3 110.5\n1973-74 139.7 139.5 139.2 100.2\n1974-75 174.9 168.8 169.9 99.4\n1975-76 173.0 171.2 157.3 108.8\n1976-77 176.6 175.2 158.5 110,5\n1977-78 185.8 179,2 174.8 102.5\n1978-79. . 185.8 179.5 171.9 104.4\n1979-80 . 217.6 215.8 188.7 114.4\n1979-80 :\nApril . 195.5 194.5 173.3 112.2\nMay? . . 198.5 196.9 177.4 111.0\nJune . . . . . 202.4 201.0 181.9 110.5\nJuly . . * . . 211.7 207.6 190.6 108.9\nAugust. . . . . 218.5 214.7 194.0 110.7\nSeptember 221.2 219.5 192.4 114.1\nOctober 222,2 220.1 193.2 113.9\nNovember 222.0 219.5 190.0 115.5\nDecember 227.0 226.0 192.9 117.2\nJanuary 227.7 225.3 191.1 117.9\nFebruary 231.3 231.1 192.8 119.9\nMarch. 233.2 233.6 194.1 120.4\n1980-81:\nApril . 235.0 235.8 194.1 121.5\nMay . . 240.0 242.0 199.0 121.6\nJune . . 247.1 247.8 2014 123.0\nJuly . . 257.3 260.8 208.1 125.3\nAugust . . . 259.9 263.8 209.4 126.0\nSeptember . 263.6 272.2 207.5 131.2\nOctober . . . 264.5 271.0 211.5 128.1\nNovember (P) 258.2 253.7 217.2 116.8\nDecember (P) 256.7 252.3 214.9 117.4\n\nP = Provisional\n\n*Composite Index for the groups Food Articles and Non-food Articles of the Major group Primary Articles.\n\n[Source 2 - es1980-81.pdf]:\n110\n\n5, Prices\n\n5.2: INDEX NUMBERS OF WHOLESALE PRICES—SELECTED COMMODITIES/COMMODITY GROUPS\n\n(Base : 1970-71= 100)\n\nRice\n\nWheat Pulses Raw Raw Grou- Coal Mine- Sugar, Edible Co-\n\nCo- Jute, Ferti- Cement Iron,\n\n[Source 3 - es1980-81.pdf]:\n82\n\n1.15 : INDEX OF INDUSTRIAL\n\n(Base :\nGroup Industry Group Weight Index\n‘ode\n1971 1972 1973 1974 1975 1976 1977 1978 1979*\n1 3 4 5 6 7 8 9 10 11 12\n20. Food manufacturing industries except\nbeverage industries . . 7.74 98.1 101.1 96.8 97.9 106.0 110.8 118.4 138.5 130.0\n21. Beverage industries . . : . 0.69 117.0 163.5 193.8 142.4 186.1 262.6 347.0 387.9 279.2\n22. Tobacco industries . . . : 2.21 104.5 98.6 101.9 99.7 94,2 106.8 107.7. 112.5 124.9\n23. Manufacture of textiles . . » 17.43 99.9 105.5 104.1 102.6 101.3 105.7 103.3 109.7 110.0\n24. Manufacture of footwear, other wearing\napparel etc. . . . 0.34 ° (99.5 85.1 92.5 89.9 91.0 90.7 80.4 73.1 75.8\n25. Manufacture of wood & cork except\nfurniture. 0.49 112.6 114.0 50.2. 103.2 105.7) 115.4 131.4 124.0 129.5\n27. Manufacture of Paper and | paper Pro-\nducts . 2.24 104.3 107.7 109.2 116.1 108.5 111.8 142.8 121.0 124.0\n29, Manufacture of leather & fur products\nexcept footwear etc. . . . . 0.32 93.6 100.4 114.9 109.3 118.5 102.9 104.2 71.6 72.3\n30. Manufacture of rubber products . 2.22 108.9 114.2 112.7) 121.0 123.1 121.7. 127.9 143.2 142.7\n31. Manufacture of chemicals & chemical\nproducts. . . . . » 10.90 112.2 124.9 126.8 123.0 132.8 155.4 171.6 182.6 187.3\n32. Manufacture of products of _ Petroleum\n& coal . . . . 1.62 106.2 106.0 111.4 113.0 119.2 124.8 132.7 141.0 153.4\n33. Manufacture of non-metallic mineral pro-\nducts except products of petroleum & coal 3.33. 109.7 116.5 115.7 118.1 119.0 140.8 147.4 152.4 157.8\n34, Basic metal industries. . . . 8.84 102.8 112.3 102.2 104.2 116.4 139.7. 144.8 144.9 138.9\n35. Manufacture of metal products except\nmachinery and transport equipment : 2.77 105.6 114.9 107.8 122.0 124.6 131.8 137.0 154.9 162.7\n36. Manufacture of machinery except electri-\ncal machinery . . . . 5.55 115.9 121.0 144.2 152.9 159.6 165.0 179.9 202.2 204.9\n37. Manufacture of electrical machinery, ap-\nparatus, appliances and supplies 5.30 105.4 115.0 113.3) 113.1 120.3) 129.9 145.5 151.1 163.3\n38. Manufacture of transport equipment . 7.39 100.3 99.2 109.6 109.1 106.3 149.2 124.5 124.6 125.5\n39, Miscellaneous manufacturing industries . 1.70 95.7 89.0 84.8 78.0 73.3 80.6 99.9 133.4 120.6\nDivision 2-3 Manufacturing . . » 81.08 104.5 110.5 111.2 111.9 115.6 130.3 135.3 144.4 144.7\nDivision 1 Mining and Quarrying . . 9.69 101.0 105.0 107.0 113.2 127.9 136.8 139.9 142.1 148.6\nDivision 5 Electricity . . . . 9.23 107.2 116.8 114.8 124.1 138.6 160.3 165.4 183.6 193.0\nGeneral Index (Crude) . . . - 100.00 104.4 110.6 111.1 113.2 119.2 133.7 138.3 147.8 149.5\n\n*Provisional.\n\n[Source 4 - es1980-81.pdf]:\n73\n\n2 3 4 5 6\nNagaland . 1973-14 37.3 17.6 54.9 1.9 56.8\n1974-75 38.6 19.9 58.5 2.0 60.5\n1975-76 66.5 20.1 86.6 2.0 88.6\n1976-77 68.8 21.9 90.7 2.8 93.5\n1977-78 71.5 9.2 80.7 4.6 85.3\n1978-79 76.5 9.2 85.7 2,3 88.0\n1979-80 76.5 9.2 85.7 23 88.0\nOrissa 1973-74 4404.4 82.8 312.5 4799.7 475.0 $274.7\n1974-75 3166.0 85.9 290.3 3542.2 428.4 3970.6\n1975-76 4531.8 = 107.4 400.6 = 5039.2 526.7 5565.9\n1976-77 3217.7 98.4 349.7 3665.8 409.6 4075.4\n1977-78 4319.2, «127.4 435.5 4882.1 678.8 $560.9\n1978-79 4401.9 110.0 461.9 4973.8 =—-791.2 5765.0\n1979-80 2917.7 80.6 272.6 3270.9 576.5 3847.4\nPunjab 1973-74 1189.0 5181.0 1004.9 7374.9 «352.3. 7727.2\n1974-75 1179.0 $300.0 1234.1 7713.1 244.6 7987.7\n1975-76 1447.0 $788.0 1190.1 8425.1 402.3. 8827.4\n1976-77 1741.0 6272.0 853.5 8865.5 331.1 -9196.6\n1977-78 2494.0 6642.0 888.2 10024.2 345.5 10369.7\n1978-79 3091.0 7423.0» 847.3. -11361.3 312.6 1673.9\n1979-80 3041.0 7865.0 +=—-780.8 +=11686.8  203.2—*11890.0\nRajasthan 1973-74 118.1 1790.7 3532.6 = 5441.4 = 1279.1 6720.5\n1974-75 100.2 1819.3 2097.1 4016.6 = 960.9 4977.5\n1975-76 223.6 «= 2290.4 3138.1 $652.1 2083.2 7735.3\n1976-77 213.2 2300.7 | 2974.3 5488.2 2002.1. 7490.3\n1977-78 236.5 2610.0 2277.5 5124.0 2034.4 7158 4\n1978-79 234.4 2874.1 2823.7 5932.2 1890.0 7829.2\n1979-80 100.1 2696.3 1596.3 4392.7 817.8 5210.5\nTamil Nadu 1973-74 5589.5 0.6 1529.6 7119.7 204.8 7324.5\n1974-75 3874.7 0.6 1107.3 4682.6 114.6 4797.2\n1975-76 5202.7 0.7 1852.4 7055.8 = 127.4 7183.2\n1976-77 4214.8 0.6 1944.4 6159.8 176.5 6336.3\n1977-78 $705.0 0.6 1848.8 7554.4 196.4 7750.8\n1978-79 5558.6 0.6 1825.0 7384.2 219.0 7603.2\n1979-80 6229.0 0.7 1904.4 134.1 222.2 356.3\nTripura 1973-74 362.0 0.8 362.8 1.1 363.9\n1974-75 326.0 1.3 327.3 1.2 328.5\n1975-76 366.5 4.9 371.4 17 3731\n1976-77 340.9 9.3 350.2 2.6 352.8\n1977-78 363.2 9.6 372.8 21 374.9\n1978-79 368.4 7.7 376.1 2.0 378.1\n1979-80 291.2 9.0 300.2 1.9 302.4\nUttar Pradesh 1973-74 3858.8 5878.8 3998.9 13736.5 1849.6 15586.1\n1974-75 3523.4 7175.6 3569.6 14268.6 2185.0 16453.6\n1975-76 4294.0 8552.5 3973.9 16820.4 2656.7 19477.\n1976-77 4290.9 8939.9 4048.9 17279.7 2628.8 199085\n1977-18 5202.5 9884.4 3725.0 18811.9 2421.0 212329\n1978-79 5964.3. 11457.8 3321.0 20743.1 -—-2336.1-:23079.2\n1979-80 2468.3 9668.6 2490.1 -14627.0 1520.3 161473\n",
+   "role": "system"
+  },
+  {
+   "content": "By how many index points did the all-commodities wholesale price index rise between the last week of 1978-79 and the last week of 1979-80?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "941",
+  "x-ratelimit-remaining-tokens": "3394",
+  "x-ratelimit-reset-requests": "1h24m57.599s",
+  "x-ratelimit-reset-tokens": "34.545s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.334454568,
+  "completion_tokens": 266,
+  "completion_tokens_details": {
+   "reasoning_tokens": 188
+  },
+  "prompt_time": 0.207171228,
+  "prompt_tokens": 3979,
+  "queue_time": 0.36781678,
+  "total_time": 0.541625796,
+  "total_tokens": 4245
+ }
+}

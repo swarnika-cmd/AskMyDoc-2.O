@@ -1,0 +1,53 @@
+{
+ "attempts": 1,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"Matches reference and context exactly\",\"is_refusal\":false,\"claims\":[{\"claim\":\"The Ministry of Railways incurred a large share of central government pay and allowances spending in 2022-23\",\"supported\":true},{\"claim\":\"The Ministry of Defence (Civil) incurred a large share of central government pay and allowances spending in 2022-23\",\"supported\":true},{\"claim\":\"The Ministry of Home Affairs incurred a large share of central government pay and allowances spending in 2022-23\",\"supported\":true},{\"claim\":\"The Department of Posts incurred a large share of central government pay and allowances spending in 2022-23\",\"supported\":true}]}",
+ "created_utc": "2026-11-13T17:43:47Z",
+ "finish_reason": "stop",
+ "key": "bfa559e30bc99815508b5b0b4e95d2161eab5d3c1653cae19e3c302b33bfc71d",
+ "latency_s": 1.523,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: answerable (factual)\n\nQuestion:\nWhich four ministries or departments incurred almost 80 per cent of central government pay and allowances spending in 2022-23?\n\nReference answer:\nRailways, Defence (Civil), Home Affairs and Posts (80.48 per cent).\n\nSystem answer:\nThe four ministries/departments that incurred almost 80 % of the Central Government pay and allowances spending in 2022‑23 were the Ministry of Railways, the Ministry of Defence (Civil), the Ministry of Home Affairs, and the Department of Posts.\n\nContext shown to the system:\n[Source 1 - pay-allowances-2023-24.pdf]:\n3\nSALIENT FEATURES\n1. The total expenditure on Pay and Allowances (excluding Productivity Linked\nBonus/ Ad-hoc Bonus, Honorarium, Encashment of Earned Leave and Travelling\nAllowance) for Regular Central Government Civilian employees including employees\nof the Union Territories and Missions abroad is₹ 275083.75 crore in 2022-23 as\ncompared to ₹ 256112.31 crore in 2021-22. Thus, there is an increase in\nexpenditure by 18971.44 crore over previous year which in relative terms works\nout to around 7.41%.\n2. The total expenditure on pay and allowances as a percentage of Revenue\nExpenditure of the Central Government during the financial year 2022-23 is 7.05%\nas compared to 7.44% during the financial year 2021-22.\n3. Almost 80.48% of the total expenditure of Central Government was incurred\nby four major Ministries/ Departments (Railways, Defence (Civil), Home Affairs and\nPosts) during 2022-23.\n4. Of the total expenditure on Pay and Allowances in 2022-23, the Ministry of\nRailways continues to have the largest share i.e. 36.39%, marginally increasing from\n36.17% in 2021-22. Share of Ministry of Home Affairs is 27.88%, marginally\ndecreasing from 28.80 in 2021-22 and Department of Posts has decreased from\n5.46% to 4.95%. Share of Ministry of Defence (Civil) has decreased from 12.15% to\n11.26%.\n5. The expenditure of UT Administrations is 5565.15 crore in 2022-23 as\ncompared to 4896.09 crore in 2021-22. Thus, there is an increase in expenditure by\n669.06 crore over previous year which in relative terms works out to around\n13.67%.\n6. The expenditure of Indian Missions/ Embassies abroad is ₹1929.43 crore in\n2022-23 as compared to ₹1623.56 crore in 2021-22. Thus, there is an increase in\nexpenditure by ₹305.87 crore over previous year which in relative terms works out to\naround 18.84%.\n\n[Source 2 - pay-allowances-2023-24.pdf]:\nCONTENTS\nCHAPTER-I\n1. Salient Features\nCHAPTER-II\nTotal Expenditure\n2 Total expenditure on Pay and Allowances of Central Government civilian\nemployees including employees of Union Territories (UTs) and Missions\nAbroad as percentage of Revenue Expenditure.\n3\n3-4\n7\nExpenditure on Pay and Allowances during the last Ten Years. 8\n4. Expenditure on major components of Pay and Allowances of Central\nGovernment civilian employees including employees of UTs and\nMissions Abroad during the last five years.\n9\nShare of major components in total expenditure of Central Government5.\ncivilian employees including employees of UTs and Missions Abroad\nduring the last five years.\n10-11\n6. Component-wise break up of expenditure on Pay and Allowances of the\nCentral Government civilian employees including employees of UTs\n(excluding Missions Abroad) during the last five years\n12-13\n147. Component-wise break up of expenditure on Pay and Allowances of the\nCentral Government civilian employees including Missions Abroad\n(excluding employees of UTs) during the last five years\nCHAPTER-III\nComponents of Expenditure\n8. Share of major Ministries/Departments in total expenditure during the last\nfive years.\n17\n9. Total expenditure on Pay and Allowances and expenditure of major\nMinistries/ Departments during the last five years\n18\n10 Expenditure on Pay and Allowances of the employees of Ministry of\nRailways\n19-20\n11. Expenditure on Pay and Allowances of the civilian employees of Ministry\nof Defence (Civil).\n21-22\n12. Expenditure on Pay and Allowances of the employees of Ministry of\nHome Affairs\n23-24\n\n[Source 3 - pay-allowances-2023-24.pdf]:\n13. Expenditure on Pay and Allowances of the employees of Department of\nPosts.\n25-26\n14. Expenditure on Pay and Allowances of the employees of UT 27-28\nAdministrations.\n15. Expenditure on Pay and Allowances of regular employees and local\nrecruits in Indian Missions Abroad.\n29-30\n16 Expenditure incurred on Pay and Allowances by the central 31-34\nMinistries/Departments on civilian employees during 2023-24.\n17. Expenditure on House Rent Allowance (HRA) of Central Government\nCivilian employees including employees of Union Territories.\n35\nCHAPTER-IV\nSanctioned Strength and Persons in position in Central\nGovernment as on 01.03.2024\n18. Group-wise number of sanctioned posts and persons in position,\nvacancies and their percentage to total sanctioned posts as on\n01.03.2024 including UTs.\n19. Group-wise number of sanctioned posts and persons in position,\nvacancies and their percentage to total sanctioned posts as on\n01.03.2024 excluding UTs.\n38-39\n40\n20. Distribution of regular civilian employees (Group-wise) in Central 41-42\nGovernment and UT Administrations as on 01.03.2024.\n21. Group-wise and status-wise estimated number of Central Government\ncivilian regular employees as on 01.03.2024 in major\nMinistries/Departments (excluding UTs).\n22. Number of sanctioned posts and persons in position in Central Police\nForces.\n23 Group-wise and status-wise (Gazetted /Non-Gazetted) estimated\nnumber of Central Government civilian regular employees as on\n01.03.2024.\n43-44\n45\n46-48\n***\n\n[Source 4 - pay-allowances-2023-24.pdf]:\n18\nTOTAL EXPENDITURE ON PAY AND ALLOWANCES AND EXPENDITURE OF MAJOR MINISTRIES/\nDEPARTMENTS DURING THE LAST FIVE YEARS\n( in crore)\nYear All India Railways Defence\n(Civilian)\nPosts Home Affairs\n2019-20 225744.70 79144.11 28638.36 12644.97 63583.07\n2020-21 237055.09 84911.76 29248.30 13032.55 68283.64\n2021-22 256112.31 92624.45 31119.98 13978.43 73759.25\n2022-23 275083.75 100096.22 30960.80 13607.89 76694.72\n2023-24 288150.92 108924.18 32349.32 16078.56 88876.28\nSHARE OF MAJOR MINISTRIES/DEPARTMENTS IN TOTAL EXPENDITURE DURING LAST\nFIVE YEARS (Expressed as percentage to total)\nYear Railways Defence (Civilian) Home Affairs Posts\nOther Departments\nincluding UTs &\nMissions\nTotal\n2019-20 35.06 12.69 28.17 5.60 18.48 100.00\n2020-21 35.82 12.34 28.80 5.50 17.54 100.00\n2021-22 36.17 12.15 28.80 5.46 17.42 100.00\n2022-23 36.39 11.26 27.88 4.95 19.52 100.00\n2023-24 36.18 10.75 29.52 5.34 18.21 100.00",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "988",
+  "x-ratelimit-remaining-tokens": "5322",
+  "x-ratelimit-reset-requests": "17m16.8s",
+  "x-ratelimit-reset-tokens": "20.085s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 0.668316599,
+  "completion_tokens": 194,
+  "completion_tokens_details": {
+   "reasoning_tokens": 42
+  },
+  "prompt_time": 0.116668228,
+  "prompt_tokens": 2311,
+  "prompt_tokens_details": {
+   "cached_tokens": 512
+  },
+  "queue_time": 0.370468007,
+  "total_time": 0.784984827,
+  "total_tokens": 2505
+ }
+}

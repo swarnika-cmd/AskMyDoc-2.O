@@ -1,0 +1,340 @@
+{
+  "label": "PARTIAL",
+  "pipeline": "P2",
+  "generator_model": "openai/gpt-oss-20b",
+  "judge_model": "openai/gpt-oss-120b",
+  "counts": {
+    "selected": 150,
+    "ok": 113,
+    "no_answer": 1,
+    "judge_parse_error": 0,
+    "error": 0,
+    "pending": 36,
+    "answerable_answered": 97,
+    "unanswerable_answered": 17
+  },
+  "n_selected": 150,
+  "n_completed": 114,
+  "errors": [],
+  "non_stop_finishes": {
+    "generator": [
+      "q083=length"
+    ],
+    "judge": [],
+    "counts": {
+      "generator": 1,
+      "judge": 0
+    }
+  },
+  "correctness": {
+    "correct": 76,
+    "partial": 1,
+    "incorrect": 20,
+    "share_correct": 0.7835051546391752,
+    "share_correct_or_partial": 0.7938144329896907,
+    "n": 97,
+    "note": "answerable items that were judged, plus no_answer items (counted incorrect); judge_parse_error and error items are excluded"
+  },
+  "faithfulness": {
+    "mean": 0.9718875502008031,
+    "n": 83,
+    "note": "supported claims / total claims, over judged answers that are not refusals and have at least one claim"
+  },
+  "refusal": {
+    "signal": "generator noEvidence flag (the app's own refusal behaviour)",
+    "accuracy_on_unanswerable": 1.0,
+    "n_unanswerable": 17,
+    "false_refusal_rate_on_answerable": 0.13402061855670103,
+    "n_answerable": 97,
+    "judge_crosscheck": {
+      "agreement": 1.0,
+      "n": 113,
+      "disagreements": []
+    }
+  },
+  "retrieval_hit_rate_on_answerable": {
+    "value": 0.8144329896907216,
+    "n": 97
+  },
+  "tokens": {
+    "generator": {
+      "n_calls": 114,
+      "prompt_tokens": {
+        "mean": 2397.342105263158,
+        "max": 5968,
+        "total": 273297
+      },
+      "completion_tokens": {
+        "mean": 108.04385964912281,
+        "max": 1024,
+        "total": 12317
+      }
+    },
+    "judge": {
+      "n_calls": 113,
+      "prompt_tokens": {
+        "mean": 2718.0,
+        "max": 6279,
+        "total": 307134
+      },
+      "completion_tokens": {
+        "mean": 166.78761061946904,
+        "max": 503,
+        "total": 18847
+      }
+    }
+  },
+  "latency": {
+    "retrieval_ms": {
+      "p50": 8.837499999999999,
+      "p95": 10.658699999999998
+    },
+    "generator_groq_network_s": {
+      "p50": 0.802,
+      "p95": 1.9855499999999997
+    },
+    "end_to_end_ms": {
+      "p50": 811.7165,
+      "p95": 1993.6785499999996,
+      "definition": "retrieval + generator call; the generator part is Groq network time"
+    },
+    "n": 114
+  },
+  "cost_inr_per_query": {
+    "generation_mean": 0.019956587236842103,
+    "generation_n": 114,
+    "judge_mean": 0.047750932141592914,
+    "judge_n": 113,
+    "evaluation_total_mean": 0.06770751937843501,
+    "note": "a production query pays for generation only",
+    "usd_to_inr": {
+      "rate": 94.04,
+      "rate_date": "2026-11-12",
+      "fetched_on": "2026-11-13",
+      "source": "frankfurter",
+      "requested_url": "https://api.frankfurter.app/latest?from=USD&to=INR",
+      "final_url_after_redirect": "https://api.frankfurter.dev/v1/latest?from=USD&to=INR"
+    },
+    "prices_read_on": "2026-11-13"
+  },
+  "rate_limit_headers_seen": {
+    "generator": {
+      "limit_requests": [
+        "1000"
+      ],
+      "limit_tokens": [
+        "8000"
+      ],
+      "min_remaining_tokens_seen": 23
+    },
+    "judge": {
+      "limit_requests": [
+        "1000"
+      ],
+      "limit_tokens": [
+        "8000"
+      ],
+      "min_remaining_tokens_seen": 44
+    }
+  },
+  "retry_events": {
+    "judge:429": 3,
+    "generator:429": 9
+  },
+  "served_model_note": "served_model is recorded per call but is not part of the cache key",
+  "ids_completed": [
+    "q001",
+    "q002",
+    "q003",
+    "q004",
+    "q005",
+    "q006",
+    "q007",
+    "q008",
+    "q009",
+    "q010",
+    "q011",
+    "q012",
+    "q013",
+    "q014",
+    "q015",
+    "q016",
+    "q017",
+    "q018",
+    "q019",
+    "q020",
+    "q021",
+    "q022",
+    "q023",
+    "q024",
+    "q025",
+    "q026",
+    "q027",
+    "q028",
+    "q029",
+    "q030",
+    "q031",
+    "q032",
+    "q033",
+    "q034",
+    "q035",
+    "q036",
+    "q037",
+    "q038",
+    "q039",
+    "q040",
+    "q041",
+    "q042",
+    "q043",
+    "q044",
+    "q045",
+    "q046",
+    "q047",
+    "q048",
+    "q049",
+    "q050",
+    "q051",
+    "q052",
+    "q053",
+    "q054",
+    "q055",
+    "q056",
+    "q057",
+    "q058",
+    "q059",
+    "q060",
+    "q061",
+    "q062",
+    "q063",
+    "q064",
+    "q065",
+    "q066",
+    "q067",
+    "q068",
+    "q069",
+    "q070",
+    "q071",
+    "q072",
+    "q073",
+    "q074",
+    "q075",
+    "q076",
+    "q077",
+    "q078",
+    "q079",
+    "q080",
+    "q081",
+    "q082",
+    "q083",
+    "q084",
+    "q085",
+    "q086",
+    "q087",
+    "q088",
+    "q089",
+    "q090",
+    "q091",
+    "q092",
+    "q093",
+    "q094",
+    "q095",
+    "q096",
+    "q097",
+    "q098",
+    "q099",
+    "q100",
+    "q101",
+    "q102",
+    "q103",
+    "q104",
+    "q105",
+    "q106",
+    "q107",
+    "q108",
+    "q109",
+    "q110",
+    "q111",
+    "q112",
+    "q113",
+    "q114"
+  ],
+  "ids_pending": [
+    "q115",
+    "q116",
+    "q117",
+    "q118",
+    "q119",
+    "q120",
+    "q121",
+    "q122",
+    "q123",
+    "q124",
+    "q125",
+    "q126",
+    "q127",
+    "q128",
+    "q129",
+    "q130",
+    "q131",
+    "q132",
+    "q133",
+    "q134",
+    "q135",
+    "q136",
+    "q137",
+    "q138",
+    "q139",
+    "q140",
+    "q141",
+    "q142",
+    "q143",
+    "q144",
+    "q145",
+    "q146",
+    "q147",
+    "q148",
+    "q149",
+    "q150"
+  ],
+  "runs": [
+    {
+      "pipeline": "P2",
+      "ids_spec": "all",
+      "started_utc": "2026-11-13T00:37:59Z",
+      "wall_seconds": 1131.1,
+      "api_calls": {
+        "openai/gpt-oss-20b": 48,
+        "openai/gpt-oss-120b": 40
+      },
+      "http_429": {
+        "openai/gpt-oss-20b": 2,
+        "openai/gpt-oss-120b": 1
+      },
+      "completed_this_invocation_total": 59,
+      "stopped_reason": "daily_limit:openai/gpt-oss-120b:tokens per day",
+      "max_calls": null,
+      "tpm_budget": 8000,
+      "note": null
+    },
+    {
+      "pipeline": "P2",
+      "ids_spec": "all",
+      "started_utc": "2026-11-13T17:37:40Z",
+      "wall_seconds": 1464.0,
+      "api_calls": {
+        "openai/gpt-oss-20b": 67,
+        "openai/gpt-oss-120b": 55
+      },
+      "http_429": {
+        "openai/gpt-oss-20b": 7,
+        "openai/gpt-oss-120b": 2
+      },
+      "completed_this_invocation_total": 114,
+      "stopped_reason": "daily_limit:openai/gpt-oss-120b:tokens per day",
+      "max_calls": null,
+      "tpm_budget": 8000,
+      "note": null
+    }
+  ],
+  "created_utc": "2026-11-13T18:02:05Z"
+}

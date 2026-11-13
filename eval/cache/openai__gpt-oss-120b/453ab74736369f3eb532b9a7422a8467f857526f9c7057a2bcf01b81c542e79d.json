@@ -1,0 +1,53 @@
+{
+ "attempts": 1,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"Matches reference answer exactly\",\"is_refusal\":false,\"claims\":[{\"claim\":\"The student must submit a written objection to the concerned Head of the Department (offering the course)\",\"supported\":true},{\"claim\":\"The objection must be submitted within 15 days from the last examination conducted in a semester\",\"supported\":true}]}",
+ "created_utc": "2026-11-13T00:26:03Z",
+ "finish_reason": "stop",
+ "key": "453ab74736369f3eb532b9a7422a8467f857526f9c7057a2bcf01b81c542e79d",
+ "latency_s": 0.516,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: answerable (factual)\n\nQuestion:\nUnder the CUSB integrated UG-PG ordinance, a student unhappy with the evaluation of an answer script must object to whom, and within how many days?\n\nReference answer:\nIn writing to the Head of the Department offering the course, within 15 days of the last exam in the semester.\n\nSystem answer:\nThe student must submit a written objection to the concerned Head of the Department within 15 days from the last examination conducted in the semester.\n\nContext shown to the system:\n[Source 1 - cusb-ug-ordinance.pdf]:\n47 \n \n \n15.8If a student fails t he End -Semester Examination, he/ she may apply for a \nsupplementary examination. The supplementary exam will be announced and \nconducted under the guidance of the Office of the Controller of Examinations and the \nconcerned Department, within three weeks of result declaration. \n \n15.9 To facilitate the process outlined in sub -clause 15.8, the concerned Department is to \nprepare two sets of moderated question papers and provide them to the Controller of \nExaminations well in advance during the question paper setting and moderation \nprocess. \n \n \n \n15.10 Making Evaluated Answer-scripts Available to the Students: \n \n15.10.1All the examination answer -scripts shall be made available to the students \nafter evaluation by the respective teachers as per the schedule decided by the \nconcerned teachers or the University. In the case of the End -Semester \nExamination, the evaluated answer scripts shall be made available to the \nstudents within 10 days of the last examination for the semester. Thereafter, \nwithin a week, all the answer scripts along with the statement of marks shall \nbe sent by the concerned teacher through her/his Department to the Office of \nthe Controller of Examinations for declaration of the results. \n15.10.2If a student is not satisfied with the evaluation of her/his answer script, she/he \nmust submit a written objection to the concerned Head of the Department \n(offering the course) within 15 days from the last examination conducted in a \nsemester. Such complaint shall be looked after by a panel of t wo faculty \nmembers, excluding the concerned teacher, to be nominated by the Head of \nthe Department, whose decision shall be final.  The revised marks, if any, shall \nbe submitted by the panel to the concerned Head of Department who shall \nfurther submit it to the Controller of Examinations. This complete process of \nGrievance Redressal by the panel and the further submission of marks by the \nHead of Department, generally, should not take more than 7 days from the \ndate of receipt of the grievance. However, in case of any controversy, the \nmatter shall be referred to the Vice-Chancellor for final decision and action.\n\n[Source 2 - cusb-ug-ordinance.pdf]:\n5 \n \n \n \n \n \n \n \nGuiding Ordinances/ Regulations/Act/ Guidelines \n \nCentral Universities Act: 2009 \nCUSB/First Ordinance/2016 \nCentral University of South Bihar Examination Manual: 2022 \nCUSB Regulations Relating to Unfair Means in the Examinations: 2019 \nDraft National Higher Education Qualifications Framework (NHEQF):2022 \nGuidelines for Multiple Entry and Exit in Academic Programmes Offered in Higher \nEducation Institutions, UGC, 2021 \nNational Education Policy: 2020 \nOrdinance Governing Master’s Degree Programme in Science, Arts, and Commerce-2022 \n \n \n \nIn exercise of the powers conferred by Section 28 (1) (b) o f the Central Universities Act, \n2009, Central University of South Bihar, in pursuance of N ational Educational Policy -2020 \nof the Government of India, and the University Grants Commission's Guidelines for Multiple  \nEntry & Multiple Exit , Academic Bank of Credit, hereby frames this Ordinance for ‘Five \nyear Integrated UG -PG Programmes’  of Studies  leading to the award of Certificate, \nDiploma, and Degree in Science, Arts and Commerce Disciplines offered by the university. \n \n1. Short Title and Commencement: \n \n1.1. This Ordinance shall be called CUSB Ordinance Governing Five-year Integrated \nUG-PG Programmes in Science, Arts and Commerce, 2022. \n \n1.2. This Ordinance shall come into force from the Academic Year 2024-2025. \n \n2. Scope and Coverage \n \n2.1. This Ordinance shall govern the Five -Year Integrated UG -PG Programme to be \ncommenced from the academic session, 2024-25.",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "971",
+  "x-ratelimit-remaining-tokens": "2295",
+  "x-ratelimit-reset-requests": "41m45.6s",
+  "x-ratelimit-reset-tokens": "42.787s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 0.279452096,
+  "completion_tokens": 135,
+  "completion_tokens_details": {
+   "reasoning_tokens": 50
+  },
+  "prompt_time": 0.044859611,
+  "prompt_tokens": 1477,
+  "prompt_tokens_details": {
+   "cached_tokens": 512
+  },
+  "queue_time": 0.049145978,
+  "total_time": 0.324311707,
+  "total_tokens": 1612
+ }
+}

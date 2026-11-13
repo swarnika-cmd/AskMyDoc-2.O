@@ -1,0 +1,53 @@
+{
+ "attempts": 1,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"System answer matches reference stating 1‑year and 3‑year cumulative default rates.\",\"is_refusal\":false,\"claims\":[{\"claim\":\"The proposed average default rate annexure requires disclosure of both a 1‑year default rate and a 3‑year cumulative default rate.\",\"supported\":true}]}",
+ "created_utc": "2026-11-13T17:57:59Z",
+ "finish_reason": "stop",
+ "key": "6b64ca641037c031eeece6fa3121f4d30d6660651ff05c62bc5ce4d1b9f98c71",
+ "latency_s": 0.841,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: answerable (table)\n\nQuestion:\nIn SEBI's 2017 consultation paper on credit rating agencies, which default rate horizons does the proposed average default rate annexure ask for?\n\nReference answer:\n1-year default rate and 3-year cumulative default rate.\n\nSystem answer:\nThe proposed average default rate annexure requires disclosure of both a 1‑year default rate and a 3‑year cumulative default rate.\n\nContext shown to the system:\n[Source 1 - sebi-cra-consultation-2017.pdf]:\nPage 15 of 15 \n \nRating prior to default - A4 category \n1                       \n2                       \n \n \nAnnexure VII – Average Default Rates for the last 5-Financial Year Period  \nAnnexure VII A- STRUCTURED INSTRUMENTS \n Weighted by No. of Issuers in Static \nPool \nWeighted by Amount of Debt in \nStatic Pool  \nRating Category 1-Year Default \nRate \n3-Year \nCumulative \nDefault Rate \n1-Year Default \nRate \n3-Year \nCumulative \nDefault Rate \nAAA     \nAA     \nA     \nBBB     \nBB     \nB     \nC     \n \nAnnexure VII B- NON - STRUCTURED INSTRUMENTS \n Weighted by No. of Issuers in Static \nPool \nWeighted by Amount of Debt in \nStatic Pool  \nRating Category 1-Year Default \nRate \n3-Year \nCumulative \nDefault Rate \n1-Year Default \nRate \n3-Year \nCumulative \nDefault Rate \nAAA     \nAA     \nA     \nBBB     \nBB     \nB     \nC\n\n[Source 2 - sebi-cra-circular-2016.pdf]:\nPage 9 of 14 \n \nII. The final action taken report, including the comments/ recommendations \nmade by Compliance Officer and the Board of the CRAas well as the \ncorrective steps taken by the CRA, shall be submitted to SEBI within 2 \nmonths from the date of receipt of the internal audit  report or 1 month from \nthe date of Board Meeting of the CRA, whichever is later, in the following \nformat: \n \nSr. \nNo. \nObservations \nof the auditor \nRemarks by the \nCompliance \nOfficer \nComments of \nthe Board of \nthe CRA \nCorrective \nactions \ntaken \n     \n     \n \n \n7. Modification in format of Annexure IV under Clause 6.2.2 of SEBI Circular \nCIR/MIRSD/CRA/6/2010dated May 3, 2010: \n \nThe format of Annexure IV under Clause 6.2.2 of SEBI Circular \nCIR/MIRSD/CRA/6/2010 dated May 3, 2010, providing the format for disclosure of \n“Movement of each credit rating that has moved by more than one notch over last \nsix months” is modified. The revise d format is placed at Annexure-A4. All other \nprovisions of the aforesaid Circular remain unchanged.\n\n[Source 3 - sebi-cra-consultation-2017.pdf]:\nPage 8 of 15 \n \nRationale: \n \nThe disclosures need to be such that are easily comprehensible to the investors. For ease \nof understanding by the investors,  the current disclosures need to be segregated for \nratings of securities and financial instruments other than securities.  \n \nThe disclosures also need to reflect the promptness of the CRA in taking the rating action.  \nIt is , thereby, proposed to include the following additional information in the various \ndisclosures mandated vide Circular dated May 03, 2010. \n \n Type of Instrument being rated (e.g. NCD/ Preference Shares/ CP/ CD, etc.) being \nrated and Issue Size \n Sector of the Issuer  \n Whether the instrument is listed or not \n Separate tables for upgrades and dow ngrades i n the disclosure pertaining to \nmovement of ratings \n Trigger event that resulted in the rating movement \n Current Outstanding Rating in disclosure of History of Outstanding Ratings \n Date of event/date of intimation triggering change in rating in case of default cases \n Debt-weighted default rates in case of average default rates for last 5 financial \nyears \n \nWith respect to disclosure of debt -weighted default rates , it may be noted that CRAs are \nrequired to disclose default rates in accordance with Point 2.2.3 of the said Circular, which \nis the number of defaults among rated entities in the static pool as a percentage of the \ntotal number of entities in the static pool . It is proposed that in addition to this, CRAs shall \nalso disclose the debt-weighted default rate which shall be defined as the amount of rated \ndebt that defaulted in the static pool as a percentage of the total amount of rated debt in \nthe static pool . The averaging for debt -weighted default rate shall be based on the \nweighted average method whe re weights shall be the amount of debt rated in each static \nperiod. This will help reflect the significance of a default from an issuer with high quantum \nof rated debt on the overall default statistics. \n \nFurther, it is proposed to delete Annexure IV of the said Circular as the information in this \nAnnexure has been incorporated in the proposed modified Annexure II.  \n \nIn accordance with the above suggested modifications, the proposed formats of the \nmodified disclosures, with the added columns highlighted in bold, are presented at \nAnnexure B.\n\n[Source 4 - sebi-cra-consultation-2017.pdf]:\nPage 14 of 15 \n \n2                       \nRating prior to default - A category \n1                       \n2                       \nRating prior to default - BBB category \n1                       \n2                       \nRating prior to default - BB category \n1                       \n2                       \nRating prior to default - B category \n1                       \n2                       \nRating prior to default - C category \n1                       \n2                       \n \nAnnexure VI B – Short Term Scale \nCategory-wise List of Defaults in a Financial year – Short Term Scale \nS. \nN\no \nNam\ne of \nthe \nIssu\ner \nSect\nor  \nInstrume\nnt Type  \nIssue \nSize \n(Rs. \nmillion\ns) \nListing \nStatus \n(Listed/ \nUnliste\nd) \n  \nRatin\ng \nprior \nto \nDefa\nult \nTrigg\ner \nEvent \nDate of \ntrigger \nof \nevent/ \nreceivin\ng \nintimati\non \nDate of \nDefault \nRecogniti\non \nRating prior to default - A1 category \n1                       \n2                       \nRating prior to default - A2 category \n1                       \n2                       \nRating prior to default - A3 category \n1                       \n2",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "954",
+  "x-ratelimit-remaining-tokens": "3004",
+  "x-ratelimit-reset-requests": "1h6m14.4s",
+  "x-ratelimit-reset-tokens": "37.47s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 0.351615373,
+  "completion_tokens": 167,
+  "completion_tokens_details": {
+   "reasoning_tokens": 86
+  },
+  "prompt_time": 0.13350266,
+  "prompt_tokens": 1871,
+  "prompt_tokens_details": {
+   "cached_tokens": 512
+  },
+  "queue_time": 0.259644168,
+  "total_time": 0.485118033,
+  "total_tokens": 2038
+ }
+}

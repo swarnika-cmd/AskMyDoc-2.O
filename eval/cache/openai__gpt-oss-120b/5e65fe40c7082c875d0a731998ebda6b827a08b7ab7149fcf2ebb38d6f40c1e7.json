@@ -1,0 +1,50 @@
+{
+ "attempts": 1,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"Matches reference stating scheme cannot use Unit Premium Reserve for dividends\",\"is_refusal\":false,\"claims\":[{\"claim\":\"A scheme cannot use its Unit Premium Reserve to pay dividends\",\"supported\":true}]}",
+ "created_utc": "2026-11-13T17:41:46Z",
+ "finish_reason": "stop",
+ "key": "5e65fe40c7082c875d0a731998ebda6b827a08b7ab7149fcf2ebb38d6f40c1e7",
+ "latency_s": 0.761,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: answerable (factual)\n\nQuestion:\nCan a scheme use its Unit Premium Reserve to pay dividends?\n\nReference answer:\nNo, because it is the part of the sale price not attributable to realised gains.\n\nSystem answer:\nNo, a scheme cannot use its Unit Premium Reserve to pay dividends.\n\nContext shown to the system:\n[Source 1 - sebi-mf-master-2011.pdf]:\n101                                                                     Master Circular for Mutual Funds  \n \nScheme Balance Sheet (including Abridged) provides for disclosure of \nUnit Premium Reserve. \n \n11.3.2 Unit Premium Reserve, which is part of the sales price of units that is \nnot attributable to realized gains, cannot be used to pay dividend. \nTherefore: \n \n11.3.2.1.When units of an open-ended scheme are sold, and sale price is \nhigher than face value of the unit, part of sale proceeds that \nrepresents unrealised gains shall be credited to a separate \naccount (Unit Premium Reserve) and shall be treated at par \nwith unit capital and the same shall not be utilized for the \ndetermination of distributable surplus.  \n \n11.3.2.2. When units of an open-ended scheme are sold, and sale price is \nless than face value of the unit, the difference between the sale \nprice and face value shall be debited to distributable reserves and \nthe dividend can be declared only when distributable reserves \nbecome positive after adjusting the amount debited to reserves as \nper Regulations234. \n  \n                                                 \n234 Paragraph 2(a) (ix) of Eleventh Schedule of SEBI (Mutual Funds) Regulations, 1996\n\n[Source 2 - sebi-mf-master-2011.pdf]:\n100                                                                     Master Circular for Mutual Funds  \n \n           11.2.1.4 Before the issue of such notice, no communication whatsoever \nindicating the probable date of dividend declaration shall be \nissued by any Mutual Fund or its distributors of its products. \n \n \n          11.2.1.5  Such notice shall be given in at least one English daily \nnewspaper having nationwide circulation as well as in a \nnewspaper published in the language of the region where the \nhead office of the Mutual Fund is situated. \n \n         11.2.1.6  The notice shall, in font size 10, bold, categorically state that \npursuant to dividend distribution, NAV of the scheme would fall \nto the extent of payout and statutory levy (if applicable). \n \n11.2.2 Liquid / Debt Schemes with frequent dividend distribution \n \n           11.2.2.1 The requirement of giving notice is not mandatory for scheme(s)/ \nplan(s)/ option(s) with dividend distribution frequency ranging \nfrom daily up to monthly distribution if requisite disclosures in \nthis regard are made in the SID. \n \n11.2.3 Listed Schemes/Plans \n \n       11.2.3.1 Listed scheme(s)/ plan(s) shall follow the requirements \nstipulated in the Listing Agreement for dividend declaration and \ndistribution. \n \n11.3 Non availability of Unit Premium Reserve for dividend distribution232 \n \n11.3.1 Regulations 233 provide the accounting policies to be followed for \ndetermining distributable surplus and accounting the sale and \nrepurchase of units in the books of the Mutual Fund. The format for \n                                                 \n232 SEBI circular No. SEBI/IMD/CIR No 18 / 198647 /2010 dated March 15, 2010 \n233 Ninth and Eleventh Schedule of SEBI (Mutual Funds) Regulations, 1996",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "993",
+  "x-ratelimit-remaining-tokens": "3507",
+  "x-ratelimit-reset-requests": "10m4.8s",
+  "x-ratelimit-reset-tokens": "33.697s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 0.283900668,
+  "completion_tokens": 134,
+  "completion_tokens_details": {
+   "reasoning_tokens": 75
+  },
+  "prompt_time": 0.086856497,
+  "prompt_tokens": 1248,
+  "queue_time": 0.31607921,
+  "total_time": 0.370757165,
+  "total_tokens": 1382
+ }
+}

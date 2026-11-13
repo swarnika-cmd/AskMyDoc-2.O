@@ -1,0 +1,50 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"The proposed average default rate annexure requires disclosure of both a 1‑year default rate and a 3‑year cumulative default rate.\"\n}",
+ "created_utc": "2026-11-13T17:51:01Z",
+ "finish_reason": "stop",
+ "key": "08d10df3a00f370c03f3d8be80eaca47d208194b0673a531cd0480e8d65794d8",
+ "latency_s": 1.309,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - sebi-cra-consultation-2017.pdf]:\nPage 15 of 15 \n \nRating prior to default - A4 category \n1                       \n2                       \n \n \nAnnexure VII – Average Default Rates for the last 5-Financial Year Period  \nAnnexure VII A- STRUCTURED INSTRUMENTS \n Weighted by No. of Issuers in Static \nPool \nWeighted by Amount of Debt in \nStatic Pool  \nRating Category 1-Year Default \nRate \n3-Year \nCumulative \nDefault Rate \n1-Year Default \nRate \n3-Year \nCumulative \nDefault Rate \nAAA     \nAA     \nA     \nBBB     \nBB     \nB     \nC     \n \nAnnexure VII B- NON - STRUCTURED INSTRUMENTS \n Weighted by No. of Issuers in Static \nPool \nWeighted by Amount of Debt in \nStatic Pool  \nRating Category 1-Year Default \nRate \n3-Year \nCumulative \nDefault Rate \n1-Year Default \nRate \n3-Year \nCumulative \nDefault Rate \nAAA     \nAA     \nA     \nBBB     \nBB     \nB     \nC\n\n[Source 2 - sebi-cra-circular-2016.pdf]:\nPage 9 of 14 \n \nII. The final action taken report, including the comments/ recommendations \nmade by Compliance Officer and the Board of the CRAas well as the \ncorrective steps taken by the CRA, shall be submitted to SEBI within 2 \nmonths from the date of receipt of the internal audit  report or 1 month from \nthe date of Board Meeting of the CRA, whichever is later, in the following \nformat: \n \nSr. \nNo. \nObservations \nof the auditor \nRemarks by the \nCompliance \nOfficer \nComments of \nthe Board of \nthe CRA \nCorrective \nactions \ntaken \n     \n     \n \n \n7. Modification in format of Annexure IV under Clause 6.2.2 of SEBI Circular \nCIR/MIRSD/CRA/6/2010dated May 3, 2010: \n \nThe format of Annexure IV under Clause 6.2.2 of SEBI Circular \nCIR/MIRSD/CRA/6/2010 dated May 3, 2010, providing the format for disclosure of \n“Movement of each credit rating that has moved by more than one notch over last \nsix months” is modified. The revise d format is placed at Annexure-A4. All other \nprovisions of the aforesaid Circular remain unchanged.\n\n[Source 3 - sebi-cra-consultation-2017.pdf]:\nPage 8 of 15 \n \nRationale: \n \nThe disclosures need to be such that are easily comprehensible to the investors. For ease \nof understanding by the investors,  the current disclosures need to be segregated for \nratings of securities and financial instruments other than securities.  \n \nThe disclosures also need to reflect the promptness of the CRA in taking the rating action.  \nIt is , thereby, proposed to include the following additional information in the various \ndisclosures mandated vide Circular dated May 03, 2010. \n \n Type of Instrument being rated (e.g. NCD/ Preference Shares/ CP/ CD, etc.) being \nrated and Issue Size \n Sector of the Issuer  \n Whether the instrument is listed or not \n Separate tables for upgrades and dow ngrades i n the disclosure pertaining to \nmovement of ratings \n Trigger event that resulted in the rating movement \n Current Outstanding Rating in disclosure of History of Outstanding Ratings \n Date of event/date of intimation triggering change in rating in case of default cases \n Debt-weighted default rates in case of average default rates for last 5 financial \nyears \n \nWith respect to disclosure of debt -weighted default rates , it may be noted that CRAs are \nrequired to disclose default rates in accordance with Point 2.2.3 of the said Circular, which \nis the number of defaults among rated entities in the static pool as a percentage of the \ntotal number of entities in the static pool . It is proposed that in addition to this, CRAs shall \nalso disclose the debt-weighted default rate which shall be defined as the amount of rated \ndebt that defaulted in the static pool as a percentage of the total amount of rated debt in \nthe static pool . The averaging for debt -weighted default rate shall be based on the \nweighted average method whe re weights shall be the amount of debt rated in each static \nperiod. This will help reflect the significance of a default from an issuer with high quantum \nof rated debt on the overall default statistics. \n \nFurther, it is proposed to delete Annexure IV of the said Circular as the information in this \nAnnexure has been incorporated in the proposed modified Annexure II.  \n \nIn accordance with the above suggested modifications, the proposed formats of the \nmodified disclosures, with the added columns highlighted in bold, are presented at \nAnnexure B.\n\n[Source 4 - sebi-cra-consultation-2017.pdf]:\nPage 14 of 15 \n \n2                       \nRating prior to default - A category \n1                       \n2                       \nRating prior to default - BBB category \n1                       \n2                       \nRating prior to default - BB category \n1                       \n2                       \nRating prior to default - B category \n1                       \n2                       \nRating prior to default - C category \n1                       \n2                       \n \nAnnexure VI B – Short Term Scale \nCategory-wise List of Defaults in a Financial year – Short Term Scale \nS. \nN\no \nNam\ne of \nthe \nIssu\ner \nSect\nor  \nInstrume\nnt Type  \nIssue \nSize \n(Rs. \nmillion\ns) \nListing \nStatus \n(Listed/ \nUnliste\nd) \n  \nRatin\ng \nprior \nto \nDefa\nult \nTrigg\ner \nEvent \nDate of \ntrigger \nof \nevent/ \nreceivin\ng \nintimati\non \nDate of \nDefault \nRecogniti\non \nRating prior to default - A1 category \n1                       \n2                       \nRating prior to default - A2 category \n1                       \n2                       \nRating prior to default - A3 category \n1                       \n2\n",
+   "role": "system"
+  },
+  {
+   "content": "In SEBI's 2017 consultation paper on credit rating agencies, which default rate horizons does the proposed average default rate annexure ask for?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "962",
+  "x-ratelimit-remaining-tokens": "1359",
+  "x-ratelimit-reset-requests": "54m43.2s",
+  "x-ratelimit-reset-tokens": "49.807s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.189035698,
+  "completion_tokens": 163,
+  "completion_tokens_details": {
+   "reasoning_tokens": 104
+  },
+  "prompt_time": 0.887577095,
+  "prompt_tokens": 1555,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "queue_time": 0.156726052,
+  "total_time": 1.076612793,
+  "total_tokens": 1718
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"In 2021‑22, the basic pay (excluding DA and other allowances) amounted to ₹162,245.73 crore, calculated by adding the pay of Gazetted Officers (₹23,710.86 crore) and the pay of Non‑Gazetted Staff (₹138,534.87 crore).\"\n}",
+ "created_utc": "2026-11-13T18:01:02Z",
+ "finish_reason": "stop",
+ "key": "eab2508ba55d9c4e0a09862abe2e362067bebd567402fdabf61cc8265f08ee2d",
+ "latency_s": 1.131,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - pay-allowances-2023-24.pdf]:\n9\nEXPENDITURE ON MAJOR COMPONENTS OF PAY AND ALLOWANCES OF THE CENTRAL GOVERNMENT\nCIVILIAN EMPLOYEES INCLUDING EMPLOYEES OF THE UNION TERRITORIES AND MISSIONS ABROAD FOR\nLAST FIVE YEARS\n(in crore)\nYear Pay DA Other Allowances Total\n2019-20 154469.85 21971.55 49303.30 225744.70\n2020-21 160074.56 27485.62 49494.91 237055.09\n2021-22 162861.85 42793.92 50456.54 256112.31\n2022-23 166279.08 57864.87 50939.80 275083.75\n2023-24 167134.97 76503.05 52274.52 295912.54\nTOTAL EXPENDITURE ON PAY AND ALLOWANCES - ALL INDIA ( in crore)\n295912.54\n300000 275083.75\n256112.31\n237055.09\n250000\n225744.70\n200000\n150000\n100000\n50000\n이\n2019-20 2020-21 2021-22 2022-23 2023-24\n\n[Source 2 - pay-allowances-2023-24.pdf]:\n11\nSHARE OF MAJOR COMPONENTS IN TOTAL EXPENDITURE OF CENTRAL GOVERNMENT\nCIVILIAN EMPLOYEES INCLUDING EMPLOYEES OF THE UNION TERRITORIES AND MISSIONS\nABROAD DURING THE LAST FIVE YEARS (EXPRESSED AS PERCENTAGE TO TOTAL)\nYear Pay DA HRA Other\nAllowances Total\n2019-20 68.43 9.73 6.42 15.42 100.00\n2020-21 67.53 11.59 6.33 14.55 100.00\n2021-22 63.59 16.71 5.95 13.75 100.00\n2022-23 60.45 21.04 5.56 12.95 100.00\n2023-24 56.48 25.85 5.17 12.50 100.00\n\n[Source 3 - pay-allowances-2023-24.pdf]:\n28\n\nEXPENDITURE ON PAY AND ALLOWANCES OF THE EMPLOYEES OF UNION TERRITORY ADMINISTRATIONS\n\n(® in crore)\nSI. No. Pay / Allowances 2019-20 2020-21 2021-22 2022-23 2023-24\n\n(1) (2) (3) (4) (5) (8) (7)\n1 Pay of Gazetted Officers 743,64 781.14 729.83 771.18 771,72\n2 Pay of Non-Gazetted Staff 2540.32 2600.12 2493.15 2634.41 2636.27\n3 Dearness Allowance 426.92 571,41 821.86 1260.07 1516.56\nSub-Total (i) 3710.88 3932.67 4044.84 4665.66 4924.55\n1 House Rent Allowance 213.78 224.95 215.7 227.92 228,08\n2 Overtime Allowance 2.98 3.05 2.92 3.09 3.09\n3 Transport Allowance 85.76 87,78 84.17 88.94 89.00\n4 Special Pay and Deput. (Duty) Allow. 3.03) 3.10 2.97 3.14 3.14\n5 Children Education Allowance 6.41 6.56 6.29 6.65 6.65\n6 Reimbursement of Medical Charges 45.72 46.80 44.87 47.42 47.45\n7 Leave Travel Concession 32.26 33.02 31.66 33,46 33.48\n8 Other Compensatory Allowances 471.42 482.52 462.67 488.87 399.00\nSub-Total (ii) 867.36 887.78 851.25 899.49 809.89\nGrand Total (i) + (ii) 4578.24 4820.45 4896.09 5565.15 5734.44\nTravelling Allowance 41.84 39.71 37.69 43.06 46.41\n\nNole:- Expenditure in respect of UT of J&« and UT of Ladakh in no!\n\nHome Affairs.\n\nt included above due ta pending manpower distribution. The expenditure is included in M/a\n\n[Source 4 - pay-allowances-2023-24.pdf]:\n10\nShare\n of\n Major\n Components\n in\n Total\n Expenditure\n (in\n %)\n120.00 100.00\n15.42\n14.55\n13.75\n12.95\n12.51\n6.42\n6.33\n5.95\n5.56\n5.16\n80.00\n9.73\n11.59\n16.71\n21.04\n25.85\n60.00 40.00\n68.43\n67.53\n63.59\n60.45\n56.48\n20.00 0.00\n2019-20\n2020-21\n2021-22\n2022-23\n2023-24\n■Pay\n■DA\nHRA\n■Other\n Allowances\n\n[Source 5 - pay-allowances-2023-24.pdf]:\n13\nCOMPONENT-WISE BREAK UP OF EXPENDITURE ON PAY AND ALLOWANCES OF THЕ\nCENTRAL GOVERNMENT CIVILIAN EMPLOYEES INCLUDING EMPLOYEES OF\nUNION TERRITORIES (EXCLUDING MISSIONS ABROAD )DURING THE LAST FIVE YEARS\n(in crore)\nS.No. Pay/Allowances 2019-20 2020-21 2021-22 2022-23 2023-24\n1 2 3 4 5 6 7\n1 Pay of Gazetted Officers 22714.47 23336.58 23710.86 25158.95 23129.51\n2 Pay of Non-Gazetted Staff 131187.76 136159.29 138534.87 140387.93 143230.15\n3 Dearness Allowance 21971.55 26917.96 42189.54 57146.63 75748.17\nSub-Total (i) 175873.78 186413.83 204435.27 222693.51 242107.83\n1 House Rent Allowance 14487.00 15016.05 15237.17 15285.50 15287.09\n2 Overtime Allowance 1668.88 1385.00 1420.27 1441.53 1489.14\n3 Transport Allowance 8839.07 9098.52 9290.13 9266.73 9686.06\n4 Spl. Pay & Deput. (Duty)\nAllowance 189.23 190.93 193.94 192.32 196.24\n5 Composite Hill Compen. Allowance 0.00 0.00 0.00 0.00 0.00\n6 Children Education Allowance 3881.96 4035.30 4112.85 4137.10 4363.03\n7 Reimbursement of Medical Charges 1259.29 1279.05 1312.47 1405.24 1357.53\n8 Leave Travel Concession 1149.98 1172.49 1192.96 1179.30 1135.31\n9 Other Compensatory Allowances 16899.80 16939.00 17293.69 17553.09 18263.13\nSub-Total (ii) 48375.21 49116.34 50053.48 50460.81 51777.53\nGrand Total (i) + (ii) 224248.99 235530.17 254488.75 273154.32 293885.36\nTravelling Allowance 6090.25 5965.09 4013.14 6815.41 8271.14\nNote: This does not include the expenditure incurred on Productivity Linked Bonus/Ad hoc Bonus, Honorarium and Encashment of Earned\nLeave.\n",
+   "role": "system"
+  },
+  {
+   "content": "According to the five-year components table, how much was spent on basic pay (excluding DA and other allowances) in 2021-22?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "937",
+  "x-ratelimit-remaining-tokens": "5646",
+  "x-ratelimit-reset-requests": "1h30m43.2s",
+  "x-ratelimit-reset-tokens": "17.655s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.188878815,
+  "completion_tokens": 169,
+  "completion_tokens_details": {
+   "reasoning_tokens": 68
+  },
+  "prompt_time": 0.14915101,
+  "prompt_tokens": 2208,
+  "queue_time": 0.524098912,
+  "total_time": 0.338029825,
+  "total_tokens": 2377
+ }
+}

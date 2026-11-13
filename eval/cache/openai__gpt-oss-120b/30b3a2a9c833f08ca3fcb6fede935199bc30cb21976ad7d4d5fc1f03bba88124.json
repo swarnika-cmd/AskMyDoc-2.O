@@ -1,0 +1,53 @@
+{
+ "attempts": 1,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"System answer matches reference statement exactly\",\"is_refusal\":false,\"claims\":[{\"claim\":\"A branch change may create a vacancy in the parent department that is no more than 5% of the department’s actual existing strength.\",\"supported\":true}]}",
+ "created_utc": "2026-11-13T18:00:00Z",
+ "finish_reason": "stop",
+ "key": "30b3a2a9c833f08ca3fcb6fede935199bc30cb21976ad7d4d5fc1f03bba88124",
+ "latency_s": 1.206,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: answerable (factual)\n\nQuestion:\nAt NIT Rourkela, how much vacancy may a branch change create in the parent department?\n\nReference answer:\nNo more than 5% of its actual existing strength.\n\nSystem answer:\nA branch change may create a vacancy in the parent department that is no more than 5% of the department’s actual existing strength.\n\nContext shown to the system:\n[Source 1 - nitrkl-btech-regs.pdf]:\nPage 19 of 31 \n \n11. Change of Branch \n11.1 Meritorious B.Tech, Int. MSc and BTech- MTech dual degree students who have secured CGPA \nof 8.5 or more (without any backlog) at the end of first year are eligible to opt for change of branch, \nof their choice, subject to following conditions: \ni. Change of branch is subject to availability of vacant seats and subject to the condition \nthat the consequent vacancy created in the parent department, due to branch change, \nshould not be more than 5% of actual existing strength.  \nii. 5% of vacancy is to be calcu lated based on existing strength. Decimal figures to be \nrounded up to the nearest integer (E.g. 1.5 = 2 and 1.49 = 1). \niii. There is no option to revert the change of branch once allotted.  \niv. The branch change will be strictly based on CGPA only and no other crit erion will be \nadopted. \nv. In case of a tie in CGPA for allotting Branch Change, the JEE Main rank (CRL) will be \nconsidered. \n11.2  The students have to exercise their choice in the NITRIS portal  on receipt of the notice for the  \n         same. \n********\n\n[Source 2 - cusb-ug-ordinance.pdf]:\n12 \n \nequivalent body, after successful completion of Grade XII or equivalent stage of \neducation. \n \n5.2.     Subject to sub clause 1 of Clause 5, the university shall have the right to declare \nfurther criteria of the eligibility for admission to the Five-Year Integrated UG -\nPG Programme on the recommendation of the Department/ Programme \nAdmission Committee. It shall be the duty of the CoE to collect the \nrecommendations of the Department Admission Committee (DAC) with regard \nto the additional eligibility criteria and communicate them to the Testing \nAgency after prior approval by the Competent Authority.  \n \n5.3.     The Department Admission Committee shall clarify the eligibility for admission \nto each course/programme in its recommendations, as well as which degree \nshall be offered to the student upon completion of such programme. \n \n5.4.     The Competent Authority shall have the right to change , modify, or reject the \nadditional criteria sought by the respective Department Admission Committee \nin the interest of the maximum maintenance of practicable uniformity and \nhomogeneity in the admission throughout the university and across the \ndisciplines.  \n \n5.5.     After fulfilling the required eligibility criteria governed by subclauses 1, 2, and 3 \nof Clause 5, a student shall have to qualify for a programme -wise common \nentrance test conducted by the university or any other recognized body as \ndecided and declared by the UATEC. \n \n5.6.     Notwithstanding subclause 4 of Clause 5, the Competent Authority may decide \nthe different modes of admissions to all the programmes or a few programmes \nas per the requirements. \n \n5.7.     The admission will be given on the merit list prepared on the test scores and the \nReservation Policy and Guidelines of the Government of India. \n \n5.8.     Other admission supernumerary quota of the University and Government of \nIndia will be equally applicable.\n\n[Source 3 - cusb-ug-ordinance.pdf]:\n15 \n \n5.17.   The admission of any candidate is liable to be cancelled forthwith without \ngiving any further notice or at any time during the period of the concerned \nProgramme of study, if it is found that the candidate has /had produced fake / \nforged certificate(s) /document(s), indulged in any act of \nmisconduct/indiscipline and has /had concealed any other relevant information \nat the time of seeking admission. \n \n5.18.   Foreign students shall be admitted as per the Rules for Admission of \nInternational Students of the University. \n \n5.19.   Any student shall have the right to withdraw his/her admission at any time. In \nthis case the refund of fees shall be as per the rules and guidelines of the UGC \nand the University. \n \n5.20.   The stream of degree/diploma  shall be based on the Major opted and qualified. \nThe subject/ discipline in which Honors/ Research will be given to the students \nshall be based on the Major opted and qualified. \n5.21 The CoE in consultation with the respective Department Admission Committee \nshall be responsible for supervising the whole conduct of admissions across the \ndepartments/programmes. \n \n5.22 At the entry–level of any programme, the intake seat number of the programme \nwill be 20 or the number mentioned in the admission notice or as updated  from \ntime to time by the department after the approval of the competent authority.  \nHowever, there will be an additional  (supernumerary) 10% of seats as payment \nseats as per the University ordinance relating to payment seats. Any increase in \nseats in subsequent semesters due to multiple entr ies or exits will remain \nunaffected. \n \n5.23 In case of any dispute relating to the admission in any Programme of Study only \nthe Hon’ble High Court of Patna shall have the jurisdiction.  \n \n6 Admission and Eligibility at Different Levels other than Entry Level under the \nMultiple Entry System throughout the Five-Year Integrated UG-PG Programme",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "950",
+  "x-ratelimit-remaining-tokens": "5839",
+  "x-ratelimit-reset-requests": "1h12m0s",
+  "x-ratelimit-reset-tokens": "16.207s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 0.284226309,
+  "completion_tokens": 136,
+  "completion_tokens_details": {
+   "reasoning_tokens": 67
+  },
+  "prompt_time": 0.247689015,
+  "prompt_tokens": 1738,
+  "prompt_tokens_details": {
+   "cached_tokens": 512
+  },
+  "queue_time": 0.370493039,
+  "total_time": 0.531915324,
+  "total_tokens": 1874
+ }
+}

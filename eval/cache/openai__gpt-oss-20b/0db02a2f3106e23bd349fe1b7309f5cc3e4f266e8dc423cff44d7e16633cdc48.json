@@ -1,0 +1,50 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"No, a scheme cannot use its Unit Premium Reserve to pay dividends.\"\n}",
+ "created_utc": "2026-11-13T00:55:49Z",
+ "finish_reason": "stop",
+ "key": "0db02a2f3106e23bd349fe1b7309f5cc3e4f266e8dc423cff44d7e16633cdc48",
+ "latency_s": 1.5,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - sebi-mf-master-2011.pdf]:\n101                                                                     Master Circular for Mutual Funds  \n \nScheme Balance Sheet (including Abridged) provides for disclosure of \nUnit Premium Reserve. \n \n11.3.2 Unit Premium Reserve, which is part of the sales price of units that is \nnot attributable to realized gains, cannot be used to pay dividend. \nTherefore: \n \n11.3.2.1.When units of an open-ended scheme are sold, and sale price is \nhigher than face value of the unit, part of sale proceeds that \nrepresents unrealised gains shall be credited to a separate \naccount (Unit Premium Reserve) and shall be treated at par \nwith unit capital and the same shall not be utilized for the \ndetermination of distributable surplus.  \n \n11.3.2.2. When units of an open-ended scheme are sold, and sale price is \nless than face value of the unit, the difference between the sale \nprice and face value shall be debited to distributable reserves and \nthe dividend can be declared only when distributable reserves \nbecome positive after adjusting the amount debited to reserves as \nper Regulations234. \n  \n                                                 \n234 Paragraph 2(a) (ix) of Eleventh Schedule of SEBI (Mutual Funds) Regulations, 1996\n\n[Source 2 - sebi-mf-master-2011.pdf]:\n100                                                                     Master Circular for Mutual Funds  \n \n           11.2.1.4 Before the issue of such notice, no communication whatsoever \nindicating the probable date of dividend declaration shall be \nissued by any Mutual Fund or its distributors of its products. \n \n \n          11.2.1.5  Such notice shall be given in at least one English daily \nnewspaper having nationwide circulation as well as in a \nnewspaper published in the language of the region where the \nhead office of the Mutual Fund is situated. \n \n         11.2.1.6  The notice shall, in font size 10, bold, categorically state that \npursuant to dividend distribution, NAV of the scheme would fall \nto the extent of payout and statutory levy (if applicable). \n \n11.2.2 Liquid / Debt Schemes with frequent dividend distribution \n \n           11.2.2.1 The requirement of giving notice is not mandatory for scheme(s)/ \nplan(s)/ option(s) with dividend distribution frequency ranging \nfrom daily up to monthly distribution if requisite disclosures in \nthis regard are made in the SID. \n \n11.2.3 Listed Schemes/Plans \n \n       11.2.3.1 Listed scheme(s)/ plan(s) shall follow the requirements \nstipulated in the Listing Agreement for dividend declaration and \ndistribution. \n \n11.3 Non availability of Unit Premium Reserve for dividend distribution232 \n \n11.3.1 Regulations 233 provide the accounting policies to be followed for \ndetermining distributable surplus and accounting the sale and \nrepurchase of units in the books of the Mutual Fund. The format for \n                                                 \n232 SEBI circular No. SEBI/IMD/CIR No 18 / 198647 /2010 dated March 15, 2010 \n233 Ninth and Eleventh Schedule of SEBI (Mutual Funds) Regulations, 1996\n",
+   "role": "system"
+  },
+  {
+   "content": "Can a scheme use its Unit Premium Reserve to pay dividends?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "951",
+  "x-ratelimit-remaining-tokens": "3523",
+  "x-ratelimit-reset-requests": "1h10m33.6s",
+  "x-ratelimit-reset-tokens": "33.577s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.069981012,
+  "completion_tokens": 63,
+  "completion_tokens_details": {
+   "reasoning_tokens": 18
+  },
+  "prompt_time": 0.979093123,
+  "prompt_tokens": 940,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "queue_time": 0.367409683,
+  "total_time": 1.049074135,
+  "total_tokens": 1003
+ }
+}

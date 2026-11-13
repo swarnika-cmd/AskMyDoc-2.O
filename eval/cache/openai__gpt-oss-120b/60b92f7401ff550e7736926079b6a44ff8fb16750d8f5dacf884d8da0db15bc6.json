@@ -1,0 +1,58 @@
+{
+ "attempts": 2,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"The system appropriately declined to answer as the information is not in the documents\",\"is_refusal\":true,\"claims\":[]}",
+ "created_utc": "2026-11-13T00:22:06Z",
+ "finish_reason": "stop",
+ "key": "60b92f7401ff550e7736926079b6a44ff8fb16750d8f5dacf884d8da0db15bc6",
+ "latency_s": 0.703,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: UNANSWERABLE (the information is not in the documents; the correct behaviour is to decline)\n\nQuestion:\nWhat was the RBI repo rate at the end of March 2024?\n\nReference answer:\nNot stated in the documents.\n\nSystem answer:\nI couldn't find sufficient evidence in the provided document to answer this question.\n\nContext shown to the system:\n[Source 1 - sebi-mf-master-2011.pdf]:\n108                                                                     Master Circular for Mutual Funds  \n \n12.10 Reconciliation Pr ocedure for Investment in Government \nSecurities261  \n12.10.1  According to the RBI guidelines 262 issued to all SGL account holders, \nto make transactions in government securities transparent, a monthly \nreconciliation system has been introduced between RBI and Mutual \nFunds maintaining SGL/CSGL accounts with respect to Government \nSecurities on an ongoing basis.  \n \n12.10.2 Mutual Funds shall reconcile the balances reported in the monthly \nstatements furnished by RBI with the transactions undertaken by \nthem.  \n \n12.10.3 The reconciliation procedure shall be made part of internal audit and \nthe auditors shall on a continuous basis, check the status of \nreconciliation and submit a report to the Audit Committee. These \nreports shall be placed in the meetings of the Board of the AMC and \nTrustees. Mutual Funds shall submit, on a quarterly basis to the RBI, \na certificate confirming compliance with these requirements and any \nother guidelines issued by the RBI from time to time in this regard. \nCompliance shall also be reported to the Board in the CTRs of AMC(s) \nand Half Yearly Trustee Reports. \n \n12.11 Overseas Investment263  \n     12.11.1 Applicable limits:  \n \n12.11.1.1 Aggregate ceiling for overseas investments is US $ 7 billion 264 and \nwithin this overall limit, Mutual Funds can make overseas \ninvestments subject to a maximum of US $ 300 million per Mutual \nFund.  \n                                                 \n261 SEBI Circular No. MFD/CIR/19/22474/2002 dated November 20, 2002. \n,, \n262 RBI Circular No.P.D.O.SGL.CIRR/1945/2002-2003 dated November 1, 2002. \n \n263 SEBI Circular No. SEBI/IMD/CIR No.7/1 04753/07 dated September 26, 2007 & SEBI \nCircular No. SEBI/IMD/CIR No.2/122577/08 dated April 8, 2008. \n \n264 SEBI Circular No. SEBI/IMD/CIR No.2/122577/08 dated April 8, 2008.\n\n[Source 2 - sebi-mf-master-2011.pdf]:\n105                                                                     Master Circular for Mutual Funds  \n \n  \n12.5.1 Mutual Funds may, for the purpose of operational flexibility, constitute \ncommittees to approve investment proposals in unrated instruments. \nHowever, detailed parameters for investment in unrated debt \ninstruments have to be approved by the Board of the AMC and Trustees. \nDetails of such investments shall be communicated by the AMCs to the \nTrustees in their periodical reports, along with clear indication as to how \nthe parameters set for investments have been complied with. Prior \napproval of the Board of the AMC and Trustees shall be required in case \ninvestment is sought to be made in an unrated security falling outside \nthe prescribed parameters. \n  \n12.6 Investments in Units of Venture Capital Funds248  \n12.6.1 Mutual Fund schemes can invest in listed or unlisted securities or units \nof Venture Capital Funds within the prescribed investment limits as \napplicable.249 \n12.7 Investment limits for Government guaranteed debt \nsecurities250  \n12.7.1 Prudential investment norms as per Regulations stipulating limits for \ninvestments in debt securities 251 issued by a single issuer are applicable \nto all debt securities issued by public bodies or institutions such as \nelectricity boards, municipal corporations, state transport corporations \netc. guaranteed by either State / Central Government. Government \nsecurities issued by Central and/or State Government or on its behalf, by \nthe RBI are however exempt from these limits. \n                                                                                                                                                                \n247 SEBI Circular No. MFD/CIR/9/ 120/2000 dated November 24, 2000.  \n248 SEBI Circular No. MFD/CIR/ 9/230/2001 dated August 14, 2001. \n,,, \n249 Clauses 10 and 11, Sevent h Schedule of SEBI (Mutua l Funds), Regulations, 1996. \n,, \n250 SEBI Circular No. SEBI/IMD/CIR No.8/18944/03 dated October 6, 2003. \n, \n251 Clauses 1 and 1A, Seventh Schedule of SEBI (Mutual Funds), Regulations, 1996.  \n,,\n\n[Source 3 - es1980-81.pdf]:\n6. Balance of Payments\n\n6.3 :INDIA’S BALANCE OF PAYMENTS (ADJUSTED)\n\nApril—December\n\n[Source 4 - es1980-81.pdf]:\n103\n4. Monetary Trends\n\n4.4 : SCHEDULED COMMERCIAL BANKS’ OUTSTANDING ADVANCES AGAINST COMMODITIES COVERED UNDER\nSELECTIVE CREDIT CONTROLS\n\n(Rs. crores)\n\nVariations du ing\n\nAs on last Friday of\n\nMarch October March Octcb2r 1979-80 April—October\n1979 1979 1980 1980 April— - amen\nMarch 1979-80 = 1980-81\n\n2. Wheat : . . . . . . . 13.9 12.2 10.9 12.7 —3.0 1.7 1.8\n3. Other foodgrains . . . . . . : 34.1 35.1 37.1 38.4 3.0 1.0 1.3\n4. Allfoodgrains —. . . . . . : 110.4 85.7 {21.3 106.7 10.9 24.7 —14.6\n5, Sugar : . . . . . . . 257.7 180.6 211.8 64.2 45.9 —77.1 —147.6\n6 Groundnut : . . . : : . 7.3 3.7 9.9 3.5 2.6 —3.6 —6.4\n7. Rapeseed/mustard seed . . . . : 10.0 3.2 2.9 3.7 —T7.1 —6.8 0.8\n8. Linseed . . . . . . . . 0.6 0.5 0.3 0.6 --0.3 0.1 0.3\n9. Castorseed . . . . . . . . 0.4 0.3 0.4 0.2 os —O.1 —0.2\n10. Groundnut oil. . . . : : . 6.8 3.8 6.8 5.4 o —3.0 1.4\nIt. Rapeseed /mustard otf. : . . . : 6.2 5.6 6.2 1L.6 oe —0.6 5.4\n12. Castor oil. . . . . . . . 7.9 8.5 9.4 2.0 1.5 0.6 7 A\n13. Linseed oil . . . . . . . . 0.6 0.5 0.4 0.3 0.2 —O.1 —).1\n14. Vanaspati . . . . . : . . IL.O 9.7 11.6 11.8 0.6 1.3 0.2\n15. Cotton & Kapas* . . . : . : 270.4 220.4 239.1 209.7 —31.3 —50.0 —29.4\n(a) Indigenous. . . : . . . 236.8 192.2 223.4 193.1 —8.4 44.6 —35.3\n(6) Imported : . . . . : . 33.6 23.2 10.7 16.6 22.9 —5.4 5.9\n\n16. Raw Jute** . : : . . . . 43.6 39.6 41.4 35.8 —2.2 —4,0 —5.6\n17. Total (4to lo). . . . . . . 732.9 562.4 G6E.5 455.5 —7L.4 —170.8 206.0\n\nNotes : (1) Data are provisional.\n(2) Food procurement advances are excluded.\n(3) Raw jute is not covered under selective credit controls.\n*Inclusive of advances to Cotton Corporation of India.\n**Inclusive of advances to Jute Corporation of India.\n\n[Source 5 - dea-frbm-h2-2023-24.pdf]:\nPage 3 of 9 \n \nS. \nNo. \nParticulars \nBE \n2023-24 \nRE \n2023-24 \nProv. \n2023-24 \nFinal \n2022-23 \n% growth in \nFY 2023-24 \n(prov.) over \n2022-23 (₹ in crore) \n    1 2 3 4 5 \n8. Borrowings and other liabilities 1,786,816 1,734,773 1,653,670 1,737,755 -4.8% \n9. Total Receipts (1+4) 4,503,097 4,490,486 4,442,542 4,193,157 5.9% \n10. Revenue Expenditure 3,502,136 3,540,239 3,494,036 3,453,132 1.2% \n10(i). - of which Interest Payments 1,079,971 1,055,427 1,063,871 928,517 14.6% \n10(ii). \n- of which Grants for creation of \nCapital Assets \n369,988 321,190 303,787 306,264 -0.8% \n11. Capital Expenditure 1,000,961 950,246 948,506 740,025 28.2% \n12. Total Expenditure (10+11) 4,503,097 4,490,486 4,442,542 4,193,157 5.9% \n13. Revenue Deficit (10-1) 869,855 840,527 765,624 1,069,926 -28.4% \n14. \nEffective Revenue Deficit{(13-\n10(ii)} \n499,867 519,337 461,837 763,662 -39.5% \n15. Fiscal Deficit {12-(1+5)} 1,786,816 1,734,773 1,653,670 1,737,755 -4.8% \n16. Primary Deficit {(15-10(i)} 706,845 679,346 589,799 809,238 -27.1% \nSource: Controller General of Accounts and Budget Documents. \nNotes: 1. The Figures are net as in Budget Documents; \n           2. Actuals for FY 2023-24 are unaudited provisional numbers and are subject to change; and \n           3. Individual items in the table may not sum up to the totals due to rounding off. \n2.1  Receipts \n2.1.1  Gross Tax Revenue \n In BE 2023 -24, Gross Tax Revenue (GTR) was estimated at ₹33.61 lakh crore. It \nwas revised to ₹34.37 lakh crore  in RE 2023 -24. GTR for FY 2023 -24 (Provisional) was \n₹34.65  lakh crore. It shows a year -on-year growth of 13.4 per cent over FY 2022 -23.",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 5.571,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "981",
+  "x-ratelimit-remaining-tokens": "189",
+  "x-ratelimit-reset-requests": "27m21.6s",
+  "x-ratelimit-reset-tokens": "58.582s"
+ },
+ "retries": [
+  {
+   "retry_after": "5",
+   "status": 429
+  }
+ ],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 0.189396937,
+  "completion_tokens": 92,
+  "completion_tokens_details": {
+   "reasoning_tokens": 49
+  },
+  "prompt_time": 0.157792225,
+  "prompt_tokens": 3158,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "queue_time": 0.052554653,
+  "total_time": 0.347189162,
+  "total_tokens": 3250
+ }
+}

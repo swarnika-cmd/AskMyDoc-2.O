@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"No. According to the SEBI Master Circular, for liquid or debt schemes that pay dividends daily up to monthly, the requirement to give a public notice is not mandatory if the requisite disclosures are made in the Scheme Information Document (SID).\"\n}",
+ "created_utc": "2026-11-13T00:41:43Z",
+ "finish_reason": "stop",
+ "key": "0989d54e944ffe6be7e270c1bda09394ec6c47db834555db41bf1f8932b043d1",
+ "latency_s": 0.731,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - sebi-mf-master-2011.pdf]:\n100                                                                     Master Circular for Mutual Funds  \n \n           11.2.1.4 Before the issue of such notice, no communication whatsoever \nindicating the probable date of dividend declaration shall be \nissued by any Mutual Fund or its distributors of its products. \n \n \n          11.2.1.5  Such notice shall be given in at least one English daily \nnewspaper having nationwide circulation as well as in a \nnewspaper published in the language of the region where the \nhead office of the Mutual Fund is situated. \n \n         11.2.1.6  The notice shall, in font size 10, bold, categorically state that \npursuant to dividend distribution, NAV of the scheme would fall \nto the extent of payout and statutory levy (if applicable). \n \n11.2.2 Liquid / Debt Schemes with frequent dividend distribution \n \n           11.2.2.1 The requirement of giving notice is not mandatory for scheme(s)/ \nplan(s)/ option(s) with dividend distribution frequency ranging \nfrom daily up to monthly distribution if requisite disclosures in \nthis regard are made in the SID. \n \n11.2.3 Listed Schemes/Plans \n \n       11.2.3.1 Listed scheme(s)/ plan(s) shall follow the requirements \nstipulated in the Listing Agreement for dividend declaration and \ndistribution. \n \n11.3 Non availability of Unit Premium Reserve for dividend distribution232 \n \n11.3.1 Regulations 233 provide the accounting policies to be followed for \ndetermining distributable surplus and accounting the sale and \nrepurchase of units in the books of the Mutual Fund. The format for \n                                                 \n232 SEBI circular No. SEBI/IMD/CIR No 18 / 198647 /2010 dated March 15, 2010 \n233 Ninth and Eleventh Schedule of SEBI (Mutual Funds) Regulations, 1996\n\n[Source 2 - sebi-mf-master-2011.pdf]:\n49                                                                     Master Circular for Mutual Funds  \n \ntransaction, excluding transactions in Money Market Mutual \nFund schemes shall be reported by them to the Compliance \nOfficer within 7 calendar days from the date of transaction.  \n \n6.4.6.2 In case of investments in SIP of any Mutual Fund scheme, the \nemployees may report only at the time of making the first \ninstallment of the SIP. \n \n6.4.6.3 Notwithstanding anything mentioned earlier, in the following \ncases employees of AMC & Trustees shall not purchase or sell /or \nrepurchase or redeem units of any scheme, including Money \nMarket Mutual Fund scheme of their Mutual Fund: \n \na. There is a likelihood of a change in the investment \nobjectives of the concerned Mutual Fund Scheme(s) and \nthis has not been communicated to the investors;  \n \nb. There is a likelihood of a rights and/or bonus issue in the \nconcerned Mutual Fund Scheme(s) and this has not been \ncommunicated to the investors;  \n \nc. The concerned Mutual Fund Scheme is contemplating to \nissue dividend to the unit holders and this has not been \ncommunicated to the investors;  \n \nd. There is a likelihood of a change in the accounting policy, \nor a significant change in the valuation of any asset, or \nclass of assets and the same has not been communicated \nto the investors; \n \ne. There is a likelihood of conversion of a close ended scheme \nto an open ended scheme and vice versa and this has not \nbeen communicated to the investors. \n \n6.4.7 Periodic Disclosures\n\n[Source 3 - sebi-mf-master-2011.pdf]:\n9                                                                     Master Circular for Mutual Funds  \n \nscheme launched in December 2008, the SID shall be updated by \nJune 30, 2010) Thereafter, the SID shall be updated once every year. \n1.2.1.2 The procedure to be followed in case of changes to the scheme shall \nbe as under: \na. In case of change in fundamental attributes in terms of Regulation14, \nSID shall be revised and updated immediately after completion of \nduration of the exit option. \nb. In case of other changes: \n1. The AMC shall be required to issue an addendum and display it \non its website. \n2. The addendum shall be circulated to all the \ndistributors/brokers/Investor Service Centre (ISC) so that the \nsame can be attached to copies of SID already in stock, till the \nSID is updated.  \n3. In case any information in SID is amended more than once, the \nlatest applicable addendum shall be a part of SID. (For example, \nin case of changes in load st ructure the addendum carrying the \nlatest applicable load structure shall be attached to all KIM and \nSID already in stock till it is updated).  \n4. A public notice shall be given in respect of such changes in one \nEnglish daily newspaper having nationwide circulation as well \nas in a newspaper published in the language of region where \nthe Head Office of the Mutual Fund is situated.  \n5. The account statements issued to investors shall indicate the \napplicable load structure.  \n1.2.1.3 A copy of all changes made to the scheme shall be filed with \nBoard within 7 days of the change.  A soft copy of updated SID \nshall be filed with Board in PDF Format along with printed copy \nof the same. AMC shall also submit an undertaking to the \nBoard while filing the soft copy that information contained in \n                                                 \n14 Regulation 18 (15A) of SEBI (Mutual Funds) Regulation, 1996\n",
+   "role": "system"
+  },
+  {
+   "content": "Must a mutual fund publish a public notice before each dividend on a liquid or debt scheme that pays out daily up to monthly?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "987",
+  "x-ratelimit-remaining-tokens": "4278",
+  "x-ratelimit-reset-requests": "18m43.2s",
+  "x-ratelimit-reset-tokens": "27.915s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.203045936,
+  "completion_tokens": 127,
+  "completion_tokens_details": {
+   "reasoning_tokens": 48
+  },
+  "prompt_time": 0.074021379,
+  "prompt_tokens": 1456,
+  "queue_time": 0.307092969,
+  "total_time": 0.277067315,
+  "total_tokens": 1583
+ }
+}

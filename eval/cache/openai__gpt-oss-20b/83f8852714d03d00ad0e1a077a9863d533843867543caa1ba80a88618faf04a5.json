@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"Revenue expenditure accounted for 78.6 % of total expenditure in FY 2023‑24, down from 82.4 % in FY 2022‑23.\"\n}",
+ "created_utc": "2026-11-13T00:08:58Z",
+ "finish_reason": "stop",
+ "key": "83f8852714d03d00ad0e1a077a9863d533843867543caa1ba80a88618faf04a5",
+ "latency_s": 0.571,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - dea-frbm-h2-2023-24.pdf]:\nPage 6 of 9 \n \n 2.1.6 Non-Debt Capital Receipts (NDCR) \n The main components of Non-Debt Capital Receipts (NDCR) are miscellaneous capital \nreceipts and rece ipts from the recovery of loans and advances.  NDCR of the government were \nbudgeted at ₹84,000 crore in FY 2023 -24. Out of this, ₹61,000 crore were from miscellaneous \ncapital receipts and ₹23,000 crore from the recovery of loans and advances. In RE 2023 -24, \nNDCR was revised to ₹56,000 crore. Against this, the actual (Provisional) receipts under NDCR \nstood at ₹60,460 crore, of which ₹33,122 crore was realized from miscellaneous capital receipts \nand ₹27,338 crore were from the recovery of loans and advances.  \n2.2 Expenditure \nIn BE 2023-24, the total expenditure of Union Government was estimated at ₹45.03 lakh \ncrore which was revised to ₹44.90 lakh crore in RE 2023 -24. The Actual (provisional) \nexpenditure in FY 2023 -24 was ₹44.43 lakh crore, recording a growth of 5.9 percent over FY \n2022-23.  \n2.2.1 Revenue Expenditure \nRevenue expenditure in BE 2023-24 was estimated at ₹35.02 lakh crore. It was revised to \n₹35.40 lakh crore  in RE 2023 -24. Against this, total revenue expenditure (Provisional) in FY \n2023-24 was ₹34.94 lakh crore. Revenue expenditure accounted for 78.6 per cent of Total \nExpenditure in FY 2023 -24 as compared to 82.4 per cent in FY2022 -23. Out of ₹34.94 lakh \ncrore of Revenue Expenditure in FY 2023 -24, ₹3.04 lakh crore was on account of Grant -in-Aid \nfor creation of capital assets. \nIn FY 2023 -24, around ₹26.16 lakh crore was spent on Interest payments, Defence \nServices, Pension, Major Subsidies and Grants-in-Aids to States/UTs Expenditure (Table 2). The \nrevenue expenditure of the above -mentioned heads increased by ₹7404 crore in FY 2023 -24      \nas compared to FY 2022-23.\n\n[Source 2 - dea-frbm-h2-2023-24.pdf]:\nPage 2 of 9 \n \n2. Review of Trends in Receipts and Expenditure in FY 2023-24 \nThe Fiscal Deficit for FY 2023-24 was budgeted at ₹17.87 lakh crore or 5.9 per cent of GDP. \nIt was 0.5 percentage points lower than the actuals of FY 2022-23 (6.4 per cent of GDP). Against \nthe BE 2023-24 target of Fiscal deficit at 5.9 percent of GDP, the fiscal deficit was estimated at \n5.8 per cent of GDP in RE 2023 -24. In this regard, a statement of deviation explaining the \nreasons for the deviation and the path of return to annual prescribed targets, as per the p rovisions \nof Section 4(5) of the FRBM Act 2003, was included in the Medium -Term Fiscal Policy cum \nFiscal Policy Strategy Statement (MTFP cum FPSS) that was laid in Parliament along with the \nInterim Union Budget FY 2024-25.  \nFiscal Deficit in FY 2023-24 (Provisional) stood at ₹16.54 lakh crore which was 5.6 per cent \nof GDP. Total Revenue Receipts (Provisional) were ₹27.28 lakh crore at the end of FY 2023 -24 \nagainst ₹23.83 lakh crore in FY 2022 -23. It shows a growth of 14.5 per cent over FY 2022 -23. \nTax Revenue (Net to Centre) at the end of FY 2023 -24 was ₹23.27 lakh crore while Non -Tax \nRevenue was ₹4.02 lakh crore. Total Expenditure at the end of FY 2023 -24 (Provisional) was \n₹44.43 lakh crore against the revised estimates of ₹44.90 lakh crore for the year (Table 1). \nTable 1: Key Fiscal Indicators, FY 2023-24 \nS. \nNo. \nParticulars \nBE \n2023-24 \nRE \n2023-24 \nProv. \n2023-24 \nFinal \n2022-23 \n% growth in \nFY 2023-24 \n(prov.) over \n2022-23 (₹ in crore) \n    1 2 3 4 5 \n1. Revenue Receipts (2+3) 2,632,281 2,699,713 2,728,412 2,383,206 14.5% \n2. Tax Revenue (Net) 2,330,631 2,323,918 2,326,524 2,097,785 10.9% \n3. Non- Tax Revenue 301,650 375,795 401,888 285,421 40.8% \n4. Capital Receipts (5+8) 1,870,816 1,790,773 1,714,130 1,809,951 -5.3% \n5. \nNon- Debt Capital Receipts \n(6+7) \n84,000 56,000 60,460 72,196 -16.3% \n6. Recovery of Loans 23,000 26,000 27,338 26,161 4.5% \n7. Other Receipts 61,000 30,000 33,122 46,035 -28.1%\n\n[Source 3 - dea-frbm-h2-2023-24.pdf]:\nPage 9 of 9 \n \n2.4  Liabilities \n  The Government of India had a cumulative Public Debt of ₹153.43 lakh crore, at the end \nof 31st March 2024. Total cumulative Government liabilities (including that of Public Account) \nas on 31 st March 2024 were ₹162.91 lakh crore. This was an increase of ₹16.79 lakh crore over \nthe course of the year (₹146.12 lakh crore at the beginning of FY 2023-24). \n 2.5 Cash Management  \n  The Government began FY 2023 -24 with cash balance of ₹4,879 crore and ended the \nfinancial year with a cash balance of ₹4,506 crore. There was an investment surplus of                  \n₹1,72,172 crore at the end of F Y 2023 -24 compared to the end FY 2022 -23 when the \nGovernment had borrowed from the RBI under Ways & Means advance, an amount of                 \n₹48,677 crore. \n4.  Conclusion \n At the commencement of FY 2023 -24, the fiscal policy stance of the government was  to \nmake the domestic economy more resilient to exogenous shocks and to mitigate the risks of \nglobal economic downturn. The Government has steered the economy in that direction and has \ncontinued on the path of fiscal consolidation by taking measures to rat ionalize expenditure as \nwell as improve the quality of expenditure through higher allocation for capital expenditure. \n The Fiscal Deficit in FY 2023 -24 (Provisional) at 5.6 per cent of GDP indicates fiscal \nconsolidation of 0.8 percentage points compared to  Fiscal Deficit of 6.4 percent in FY 2022 -23. \nFurther, the fiscal consolidation was also well aligned with better quality of expenditure as the \nRevenue Deficit declined by 1.4 percentage points from 4.0 percent in FY 2022-23 to 2.6 percent \nin FY 2023-24 (provisional).  \n The fiscal consolidation achieved in FY 2023 -24 was on account of buoyant revenue \ncollection and prioritization of expenditure. The Gross Tax Revenue stood at 11.7 per cent of \nGDP in FY 2023 -24 as compared to 11.3 and 11.5 per cent of GDP in  FY 2022 -23 and                       \nFY 2021-22, respectively. On other hand, t otal Expenditure in FY 2023 -24 (Provisional) was at \n15.0 per cent of GDP as compared to 15.6 per cent in FY 2022 -23. In the process of managing \nthe total expenditure, Governmen t also ensured improvement in the quality of expenditure to \nboost economic growth through enhancement in effective capital expenditure as proportion to \ntotal expenditure.   \n*****\n",
+   "role": "system"
+  },
+  {
+   "content": "What share of total expenditure was revenue expenditure in FY 2023-24, compared with the year before?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "992",
+  "x-ratelimit-remaining-tokens": "3273",
+  "x-ratelimit-reset-requests": "11m31.2s",
+  "x-ratelimit-reset-tokens": "35.452s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.107257773,
+  "completion_tokens": 97,
+  "completion_tokens_details": {
+   "reasoning_tokens": 29
+  },
+  "prompt_time": 0.118315541,
+  "prompt_tokens": 2165,
+  "queue_time": 0.154413746,
+  "total_time": 0.225573314,
+  "total_tokens": 2262
+ }
+}

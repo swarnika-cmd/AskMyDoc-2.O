@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"As on 1 March 2024, across all groups including Union Territories, there were 4,003,140 sanctioned posts and 3,157,362 posts were filled.\"\n}",
+ "created_utc": "2026-11-13T00:39:43Z",
+ "finish_reason": "stop",
+ "key": "a58696b140332aa39f0b9d05221be678cb57290664811a41110bdb65fc14c6f4",
+ "latency_s": 0.467,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - pay-allowances-2023-24.pdf]:\n38\n\nGroup-wise number of sanctioned posts and persons in position, vacancies and\ntheir percentage to total sanctioned posts as on 01.03.2024 including UTs.\n\nGroup Number of Number of Number of Percentage of vacant\nSanctioned posts persons in vacant Posts __|posts to total\nposition sanctioned posts in\nthe group\nA 144000 115326 28674 19.91\nB (G) 116020 99346 16674 14.37\nB(NG) 296182 204792 91390 30.86\nCc 3446938 2737898 709040 20.57\nTotal 4003140 3157362 845778 21.13\n\n[Source 2 - pay-allowances-2023-24.pdf]:\n13. Expenditure on Pay and Allowances of the employees of Department of\nPosts.\n25-26\n14. Expenditure on Pay and Allowances of the employees of UT 27-28\nAdministrations.\n15. Expenditure on Pay and Allowances of regular employees and local\nrecruits in Indian Missions Abroad.\n29-30\n16 Expenditure incurred on Pay and Allowances by the central 31-34\nMinistries/Departments on civilian employees during 2023-24.\n17. Expenditure on House Rent Allowance (HRA) of Central Government\nCivilian employees including employees of Union Territories.\n35\nCHAPTER-IV\nSanctioned Strength and Persons in position in Central\nGovernment as on 01.03.2024\n18. Group-wise number of sanctioned posts and persons in position,\nvacancies and their percentage to total sanctioned posts as on\n01.03.2024 including UTs.\n19. Group-wise number of sanctioned posts and persons in position,\nvacancies and their percentage to total sanctioned posts as on\n01.03.2024 excluding UTs.\n38-39\n40\n20. Distribution of regular civilian employees (Group-wise) in Central 41-42\nGovernment and UT Administrations as on 01.03.2024.\n21. Group-wise and status-wise estimated number of Central Government\ncivilian regular employees as on 01.03.2024 in major\nMinistries/Departments (excluding UTs).\n22. Number of sanctioned posts and persons in position in Central Police\nForces.\n23 Group-wise and status-wise (Gazetted /Non-Gazetted) estimated\nnumber of Central Government civilian regular employees as on\n01.03.2024.\n43-44\n45\n46-48\n***\n\n[Source 3 - pay-allowances-2023-24.pdf]:\n17\nSHARE OF MAJOR MINISTRIES/DEPARTMENTS IN TOTAL EXPENDITURE(in %)\n40.00\n35.00\n35.82\n36.17\n36.39\n30.00\n25.00\n20.00\n35.06 36.81\n15.00\n10.00\n5.00\n12.69\n12.34\n12.15\n11.26\n10.93\n28.17\n28.80\n28.80\n27.88\n30.03\n0.00\nRailways Defence (Civilian) Home Affairs\n6.60\n5.50\n5.46\n4.95\n5.43\n18.48\n17.54\n17.42\n19.52\n16.80\nPosts Other Departments\nincluding UTs &\nMissions\n■2019-20 ■2020-21 ■2021-22 2022-23 2023-24\nShare of Major Ministries/Departmentes in Total Expenditure in\n2023-24\nOther Departments\nincluding Union\nTerritories\n16.80%\nPosts 5.43%\nRailways\n36.81%\nHome Affairs\n30.03% Defence (Civilian)\n10.93%\n\n[Source 4 - pay-allowances-2023-24.pdf]:\n40\n\nGroup-wise number of sanctioned posts and persons in position,\nvacancies and their percentage to total sanctioned posts as on\n01.03.2024 excluding UTs.\n\nGroup Number of Number of Number of Percentage of vacant\nSanctioned persons in vacant Posts |posts to total\nposts position sanctioned posts in the\n\ngroup\n\nA 140311 113019 27292 19.45\n\nB (G) 112837 97174 15663 13.88\n\nB(NG) 275285 189811 85474 31.05\n\nCc 3394779 2699652 695127 20.48\n\nTotal 3923212 3099656 823556 20.99\n",
+   "role": "system"
+  },
+  {
+   "content": "As on 1 March 2024, how many posts were sanctioned and how many were filled across all groups including UTs?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "992",
+  "x-ratelimit-remaining-tokens": "656",
+  "x-ratelimit-reset-requests": "11m31.2s",
+  "x-ratelimit-reset-tokens": "55.08s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.103862433,
+  "completion_tokens": 97,
+  "completion_tokens_details": {
+   "reasoning_tokens": 28
+  },
+  "prompt_time": 0.08268307,
+  "prompt_tokens": 1282,
+  "queue_time": 0.205762228,
+  "total_time": 0.186545503,
+  "total_tokens": 1379
+ }
+}

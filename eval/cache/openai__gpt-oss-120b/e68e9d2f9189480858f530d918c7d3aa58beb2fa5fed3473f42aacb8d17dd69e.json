@@ -1,0 +1,53 @@
+{
+ "attempts": 1,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"System numbers match reference values and context data\",\"is_refusal\":false,\"claims\":[{\"claim\":\"The sanctioned strength of Central Police Forces on 1 March 2023 was 1,036,909 posts\",\"supported\":true},{\"claim\":\"The number of persons in position in Central Police Forces on 1 March 2023 was 932,826\",\"supported\":true}]}",
+ "created_utc": "2026-11-13T00:39:44Z",
+ "finish_reason": "stop",
+ "key": "e68e9d2f9189480858f530d918c7d3aa58beb2fa5fed3473f42aacb8d17dd69e",
+ "latency_s": 1.65,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: answerable (factual)\n\nQuestion:\nHow many people were in position in the Central Police Forces on 1 March 2023 compared with sanctioned strength?\n\nReference answer:\n9.33 lakh in position against a sanctioned strength of 10.37 lakh.\n\nSystem answer:\nOn 1 March 2023, the Central Police Forces had a sanctioned strength of 1,036,909 posts, while 932,826 officers were actually in position.\n\nContext shown to the system:\n[Source 1 - pay-allowances-2023-24.pdf]:\n4\n7. Out of the total expenditure of ₹275083.75 crore on Pay and Allowances of\nCentral Government Civilian Employees including employees of UTs and Missions\nAbroad, the percentage expenditure on Pay, Dearness Allowance (DA), House Rent\nAllowance (HRA) and other allowances are 60.45%, 21.04%, 5.56% and 12.95%\nrespectively.\n8. Out of the total expenditure of ₹ 15285.50 crore on HRA in 2022-23, the HRA\nexpenditure for 'X' class cities is 5669.64 crore which is around 37.09% of the total\nexpenditure on HRA.\n9. The total number of regular Central Government Civilian Employees in\nposition (including UTs) as on 01.03.2023, is 30.62 lakh as against the sanctioned\nstrength of 40.40 lakh and approximately 24.21 % of the posts were vacant.\n10. Almost 92% of the total manpower is covered by five major\nMinistries/Departments viz, Railways, Defence (Civil), Home Affairs, Posts and\nRevenue. Of the total strength of 30.04 lakh (excluding UTs), the percentage share\nof the Railways is 39.06%, Home Affairs 32.78%, Defence (Civil) 11.11%, Posts\n5.91%, Revenue 3.55% and all other Ministries/ Departments 7.59%.\n11. Against the sanctioned strength of 10.37 lakh in Central Police Forces, 9.33\nlakh employees were in position as on 01.03.2023. In Union Territories (UTs) 0.58\nlakhs employees were in position as against a sanctioned strength of 0.79 lakhs as\non 01.03.2023.\n\n[Source 2 - pay-allowances-2023-24.pdf]:\n45\n\nNUMBER OF SANCTIONED POSTS AND NUMBER OF PERSONS IN POSITION IN CENTRAL POLICE FORCES\n\nNumber of Sanctioned posts (as on\n\nNumber of persons in Position (as on |\n\n1\nSI. No|Name of the Central Police Force ee ee MAREN\n2023 2024 2023 2024\n(1) (2) (3) (4) (5) (6)\n\nBorder Security Force (BSF) 265331 265331 244368 256864\nCentral Reserve Police Force (CRPF) 324654 325182 294898 298921\nCentral Industrial Security Force (CISF) 171730 177325 148067 150022\nIndo Tibetan Border Police(ITBP) 100165 100136 84503 84500\nAssam Rifles 66411 66411 63037 63824\nSashastra Seema Bal(SSB) 97774 97774 88457 91158\nNational Security Guard(NSG) 10844 10844 9496 8739\nTOTAL 1036909 1043003 932826 954028\n\n[Source 3 - pay-allowances-2023-24.pdf]:\n13. Expenditure on Pay and Allowances of the employees of Department of\nPosts.\n25-26\n14. Expenditure on Pay and Allowances of the employees of UT 27-28\nAdministrations.\n15. Expenditure on Pay and Allowances of regular employees and local\nrecruits in Indian Missions Abroad.\n29-30\n16 Expenditure incurred on Pay and Allowances by the central 31-34\nMinistries/Departments on civilian employees during 2023-24.\n17. Expenditure on House Rent Allowance (HRA) of Central Government\nCivilian employees including employees of Union Territories.\n35\nCHAPTER-IV\nSanctioned Strength and Persons in position in Central\nGovernment as on 01.03.2024\n18. Group-wise number of sanctioned posts and persons in position,\nvacancies and their percentage to total sanctioned posts as on\n01.03.2024 including UTs.\n19. Group-wise number of sanctioned posts and persons in position,\nvacancies and their percentage to total sanctioned posts as on\n01.03.2024 excluding UTs.\n38-39\n40\n20. Distribution of regular civilian employees (Group-wise) in Central 41-42\nGovernment and UT Administrations as on 01.03.2024.\n21. Group-wise and status-wise estimated number of Central Government\ncivilian regular employees as on 01.03.2024 in major\nMinistries/Departments (excluding UTs).\n22. Number of sanctioned posts and persons in position in Central Police\nForces.\n23 Group-wise and status-wise (Gazetted /Non-Gazetted) estimated\nnumber of Central Government civilian regular employees as on\n01.03.2024.\n43-44\n45\n46-48\n***\n\n[Source 4 - pay-allowances-2023-24.pdf]:\n43\n\nGROUP-WISE AND STATUS-WISE ESTIMATED NUMBER OF CENTRAL GOVERNMENT CIVILIAN REGULAR EMPLOYEES AS ON\n\n01.03.2024 IN MAJOR MINISTRIES/ DEPARTMENTS (EXCLUDING UNION TERRITORRIES)\n\nMinistry/Deptt. Number of Sanctioned Posts Number in Position\n\nA B(G) B(NG) c Total A B(G) B(NG) Cc Total\n1 2 3 4 5 6 7 8 9 10 11\n13399 5586 638 1460078 1479701 10470 §292 555 1223259 1239576\nRailways\n(9.55) (4.95) (0.23) (43.01) (37.72) (9.26) (5.45) (0.29) (45.31) (39.99)\n26234 8060 79599 1004340 1118233 21668 10418 64620 910642 1007348\nHome Affairs\n(18.70) (7.14) (28.92) (29.58) (28.50) (19.17) (10.72) (34.04) (33.73) (32.50)\n19639 26015 79301 431293 556248 15373 20565 48860 229807 314605\nDefence(Civilian)\n(14.00) (23.06) (28.81) (12.70) (14.18) (13.60) (21.16) (25.74) (8.51) (10.15)\n853 4212 15384 232675 253124 611 3528 7212 180227 191578\nPosts\n(0.61) (3.73) (5,59) (6.85) (6.45) (0.54) (3.63) (3.80) (6.68) (6.18)\n12988 32027 38984 95375 179374 9705 26765 25332 47920 109722\nRevenue =\n(9.26) (28.38) (14.16) (2.81) (4.57) (8.59) (27.54) (13.35) (1.78) (3.54)\n67198 36937 61379 171018 336532 55192 30606 43232 107797 236827\nOthers\n(47.89) (34.74) (22.29) (5.05) (8.58) (48.84) (31.50) (22.78) (3.99) (7.64)\nTotal 140311 112837 275285 3394779 3923212 113019 97174 189811 2699652 3099656\n(100) (100) (100) (100) (100) (100) (100) (100) (100) (100)\n\nN.B.: Figures in parentheses are the percentages of total manpower.\n\n[Source 5 - pay-allowances-2023-24.pdf]:\nCHAPTER - IV\n\nSanctioned Strength and\nPersons in Position in Central\n\nGovernment as on 01.03.2024 |",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "968",
+  "x-ratelimit-remaining-tokens": "4875",
+  "x-ratelimit-reset-requests": "46m4.8s",
+  "x-ratelimit-reset-tokens": "23.437s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 1.148597003,
+  "completion_tokens": 296,
+  "completion_tokens_details": {
+   "reasoning_tokens": 198
+  },
+  "prompt_time": 0.093343756,
+  "prompt_tokens": 2420,
+  "prompt_tokens_details": {
+   "cached_tokens": 512
+  },
+  "queue_time": 0.054991882,
+  "total_time": 1.241940759,
+  "total_tokens": 2716
+ }
+}

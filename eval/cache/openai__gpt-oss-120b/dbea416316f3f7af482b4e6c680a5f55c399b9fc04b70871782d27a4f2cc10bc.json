@@ -1,0 +1,53 @@
+{
+ "attempts": 1,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"The answer matches the reference growth amount exactly.\",\"is_refusal\":false,\"claims\":[{\"claim\":\"The annual pay and allowances expenditure grew by ₹49,339.05 crore between 2019‑20 and 2022‑23.\",\"supported\":true}]}",
+ "created_utc": "2026-11-13T00:25:01Z",
+ "finish_reason": "stop",
+ "key": "dbea416316f3f7af482b4e6c680a5f55c399b9fc04b70871782d27a4f2cc10bc",
+ "latency_s": 0.872,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: answerable (multi-hop)\n\nQuestion:\nAccording to the ten-year expenditure table, by how much did annual pay and allowances expenditure grow between 2019-20 and 2022-23, in rupees crore?\n\nReference answer:\n₹49339.05 crore (from ₹225744.70 crore to ₹275083.75 crore).\n\nSystem answer:\nThe annual pay and allowances expenditure grew by ₹49,339.05 crore between 2019‑20 and 2022‑23.\n\nContext shown to the system:\n[Source 1 - pay-allowances-2023-24.pdf]:\n9\nEXPENDITURE ON MAJOR COMPONENTS OF PAY AND ALLOWANCES OF THE CENTRAL GOVERNMENT\nCIVILIAN EMPLOYEES INCLUDING EMPLOYEES OF THE UNION TERRITORIES AND MISSIONS ABROAD FOR\nLAST FIVE YEARS\n(in crore)\nYear Pay DA Other Allowances Total\n2019-20 154469.85 21971.55 49303.30 225744.70\n2020-21 160074.56 27485.62 49494.91 237055.09\n2021-22 162861.85 42793.92 50456.54 256112.31\n2022-23 166279.08 57864.87 50939.80 275083.75\n2023-24 167134.97 76503.05 52274.52 295912.54\nTOTAL EXPENDITURE ON PAY AND ALLOWANCES - ALL INDIA ( in crore)\n295912.54\n300000 275083.75\n256112.31\n237055.09\n250000\n225744.70\n200000\n150000\n100000\n50000\n이\n2019-20 2020-21 2021-22 2022-23 2023-24\n\n[Source 2 - dea-frbm-h2-2023-24.pdf]:\nPage 6 of 9 \n \n 2.1.6 Non-Debt Capital Receipts (NDCR) \n The main components of Non-Debt Capital Receipts (NDCR) are miscellaneous capital \nreceipts and rece ipts from the recovery of loans and advances.  NDCR of the government were \nbudgeted at ₹84,000 crore in FY 2023 -24. Out of this, ₹61,000 crore were from miscellaneous \ncapital receipts and ₹23,000 crore from the recovery of loans and advances. In RE 2023 -24, \nNDCR was revised to ₹56,000 crore. Against this, the actual (Provisional) receipts under NDCR \nstood at ₹60,460 crore, of which ₹33,122 crore was realized from miscellaneous capital receipts \nand ₹27,338 crore were from the recovery of loans and advances.  \n2.2 Expenditure \nIn BE 2023-24, the total expenditure of Union Government was estimated at ₹45.03 lakh \ncrore which was revised to ₹44.90 lakh crore in RE 2023 -24. The Actual (provisional) \nexpenditure in FY 2023 -24 was ₹44.43 lakh crore, recording a growth of 5.9 percent over FY \n2022-23.  \n2.2.1 Revenue Expenditure \nRevenue expenditure in BE 2023-24 was estimated at ₹35.02 lakh crore. It was revised to \n₹35.40 lakh crore  in RE 2023 -24. Against this, total revenue expenditure (Provisional) in FY \n2023-24 was ₹34.94 lakh crore. Revenue expenditure accounted for 78.6 per cent of Total \nExpenditure in FY 2023 -24 as compared to 82.4 per cent in FY2022 -23. Out of ₹34.94 lakh \ncrore of Revenue Expenditure in FY 2023 -24, ₹3.04 lakh crore was on account of Grant -in-Aid \nfor creation of capital assets. \nIn FY 2023 -24, around ₹26.16 lakh crore was spent on Interest payments, Defence \nServices, Pension, Major Subsidies and Grants-in-Aids to States/UTs Expenditure (Table 2). The \nrevenue expenditure of the above -mentioned heads increased by ₹7404 crore in FY 2023 -24      \nas compared to FY 2022-23.\n\n[Source 3 - pay-allowances-2023-24.pdf]:\n8\nExpenditure on Pay and Allowances for Last Ten years (* in crore)\n% increase overSl. No. Year Expenditure\nPrevious year\n1 2014-15 139951.93 10.13\n2 2015-16 150028.57 7.20\n3 2016-17 182513.25 21.65\n4 2017-18 194591.98 6.62\n5 2018-19 208960.17 7.38\n6 2019-20 225744.70 8.03\n7 2020-21 237055.09 5.01\n8 2021-22 256112.31 8.04\n9 2022-23 275083.75 7.41\n10 2023-24 295912.54 7.57\nExpenditure on Pay and Allowances for Last Ten years (*in crore) 295912.54\n300000\n275083.75\n256112.31\n250000 237055.09\n225744.70\n208960.17\n194591.98\n200000\n182513.25\n150028.57\n150000 139951.93\n100000\n50000\n이\n2014-15 2015-16 2016-17 2017-18 2018-19 2019-20 2020-21 2021-22 2022-23 2023-24\n\n[Source 4 - pay-allowances-2023-24.pdf]:\n7\nTOTAL EXPENDITURE ON PAY AND ALLOWANCES OF CENTRAL GOVERNMENT CIVILIAN EMPLOYEES\nINCLUDING EMPLOYEES OF THE UNION TERRITORIES AND MISSIONS ABROAD AS PERCENTAGE OF REVENUE\nYear Expenditure on Pay and\nAllowances of Civilian\nEmployees of Central\nGovernment including\nUnion Territories and\nMissions Abroad\nEXPENDITURE\nRevenue Expenditure\nof the Central\nGovernment\n(in crore)\nExpenditure on Pay and\nAllowances as\npercentage of Revenue\nExpenditure\n2021-22(RE) 256112\n2022-23(RE) 275084\n2023-24(RE) 295913\n3442693\n3791423\n3900204\n7.44\n7.26\n7.59\nNote: The above figures of the revenue expenditure have been taken from Annual Financial Statement of the Central Government as\nlaid before the Parliament. The figures of expenditure include Railways also.\n4000000\n3000000\n2500000\n2000000\n1500000\nTOTAL EXPENDITURE ON PAY AND ALLOWANCES OF CENTRAL GOVERNMENT CIVILIAN\nEMPLOYEES (₹ in crore)\n56112\n500000\n2021-22(RE)\n3442693\n275084\n2022-23(RE)\n3791423\n295913\n2023-24(RE)\nExpenditure on Pay and Allowances of Civilian Employees of Central Government including Union Territories and Missions Abroad\nRevenue Expenditure of the Central Government\n\n[Source 5 - pay-allowances-2023-24.pdf]:\n3\nSALIENT FEATURES\n1. The total expenditure on Pay and Allowances (excluding Productivity Linked\nBonus/ Ad-hoc Bonus, Honorarium, Encashment of Earned Leave and Travelling\nAllowance) for Regular Central Government Civilian employees including employees\nof the Union Territories and Missions abroad is₹ 275083.75 crore in 2022-23 as\ncompared to ₹ 256112.31 crore in 2021-22. Thus, there is an increase in\nexpenditure by 18971.44 crore over previous year which in relative terms works\nout to around 7.41%.\n2. The total expenditure on pay and allowances as a percentage of Revenue\nExpenditure of the Central Government during the financial year 2022-23 is 7.05%\nas compared to 7.44% during the financial year 2021-22.\n3. Almost 80.48% of the total expenditure of Central Government was incurred\nby four major Ministries/ Departments (Railways, Defence (Civil), Home Affairs and\nPosts) during 2022-23.\n4. Of the total expenditure on Pay and Allowances in 2022-23, the Ministry of\nRailways continues to have the largest share i.e. 36.39%, marginally increasing from\n36.17% in 2021-22. Share of Ministry of Home Affairs is 27.88%, marginally\ndecreasing from 28.80 in 2021-22 and Department of Posts has decreased from\n5.46% to 4.95%. Share of Ministry of Defence (Civil) has decreased from 12.15% to\n11.26%.\n5. The expenditure of UT Administrations is 5565.15 crore in 2022-23 as\ncompared to 4896.09 crore in 2021-22. Thus, there is an increase in expenditure by\n669.06 crore over previous year which in relative terms works out to around\n13.67%.\n6. The expenditure of Indian Missions/ Embassies abroad is ₹1929.43 crore in\n2022-23 as compared to ₹1623.56 crore in 2021-22. Thus, there is an increase in\nexpenditure by ₹305.87 crore over previous year which in relative terms works out to\naround 18.84%.",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "975",
+  "x-ratelimit-remaining-tokens": "5161",
+  "x-ratelimit-reset-requests": "36m0s",
+  "x-ratelimit-reset-tokens": "21.292s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 0.379725383,
+  "completion_tokens": 180,
+  "completion_tokens_details": {
+   "reasoning_tokens": 106
+  },
+  "prompt_time": 0.106232235,
+  "prompt_tokens": 2627,
+  "prompt_tokens_details": {
+   "cached_tokens": 512
+  },
+  "queue_time": 0.053080515,
+  "total_time": 0.485957618,
+  "total_tokens": 2807
+ }
+}

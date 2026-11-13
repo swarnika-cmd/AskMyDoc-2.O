@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"₹2,90,437 crore was spent on Defence Services in FY 2023-24.\"\n}",
+ "created_utc": "2026-11-13T17:58:04Z",
+ "finish_reason": "stop",
+ "key": "226760505c7f2e198ea7bcf1d5ee4ed8183ab6096dc8b260f52dc5421c514f98",
+ "latency_s": 0.672,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - dea-frbm-h2-2023-24.pdf]:\nPage 7 of 9 \n \nTable 2: Major Items of Revenue Expenditure  \n(₹ in crore) \nItems \nFY  \n2022-23 \nProv. Actuals \nFY 2023-24 \nInterest Payments 9,28,517 10,63,871 \nDefence Service 2,56,183 2,90,437 \nGrants in Aid to States & UTs 6,51,648 6,10,134 \nMajor Subsidies 5,30,958 4,13,542 \nPension 2,41,599 2,38,325 \nTotal 26,08,905 26,16,309 \n \n2.2.2 Capital Expenditure  \nCapital expenditure (Provisional Actual) recorded a growth of 28.2 per cent and stood at \n₹9.49 lakh crore in FY 2023 -24. This was 3.2 per cent of GDP as compared to 2.7 per cent of \nGDP in FY 2022-23.  \nTable 3: Composition of Revenue, Capital and Effective Capital Expenditure \n(₹ in crore) \nItems  2021-22 2022-23 2023-24 \n1. Revenue Expenditure 32,00,926 34,53,132 34,94,036 \n1.1 Grant for creation of capital assets 2,42,646 3,06,264 3,03,787 \n2. Capital Expenditure 5,92,874 7,40,025 9,48,506 \n3. Effective Capital Expenditure (2+ 1.1) 8,35,520 10,46,289 12,52,293 \nTotal Expenditure (1+2) 37,93,800 41,93,157 44,42,542\n\n[Source 2 - pay-allowances-2023-24.pdf]:\n18\nTOTAL EXPENDITURE ON PAY AND ALLOWANCES AND EXPENDITURE OF MAJOR MINISTRIES/\nDEPARTMENTS DURING THE LAST FIVE YEARS\n( in crore)\nYear All India Railways Defence\n(Civilian)\nPosts Home Affairs\n2019-20 225744.70 79144.11 28638.36 12644.97 63583.07\n2020-21 237055.09 84911.76 29248.30 13032.55 68283.64\n2021-22 256112.31 92624.45 31119.98 13978.43 73759.25\n2022-23 275083.75 100096.22 30960.80 13607.89 76694.72\n2023-24 288150.92 108924.18 32349.32 16078.56 88876.28\nSHARE OF MAJOR MINISTRIES/DEPARTMENTS IN TOTAL EXPENDITURE DURING LAST\nFIVE YEARS (Expressed as percentage to total)\nYear Railways Defence (Civilian) Home Affairs Posts\nOther Departments\nincluding UTs &\nMissions\nTotal\n2019-20 35.06 12.69 28.17 5.60 18.48 100.00\n2020-21 35.82 12.34 28.80 5.50 17.54 100.00\n2021-22 36.17 12.15 28.80 5.46 17.42 100.00\n2022-23 36.39 11.26 27.88 4.95 19.52 100.00\n2023-24 36.18 10.75 29.52 5.34 18.21 100.00\n\n[Source 3 - dea-frbm-h2-2023-24.pdf]:\nPage 6 of 9 \n \n 2.1.6 Non-Debt Capital Receipts (NDCR) \n The main components of Non-Debt Capital Receipts (NDCR) are miscellaneous capital \nreceipts and rece ipts from the recovery of loans and advances.  NDCR of the government were \nbudgeted at ₹84,000 crore in FY 2023 -24. Out of this, ₹61,000 crore were from miscellaneous \ncapital receipts and ₹23,000 crore from the recovery of loans and advances. In RE 2023 -24, \nNDCR was revised to ₹56,000 crore. Against this, the actual (Provisional) receipts under NDCR \nstood at ₹60,460 crore, of which ₹33,122 crore was realized from miscellaneous capital receipts \nand ₹27,338 crore were from the recovery of loans and advances.  \n2.2 Expenditure \nIn BE 2023-24, the total expenditure of Union Government was estimated at ₹45.03 lakh \ncrore which was revised to ₹44.90 lakh crore in RE 2023 -24. The Actual (provisional) \nexpenditure in FY 2023 -24 was ₹44.43 lakh crore, recording a growth of 5.9 percent over FY \n2022-23.  \n2.2.1 Revenue Expenditure \nRevenue expenditure in BE 2023-24 was estimated at ₹35.02 lakh crore. It was revised to \n₹35.40 lakh crore  in RE 2023 -24. Against this, total revenue expenditure (Provisional) in FY \n2023-24 was ₹34.94 lakh crore. Revenue expenditure accounted for 78.6 per cent of Total \nExpenditure in FY 2023 -24 as compared to 82.4 per cent in FY2022 -23. Out of ₹34.94 lakh \ncrore of Revenue Expenditure in FY 2023 -24, ₹3.04 lakh crore was on account of Grant -in-Aid \nfor creation of capital assets. \nIn FY 2023 -24, around ₹26.16 lakh crore was spent on Interest payments, Defence \nServices, Pension, Major Subsidies and Grants-in-Aids to States/UTs Expenditure (Table 2). The \nrevenue expenditure of the above -mentioned heads increased by ₹7404 crore in FY 2023 -24      \nas compared to FY 2022-23.\n\n[Source 4 - pay-allowances-2023-24.pdf]:\n22\n\nEXPENDITURE ON PAY AND ALLOWANCES OF THE CIVILIAN EMPLOYEES OF M/o DEFENCE\n\n(CIVIL)\n(% in crore)\nSI. No. Pay/Allowances 2019-20 2020-21 2021-22 2022-23 2023-24\n(1) (2) (3) (4) (5) (6) (7)\n1 Pay of Gazetted Officers 4955.10 4990.13 4995.13 4865.77 4653.32\n2 Pay of Non-Gazetted Staff} 15755.62 16000.36 16016.39 15601.6 14920.4\n3 Dearness Allowance 2899.5 3509.34 5357.94 6140.21 8612.44\nSub-Total (i) 23610.22 24499.83 26369.46) 26607.58 28186.16\n1 House Rent Allowance 2165,55 2172.51 2172.59 1842.06 1761.63\n2 Overtime Allowance 359.67 42.57 42.00 40.91 39.13\n3 Transport Allowance 1242.64 1246.66 1247.91 1215.59 1162.52\nSpecial Pay and\n4 Deput.(Duty) Allowance 10.57 14.91 14.92 14.53 13.90\ng Soe 0.00 0.00 0.00 0.00 0.00\nCompensatory Allowance\nge  [eriten Esucation 495.83 507.52) 508.03] 494.87 473.27\nAllowance\n7 _ | Rekobursement.of 129.96 151.83 151.98] 148.04 141.58\nMedical Charges\n8 Leave Travel Concession 205.46 196.53 196.73 191.64 183.27\ng {Other Compensatory 418.46 415.94] 416.36] 405.58 387.86\nAllowances\nSub - Total ( ii ) 5028.14 4748.47 4750.52 4353.22 4163.16\nGrand Total (i) + (ii) 28638.36 29248.30 31119.98] 30960.80 32349.32\nTravelling Allowance 290.41 180.05 190.85 336.58 907.98\n",
+   "role": "system"
+  },
+  {
+   "content": "In the table of major revenue expenditure items, how much was spent on defence services in FY 2023-24?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "942",
+  "x-ratelimit-remaining-tokens": "2302",
+  "x-ratelimit-reset-requests": "1h23m31.2s",
+  "x-ratelimit-reset-tokens": "42.735s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.082980335,
+  "completion_tokens": 74,
+  "completion_tokens_details": {
+   "reasoning_tokens": 23
+  },
+  "prompt_time": 0.130119502,
+  "prompt_tokens": 2242,
+  "queue_time": 0.372544232,
+  "total_time": 0.213099837,
+  "total_tokens": 2316
+ }
+}

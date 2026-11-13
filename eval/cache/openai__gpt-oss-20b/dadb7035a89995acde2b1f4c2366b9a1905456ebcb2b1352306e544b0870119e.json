@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"Any item of expenditure accounting for more than 10% of total expenditure must be disclosed in the accounts or the notes thereto of the scheme.\"\n}",
+ "created_utc": "2026-11-13T00:12:59Z",
+ "finish_reason": "stop",
+ "key": "dadb7035a89995acde2b1f4c2366b9a1905456ebcb2b1352306e544b0870119e",
+ "latency_s": 0.672,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - sebi-mf-master-2011.pdf]:\n113                                                                     Master Circular for Mutual Funds  \n \n \na. Investment restrictions specified in Schedule Seven of the Mutual \nFunds Regulations are applicable to overseas investments stipulated \nunder paragraph 12.11.2.1- 12.11.2.9 \n \nb. However, Clause 4 of the Seventh Schedule of the Mutual Funds \nRegulations that restricts investments in Mutual Fund units up to 5% \nof net assets and prohibits charging of fees, shall not be applicable to \ninvestments in Mutual Funds in foreign countries made in accordance \nwith these Guidelines. \n \nc. Management fees and other expenses charged by the Mutual Funds in \nforeign countries along with the management fee and recurring \nexpenses charged to the domestic Mutual Fund scheme shall not \nexceed the total limits on expenses as prescribed under Regulation \n52(6) of the Mutual Funds Regulations. Where the scheme is investing \nonly a part of the net assets in overseas Mutual Funds, the same \nprinciple shall be applicable for that part of investment. Details of \ncalculation for charging such expenses shall be reported to the Board \nof the AMC and the Trustees and shall also be disclosed in the Annual \nReport of the scheme \n \nd. The application 267 for seeking approval for investing in foreign \nsecurities, ADR/GDR/overseas ETF(s) shall be made in advance of \nmaking investments. On receipt of approval from the Board, \nintimation may be sent by the AMC(s) to Overseas Investment \nDivision, Foreign Exchange Department, RBI. \n \n12.12 Investments in Indian Depository Receipts (IDRs)268 \n                                                 \n267 Please refer the chapter on formats for format of proposal for investments in foreign securities \nand ETFs  \n268 SEBI Circular No. IMD/CIR. No.1/165935/2009 dated June 09, 2009\n\n[Source 2 - sebi-mf-master-2011.pdf]:\n95                                                                     Master Circular for Mutual Funds  \n \n10.1.2.7 Depreciation on fixed assets and software development expenses. \n \n10.1.2.8 Such other costs as may be prohibited by the Board. \n \n10.1.3 The expenditure and/or fee payable by Mutual Funds to the \nDepositories may either be capitalized or included as part of recurring \nexpenditure within the limits prescribed under Regulation 52(6) of the \nMutual Funds Regulations209. \n \n10.1.4 Further, each item of expenditure accounting for more than 10% of \ntotal expenditure shall be disclosed in the accounts or the notes \nthereto of the schemes210. \n \n10.1.5 Provision of charging of additional management fees by the Asset \nManagement Companies in case of schemes launched on no load \nbasis211. \n \n10.1.5.1 AMC shall not collect any additional management fees referred \nto in Regulation212. \n \n10.1.5.2Mutual Fund Schemes to be launched including those for \nwhich observation letter have been issued under Regulation 213 \nwould be required to carry out the changes in SID and file the \nsame with SEBI before the launch. \n \n \n10.2 Restriction on paying brokerage or commission214  \n \n                                                 \n209 SEBI Circular No. IIMARP/MF/C IR/07/826/98 dated April 15, 1998. \n,,, \n210 SEBI Circular No. MFD/CIR/9/ 120/2000 dated November 24, 2000. \n \n211 SEBI Circular No. SEBI/IMD/CIR No 18 / 198647 /2010 dated March 15, 2010 \n212 Regulation 52(3) of SEBI Mutual Funds Regulation, 1996 and SEBI Circular No. \nSEBI/IMD/CIR No. 4/ 168230/09 dated June 30, 2009 \n213 Regulation 29 of SEBI (Mutual Funds) Regulations, 1996 \n214 SEBI Circular No. MFD/CIR No.3/211/2001 dated April 30, 2001, SEBI Circular No. \nMFD/CIR No.5/153/2001 dated May 24, 2001.\n\n[Source 3 - sebi-mf-master-2011.pdf]:\n22                                                                     Master Circular for Mutual Funds  \n \nCHAPTER 3 \nNEW PRODUCTS \n3.1 Fund of Funds Scheme45 \n3.1.1 The SID and the advertisements pertaining to Fund of Funds Scheme 46 \nshall disclose that the investors are bearing the recurring expenses of the \nscheme, in addition to the expenses of other schemes in which the Fund of \nFunds Scheme makes investments.  \n \n3.1.2 AMCs shall not enter into any revenue sharing arrangement with the \nunderlying funds in any manner and shall not receive any revenue by \nwhatever means/head from the underlying fund. Any commission or \nbrokerage received from the underlying fund shall be credited into \nconcerned scheme’s account47. \n3.1.3Fund of funds mutual fund schemes shall adopt either of the total expense \nstructures laid out in Regulations 48, which Asset Management Companies \nshall clearly indicate in the SIDs. \n3.1.4 Fund of Fund schemes 49, shall, with the approval of trustees, adopt either \nof the total expense structures laid out in Regulation 50 and change the \ntotal expense structure after giving the unitholders an option to exit in \naccordance with Regulation51. \n                                                 \n45 SEBI Circular No. MFD/CIR. No .04/11488/2003 dated June 12, 2003.   \n \n46 Regulation 2(ma) of the Mutual Funds Regulations introduced vide Gazette Notification No. \nS.O 632(E) dated May 29, 2003.  \n \n47 SEBI Circular No. SEBI/IMD/CIR No  18 / 198647 /2010 dated March 15, 2010 \n \n48 Regulation 52(6)(a) of SEBI (M utual Funds) Regulations, 1996  \n49 existing as on July 29, 2010, Cir/IMD/DF/8/2010 dated August 6, 2010  \n50 Regulation 52 (6)(a) of SEBI (M utual Funds) Regulations, 1996  \n51 Regulation 18(15A)  of SEBI (Mutual Funds) Regulations, 1996\n\n[Source 4 - sebi-mf-master-2011.pdf]:\n94                                                                     Master Circular for Mutual Funds  \n \n \nCHAPTER 10 \nLOADS, FEES AND EXPENSES \n10.1 Limits on fees and expenses charged to schemes206  \n \n10.1.1 Mutual Funds may charge certain expenses to a scheme, as specified \nunder Regulations. 207 Apart from the these expenses, any other \nexpense as may be approved by SEBI under clause (xiii) of Sub \nRegulation 52(4) can also be charged to the Mutual Fund schemes. \nOther expenses directly attributable to a scheme may be charged with \nthe approval of trustees within the overall limits as provided in the \nRegulation 52(6).208  \n \n10.1.2 The following expenses cannot be charged to the schemes of Mutual \nFunds:  \n  \n10.1.2.1 Penalties and fines for infraction of laws.  \n \n10.1.2.2 Interest on delayed payment to the unit holders. \n \n10.1.2.3 Legal, marketing, publication and other general expenses not \nattributable to any scheme(s). \n \n10.1.2.4 Fund Accounting Fees. \n \n10.1.2.5 Expenses on investment management/general management. \n \n10.1.2.6 Expenses on general administration, corporate advertising and \ninfrastructure costs. \n \n                                                 \n206 SEBI Circular No. IIMARP/ MF/CIR/01/428/97 dated Februa ry 28, 1997, SEBI Circular \nNo. IIMARP/MF/CIR/07/826/98 dated April 15, 1998, SEBI Circular No. \nMFD/CIR/9/120/2000 dated November 24, 2000. \n \n207 Regulation 52(4) of the Mutual Funds Regulations,1996 \n208 SEBI Circular No. MFD/CIR/9/ 120/2000 dated November 24, 2000.\n",
+   "role": "system"
+  },
+  {
+   "content": "Above what share of total expenditure must an individual expense item of a mutual fund scheme be disclosed in its accounts?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "982",
+  "x-ratelimit-remaining-tokens": "5857",
+  "x-ratelimit-reset-requests": "25m55.199s",
+  "x-ratelimit-reset-tokens": "16.072s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.090359339,
+  "completion_tokens": 84,
+  "completion_tokens_details": {
+   "reasoning_tokens": 25
+  },
+  "prompt_time": 0.10212308,
+  "prompt_tokens": 2032,
+  "queue_time": 0.154910639,
+  "total_time": 0.192482419,
+  "total_tokens": 2116
+ }
+}

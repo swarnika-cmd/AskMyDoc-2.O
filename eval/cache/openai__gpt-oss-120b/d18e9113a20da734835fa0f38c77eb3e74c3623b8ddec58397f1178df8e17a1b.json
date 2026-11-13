@@ -1,0 +1,53 @@
+{
+ "attempts": 1,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"System answer matches reference, giving same CGPA values and comparison\",\"is_refusal\":false,\"claims\":[{\"claim\":\"NIT Rourkela’s B.Tech. program requires a minimum CGPA of 6.00 to graduate\",\"supported\":true},{\"claim\":\"CUSB’s integrated UG‑PG programme requires a minimum CGPA of 4.50 to graduate\",\"supported\":true},{\"claim\":\"NIT Rourkela’s requirement is higher than CUSB’s\",\"supported\":true}]}",
+ "created_utc": "2026-11-13T17:52:56Z",
+ "finish_reason": "stop",
+ "key": "d18e9113a20da734835fa0f38c77eb3e74c3623b8ddec58397f1178df8e17a1b",
+ "latency_s": 1.311,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: answerable (multi-hop)\n\nQuestion:\nWhich requires the higher minimum CGPA to graduate, NIT Rourkela's B.Tech. or CUSB's integrated UG-PG programme?\n\nReference answer:\nNIT Rourkela's B.Tech. (6.00) over CUSB's integrated programme (4.50).\n\nSystem answer:\nNIT Rourkela’s B.Tech. program requires a higher minimum CGPA (6.00) to graduate compared to CUSB’s integrated UG‑PG programme, which requires a minimum CGPA of 4.50.\n\nContext shown to the system:\n[Source 1 - nitrkl-btech-regs.pdf]:\n(ii) The minor degree courses will be over and above the minimum B. Tech. credit requirements. \n(iii) Every department will prepare a list of courses to be offered for minor degree. The \ndepartment will also provide the number of students the department can accept for minor \ndegree. \n(iv)  Minor degree will be allocated on merit basis on completion of 2nd semester. At present, the \nminimum CGPA 8.0 with no backlog courses may be considered for minor degree eligibility. \nThis is proposed considering that minor degree credit requirement is over and above the \nminimum B. Tech. requirements.  It is mandatory for all departments (including Science \nand Humanities) to offer courses for minor degree.  The CGPA of minor degree will  be\n\n[Source 2 - cusb-ug-ordinance.pdf]:\n49 \n \nrequired to re-appear in the examination. \n \n(ii) The minimum qualifying Grade Point for a course shall be 4.5 (i.e., a ‘P’ \ngrade). \n \n(iii) Students will have to pass the Continuou s Internal Assessment and End \nSemester examinations taken together. \n \n(iv) Before assigning a numerical grade to the marks obtained in a course, the total \nof both the Continuous Internal Assessment and the End -Semester \nExamination shall be rounded off to eliminate decimal marks. Therefore, the \nmarks obtained in the individual components of the Continuous Internal \nAssessment and End -Semester Examination shall NOT be rounded off \nseparately. \n \n(v) SGPA / CGPA shall be rounded off to two decimal places. \n \n(vi) The SGPA / CGPA obtained by a student shall be on a scale of 10 points. To \nbe eligible for the award of any certificate or degree mentioned in a Five -Year \nUG-PG Integrated program, a student must achieve a CGPA of at least 4.50 by \nthe end of the program.  \n \n(vii) The Cumulative Grade Point Average (CGPA) obtained by a student will be \nclassified into the following divisions/classes: \n \n \nCGPA Class/ Division \nAbove 9 Outstanding \nAbove 8 to 9 First Class (With Distinction) \n6 to 8 First Class \n5.5 to < 6 High-Second Class \n5 to < 5.5 Second Class \n4.5 to < 5 Pass\n\n[Source 3 - nitrkl-btech-regs.pdf]:\nPage 18 of 31 \n \nto look into psychological cases. Such counseling service may be provided to psychologically \ndepressed, demotivated and academically weak students to bring them into the main stream, \nalbeit slowly and methodically. If identified by the counseling cell, and if situation demands, the \nparents of the student will b e informed and advised to seek p rofessional counselling help and \ntreatment (if so required). In case of prolonged psychological treatment, the studentship may be \nconverted to “Dies Non” status and parents should approach the Institute only when (as per \ntreating professional counsellor opinion), the psychological condition has improved for restarting \nthe academic programme.  \n9. Graduation Requirement \n9.1 In order to qualify for a degree of the Institute covered under these Regulations, a student must:  \n (a) Complete all the credit requirements for the degree, as laid down in the prescribed \ncurriculum of the discipline, with a minimum grade ‘P’ scored in every subject.  \n (b) Obtain a CGPA of 6.00 or higher at the end of the semester in which he/she completes \nall the requirements for the degree.  \n (c) Have cleared all dues of the Institute, the Hall of Residence, the Library, the D epartment, \nNCC, NSS and Student Activity Centre.  \n9.2 The minimum total credit requirements that has to be satisfactorily completed for the award of \nB.Tech. degree will vary between 160 – 170 depending on the course structure of various \ndepartments or as decided by the Senate from time to time, and that for Integrated M.Sc. and \nDual degree between 190 - 210. \n9.3 Normally, a student should complete all the requirements consecutively in eight se mesters for \nB.Tech. degree and ten semesters for B.Arch, Dual degree and Integrated M.Sc.. Academically \nweaker students may, however, be granted additional time of 2 years to complete all the \nrequirements for the degree.  However, in special cases the Senate may further extend this limit \nfor completion of all requirements for the degree by one more year, depending upon the merit \nof the case, particularly for students with superior attendance record and/or record of \ncontributing to the Institute’s academic o r cultural life  only if the arithmetic of the grade card at \nthe end of 6 th year (7 th year for B.Arch, Dual degree  and Integrated M.Sc. ) dictates that the \nremaining courses can be completed in two semesters.  \n9.4 All graduating students are required to submit their suggestion for improvement of courses to \nthe Director  in Form AC/123. The suggestions will be summarized on Form AC/124 and \npresented before the Senate.  \n10  Award of Degree \n10.1 A student who satisfies graduation requirement (Clause 9.1) and hence qualifies for the B.Tech, \nB.Arch, Dual Degree B.Tech. & M.Tech. or Integrated M.Sc. degree, is awarded the division as \nper the following norms :  \n CGPA ≥ 8.00 - Honours \n 6.50 ≤ CGPA < 8.00 - 1st Class \n 6.00 ≤ CGPA < 6.50   - 2nd Class",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "966",
+  "x-ratelimit-remaining-tokens": "3381",
+  "x-ratelimit-reset-requests": "48m57.6s",
+  "x-ratelimit-reset-tokens": "34.642s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 0.439353149,
+  "completion_tokens": 210,
+  "completion_tokens_details": {
+   "reasoning_tokens": 90
+  },
+  "prompt_time": 0.470177898,
+  "prompt_tokens": 1831,
+  "prompt_tokens_details": {
+   "cached_tokens": 512
+  },
+  "queue_time": 0.319436687,
+  "total_time": 0.909531047,
+  "total_tokens": 2041
+ }
+}

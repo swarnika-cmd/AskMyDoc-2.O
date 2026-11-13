@@ -1,0 +1,50 @@
+{
+ "attempts": 1,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"Matches reference amount exactly\",\"is_refusal\":false,\"claims\":[{\"claim\":\"The Ministry of Home Affairs spent ₹22,064.59 crore on dearness allowance in the financial year 2023-24.\",\"supported\":true}]}",
+ "created_utc": "2026-11-13T00:40:46Z",
+ "finish_reason": "stop",
+ "key": "514c7c458f29165ad918f1dda29f4d7c209fe726038118e83af94af7fd8fc877",
+ "latency_s": 0.706,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: answerable (table)\n\nQuestion:\nHow much did the Ministry of Home Affairs spend on dearness allowance in 2023-24?\n\nReference answer:\n₹22064.59 crore.\n\nSystem answer:\nThe Ministry of Home Affairs spent ₹22,064.59 crore on dearness allowance in the financial year 2023-24.\n\nContext shown to the system:\n[Source 1 - pay-allowances-2023-24.pdf]:\nCONTENTS\nCHAPTER-I\n1. Salient Features\nCHAPTER-II\nTotal Expenditure\n2 Total expenditure on Pay and Allowances of Central Government civilian\nemployees including employees of Union Territories (UTs) and Missions\nAbroad as percentage of Revenue Expenditure.\n3\n3-4\n7\nExpenditure on Pay and Allowances during the last Ten Years. 8\n4. Expenditure on major components of Pay and Allowances of Central\nGovernment civilian employees including employees of UTs and\nMissions Abroad during the last five years.\n9\nShare of major components in total expenditure of Central Government5.\ncivilian employees including employees of UTs and Missions Abroad\nduring the last five years.\n10-11\n6. Component-wise break up of expenditure on Pay and Allowances of the\nCentral Government civilian employees including employees of UTs\n(excluding Missions Abroad) during the last five years\n12-13\n147. Component-wise break up of expenditure on Pay and Allowances of the\nCentral Government civilian employees including Missions Abroad\n(excluding employees of UTs) during the last five years\nCHAPTER-III\nComponents of Expenditure\n8. Share of major Ministries/Departments in total expenditure during the last\nfive years.\n17\n9. Total expenditure on Pay and Allowances and expenditure of major\nMinistries/ Departments during the last five years\n18\n10 Expenditure on Pay and Allowances of the employees of Ministry of\nRailways\n19-20\n11. Expenditure on Pay and Allowances of the civilian employees of Ministry\nof Defence (Civil).\n21-22\n12. Expenditure on Pay and Allowances of the employees of Ministry of\nHome Affairs\n23-24\n\n[Source 2 - pay-allowances-2023-24.pdf]:\n24\n\nEXPENDITURE ON PAY AND ALLOWANCES OF THE EMPLOYEES OF M/o HOME AFFAIRS\n\n(& in crore)\nSi. No. Pay/Allowances 2019-20 2020-21 2021-22 2022-23 2023-24\n(1) (2) (3) (4) (5) (6) (7)\n1 Pay of Gazetted Officers 2019.59 2130.62 2169.28 2139.05 2314.02\n2 Pay of Non-Gazetted Staff 3928229 41441.97 42193.87 42200.67 45652.49\n3 Dearness Allowance 5833.8 7359.41 11729.62 14934.72 22064.59\nSub-Total (i) 47135.68 50932.00 56092.77 59274.44 70031.10\n1 House Rent Allowance 2636.69 2781.65 2832.12 2792.65 3021.08\n2 Overtime Allowance 1.88 1.98 2.02 1.99 2.15\n3 Transport Allowance 2461.66 2597.00 2644.12 2607.27 2820.54\nSpecial Pay and\n4 Deput (Duty) Allowance 79.40 83.77 85.29 84.1 90.98\nComposite Hill\n5 Compensatory Allowance 0.00 0.00 0.00 0.00 0.00\ng [Chinen Eaucation 1085.48] 1145.16] 1165.94] + 1149.69] 1243.73\nAllowance\nReimbursement of Medical\ne Charges 188.99 199.38 203.00 200.17 216.54\n8 Leave Travel Concession 99.58 105.05 106.96 105.47 114.09\n@  [DilerCompeneniny 9893.71] 10437.65}  10627.03]  10478.94] —11336.07\nAllowances\nSub - Total ( ii) 16447.39 17351.64 17666.48 17420.28 18845.18\nGrand Total (i) + (ii) 63583.07 68283.64 73759.25 76694.72 88876.28\nTravelling Allowance 2271.99 1413.33 2262.03 2966.63 3314.58\n\n[Source 3 - pay-allowances-2023-24.pdf]:\n3\nSALIENT FEATURES\n1. The total expenditure on Pay and Allowances (excluding Productivity Linked\nBonus/ Ad-hoc Bonus, Honorarium, Encashment of Earned Leave and Travelling\nAllowance) for Regular Central Government Civilian employees including employees\nof the Union Territories and Missions abroad is₹ 275083.75 crore in 2022-23 as\ncompared to ₹ 256112.31 crore in 2021-22. Thus, there is an increase in\nexpenditure by 18971.44 crore over previous year which in relative terms works\nout to around 7.41%.\n2. The total expenditure on pay and allowances as a percentage of Revenue\nExpenditure of the Central Government during the financial year 2022-23 is 7.05%\nas compared to 7.44% during the financial year 2021-22.\n3. Almost 80.48% of the total expenditure of Central Government was incurred\nby four major Ministries/ Departments (Railways, Defence (Civil), Home Affairs and\nPosts) during 2022-23.\n4. Of the total expenditure on Pay and Allowances in 2022-23, the Ministry of\nRailways continues to have the largest share i.e. 36.39%, marginally increasing from\n36.17% in 2021-22. Share of Ministry of Home Affairs is 27.88%, marginally\ndecreasing from 28.80 in 2021-22 and Department of Posts has decreased from\n5.46% to 4.95%. Share of Ministry of Defence (Civil) has decreased from 12.15% to\n11.26%.\n5. The expenditure of UT Administrations is 5565.15 crore in 2022-23 as\ncompared to 4896.09 crore in 2021-22. Thus, there is an increase in expenditure by\n669.06 crore over previous year which in relative terms works out to around\n13.67%.\n6. The expenditure of Indian Missions/ Embassies abroad is ₹1929.43 crore in\n2022-23 as compared to ₹1623.56 crore in 2021-22. Thus, there is an increase in\nexpenditure by ₹305.87 crore over previous year which in relative terms works out to\naround 18.84%.\n\n[Source 4 - pay-allowances-2023-24.pdf]:\n23\nEXPENDITURE ON PAY AND ALLOWANCES OF THE EMPLOYEES OF M/o HOME AFFAIRS (% in crore)\n\n50000 5\n\n2\n2\ngi\ng\n@\na\n\n42193.87\n42200.87\n\n41441.97\n\n45000\n\n=A ET) ee rerrcmae\n\n39282.29\n\n40000\n\n35000\n\n30000\n\neee\n\n25000\n\nees Uae\n\n20000\n\n12018.37\n13001.41\n\n15000 +\n\n11347.16\n\n10000 -\n\n5000\n\n$e\n\n=\n\n2019-20 2020-21 2021-22 2022-23 2023-24\n\n@ Pay of Gazetted Officers @ Pay of Non-Gazetted Staff\nuw Dearness Allowance m House Rent Allowance\n\n@ Overtime Allowance uw Transport Allowance\n\n@ Other Comp. Allo. [includes SP & Depu. (duty), CEA,Med. Reimb, LTC, OCA)\n\n0\n\n+\n\n= a es eer\n\nPercentage of Pay and Allowances of the Employees of Ministry of Home Affairs during the Year\n2023-24\n\n@ Pay of Gazetted Officers\n\nPay of Non-Gazetted Staff\n\n Dearness Allowance\n\n@ House Rent Allowance |\n\n@ Overtime Allowance |\n\n@ Transport Allowance\n\na Other Comp. Allo.[includes SP &\nDepu. (duty), CEA,Med. Reimb,\nLTC, OCA ]",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "964",
+  "x-ratelimit-remaining-tokens": "1897",
+  "x-ratelimit-reset-requests": "51m50.399s",
+  "x-ratelimit-reset-tokens": "45.772s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 0.323913818,
+  "completion_tokens": 155,
+  "completion_tokens_details": {
+   "reasoning_tokens": 88
+  },
+  "prompt_time": 0.121325969,
+  "prompt_tokens": 2411,
+  "queue_time": 0.15849479,
+  "total_time": 0.445239787,
+  "total_tokens": 2566
+ }
+}

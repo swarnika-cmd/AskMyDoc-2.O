@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"No. According to the Master Circular, AMC(s) shall not charge entry and/or exit load on bonus units and units allotted on reinvestment of dividend.\"\n}",
+ "created_utc": "2026-11-13T17:52:01Z",
+ "finish_reason": "stop",
+ "key": "0114d4b6159a76de91117336fd3bb6af229199503d1e9c003781cb643599afb7",
+ "latency_s": 1.967,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - sebi-mf-master-2011.pdf]:\n98                                                                     Master Circular for Mutual Funds  \n \n10.5 No Load on Bonus Un its and Units allotted on   \nReinvestment of Dividend220 \n10.5.1 AMC(s) shall not charge entry and/or exit load on bonus units and units \nallotted on reinvestment of dividend. Necessary disclosures in this \nregard shall be made in the SID filed with the Board221.  \n \n10.6 Filing fees 222 \n \n         10.6.1 Revised filing fee 223 as per the SEBI (Payment of Fees ) Amendment \nRegulations 2009 would be applicable to those scheme(s) whose SID \nhas been filed with SEBI on or after July 01, 2009.  \n \n10.7  Exit load parity \n       10.7.1 While charging exit loads, no distinction among unit holders should \nbe made based on the amount of subscription 224. While complying \nwith the same, Mutual Funds should ensure that “any imposition or \nenhancement in the load shall be applicable on prospective \ninvestments only.225 \n \n        10.7.2 Further, the parity among all classes of unit holders in terms of \ncharging exit load shall be made applicable at the portfolio level.226 \n                                                 \n220,221 SEBI Circular No. SEBI/IMD/CIR No. 14/120784/08 dated March 18, 2008.  \n \n \n222 SEBI Cir No. SEBI / IMD / CIR No. 5 / 169030 / 2009 dated July 8, 2009 \n \n223 Gazettee Notification No. LAD-NRO/GN/2009-10/11/167759 on SEBI (Payment of Fees)  \n(Amendment) Regulations, 2009 dated 29 June, 2009 \n224  SEBI Circular No. SEBI / IMD / CIR No . 6 /172445/ 2009 dated August 7,2009 All \nMutual Funds shall ensure compliance with this circular on or before August 24, 2009 \n \n225    SEBI Circular No -  SEBI / IMD / CIR No. 7 /173650 / 2009 dated August 17,2009 and \nSEBI circular No. SEBI/IMD/CIR No. 5/126096/08 dated May 23, 2008 (clause 16 of the \nstandard observations) \n226 SEBI Circular No -  SEBI / IMD / CIR No. 7 /173650 / 2009 dated August 17,2009\n\n[Source 2 - sebi-mf-master-2011.pdf]:\n135                                                                     Master Circular for Mutual Funds  \n \nCHAPTER 14 \nINVESTOR RIGHTS & OBLIGATIONS \n  \nPART I – INVESTOR RIGHTS \n \n14.1 Payment of interest for dela y in dispatch of redemption \nand/or repurchase proceeds and/or dividend308 \n \n14.1.1 In the event of failure to dispatch: \n \na. Redemption or repurchase proceeds within 10 working days from \nthe date of receipt of such requests and/ or \nb. Dividend within the stipulated 30 day period309,  \n \n14.1.2 The AMC(s) shall be liable to pay interest @ 15 per cent per annum to \nthe unit holders. 310 AMC(s) must ensure that the interest amount \ndue for the period of delay in dispatch of repurchase or redemption \nand/or dividend is added to the proceeds when such payments are \nmade to the investors. Such interest shall be borne by the AMC(s).  \n \n14.1.3 Details of such payments shall be sent to the Board along with the \nCTR(s).311 Investors shall also be informed about the rate and \namount of interest paid to them. Non compliance with these \ndirections may invite action under the Mutual Funds Regulations.  \n \n14.2 Unclaimed Redemption Amount312  \n \n                                                 \n308 SEBI Circular No. SEBI/MFD/CIR/2/266/2000 dated May 19, 2000. \n, \n309 SEBI Circular No. SEBI / IMD / CIR No 14 / 187175/ 2009 dated December 15,2009 \n, \n310Regulation 53(c) of the SEBI (M utual Fund) Regulations, 1996.  \n \n311 For CTR format please refer to Chapter on Formats   \n312SEBI Circular No. MFD/CIR/9/ 120/2000 dated November 24, 2000\n\n[Source 3 - sebi-mf-master-2011.pdf]:\n96                                                                     Master Circular for Mutual Funds  \n \n10.2.1 In case of investments made by the Sponsor(s), no brokerage or \ncommission shall be paid. \n \n10.3 Restriction on charging Service Tax215 \n \n10.3.1 AMC(s) can charge Service Tax, as per applicable Taxation Laws, to the \nscheme(s) within the limits prescribed under Regulations216  \n \n 10.4 Empowering investors through transparency in payment \nof commission and load structure217 \n \n10.4.1 In order to empower investors in deciding the commission paid to \ndistributors in accordance with the level of service received, it has been \nmandated that: \n \n      10.4.1.1   There shall be no entry load218 for all Mutual Fund schemes. \n \n       10.4.1.2 The scheme application forms shall carry a suitable disclosure to \nthe effect that the upfront commission to distributors will be paid \nby the investor directly to the distributor, based on his \n                                                 \n215 SEBI Circular No. MFD/CIR/ 04/430/2002 dated June 19, 2002. \n \n216 Reg.52(6) of the SEBI (Mutual Funds) Regulations, 1996.    \n \n217, 219 SEBI Circular No  SEBI/IMD/CIR No. 4/ 168230/09 dated June 30, 2009  \n218 Waiver of load for direct applications - Vide SEBI Circular No. SEBI/IMD/CIR \nNo.10/112153/07 dated December 31, 2007,SEBI mandated w.e.f January 4,2009 no \nentry load shall be charged for applications  received directly by the AMC(s) through \ninternet or submitted directly to the AMC(s)  or Collection Center/Investor Service Centre \nand not routed through any distributor or agen t or broker. This waiver was applicable to \nboth additional purchases under the same fo lio and ‘switch in’ to a scheme from other \nschemes also done directly by the investor. AM Cs shall follow the provisions pertaining to \ninforming the unitholders upon a change in lo ad structure as per clause 3(d) of standard \nobservations.\n\n[Source 4 - sebi-mf-master-2011.pdf]:\n17                                                                     Master Circular for Mutual Funds  \n \nc. The addendum to the SID detailing the modifications (if any) made \nto the scheme(s). \n \n2.1.1.3 The letter to unit holders and revised SID (if any) shall be issued only \nafter the final observations as communicated by the Board in terms of \nRegulation 29(3) of the Mutual Funds Regulations have been \nincorporated therein and final copies of the same have been filed with the \nBoard. \n \n2.1.1.4 Unit holders shall be given at least 30 days to exercise exit option. \nDuring this period, the unit holders who opt to redeem their holdings in \npart or in full shall be allowed to exit at the NAV applicable for the day on \nwhich the request is received, without charging exit load.\n",
+   "role": "system"
+  },
+  {
+   "content": "Can an AMC charge entry or exit load on bonus units?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "960",
+  "x-ratelimit-remaining-tokens": "4069",
+  "x-ratelimit-reset-requests": "57m36s",
+  "x-ratelimit-reset-tokens": "29.482s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.093447425,
+  "completion_tokens": 87,
+  "completion_tokens_details": {
+   "reasoning_tokens": 24
+  },
+  "prompt_time": 0.111081226,
+  "prompt_tokens": 1881,
+  "queue_time": 1.3430985180000001,
+  "total_time": 0.204528651,
+  "total_tokens": 1968
+ }
+}

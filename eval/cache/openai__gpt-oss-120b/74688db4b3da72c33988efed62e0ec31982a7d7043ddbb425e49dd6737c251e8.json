@@ -1,0 +1,53 @@
+{
+ "attempts": 1,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"The system declined to answer, matching the required behavior for an unanswerable question.\",\"is_refusal\":true,\"claims\":[]}",
+ "created_utc": "2026-11-13T00:27:02Z",
+ "finish_reason": "stop",
+ "key": "74688db4b3da72c33988efed62e0ec31982a7d7043ddbb425e49dd6737c251e8",
+ "latency_s": 0.677,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: UNANSWERABLE (the information is not in the documents; the correct behaviour is to decline)\n\nQuestion:\nHow many Group D employees were in position in the central government on 1 March 2024?\n\nReference answer:\nNot stated; the report classifies posts only as Groups A, B(G), B(NG) and C.\n\nSystem answer:\nI couldn't find sufficient evidence in the provided document to answer this question.\n\nContext shown to the system:\n[Source 1 - pay-allowances-2023-24.pdf]:\n41\n\nDISTRIBUTION OF REGULAR CIVILIAN EMPLOYEES (GROUP-WISE) PERSONS IN POSITION IN\nCENTRAL GOVERNMENT AND UNION TERRITORY ADMINISTRATIONS AS ON 01.03.2024\n\nCentral Government /\n\nanni Union Territory Administrations wi aaiiiaeen\nA B Cc Total\n(1) (2) (3) (4) (5) (6)\n1 CENTRAL GOVERNMENT 113019 286985 2699652 3099656\n2 UNION TERRITORY ADMINISTRATIONS 2307 17153 38246 57706\nTOTAL 115326 304138 2737898 3157362\n\n[Source 2 - pay-allowances-2023-24.pdf]:\n43\n\nGROUP-WISE AND STATUS-WISE ESTIMATED NUMBER OF CENTRAL GOVERNMENT CIVILIAN REGULAR EMPLOYEES AS ON\n\n01.03.2024 IN MAJOR MINISTRIES/ DEPARTMENTS (EXCLUDING UNION TERRITORRIES)\n\nMinistry/Deptt. Number of Sanctioned Posts Number in Position\n\nA B(G) B(NG) c Total A B(G) B(NG) Cc Total\n1 2 3 4 5 6 7 8 9 10 11\n13399 5586 638 1460078 1479701 10470 §292 555 1223259 1239576\nRailways\n(9.55) (4.95) (0.23) (43.01) (37.72) (9.26) (5.45) (0.29) (45.31) (39.99)\n26234 8060 79599 1004340 1118233 21668 10418 64620 910642 1007348\nHome Affairs\n(18.70) (7.14) (28.92) (29.58) (28.50) (19.17) (10.72) (34.04) (33.73) (32.50)\n19639 26015 79301 431293 556248 15373 20565 48860 229807 314605\nDefence(Civilian)\n(14.00) (23.06) (28.81) (12.70) (14.18) (13.60) (21.16) (25.74) (8.51) (10.15)\n853 4212 15384 232675 253124 611 3528 7212 180227 191578\nPosts\n(0.61) (3.73) (5,59) (6.85) (6.45) (0.54) (3.63) (3.80) (6.68) (6.18)\n12988 32027 38984 95375 179374 9705 26765 25332 47920 109722\nRevenue =\n(9.26) (28.38) (14.16) (2.81) (4.57) (8.59) (27.54) (13.35) (1.78) (3.54)\n67198 36937 61379 171018 336532 55192 30606 43232 107797 236827\nOthers\n(47.89) (34.74) (22.29) (5.05) (8.58) (48.84) (31.50) (22.78) (3.99) (7.64)\nTotal 140311 112837 275285 3394779 3923212 113019 97174 189811 2699652 3099656\n(100) (100) (100) (100) (100) (100) (100) (100) (100) (100)\n\nN.B.: Figures in parentheses are the percentages of total manpower.\n\n[Source 3 - pay-allowances-2023-24.pdf]:\n42\n\nDISTRIBUTION OF REGULAR CIVILIAN EMPLOYEES (GROUP-WISE) IN\nPOSITION IN CENTRAL GOVERNMENT\n\nmA\n\nwB\n\nwc\n\nTERRITORY ADMINISTRATIONS\n\nHA\nwB\nwc\n\n[Source 4 - pay-allowances-2023-24.pdf]:\n13. Expenditure on Pay and Allowances of the employees of Department of\nPosts.\n25-26\n14. Expenditure on Pay and Allowances of the employees of UT 27-28\nAdministrations.\n15. Expenditure on Pay and Allowances of regular employees and local\nrecruits in Indian Missions Abroad.\n29-30\n16 Expenditure incurred on Pay and Allowances by the central 31-34\nMinistries/Departments on civilian employees during 2023-24.\n17. Expenditure on House Rent Allowance (HRA) of Central Government\nCivilian employees including employees of Union Territories.\n35\nCHAPTER-IV\nSanctioned Strength and Persons in position in Central\nGovernment as on 01.03.2024\n18. Group-wise number of sanctioned posts and persons in position,\nvacancies and their percentage to total sanctioned posts as on\n01.03.2024 including UTs.\n19. Group-wise number of sanctioned posts and persons in position,\nvacancies and their percentage to total sanctioned posts as on\n01.03.2024 excluding UTs.\n38-39\n40\n20. Distribution of regular civilian employees (Group-wise) in Central 41-42\nGovernment and UT Administrations as on 01.03.2024.\n21. Group-wise and status-wise estimated number of Central Government\ncivilian regular employees as on 01.03.2024 in major\nMinistries/Departments (excluding UTs).\n22. Number of sanctioned posts and persons in position in Central Police\nForces.\n23 Group-wise and status-wise (Gazetted /Non-Gazetted) estimated\nnumber of Central Government civilian regular employees as on\n01.03.2024.\n43-44\n45\n46-48\n***",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "970",
+  "x-ratelimit-remaining-tokens": "5883",
+  "x-ratelimit-reset-requests": "43m12s",
+  "x-ratelimit-reset-tokens": "15.877s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 0.175316011,
+  "completion_tokens": 83,
+  "completion_tokens_details": {
+   "reasoning_tokens": 38
+  },
+  "prompt_time": 0.085379984,
+  "prompt_tokens": 1921,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "queue_time": 0.049439565,
+  "total_time": 0.260695995,
+  "total_tokens": 2004
+ }
+}

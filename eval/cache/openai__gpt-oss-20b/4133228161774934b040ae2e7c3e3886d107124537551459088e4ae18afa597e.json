@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"A Bachelor of Arts/Science/Commerce with Honors/Research requires completion of 160 credits.\"\n}",
+ "created_utc": "2026-11-13T00:40:42Z",
+ "finish_reason": "stop",
+ "key": "4133228161774934b040ae2e7c3e3886d107124537551459088e4ae18afa597e",
+ "latency_s": 0.44,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - cusb-ug-ordinance.pdf]:\n5 \n \n \n \n \n \n \n \nGuiding Ordinances/ Regulations/Act/ Guidelines \n \nCentral Universities Act: 2009 \nCUSB/First Ordinance/2016 \nCentral University of South Bihar Examination Manual: 2022 \nCUSB Regulations Relating to Unfair Means in the Examinations: 2019 \nDraft National Higher Education Qualifications Framework (NHEQF):2022 \nGuidelines for Multiple Entry and Exit in Academic Programmes Offered in Higher \nEducation Institutions, UGC, 2021 \nNational Education Policy: 2020 \nOrdinance Governing Master’s Degree Programme in Science, Arts, and Commerce-2022 \n \n \n \nIn exercise of the powers conferred by Section 28 (1) (b) o f the Central Universities Act, \n2009, Central University of South Bihar, in pursuance of N ational Educational Policy -2020 \nof the Government of India, and the University Grants Commission's Guidelines for Multiple  \nEntry & Multiple Exit , Academic Bank of Credit, hereby frames this Ordinance for ‘Five \nyear Integrated UG -PG Programmes’  of Studies  leading to the award of Certificate, \nDiploma, and Degree in Science, Arts and Commerce Disciplines offered by the university. \n \n1. Short Title and Commencement: \n \n1.1. This Ordinance shall be called CUSB Ordinance Governing Five-year Integrated \nUG-PG Programmes in Science, Arts and Commerce, 2022. \n \n1.2. This Ordinance shall come into force from the Academic Year 2024-2025. \n \n2. Scope and Coverage \n \n2.1. This Ordinance shall govern the Five -Year Integrated UG -PG Programme to be \ncommenced from the academic session, 2024-25.\n\n[Source 2 - cusb-ug-ordinance.pdf]:\n60 \n \n \nTable 6: Consolidated Course Structure for Five Year Integrated Degree Programme. \nSemester \n(Level) \nCourse Type \nI \n(100) \n \nII \n(100) \nSummer \nVacation \n(8 weeks) \nIII \n(200) \n \nIV \n(200) \n \nSummer \nVacation \n(8 weeks) \nV \n(300) \n \nVI \n(300) \n \nTotal \n(I to VI) \nVII \n(400) \n \nVIII \n(400) \n \nTotal \n(I to \nVIII) \nIX \n(500) \nX \n(500) \nTotal \n(VII to X) \nMajor 4 4 \nexit 4 credit skills enhancement course 4, 4 4,4,4,2 \nexit 4 credit skills enhancement course 4,4,4,2 4,4,4,4 60 4,4,4,4 \n4, \n80+12 \n4,4,4,4,4 4,4,4,4,4 72 \n4 \n4 \n4 \nProject \n12 \ncredits c \nProject  \n20/40 \ncredits \nMinor 4 4 4 4 4 4 24 4 (≥300 ) 4  (≥300 ) 32   8 \n        Two year Master’s Programme  (Total Credit 80)  \n        PG Diploma (40 Credit) One year Master’s Programme (Total Credit 40) \nMultidiscipl\ninary 3 3 3  Internshipb \n(2 credits) \n \n 9 \n  \n9   \n \nAEC 2 2 2 2  8 8    \nSEC 3 3 3   9 9    \nValue \nAddeda 2,2 2,2    8 8    \nTotal Credit 20 20 20 20 20 20 120 20 20 160 20 20  \n UG Certificate            \n UG Diploma (either A or B is must.)         \n Bachelor’s Degree (Neither A nor B is required)       \n Bachelor’s Degree with Honors / Honors with Research (Neither A nor B is required)     \n   Five Year Integrated Degree Programme\n\n[Source 3 - cusb-ug-ordinance.pdf]:\n16 \n \n \n6.1 Under the Multiple Entry System  as adopted by this Ordinance, a student may be \nallowed to enter through admission into the ongoing Five -Years Integrated UG-PG \nProgrammes at different points of Entry. \n \n6.2 A student shall have the entry options (other than semester 1 governed by Clause \n5) in the said programme in Semesters 3, 5, 7, and 9. The eligibility and admission \ncriteria for admission to Semester 3, 5,7 , and 9 under the multiple-entry system \nshall be as the following: \n \n6.3 A student is entitled to admission to the ongoing Five-Year Integrated UG -PG \nProgramme in Semester 3 or Semester 5 under multiple entry options provided \nhe/she meets the following conditions: \n \n6.3.1 A student should be from a university with a NAAC A  grade or / and an \ninstitution falling under the NIRF 200 ranking at the time of admission. \n \n6.3.2 He/she must have been a student of the Five -Year Integrated Programme \nrunning in his/her previous institute and must have earned a minimum of 40 \ncredits and 80 credits for admission in semeste r 3 and semester 5, respectively \nhaving a UG certificate/diploma as the case may be.  \n \nOR \n \nHe/she should have been awarded the UG certificate/diploma as the case may \nbe from any other programme with 40 and 80 credits, respectively. \n \n6.3.3 He/she must have qualified  for the common entrance test for admission to the \nentry-level of the said programme in Semester 1 at his/her previous institution. \n \n6.3.4 The candidate must have scored at least 6. 5Cumulative Grade Point Average \n(CGPA) or 65%marks after completion of the last examination to get awarded \nthe UG certificate/ diploma as the case may be.\n\n[Source 4 - cusb-ug-ordinance.pdf]:\n20 \n \nwith Research 100 marks 45 \nNote: The seat matrix is for initial 3 years and is subject to revision thereafter. \nNote: The seat matrix is the initial method suggested to meet the admission quota of 45. The \ndepartment may adjust the number of admission seats as needed, after obtaining approval from the \nDepartmental Committee and permission from the competent University authority. \n \n7 Award of Certificate/ Diploma/ Degree along with multiple Exit Options. \n \n7.1    A student shall be awarded  a Certificate/ Diploma/ Degree, as the case may be, \nfollowing the multiple Exit Options. \n \n7.2    The nomenclature of the final degree to be awarded after successful completion of \n200 Credits shall be Master of Arts/Science/  Commerce (Integrated) in ( Specific \nProgramme).  \n \n7.3    A nomenclature of the degree to be awarded after successful completion of 120 \ncredits shall be Bachelor of Arts/ Science/Commerce in (Specific Programme). \n \n7.4    A nomenclature of the degree to be awarded after successful completion of 160 \ncredits shall be Bachelor of Arts/ Science/Commerce with Honors/Research in \n(Specific Programme). \n \n7.5    A nomenclature of the Diploma to be awarded after successful completion of 80 \ncredits along with  an exit 4 credit skills enhancement course shall be UG \nDiploma in (specific programme) with specialization in (specific skill). \n \n7.6    A nomenclature of the Certificate to be awarded after successful completion of 40 \ncredits along with an exit 4 credit skills enhancement course  of 4 credits shall be \nUG Certificate Course in (specific programme)  with specialization in (specific \nskill).  \n \n7.7    A student, he/she may be awarded a degree of a Two-year Master of Arts/ \nScience/Commerce degree if he/she has taken admission through the multiple \nentry option in Semester 7 under clauses 6.4.1 and 6.4.2, and completes a further \n80 credits in four semesters as from semester 7 to Semester 10.\n",
+   "role": "system"
+  },
+  {
+   "content": "Under the CUSB integrated UG-PG ordinance, how many credits are needed for a Bachelor's degree with Honours or Research?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "990",
+  "x-ratelimit-remaining-tokens": "4063",
+  "x-ratelimit-reset-requests": "14m24s",
+  "x-ratelimit-reset-tokens": "29.527s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.067621082,
+  "completion_tokens": 60,
+  "completion_tokens_details": {
+   "reasoning_tokens": 10
+  },
+  "prompt_time": 0.122625561,
+  "prompt_tokens": 1994,
+  "queue_time": 0.157036907,
+  "total_time": 0.190246643,
+  "total_tokens": 2054
+ }
+}

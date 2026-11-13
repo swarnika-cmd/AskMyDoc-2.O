@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": true,\n  \"answer\": \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n}",
+ "created_utc": "2026-11-13T17:54:02Z",
+ "finish_reason": "stop",
+ "key": "198c77675c8e1ddfad7025efdae973e53d86b7c84b4cbe2845fdddf3c0c270ce",
+ "latency_s": 0.572,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - sebi-mf-master-2011.pdf]:\n55                                                                     Master Circular for Mutual Funds  \n \n6.7.6 Reporting to the Board \n \n6.7.6.1 Compliance with these Guidelines shall be reported in \nCompliance Test Reports (CTRs) and Half Yearly Trustee Reports. \n \n6.8 Scheme Performance Review \n \n \n6.8.1 AMCs and Trustees shall review the performance of their schemes on \nperiodic basis 137. Such review can take place by comparing the \nperformance of the schemes with benchmark indices as well as in light \nof the performance of the entire Mutual Funds industry by relying on \ndata published from time to time by independent research agencies and \nfinancial newspapers and journals.  Corrective action if required may \nbe taken in case of unsatisfactory performance.  Its compliance should \nbe   reported in the bimonthly CTRs of AMCs and half-yearly reports of \nthe Trustees to SEBI (while reporting compliance of Regulation 25(2) on \nexercise of due diligence in investment decisions). \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n                                                 \n \n137 SEBI Circular No. dated July 27, 2 000 & SEBI Cir 16/400/02 dated March 26, 2002.\n\n[Source 2 - sebi-mf-master-2011.pdf]:\n13                                                                     Master Circular for Mutual Funds  \n \n1.8 Selection of Benchmarks21 \n 1.8.1 In case of equity oriented schemes, mutual funds may appropriately \nselect any of the indices available, (e.g. BSE (Sensitive) Index, S&P CNX \nNifty, BSE 100, BSE 200 or S&P CNX 500 etc.) as a benchmark index \ndepending on the investment objective and portfolio.  \n1.8.2 Benchmarks for debt oriented and balanced fund schemes 22 developed \nby research and rating agencies recommended by the AMFI on a \nregular basis shall be used by the Mutual Funds. \n1.8.3 In case of sector or industry specific schemes, Mutual Funds may select \nany sectoral indices as published by the Stock Exchanges and other \nreputed agencies. \n1.8.4 These benchmark indices may be decided by the AMC(s) and Trustees. \nAny change at a later date in the benchmark index shall be recorded \nand reasonably justified23. \n1.8.5 Examples of benchmarks are illustrated below24: \n1.8.5.1 Growth funds maintaining minimum 65% of their investments in \nequities shall always be compared against The Bombay Stock \nExchange Ltd. (BSE) Sensex or The National Stock Exchange Ltd. \n(NSE) Nifty or BSE 100 or CRISIL 500 or similar standard \nindices.  \n1.8.5.2  Income funds maintaining 65% or more of investments in debt \ninstruments shall be compared with a suitable index that is a \nrepresentative of the fund’s portfolio.  \n1.8.5.3  Balanced funds with equity investments of 40%-60% shall be \ncompared with a tailored index having 50% of its weight selected \n                                                 \n21 SEBI Circular No. MFD/CIR/4/51/2000 da ted June 5, 2000, SEBI Circular No. \nMFD/CIR/16/400/02 dated March 26, 2002, SEBI Circular No. MFD/CIR/01/071/02 \nApril 15, 2002.  \n \n22 SEBI Circular No. MFD/CIR/01/071/02 dated April 15, 2002.  \n, \n23 SEBI Circular No. MFD/CIR/16/400/02 dated Ma rch 26, 2002. Also please note that for \nreview of scheme performance with benchmark indices please refer to section on \ngovernance norms.  \n24 SEBI Circular No. MFD/CI R/4/51/2000 dated June 5, 2000\n\n[Source 3 - sebi-mf-master-2011.pdf]:\n23                                                                     Master Circular for Mutual Funds  \n \n \n3.2 Gold Exchange Traded Fund Scheme52  \n3.2.2 A Gold Exchange Traded Fund (GETF) Scheme53 shall invest primarily in: \n \n3.2.2.1 Gold and  \n3.2.2.2 Gold related instruments 54. However investments in gold related \ninstruments shall be done only after such instruments are specified by \nthe Board55  \n \n3.2.3 Valuation: \n3.2.3.1 Gold shall be valued based on the methodology provided in Clause \n3A of, Schedule Eight of the Mutual Funds Regulations56. \n \n3.2.4 Determination of Net Asset Value57 \n3.2.4.1 The NAV of units under the GETF Scheme shall be calculated up \nto four decimal points as shown below:  \n \nMarket or Fair Value of Scheme's investments + Current \nAssets - Current Liabilities and Provision \nNAV (in Rs. terms)   =   ______________________________________________  \nNumber of Units outstanding under Scheme on the \nValuation Date \n  \n3.2.5 Recurring Expenses58 \n                                                 \n52 SEBI Circular No. SEBI/IMD/CIR. No.4/5842 2/06 dated January 24, 2006, SEBI Circular \nNo. SEBI/IMD/CIR No.2/65348/06 dated April 21, 2006, SEBI Circular No. SEBI/IMD/CIR \nNo.14/84243/07 dated January 15, 2007. \n \n53 Regulation 2(mb) of the SEBI (Mutual Fund s) Regulations, 1996 introduced vide Gazette \nNotification No. S.O. 38(E) dated January 12, 2006. \n \n54 Regulations 2(mc) of the Mutual Funds Regulations introduced vide Gazette Notification \nNo. S.O. 38(E) dated January 12, 2006.    \n55 SEBI Circular No. SEBI/IMD/CIR No. 4/58422/06 dated January 24, 2006. \n \n56 SEBI Circular No. SEBI/IMD/CIR No.14/ 84243/07 dated January 15, 2007 read with \nGazette Notification F. No. SEBI/LAD /DoP/82534/2006 dated December 20, 2006. \n \n57 SEBI Circular No. SEBI/IMD/CIR No.2/65348/06 dated April 21, 2006.  \n \n58 SEBI Circular No. SEBI/IMD/CIR No.2/65348/06 dated April 21, 2006.\n",
+   "role": "system"
+  },
+  {
+   "content": "Against what must a Gold Exchange Traded Fund scheme be benchmarked?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "954",
+  "x-ratelimit-remaining-tokens": "3271",
+  "x-ratelimit-reset-requests": "1h6m14.4s",
+  "x-ratelimit-reset-tokens": "35.467s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.077032625,
+  "completion_tokens": 66,
+  "completion_tokens_details": {
+   "reasoning_tokens": 21
+  },
+  "prompt_time": 0.098828491,
+  "prompt_tokens": 1683,
+  "queue_time": 0.315816456,
+  "total_time": 0.175861116,
+  "total_tokens": 1749
+ }
+}

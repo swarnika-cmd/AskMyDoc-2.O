@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"In 2022‑23, the Ministry of Railways accounted for 36.39% of the total expenditure on pay and allowances.\"\n}",
+ "created_utc": "2026-11-13T00:12:01Z",
+ "finish_reason": "stop",
+ "key": "3fbd96c188b75f2f07db48e1df1010df8117f9e1116d10801b5d82aac49011ae",
+ "latency_s": 0.678,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - pay-allowances-2023-24.pdf]:\n3\nSALIENT FEATURES\n1. The total expenditure on Pay and Allowances (excluding Productivity Linked\nBonus/ Ad-hoc Bonus, Honorarium, Encashment of Earned Leave and Travelling\nAllowance) for Regular Central Government Civilian employees including employees\nof the Union Territories and Missions abroad is₹ 275083.75 crore in 2022-23 as\ncompared to ₹ 256112.31 crore in 2021-22. Thus, there is an increase in\nexpenditure by 18971.44 crore over previous year which in relative terms works\nout to around 7.41%.\n2. The total expenditure on pay and allowances as a percentage of Revenue\nExpenditure of the Central Government during the financial year 2022-23 is 7.05%\nas compared to 7.44% during the financial year 2021-22.\n3. Almost 80.48% of the total expenditure of Central Government was incurred\nby four major Ministries/ Departments (Railways, Defence (Civil), Home Affairs and\nPosts) during 2022-23.\n4. Of the total expenditure on Pay and Allowances in 2022-23, the Ministry of\nRailways continues to have the largest share i.e. 36.39%, marginally increasing from\n36.17% in 2021-22. Share of Ministry of Home Affairs is 27.88%, marginally\ndecreasing from 28.80 in 2021-22 and Department of Posts has decreased from\n5.46% to 4.95%. Share of Ministry of Defence (Civil) has decreased from 12.15% to\n11.26%.\n5. The expenditure of UT Administrations is 5565.15 crore in 2022-23 as\ncompared to 4896.09 crore in 2021-22. Thus, there is an increase in expenditure by\n669.06 crore over previous year which in relative terms works out to around\n13.67%.\n6. The expenditure of Indian Missions/ Embassies abroad is ₹1929.43 crore in\n2022-23 as compared to ₹1623.56 crore in 2021-22. Thus, there is an increase in\nexpenditure by ₹305.87 crore over previous year which in relative terms works out to\naround 18.84%.\n\n[Source 2 - pay-allowances-2023-24.pdf]:\n20\n\nEXPENDITURE ON PAY AND ALLOWANCES OF THE EMPLOYEES OF M/o RAILWAYS\n(@ in crore)\nSI. No. Pay/Allowances 2020-21 2021-22 2022-23 2022-23 2023-24\n1 2 3 4 5 6 ¢\n1 Pay of Gazetted Officers 2456.80 2585.72 2654.67 2686.66 2764.78\n2 Pay of Non-Gazetted Staff §2893.04 55668.68 57153.10 57841.89 59523.78\n3 Dearness Allowance 7814.64 9839.17 15550.02 22092.92 28652.74\nSub-Total (i) 63164.48 68093.57 75357.79 82621.47 $0941.30\n1 House Rent Allowance 5533.26 5823.63 5978.92 6050.98 6226.92\n2 Overtime Allowance 1245.04 1310.38 1345.32 1361.53 1401.12\n3 Transport Allowance 2790.94 2937.40 3015.73 3052.07 3140.82\n4 _ |Special Pay and Deput.(Duty) 37.2 39.15 40.19 40.67 41.86\nAllowance\n5 Composite Hill Compensatory 0.00 0.00 0.00 0.00 0.00\nAllowance\n6 Children Education Allowance 1719.74 1809.99 1858.25 1880.64 1935.33\nz «| Reeneiieament of Medical 335.32 352.92 362.33 366.7 377.36\nCharges\n8 Leave Travel Concession # 231.52 243.67 250.17 253.18 260.55\n9 Other Compensatory Allowances 4086.61 4301.05 4415.75 4468.98 4598.92\nSub - Total ( ii ) 15979.63 16818.19 17266.66 17474.75 17982.88\nGrand Total (i) + (ii) 79144.11 84911.76 92624.45 100096.22 108924.18\nTravelling Allowance 2021.00 1627.13 1828.67 1876.00 2446.01\n# The Employees of Railways get free passes.\n\n[Source 3 - pay-allowances-2023-24.pdf]:\nCONTENTS\nCHAPTER-I\n1. Salient Features\nCHAPTER-II\nTotal Expenditure\n2 Total expenditure on Pay and Allowances of Central Government civilian\nemployees including employees of Union Territories (UTs) and Missions\nAbroad as percentage of Revenue Expenditure.\n3\n3-4\n7\nExpenditure on Pay and Allowances during the last Ten Years. 8\n4. Expenditure on major components of Pay and Allowances of Central\nGovernment civilian employees including employees of UTs and\nMissions Abroad during the last five years.\n9\nShare of major components in total expenditure of Central Government5.\ncivilian employees including employees of UTs and Missions Abroad\nduring the last five years.\n10-11\n6. Component-wise break up of expenditure on Pay and Allowances of the\nCentral Government civilian employees including employees of UTs\n(excluding Missions Abroad) during the last five years\n12-13\n147. Component-wise break up of expenditure on Pay and Allowances of the\nCentral Government civilian employees including Missions Abroad\n(excluding employees of UTs) during the last five years\nCHAPTER-III\nComponents of Expenditure\n8. Share of major Ministries/Departments in total expenditure during the last\nfive years.\n17\n9. Total expenditure on Pay and Allowances and expenditure of major\nMinistries/ Departments during the last five years\n18\n10 Expenditure on Pay and Allowances of the employees of Ministry of\nRailways\n19-20\n11. Expenditure on Pay and Allowances of the civilian employees of Ministry\nof Defence (Civil).\n21-22\n12. Expenditure on Pay and Allowances of the employees of Ministry of\nHome Affairs\n23-24\n\n[Source 4 - pay-allowances-2023-24.pdf]:\n18\nTOTAL EXPENDITURE ON PAY AND ALLOWANCES AND EXPENDITURE OF MAJOR MINISTRIES/\nDEPARTMENTS DURING THE LAST FIVE YEARS\n( in crore)\nYear All India Railways Defence\n(Civilian)\nPosts Home Affairs\n2019-20 225744.70 79144.11 28638.36 12644.97 63583.07\n2020-21 237055.09 84911.76 29248.30 13032.55 68283.64\n2021-22 256112.31 92624.45 31119.98 13978.43 73759.25\n2022-23 275083.75 100096.22 30960.80 13607.89 76694.72\n2023-24 288150.92 108924.18 32349.32 16078.56 88876.28\nSHARE OF MAJOR MINISTRIES/DEPARTMENTS IN TOTAL EXPENDITURE DURING LAST\nFIVE YEARS (Expressed as percentage to total)\nYear Railways Defence (Civilian) Home Affairs Posts\nOther Departments\nincluding UTs &\nMissions\nTotal\n2019-20 35.06 12.69 28.17 5.60 18.48 100.00\n2020-21 35.82 12.34 28.80 5.50 17.54 100.00\n2021-22 36.17 12.15 28.80 5.46 17.42 100.00\n2022-23 36.39 11.26 27.88 4.95 19.52 100.00\n2023-24 36.18 10.75 29.52 5.34 18.21 100.00\n\n[Source 5 - pay-allowances-2023-24.pdf]:\n7\nTOTAL EXPENDITURE ON PAY AND ALLOWANCES OF CENTRAL GOVERNMENT CIVILIAN EMPLOYEES\nINCLUDING EMPLOYEES OF THE UNION TERRITORIES AND MISSIONS ABROAD AS PERCENTAGE OF REVENUE\nYear Expenditure on Pay and\nAllowances of Civilian\nEmployees of Central\nGovernment including\nUnion Territories and\nMissions Abroad\nEXPENDITURE\nRevenue Expenditure\nof the Central\nGovernment\n(in crore)\nExpenditure on Pay and\nAllowances as\npercentage of Revenue\nExpenditure\n2021-22(RE) 256112\n2022-23(RE) 275084\n2023-24(RE) 295913\n3442693\n3791423\n3900204\n7.44\n7.26\n7.59\nNote: The above figures of the revenue expenditure have been taken from Annual Financial Statement of the Central Government as\nlaid before the Parliament. The figures of expenditure include Railways also.\n4000000\n3000000\n2500000\n2000000\n1500000\nTOTAL EXPENDITURE ON PAY AND ALLOWANCES OF CENTRAL GOVERNMENT CIVILIAN\nEMPLOYEES (₹ in crore)\n56112\n500000\n2021-22(RE)\n3442693\n275084\n2022-23(RE)\n3791423\n295913\n2023-24(RE)\nExpenditure on Pay and Allowances of Civilian Employees of Central Government including Union Territories and Missions Abroad\nRevenue Expenditure of the Central Government\n",
+   "role": "system"
+  },
+  {
+   "content": "What share of pay and allowances spending did the Ministry of Railways account for in 2022-23?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "983",
+  "x-ratelimit-remaining-tokens": "1308",
+  "x-ratelimit-reset-requests": "24m28.8s",
+  "x-ratelimit-reset-tokens": "50.19s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.085702267,
+  "completion_tokens": 75,
+  "completion_tokens_details": {
+   "reasoning_tokens": 16
+  },
+  "prompt_time": 0.163881778,
+  "prompt_tokens": 2517,
+  "queue_time": 0.311688418,
+  "total_time": 0.249584045,
+  "total_tokens": 2592
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"The provisional capital expenditure for FY 2023‑24 was ₹9.49 lakh crore, which represented a growth of 28.2 percent over FY 2022‑23.\"\n}",
+ "created_utc": "2026-11-13T18:02:04Z",
+ "finish_reason": "stop",
+ "key": "4ae0476ce12b48ab67843d12b45f295718fad64001507553af18d9c8b7e8a4ec",
+ "latency_s": 1.413,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - dea-frbm-h2-2023-24.pdf]:\nPage 6 of 9 \n \n 2.1.6 Non-Debt Capital Receipts (NDCR) \n The main components of Non-Debt Capital Receipts (NDCR) are miscellaneous capital \nreceipts and rece ipts from the recovery of loans and advances.  NDCR of the government were \nbudgeted at ₹84,000 crore in FY 2023 -24. Out of this, ₹61,000 crore were from miscellaneous \ncapital receipts and ₹23,000 crore from the recovery of loans and advances. In RE 2023 -24, \nNDCR was revised to ₹56,000 crore. Against this, the actual (Provisional) receipts under NDCR \nstood at ₹60,460 crore, of which ₹33,122 crore was realized from miscellaneous capital receipts \nand ₹27,338 crore were from the recovery of loans and advances.  \n2.2 Expenditure \nIn BE 2023-24, the total expenditure of Union Government was estimated at ₹45.03 lakh \ncrore which was revised to ₹44.90 lakh crore in RE 2023 -24. The Actual (provisional) \nexpenditure in FY 2023 -24 was ₹44.43 lakh crore, recording a growth of 5.9 percent over FY \n2022-23.  \n2.2.1 Revenue Expenditure \nRevenue expenditure in BE 2023-24 was estimated at ₹35.02 lakh crore. It was revised to \n₹35.40 lakh crore  in RE 2023 -24. Against this, total revenue expenditure (Provisional) in FY \n2023-24 was ₹34.94 lakh crore. Revenue expenditure accounted for 78.6 per cent of Total \nExpenditure in FY 2023 -24 as compared to 82.4 per cent in FY2022 -23. Out of ₹34.94 lakh \ncrore of Revenue Expenditure in FY 2023 -24, ₹3.04 lakh crore was on account of Grant -in-Aid \nfor creation of capital assets. \nIn FY 2023 -24, around ₹26.16 lakh crore was spent on Interest payments, Defence \nServices, Pension, Major Subsidies and Grants-in-Aids to States/UTs Expenditure (Table 2). The \nrevenue expenditure of the above -mentioned heads increased by ₹7404 crore in FY 2023 -24      \nas compared to FY 2022-23.\n\n[Source 2 - dea-frbm-h2-2023-24.pdf]:\nPage 9 of 9 \n \n2.4  Liabilities \n  The Government of India had a cumulative Public Debt of ₹153.43 lakh crore, at the end \nof 31st March 2024. Total cumulative Government liabilities (including that of Public Account) \nas on 31 st March 2024 were ₹162.91 lakh crore. This was an increase of ₹16.79 lakh crore over \nthe course of the year (₹146.12 lakh crore at the beginning of FY 2023-24). \n 2.5 Cash Management  \n  The Government began FY 2023 -24 with cash balance of ₹4,879 crore and ended the \nfinancial year with a cash balance of ₹4,506 crore. There was an investment surplus of                  \n₹1,72,172 crore at the end of F Y 2023 -24 compared to the end FY 2022 -23 when the \nGovernment had borrowed from the RBI under Ways & Means advance, an amount of                 \n₹48,677 crore. \n4.  Conclusion \n At the commencement of FY 2023 -24, the fiscal policy stance of the government was  to \nmake the domestic economy more resilient to exogenous shocks and to mitigate the risks of \nglobal economic downturn. The Government has steered the economy in that direction and has \ncontinued on the path of fiscal consolidation by taking measures to rat ionalize expenditure as \nwell as improve the quality of expenditure through higher allocation for capital expenditure. \n The Fiscal Deficit in FY 2023 -24 (Provisional) at 5.6 per cent of GDP indicates fiscal \nconsolidation of 0.8 percentage points compared to  Fiscal Deficit of 6.4 percent in FY 2022 -23. \nFurther, the fiscal consolidation was also well aligned with better quality of expenditure as the \nRevenue Deficit declined by 1.4 percentage points from 4.0 percent in FY 2022-23 to 2.6 percent \nin FY 2023-24 (provisional).  \n The fiscal consolidation achieved in FY 2023 -24 was on account of buoyant revenue \ncollection and prioritization of expenditure. The Gross Tax Revenue stood at 11.7 per cent of \nGDP in FY 2023 -24 as compared to 11.3 and 11.5 per cent of GDP in  FY 2022 -23 and                       \nFY 2021-22, respectively. On other hand, t otal Expenditure in FY 2023 -24 (Provisional) was at \n15.0 per cent of GDP as compared to 15.6 per cent in FY 2022 -23. In the process of managing \nthe total expenditure, Governmen t also ensured improvement in the quality of expenditure to \nboost economic growth through enhancement in effective capital expenditure as proportion to \ntotal expenditure.   \n*****\n\n[Source 3 - dea-frbm-h2-2023-24.pdf]:\nPage 7 of 9 \n \nTable 2: Major Items of Revenue Expenditure  \n(₹ in crore) \nItems \nFY  \n2022-23 \nProv. Actuals \nFY 2023-24 \nInterest Payments 9,28,517 10,63,871 \nDefence Service 2,56,183 2,90,437 \nGrants in Aid to States & UTs 6,51,648 6,10,134 \nMajor Subsidies 5,30,958 4,13,542 \nPension 2,41,599 2,38,325 \nTotal 26,08,905 26,16,309 \n \n2.2.2 Capital Expenditure  \nCapital expenditure (Provisional Actual) recorded a growth of 28.2 per cent and stood at \n₹9.49 lakh crore in FY 2023 -24. This was 3.2 per cent of GDP as compared to 2.7 per cent of \nGDP in FY 2022-23.  \nTable 3: Composition of Revenue, Capital and Effective Capital Expenditure \n(₹ in crore) \nItems  2021-22 2022-23 2023-24 \n1. Revenue Expenditure 32,00,926 34,53,132 34,94,036 \n1.1 Grant for creation of capital assets 2,42,646 3,06,264 3,03,787 \n2. Capital Expenditure 5,92,874 7,40,025 9,48,506 \n3. Effective Capital Expenditure (2+ 1.1) 8,35,520 10,46,289 12,52,293 \nTotal Expenditure (1+2) 37,93,800 41,93,157 44,42,542\n\n[Source 4 - dea-frbm-h2-2023-24.pdf]:\nPage 8 of 9 \n \n2.3 Deficit \n2.3.1  Fiscal Deficit \n  Fiscal deficit (FD) was estimated at ₹17.87 lakh crore  (5.9 per cent of GDP) in BE              \n2023-24. It was revised to ₹17.35 lakh crore (5.8 per cent of GDP) at RE stage . Against the \nrevised target, the actual (provisional) fiscal deficit for FY 2023-24 was ₹16.54 lakh crore, which \nwas 5.6 per cent of GDP.  \n2.3.2  Revenue Deficit  \n  Revenue Deficit (RD) for FY 2023 -24 was budgeted at ₹8.70 lakh crore (2.9 per cent of \nGDP). It was revised to ₹8.41 lakh crore (2.8 per cent of GDP) at RE stage. At the end of FY \n2023-24, RD (provisional) was ₹7.66 lakh crore (2.6 per cent of GDP). \n2.3.3  Financing of deficit \n  Fiscal Deficit of ₹16.54 lakh crore (Provisional) in FY 2023 -24 was mostly financed by \nraising internal debt (Table–4).         \nTable 4: Sources of financing fiscal deficit \n            (₹ in crore) \n  \n2023-24 \n(Prov.) \n2022-23 2021-22 2020-21 \nFiscal Deficit 16,53,670 17,37,755 15,84,519 18,18,291 \nInternal   Debt (Net) excluding MSS 16,94,935 16,10,883 13,89,530 17,51,072 \nExternal Assistance including Revolving \nFund \n55,121 37,124 36,147 70,181 \nPublic Account (-)88,869 91,370 1,56,299 4,226 \nCash Balance (-)7,517 (-)1,622 2,543 (-)7,188 \n  The Progressive Internal Debt (gross) of the Government (excluding WMA and Central \nsecurities against Small Savings) grew by ₹13 lakh crore from ₹107.45 lakh crore at the beginning of \nFY 2023-24 to ₹120.45 lakh crore at the end of the financial year.  Fresh external loans of ₹1,20,429 \ncrore were contracted and past obligations to the tune of ₹47,317 crore were  discharged. The \nprogressive External debt (gross) at the end of the financial year was ₹5.66 lakh crore. Thus, External \nDebt (Gross) grew by ₹73,112 crore over the course of the year.\n",
+   "role": "system"
+  },
+  {
+   "content": "What was capital expenditure in provisional 2023-24, and its growth over 2022-23?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "933",
+  "x-ratelimit-remaining-tokens": "4967",
+  "x-ratelimit-reset-requests": "1h36m28.8s",
+  "x-ratelimit-reset-tokens": "22.747s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.119103471,
+  "completion_tokens": 101,
+  "completion_tokens_details": {
+   "reasoning_tokens": 30
+  },
+  "prompt_time": 0.121792856,
+  "prompt_tokens": 2426,
+  "queue_time": 1.08308518,
+  "total_time": 0.240896327,
+  "total_tokens": 2527
+ }
+}

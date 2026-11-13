@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"The examples given for growth funds that maintain at least 65% of their investments in equities are: The Bombay Stock Exchange Ltd. (BSE) Sensex, The National Stock Exchange Ltd. (NSE) Nifty, BSE 100, CRISIL 500, or similar standard indices.\"\n}",
+ "created_utc": "2026-11-13T17:58:01Z",
+ "finish_reason": "stop",
+ "key": "702964d352ffcab49dfeea7236db875f4585390f1953cb075304baa3fda7971c",
+ "latency_s": 0.296,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - sebi-mf-master-2011.pdf]:\n13                                                                     Master Circular for Mutual Funds  \n \n1.8 Selection of Benchmarks21 \n 1.8.1 In case of equity oriented schemes, mutual funds may appropriately \nselect any of the indices available, (e.g. BSE (Sensitive) Index, S&P CNX \nNifty, BSE 100, BSE 200 or S&P CNX 500 etc.) as a benchmark index \ndepending on the investment objective and portfolio.  \n1.8.2 Benchmarks for debt oriented and balanced fund schemes 22 developed \nby research and rating agencies recommended by the AMFI on a \nregular basis shall be used by the Mutual Funds. \n1.8.3 In case of sector or industry specific schemes, Mutual Funds may select \nany sectoral indices as published by the Stock Exchanges and other \nreputed agencies. \n1.8.4 These benchmark indices may be decided by the AMC(s) and Trustees. \nAny change at a later date in the benchmark index shall be recorded \nand reasonably justified23. \n1.8.5 Examples of benchmarks are illustrated below24: \n1.8.5.1 Growth funds maintaining minimum 65% of their investments in \nequities shall always be compared against The Bombay Stock \nExchange Ltd. (BSE) Sensex or The National Stock Exchange Ltd. \n(NSE) Nifty or BSE 100 or CRISIL 500 or similar standard \nindices.  \n1.8.5.2  Income funds maintaining 65% or more of investments in debt \ninstruments shall be compared with a suitable index that is a \nrepresentative of the fund’s portfolio.  \n1.8.5.3  Balanced funds with equity investments of 40%-60% shall be \ncompared with a tailored index having 50% of its weight selected \n                                                 \n21 SEBI Circular No. MFD/CIR/4/51/2000 da ted June 5, 2000, SEBI Circular No. \nMFD/CIR/16/400/02 dated March 26, 2002, SEBI Circular No. MFD/CIR/01/071/02 \nApril 15, 2002.  \n \n22 SEBI Circular No. MFD/CIR/01/071/02 dated April 15, 2002.  \n, \n23 SEBI Circular No. MFD/CIR/16/400/02 dated Ma rch 26, 2002. Also please note that for \nreview of scheme performance with benchmark indices please refer to section on \ngovernance norms.  \n24 SEBI Circular No. MFD/CI R/4/51/2000 dated June 5, 2000\n",
+   "role": "system"
+  },
+  {
+   "content": "Which benchmark indices are given as examples for growth funds that keep at least 65% of investments in equities?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "944",
+  "x-ratelimit-remaining-tokens": "7001",
+  "x-ratelimit-reset-requests": "1h20m38.4s",
+  "x-ratelimit-reset-tokens": "7.492s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.110795695,
+  "completion_tokens": 102,
+  "completion_tokens_details": {
+   "reasoning_tokens": 9
+  },
+  "prompt_time": 0.059473294,
+  "prompt_tokens": 853,
+  "queue_time": 0.047975755,
+  "total_time": 0.170268989,
+  "total_tokens": 955
+ }
+}

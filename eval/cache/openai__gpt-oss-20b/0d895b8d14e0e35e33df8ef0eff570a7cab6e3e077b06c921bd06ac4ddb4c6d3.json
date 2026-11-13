@@ -1,0 +1,50 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"The action‑taken report must be submitted to SEBI within 2 months from the date of receipt of the internal audit report or 1 month from the date of the CRA’s Board meeting, whichever is later.\"\n}",
+ "created_utc": "2026-11-13T17:55:02Z",
+ "finish_reason": "stop",
+ "key": "0d895b8d14e0e35e33df8ef0eff570a7cab6e3e077b06c921bd06ac4ddb4c6d3",
+ "latency_s": 0.665,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - sebi-cra-circular-2016.pdf]:\nPage 9 of 14 \n \nII. The final action taken report, including the comments/ recommendations \nmade by Compliance Officer and the Board of the CRAas well as the \ncorrective steps taken by the CRA, shall be submitted to SEBI within 2 \nmonths from the date of receipt of the internal audit  report or 1 month from \nthe date of Board Meeting of the CRA, whichever is later, in the following \nformat: \n \nSr. \nNo. \nObservations \nof the auditor \nRemarks by the \nCompliance \nOfficer \nComments of \nthe Board of \nthe CRA \nCorrective \nactions \ntaken \n     \n     \n \n \n7. Modification in format of Annexure IV under Clause 6.2.2 of SEBI Circular \nCIR/MIRSD/CRA/6/2010dated May 3, 2010: \n \nThe format of Annexure IV under Clause 6.2.2 of SEBI Circular \nCIR/MIRSD/CRA/6/2010 dated May 3, 2010, providing the format for disclosure of \n“Movement of each credit rating that has moved by more than one notch over last \nsix months” is modified. The revise d format is placed at Annexure-A4. All other \nprovisions of the aforesaid Circular remain unchanged.\n\n[Source 2 - sebi-cra-circular-2016.pdf]:\nPage 2 of 14 \n \n \n4. The CRAs shall at all times observe high standards and fairness in conduct of the \nbusiness and any act of omission or commission in contravention of the \nprovisions of clauses 12 and/or 23 of Code of Conduct , as specified under Third \nSchedule of the SEBI (Credit Rating Agencies)  Regulations, 1999, in letter or \nspirit, may result in violation of the provisions of section 12A of the Securities and \nExchange Board of India Act,1992 and SEBI (Prohibition of Fraudulent and  \nUnfair Trade Practices relating to Securities Market) Regulations, 2003. \n \n5. This circular is issued in exercise of the powers conferred by Section 11 (1) of \nSecuritiesand Exchange Board of India Act, 19 92 read with the provisions of \nRegulation 20of SEBI (Credit Rating Agencies) Regulations, 1999 to prot ect the \ninterest of investors in securities and to promote the development of, and \ntoregulate, the securities market. \n \n \n \n \nYours faithfully, \n \n \nSurabhi Gupta \nDeputy General Manager \nMarket Intermediaries Regulation and Supervision Department \nTel. No: 022-26449315 \nEmail id: surabhig@sebi.gov.in \n \nEncl: Annexure\n\n[Source 3 - sebi-mf-master-2011.pdf]:\n56                                                                     Master Circular for Mutual Funds  \n \nPART III -SYSTEMS AUDIT OF MUTUAL FUNDS138 \n \n6.9 Mutual funds shall have a systems audit conducted by an independent \nCISA/CISM qualified or equivalent auditor. \n \n6.10 The systems audit should be comprehensive encompassing audit of \nsystems and processes inter alia related to examination of integration of \nfront office system with the back office system, fund accounting system for \ncalculation of net asset values, financial accounting and reporting system \nfor the AMC, Unit-holder administration and servicing systems for \ncustomer service, funds flow process, system processes for meeting \nregulatory requirements, prudential investment limits and access rights to \nsystems interface. \n \n6.11 Mutual Funds/ AMCs should get the above systems audit conducted once \nin two years.  \n \n6.12  The Systems Audit Report and compliance status should be placed before \nthe Trustees of the mutual fund.  \n \n6.13 The systems audit report/findings alongwith trustee comments should be \ncommunicated to SEBI. \n \n6.14 For the financial years April 2008 – March 2010, the systems audit should \nbe completed by September 30, 2010. \n \n \n \n \n \n \n                                                 \n138 SEBI Circular No SEBI/IMD/CIR No . 9/176988/2009 dated September 16, 2009\n\n[Source 4 - sebi-cra-circular-2016.pdf]:\nPage 7 of 14 \n \nVI. Limitations regarding information availability (shallhave a suitable caveat \ncautioning the investors/lenders /public)  \nVII. Rating History for last three years \nVIII. Name and contact details of the Rating Analyst(s) \n \nD. In case an issuer, having not co-operated with a CRA in the past , approaches \nanother CRA for rating, the new CRA shall, in its Press Release, disclose the \naspect of non-co-operation. \n \nE. The Rating Agreement, signed between the CRA and its client (issuer/ \nborrower),shall have an additional clause stating that - \n \n\"The client (issuer/ borrower) agrees to disclose the history and status (non -\ncooperation, non -payment of fees etc.) of previous rating relation with the \nearlierCRA(s) to the new CRA along with reasons for non - cooperation,, etc. if \napplicable.\" \n \n6. Internal Audit of CRAs:  \n \nFor strengthening and improving the relevance of the internal audit of CRAs, as \nenvisaged under Regulation 22 of the SEBI (Credit Rating Agencies) Regulations, \n1999 and Circular SEBI/ MIRSD/CRA/Cir -01/ 2010 dated January 06, 2010, it has \nbeen decided to implement the below mentioned additional norms for the Internal \nAudit: \n \nA. Eligibility ofAuditors for conducting the Internal Audit of the CRA \n \nI. The audit firm shallhave a minimum experience of three years in the financial \nsector. \n \nII. The internal auditor of a CRA shall declare that  \na) The firm has not been employed by other CRAs for any other services \n(such as statutory audit, taxa tion, consultancy/ retainership  etc.) in the \npast two years, and \nb) The partners/ firm do not have any association with any other CRA. \n \nIII. The audit team must be composed of, at least, a Chartered Accountant \n(ACA/FCA) and a Certified Information Systems Auditor (CISA). \n \nB. Rotation of InternalAuditors \n \nI. An auditor shall be appointed for a maximum term of five years, with a \ncooling-off period of two years.  \n \nC. Scope of the InternalAudit \n \nThe scope of the internal audit shall be expanded to include the \nfollowingadditional checks:\n\n[Source 5 - sebi-cra-circular-2016.pdf]:\nPage 1 of 14 \n \n \nCIRCULAR \n \nSEBI/HO/MIRSD/MIRSD4/CIR/P/2016/119   November 1, 2016 \n \nTo \nAll Credit Rating Agencies Registered with SEBI \n \nDear Sir/ Madam, \n \n \nSub: Enhanced Standards for Credit Rating Agencies (CRAs) \n \n \n1. SEBI constituted a committee on “ Strengthening the Guidelines and Raising \nIndustry Standards for Credit Rating Agencies (CRAs) ”, which included \nrepresentatives from all the CRAs . The objective of the Committee was to \ndeliberate upon measures and guidelines to bring about greater transparency in \nthe policie s of the CRAs,  enhance the standards followed by the industry \nand,thereby, facilitate ease of understanding of the ratings by the investors. \n \n2. With a view to implement ing the recommendations  of the said Committee, the \nguidelines as annexed to this C ircular are being issued. These guidelines cover \nthe following broad areas: \n \nI. Formulation of Rating Criteria and rating p rocesses and public \ndisclosure of the same. \n \nII. Accountability of RatingAnalysts \n \nIII. Standardisationof Press Releasefor rating actions. \n \nIV. Functioning and evaluation of Rating Committees/Sub-Committees. \n \nV. Disclosure of ratings in case of non-acceptance by an issuer \n \nVI. Disclosure in case of delay in periodic review of ratings. \n \nVII. Policy in respectofnon-co-operation by the issuer. \n \nVIII. Strengthening and enhancing the relevance of Internal Audit of CRAs, \nviz.appointmentand rotation of auditors and scope of the audit. \n \n3. The CRAs shall effectively implement these guidelines within 60 days from the \ndate of issue of this circular.\n",
+   "role": "system"
+  },
+  {
+   "content": "Under SEBI's 2016 circular on credit rating agencies, what is the deadline for sending SEBI the action taken report on an internal audit?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "951",
+  "x-ratelimit-remaining-tokens": "2949",
+  "x-ratelimit-reset-requests": "1h10m33.6s",
+  "x-ratelimit-reset-tokens": "37.882s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.138564859,
+  "completion_tokens": 133,
+  "completion_tokens_details": {
+   "reasoning_tokens": 57
+  },
+  "prompt_time": 0.121912346,
+  "prompt_tokens": 2040,
+  "prompt_tokens_details": {
+   "cached_tokens": 256
+  },
+  "queue_time": 0.31471137,
+  "total_time": 0.260477205,
+  "total_tokens": 2173
+ }
+}

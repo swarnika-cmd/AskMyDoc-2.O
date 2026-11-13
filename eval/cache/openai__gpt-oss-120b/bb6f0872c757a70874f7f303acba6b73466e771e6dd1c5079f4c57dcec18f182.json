@@ -1,0 +1,50 @@
+{
+ "attempts": 1,
+ "content": "{\"correctness\":\"correct\",\"correctness_reason\":\"System correctly declined as info not in context\",\"is_refusal\":true,\"claims\":[]}",
+ "created_utc": "2026-11-13T17:57:57Z",
+ "finish_reason": "stop",
+ "key": "bb6f0872c757a70874f7f303acba6b73466e771e6dd1c5079f4c57dcec18f182",
+ "latency_s": 0.755,
+ "messages": [
+  {
+   "content": "You are a strict evaluator of answers produced by a document question-answering system. You are given a question, a reference answer written by a human from the source document, the answer the system gave, and the exact context the system was shown. Judge only what is written. Use no outside knowledge.\n\nProduce four judgements.\n\n1. correctness: compare the system answer with the reference answer.\n   - \"correct\": it states the same essential facts, numbers and conditions as the reference. Extra detail is fine if it does not contradict the reference.\n   - \"partial\": it states some but not all of the essential facts, or is right but imprecise on a key number or condition.\n   - \"incorrect\": it contradicts the reference, gives a wrong key fact, gives no answer, or declines to answer.\n   For a question marked UNANSWERABLE the reference answer says the information is not in the documents. There the answer is \"correct\" only if the system declines to answer or says the information is not available; any substantive answer is \"incorrect\".\n\n2. is_refusal: true if the system answer declines to answer or says the information is not available in the document, false otherwise. A partial answer that also notes some missing detail is not a refusal.\n\n3. claims: break the system answer into its independent factual claims (at most 10; merge trivial ones). For each, mark supported true only if the CONTEXT states it or directly implies it. A claim that is true in the real world but absent from the context is unsupported. Compare against the context, never against the reference answer. If the answer is a refusal, return an empty list.\n\n4. correctness_reason: one sentence, at most 30 words.\n\nRespond with one JSON object and nothing else:\n{\"correctness\": \"correct\" | \"partial\" | \"incorrect\", \"correctness_reason\": \"...\", \"is_refusal\": true | false, \"claims\": [{\"claim\": \"...\", \"supported\": true | false}]}",
+   "role": "system"
+  },
+  {
+   "content": "Question type: UNANSWERABLE (the information is not in the documents; the correct behaviour is to decline)\n\nQuestion:\nHow much was spent on Productivity Linked Bonus for central civilian employees in 2023-24?\n\nReference answer:\nNot stated in the documents.\n\nSystem answer:\nI couldn't find sufficient evidence in the provided document to answer this question.\n\nContext shown to the system:\n[Source 1 - pay-allowances-2023-24.pdf]:\n13\nCOMPONENT-WISE BREAK UP OF EXPENDITURE ON PAY AND ALLOWANCES OF THЕ\nCENTRAL GOVERNMENT CIVILIAN EMPLOYEES INCLUDING EMPLOYEES OF\nUNION TERRITORIES (EXCLUDING MISSIONS ABROAD )DURING THE LAST FIVE YEARS\n(in crore)\nS.No. Pay/Allowances 2019-20 2020-21 2021-22 2022-23 2023-24\n1 2 3 4 5 6 7\n1 Pay of Gazetted Officers 22714.47 23336.58 23710.86 25158.95 23129.51\n2 Pay of Non-Gazetted Staff 131187.76 136159.29 138534.87 140387.93 143230.15\n3 Dearness Allowance 21971.55 26917.96 42189.54 57146.63 75748.17\nSub-Total (i) 175873.78 186413.83 204435.27 222693.51 242107.83\n1 House Rent Allowance 14487.00 15016.05 15237.17 15285.50 15287.09\n2 Overtime Allowance 1668.88 1385.00 1420.27 1441.53 1489.14\n3 Transport Allowance 8839.07 9098.52 9290.13 9266.73 9686.06\n4 Spl. Pay & Deput. (Duty)\nAllowance 189.23 190.93 193.94 192.32 196.24\n5 Composite Hill Compen. Allowance 0.00 0.00 0.00 0.00 0.00\n6 Children Education Allowance 3881.96 4035.30 4112.85 4137.10 4363.03\n7 Reimbursement of Medical Charges 1259.29 1279.05 1312.47 1405.24 1357.53\n8 Leave Travel Concession 1149.98 1172.49 1192.96 1179.30 1135.31\n9 Other Compensatory Allowances 16899.80 16939.00 17293.69 17553.09 18263.13\nSub-Total (ii) 48375.21 49116.34 50053.48 50460.81 51777.53\nGrand Total (i) + (ii) 224248.99 235530.17 254488.75 273154.32 293885.36\nTravelling Allowance 6090.25 5965.09 4013.14 6815.41 8271.14\nNote: This does not include the expenditure incurred on Productivity Linked Bonus/Ad hoc Bonus, Honorarium and Encashment of Earned\nLeave.\n\n[Source 2 - pay-allowances-2023-24.pdf]:\n3\nSALIENT FEATURES\n1. The total expenditure on Pay and Allowances (excluding Productivity Linked\nBonus/ Ad-hoc Bonus, Honorarium, Encashment of Earned Leave and Travelling\nAllowance) for Regular Central Government Civilian employees including employees\nof the Union Territories and Missions abroad is₹ 275083.75 crore in 2022-23 as\ncompared to ₹ 256112.31 crore in 2021-22. Thus, there is an increase in\nexpenditure by 18971.44 crore over previous year which in relative terms works\nout to around 7.41%.\n2. The total expenditure on pay and allowances as a percentage of Revenue\nExpenditure of the Central Government during the financial year 2022-23 is 7.05%\nas compared to 7.44% during the financial year 2021-22.\n3. Almost 80.48% of the total expenditure of Central Government was incurred\nby four major Ministries/ Departments (Railways, Defence (Civil), Home Affairs and\nPosts) during 2022-23.\n4. Of the total expenditure on Pay and Allowances in 2022-23, the Ministry of\nRailways continues to have the largest share i.e. 36.39%, marginally increasing from\n36.17% in 2021-22. Share of Ministry of Home Affairs is 27.88%, marginally\ndecreasing from 28.80 in 2021-22 and Department of Posts has decreased from\n5.46% to 4.95%. Share of Ministry of Defence (Civil) has decreased from 12.15% to\n11.26%.\n5. The expenditure of UT Administrations is 5565.15 crore in 2022-23 as\ncompared to 4896.09 crore in 2021-22. Thus, there is an increase in expenditure by\n669.06 crore over previous year which in relative terms works out to around\n13.67%.\n6. The expenditure of Indian Missions/ Embassies abroad is ₹1929.43 crore in\n2022-23 as compared to ₹1623.56 crore in 2021-22. Thus, there is an increase in\nexpenditure by ₹305.87 crore over previous year which in relative terms works out to\naround 18.84%.\n\n[Source 3 - pay-allowances-2023-24.pdf]:\n14\nCOMPONENT-WISE BREAK UP OF EXPENDITURE ON PAY AND ALLOWANCES OF THE\nCENTRAL GOVERNMENT CIVILIAN EMPLOYEES INCLUDING MISSION ABROAD (EXCLUDING\nEMPLOYEES OF UNION TERRITORIES) DURING THE LAST FIVE YEARS\n(₹in crore)\nS.No. Pay/Allowances 2019-20 2020-21 2021-22 2022-23 2023-24\n1 2 3 4 5 6 7\n1 Pay of Gazetted Officers 22189.16 22798.03 23218.02 24669.41 22653.29\n2 Pay of Non-Gazetted Staff 128996.73 133915.27 136420.85 138204.08 141066.62\n3 Dearness Allowance 22101.42 26914.21 41972.06 56604.8 74985.21\nSub-Total (i) 173287.31 183627.51 201610.93 219478.29 238705.12\n1 House Rent Allowance 14267.22 14791.10 15021.47 15057.58 15059.01\n2 Overtime Allowance 1665.90 1381.95 1417.35 1438.44 1486.05\n3 Transport Allowance 8753.31 9010.74 9205.96 9177.79 9597.06\n4 Spl. Pay & Deput. (Duty) Allowance 186.20 187.83 190.97 189.18 193.10\n5 Composite Hill Compen.\nAllowance 0.00 0.00 0.00 0.00 0.00\n6 Children Education\nAllowance 4024.57 4180.66 4268.31 4322.67 4558.06\n7 Reimbursement of\nMedical Charges 1299.60 1319.96 1360.97 1468.80 1426.52\n8 Leave Travel Concession 1158.34 1180.89 1205.40 1198.25 1156.82\n9 Other Compensatory Allowances 16524.01 16554.00 16934.86 17187.60 17993.59\nSub-Total (ii) 47879.15 48607.13 49605.29 50040.31 51470.21\nGrand Total (i) + (ii) 221166.46 232234.64 251216.22 269518.60 290175.33\nTravelling Allowance 5923.25 4088.08 5313.08 7030.44 8496.58\nNote: (i) This does not include the expenditure incurred on Productivity Linked Bonus/Adhoc Bonus, Honorarrium and Enchashment of Earned Leave.\n\n[Source 4 - pay-allowances-2023-24.pdf]:\n11\nSHARE OF MAJOR COMPONENTS IN TOTAL EXPENDITURE OF CENTRAL GOVERNMENT\nCIVILIAN EMPLOYEES INCLUDING EMPLOYEES OF THE UNION TERRITORIES AND MISSIONS\nABROAD DURING THE LAST FIVE YEARS (EXPRESSED AS PERCENTAGE TO TOTAL)\nYear Pay DA HRA Other\nAllowances Total\n2019-20 68.43 9.73 6.42 15.42 100.00\n2020-21 67.53 11.59 6.33 14.55 100.00\n2021-22 63.59 16.71 5.95 13.75 100.00\n2022-23 60.45 21.04 5.56 12.95 100.00\n2023-24 56.48 25.85 5.17 12.50 100.00\n\n[Source 5 - pay-allowances-2023-24.pdf]:\n9\nEXPENDITURE ON MAJOR COMPONENTS OF PAY AND ALLOWANCES OF THE CENTRAL GOVERNMENT\nCIVILIAN EMPLOYEES INCLUDING EMPLOYEES OF THE UNION TERRITORIES AND MISSIONS ABROAD FOR\nLAST FIVE YEARS\n(in crore)\nYear Pay DA Other Allowances Total\n2019-20 154469.85 21971.55 49303.30 225744.70\n2020-21 160074.56 27485.62 49494.91 237055.09\n2021-22 162861.85 42793.92 50456.54 256112.31\n2022-23 166279.08 57864.87 50939.80 275083.75\n2023-24 167134.97 76503.05 52274.52 295912.54\nTOTAL EXPENDITURE ON PAY AND ALLOWANCES - ALL INDIA ( in crore)\n295912.54\n300000 275083.75\n256112.31\n237055.09\n250000\n225744.70\n200000\n150000\n100000\n50000\n이\n2019-20 2020-21 2021-22 2022-23 2023-24",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-120b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 2048,
+  "reasoning_effort": "low",
+  "response_format": {
+   "type": "json_object"
+  },
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "955",
+  "x-ratelimit-remaining-tokens": "4691",
+  "x-ratelimit-reset-requests": "1h4m48s",
+  "x-ratelimit-reset-tokens": "24.817s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-120b",
+ "usage": {
+  "completion_time": 0.15087289,
+  "completion_tokens": 72,
+  "completion_tokens_details": {
+   "reasoning_tokens": 35
+  },
+  "prompt_time": 0.224809423,
+  "prompt_tokens": 2929,
+  "queue_time": 0.087657204,
+  "total_time": 0.375682313,
+  "total_tokens": 3001
+ }
+}

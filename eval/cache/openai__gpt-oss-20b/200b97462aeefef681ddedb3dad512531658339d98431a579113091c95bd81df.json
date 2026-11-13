@@ -1,0 +1,50 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"The B.Tech. degree ordinarily takes four years at NIT Rourkela.\"\n}",
+ "created_utc": "2026-11-13T17:48:57Z",
+ "finish_reason": "stop",
+ "key": "200b97462aeefef681ddedb3dad512531658339d98431a579113091c95bd81df",
+ "latency_s": 0.578,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - nitrkl-btech-regs.pdf]:\nPage 18 of 31 \n \nto look into psychological cases. Such counseling service may be provided to psychologically \ndepressed, demotivated and academically weak students to bring them into the main stream, \nalbeit slowly and methodically. If identified by the counseling cell, and if situation demands, the \nparents of the student will b e informed and advised to seek p rofessional counselling help and \ntreatment (if so required). In case of prolonged psychological treatment, the studentship may be \nconverted to “Dies Non” status and parents should approach the Institute only when (as per \ntreating professional counsellor opinion), the psychological condition has improved for restarting \nthe academic programme.  \n9. Graduation Requirement \n9.1 In order to qualify for a degree of the Institute covered under these Regulations, a student must:  \n (a) Complete all the credit requirements for the degree, as laid down in the prescribed \ncurriculum of the discipline, with a minimum grade ‘P’ scored in every subject.  \n (b) Obtain a CGPA of 6.00 or higher at the end of the semester in which he/she completes \nall the requirements for the degree.  \n (c) Have cleared all dues of the Institute, the Hall of Residence, the Library, the D epartment, \nNCC, NSS and Student Activity Centre.  \n9.2 The minimum total credit requirements that has to be satisfactorily completed for the award of \nB.Tech. degree will vary between 160 – 170 depending on the course structure of various \ndepartments or as decided by the Senate from time to time, and that for Integrated M.Sc. and \nDual degree between 190 - 210. \n9.3 Normally, a student should complete all the requirements consecutively in eight se mesters for \nB.Tech. degree and ten semesters for B.Arch, Dual degree and Integrated M.Sc.. Academically \nweaker students may, however, be granted additional time of 2 years to complete all the \nrequirements for the degree.  However, in special cases the Senate may further extend this limit \nfor completion of all requirements for the degree by one more year, depending upon the merit \nof the case, particularly for students with superior attendance record and/or record of \ncontributing to the Institute’s academic o r cultural life  only if the arithmetic of the grade card at \nthe end of 6 th year (7 th year for B.Arch, Dual degree  and Integrated M.Sc. ) dictates that the \nremaining courses can be completed in two semesters.  \n9.4 All graduating students are required to submit their suggestion for improvement of courses to \nthe Director  in Form AC/123. The suggestions will be summarized on Form AC/124 and \npresented before the Senate.  \n10  Award of Degree \n10.1 A student who satisfies graduation requirement (Clause 9.1) and hence qualifies for the B.Tech, \nB.Arch, Dual Degree B.Tech. & M.Tech. or Integrated M.Sc. degree, is awarded the division as \nper the following norms :  \n CGPA ≥ 8.00 - Honours \n 6.50 ≤ CGPA < 8.00 - 1st Class \n 6.00 ≤ CGPA < 6.50   - 2nd Class\n\n[Source 2 - nitrkl-btech-regs.pdf]:\nPage 5 of 31 \n \nacademically weak o r de-motivated students, who need to be guided out of their academic or \nsocial situations. \n3 Academic Session : The academic session is divided into two semesters each of \napproximately 17 weeks duration: An Autumn/ Odd semester (July – November) and a Spring/ \nEven semester (January – May). In addition, a Summer session (May – July) may be offered in \nspecific subjects at the discretion of the Senate under special circumstances.  \n4. Course Structure \n4.1 The duration of the course leading to B.Tech. Degree will ordinarily be four years . Duration of \nB.Arch, Dual Degree B.Tech and M.Tech and Int. M.Sc shall ordinarily be five years. A student \nmay, however, opt for the slow pace programme if he does not feel comfortable with the work \nload. Under certain cases, e.g., poor grades, he is required to proceed in slow pace to minimize \nthe time required to complete the programme.  \n4.2 The curricula for the different degree programmes offered by the respective departments have \nbeen evaluated by Curriculum Development Com mittee (CDC) and approved  by the Senate. \n4.3 All courses will have Lecture -Tutorial-Laboratory / Design components (L -T-P) to indicate the \ncontact hours. Theory courses will have 3 -0-0 (3 credits) or 3 -1-0 (4 credits) structure. Design \nor laboratory courses will be offered as distinct 0-0-2 (1 credit), 0 –0–3 (2 credits),  0-1-3 (3 \ncredits), 0-0-6 (4 credits) and  0-0-12 (8 credits) courses without being mixed with lecture \ncomponents.  \n4.4.  Normally, courses based on engineering or scientific principles or on thought - provoking \ninformation, where it is possible to conduct a closed book examination, will be taught  as theory \ncourses, whereas those based on applications and practice (conceptual, computational or \nexperimental) will be covered under Design or Practical courses..  \n4.5    Academic load per semester: In a semester there shall be maximum 5 t heory courses each \ncomprising 2, 3 or 4 credits aggregating to total 15 credits. Similarly, there shall be 3 lab courses \nwith 1 or 2 credits each. Total credits in semester shall be within 18 -20 credits. \n 4.6  Minor degree \n The Institute has also the provision of awarding minor degree for B. Tech students in Engineering, \nScience or Humanities discipline. For ex: a student of Chemical Engineering can graduate with a \nmajor in Chemical Engineering and a minor in Physics and Astronomy.  The minor degree can be \nawarded under the following conditions:   \n(i) A student will be eligible to receive minor degree when they take at least 6 additional courses \n(4 Theory and 2 Lab courses)  constituting 16 credits between 3 rd to 8th semesters. \n(ii) The minor degree courses will be over and above the minimum B. Tech. credit requirements. \n(iii) Every department will prepare a list of courses to be offered for minor degree. The \ndepartment will also provide the number of students the department can accept for minor \ndegree.\n\n[Source 3 - nitrkl-btech-regs.pdf]:\nPage 1 of 31 \n \nRegulations  \nfor \nBachelor of Technology (B.Tech.) \n5 year Dual Degree B.Tech. & M.Tech. \nBachelor of Architecture (B.Arch.) & \n5 year Integrated M.Sc. Programmes \n (Summarised Version as approved vide resolution Senate-87[2019]-02 \ndated  Nov 15, 2019 for information only)\n",
+   "role": "system"
+  },
+  {
+   "content": "How many years does the B.Tech. degree ordinarily take at NIT Rourkela?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "969",
+  "x-ratelimit-remaining-tokens": "3858",
+  "x-ratelimit-reset-requests": "44m38.4s",
+  "x-ratelimit-reset-tokens": "31.065s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.085884115,
+  "completion_tokens": 76,
+  "completion_tokens_details": {
+   "reasoning_tokens": 28
+  },
+  "prompt_time": 0.096358674,
+  "prompt_tokens": 1774,
+  "prompt_tokens_details": {
+   "cached_tokens": 768
+  },
+  "queue_time": 0.317407993,
+  "total_time": 0.182242789,
+  "total_tokens": 1850
+ }
+}

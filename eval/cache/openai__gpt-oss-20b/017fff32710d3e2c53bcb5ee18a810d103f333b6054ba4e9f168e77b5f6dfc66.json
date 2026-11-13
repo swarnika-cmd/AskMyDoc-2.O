@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": true,\n  \"answer\": \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n}",
+ "created_utc": "2026-11-13T18:00:02Z",
+ "finish_reason": "stop",
+ "key": "017fff32710d3e2c53bcb5ee18a810d103f333b6054ba4e9f168e77b5f6dfc66",
+ "latency_s": 0.663,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - sebi-mf-master-2011.pdf]:\n24                                                                     Master Circular for Mutual Funds  \n \n3.2.5.1The recurring expenses limits applicable to equity schemes 59 shall \nbe applicable to GETF Scheme(s).  \n3.2.6 Benchmarks for GETF Scheme60 \n3.2.6.1GETF Scheme(s) shall be benchmarked against the price of gold. \n \n3.2.7 Half yearly report by Trustees61 \n3.2.7.1. Physical verification of gold underlying the Gold ETF units shall \nbe carried out by statutory auditors of mutual fund schemes and \nreported to trustees on half yearly basis.  \n \n3.2.7.2  The confirmation on physical verification of gold as above shall \nalso form part of half yearly report62 by trustees to SEBI. \n3.3 Capital Protection Oriented Scheme63 \n3.3.1 The SID, KIM and advertisements pertaining to Capital Protection Oriented \nScheme64 shall disclose that the scheme is “oriented towards protection of \ncapital” and not “with guaranteed returns.” It shall also be indicated that \nthe orientation towards protection of capital originates from the portfolio \nstructure of the scheme and not from any bank guarantee, insurance \ncover etc. \n \n3.3.2 The proposed portfolio structure indicated in the SID and KIM shall be \nrated by a Credit Rating Agency registered with the Board from the view \npoint of assessing the degree of certainty for achieving the objective of \ncapital protection and the rating shall be reviewed on a quarterly basis. \n \n                                                 \n59 Regulation 52(6) of the SEBI (M utual Funds) Regulations, 1996.  \n \n60 SEBI Circular No. SEBI/IMD/CIR No.2/65348/06 dated April 21, 2006. \n \n61 SEBI Circular No. Cir/IMD/DF/20/2010 dated December 06, 2010  \n62 Please refer to the Chapter on Formats for the disclosures in the Half Yearly Trustee Report \nw.r.t physical verification of Gold. This will be  effective from the half yearly report ending \nApril 2011 by Trustees to SEBI.  \n63 SEBI Circular No. SEBI/IMD/CIR  No.9/74364/06 dated August 14, 2006.    \n64 Regulation 2(ea), 33(2A) and 38A of the Mutu al Funds Regulations introduced vide Gazette \nNotification No. S.O. 1254(E) dated August 3, 2006.\n\n[Source 2 - sebi-cra-consultation-2017.pdf]:\nPage 10 of 15 \n \nAnnexure A: Proposed Format for Annual Rating Summary Sheet , \nsegregated for securities and financial instruments other than securities \n \n \n \nS.No. Parameter No. of ratings Amount of debt rated \n(Rs. millions) \n1.  New Ratings   \n2.  Upgrades   \na.  Total Upgrades   \nb.  Upgrades from Non -\nInvestment to \nInvestment Grade \n  \n3.  Downgrades   \na.  Total Downgrades   \nb.  Downgrades from \nInvestment to Non - \nInvestment Grade \n  \n4.  Defaults   \na.  Total Defaults   \nb.  Default from Non - \nInvestment Grade  \n  \nc.  Default from \nInvestment Grade: \n  \n AAA   \n AA   \n A   \n BBB   \n5.  Rating Distribution \nfor outstanding \nratings as on 31 st \nMarch \n  \na.  AAA   \nb.  AA   \nc.  A   \nd.  BBB   \ne.  BB   \nf.  B   \ng.  C   \nh.  D\n\n[Source 3 - sebi-mf-master-2011.pdf]:\n103                                                                     Master Circular for Mutual Funds  \n \n \na. In case of securities where the principal is to be repaid in a single \npayout the maturity of the securities shall mean residual maturity.  \nIn case the principal is to be repaid in more than one payout then \nthe maturity of the securities shall be calculated on the basis of \nweighted average maturity of security. \nb. In case of securities with put and call options (daily or otherwise) the \nresidual maturity of the securities shall not be greater than 91 \ndays241  \n \nc. In case the maturity of the security falls on a non-business day then \nsettlement of securities will take place on the next business day. \n \n12.2.2 The above requirements shall be disclosed in the SID and shall form part \nof the investment allocation pattern. Any deviation from these \nrequirements shall be viewed as violation of investment restrictions. \n12.3 Investments by close ended debt schemes: \n \n   12.3.1 Close ended debt schemes shall invest only in such securities which \nmature on or before the date of the maturity of the scheme242   \n \n12.4 Stock Lending Scheme243  \n   \n     12.4.1 The following guidelines are issued to facilitate lending of securities by \nMutual Funds through intermediaries approved by the Board in \naccordance with the Stock Lending & Borrowing Scheme.244 \n \n     12.4.2 Disclosure Requirements \n          12.4.2.1 The following information shall be disclosed in the SID to enable \nthe investors and unit holders to take an informed decision: \n \n                                                 \n241 w.e.f May 01, 2009. \n \n242 SEBI Circular No IMD/CIR No 12/147132/08 dated December 11, 2008.  \n243 SEBI Circular No MFD/CIR/01/ 047/99 dated February 10, 1999. \n, \n244 Regulation 44(4) of the SEBI (M utual Funds) Regulations, 1996.\n",
+   "role": "system"
+  },
+  {
+   "content": "What rating must the debt component of a Capital Protection Oriented Scheme's portfolio carry?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "939",
+  "x-ratelimit-remaining-tokens": "3241",
+  "x-ratelimit-reset-requests": "1h27m50.4s",
+  "x-ratelimit-reset-tokens": "35.692s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.101164077,
+  "completion_tokens": 82,
+  "completion_tokens_details": {
+   "reasoning_tokens": 37
+  },
+  "prompt_time": 0.087130418,
+  "prompt_tokens": 1469,
+  "queue_time": 0.390017092,
+  "total_time": 0.188294495,
+  "total_tokens": 1551
+ }
+}

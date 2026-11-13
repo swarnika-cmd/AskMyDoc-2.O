@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"On 1 March 2023, there were 932,826 Central Police Force personnel in position out of a sanctioned strength of 1,036,909.\"\n}",
+ "created_utc": "2026-11-13T00:57:42Z",
+ "finish_reason": "stop",
+ "key": "518a4a412d570a09dacd8b52327ec7b3aa25a0bee0b9f638893eb68857abd5f8",
+ "latency_s": 0.479,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - pay-allowances-2023-24.pdf]:\n4\n7. Out of the total expenditure of ₹275083.75 crore on Pay and Allowances of\nCentral Government Civilian Employees including employees of UTs and Missions\nAbroad, the percentage expenditure on Pay, Dearness Allowance (DA), House Rent\nAllowance (HRA) and other allowances are 60.45%, 21.04%, 5.56% and 12.95%\nrespectively.\n8. Out of the total expenditure of ₹ 15285.50 crore on HRA in 2022-23, the HRA\nexpenditure for 'X' class cities is 5669.64 crore which is around 37.09% of the total\nexpenditure on HRA.\n9. The total number of regular Central Government Civilian Employees in\nposition (including UTs) as on 01.03.2023, is 30.62 lakh as against the sanctioned\nstrength of 40.40 lakh and approximately 24.21 % of the posts were vacant.\n10. Almost 92% of the total manpower is covered by five major\nMinistries/Departments viz, Railways, Defence (Civil), Home Affairs, Posts and\nRevenue. Of the total strength of 30.04 lakh (excluding UTs), the percentage share\nof the Railways is 39.06%, Home Affairs 32.78%, Defence (Civil) 11.11%, Posts\n5.91%, Revenue 3.55% and all other Ministries/ Departments 7.59%.\n11. Against the sanctioned strength of 10.37 lakh in Central Police Forces, 9.33\nlakh employees were in position as on 01.03.2023. In Union Territories (UTs) 0.58\nlakhs employees were in position as against a sanctioned strength of 0.79 lakhs as\non 01.03.2023.\n\n[Source 2 - pay-allowances-2023-24.pdf]:\n45\n\nNUMBER OF SANCTIONED POSTS AND NUMBER OF PERSONS IN POSITION IN CENTRAL POLICE FORCES\n\nNumber of Sanctioned posts (as on\n\nNumber of persons in Position (as on |\n\n1\nSI. No|Name of the Central Police Force ee ee MAREN\n2023 2024 2023 2024\n(1) (2) (3) (4) (5) (6)\n\nBorder Security Force (BSF) 265331 265331 244368 256864\nCentral Reserve Police Force (CRPF) 324654 325182 294898 298921\nCentral Industrial Security Force (CISF) 171730 177325 148067 150022\nIndo Tibetan Border Police(ITBP) 100165 100136 84503 84500\nAssam Rifles 66411 66411 63037 63824\nSashastra Seema Bal(SSB) 97774 97774 88457 91158\nNational Security Guard(NSG) 10844 10844 9496 8739\nTOTAL 1036909 1043003 932826 954028\n\n[Source 3 - pay-allowances-2023-24.pdf]:\n13. Expenditure on Pay and Allowances of the employees of Department of\nPosts.\n25-26\n14. Expenditure on Pay and Allowances of the employees of UT 27-28\nAdministrations.\n15. Expenditure on Pay and Allowances of regular employees and local\nrecruits in Indian Missions Abroad.\n29-30\n16 Expenditure incurred on Pay and Allowances by the central 31-34\nMinistries/Departments on civilian employees during 2023-24.\n17. Expenditure on House Rent Allowance (HRA) of Central Government\nCivilian employees including employees of Union Territories.\n35\nCHAPTER-IV\nSanctioned Strength and Persons in position in Central\nGovernment as on 01.03.2024\n18. Group-wise number of sanctioned posts and persons in position,\nvacancies and their percentage to total sanctioned posts as on\n01.03.2024 including UTs.\n19. Group-wise number of sanctioned posts and persons in position,\nvacancies and their percentage to total sanctioned posts as on\n01.03.2024 excluding UTs.\n38-39\n40\n20. Distribution of regular civilian employees (Group-wise) in Central 41-42\nGovernment and UT Administrations as on 01.03.2024.\n21. Group-wise and status-wise estimated number of Central Government\ncivilian regular employees as on 01.03.2024 in major\nMinistries/Departments (excluding UTs).\n22. Number of sanctioned posts and persons in position in Central Police\nForces.\n23 Group-wise and status-wise (Gazetted /Non-Gazetted) estimated\nnumber of Central Government civilian regular employees as on\n01.03.2024.\n43-44\n45\n46-48\n***\n\n[Source 4 - pay-allowances-2023-24.pdf]:\nCHAPTER - IV\n\nSanctioned Strength and\nPersons in Position in Central\n\nGovernment as on 01.03.2024 |\n",
+   "role": "system"
+  },
+  {
+   "content": "How many people were in position in the Central Police Forces on 1 March 2023 compared with sanctioned strength?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "947",
+  "x-ratelimit-remaining-tokens": "3414",
+  "x-ratelimit-reset-requests": "1h16m19.2s",
+  "x-ratelimit-reset-tokens": "34.395s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.155707413,
+  "completion_tokens": 146,
+  "completion_tokens_details": {
+   "reasoning_tokens": 81
+  },
+  "prompt_time": 0.080546901,
+  "prompt_tokens": 1380,
+  "queue_time": 0.152098457,
+  "total_time": 0.236254314,
+  "total_tokens": 1526
+ }
+}

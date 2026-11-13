@@ -1,0 +1,47 @@
+{
+ "attempts": 1,
+ "content": "{\n  \"isConversational\": false,\n  \"noEvidence\": false,\n  \"answer\": \"The expenditure on dearness allowance increased by ₹54,531.5 crore from 2019‑20 (₹21,971.55 crore) to 2023‑24 (₹76,503.05 crore).\"\n}",
+ "created_utc": "2026-11-13T17:48:56Z",
+ "finish_reason": "stop",
+ "key": "13ced87a6ce2f8bc5a408cb8718d65e6e90edbe979a32e3def16d3a7004f22dc",
+ "latency_s": 0.715,
+ "messages": [
+  {
+   "content": "You are a helpful AI Assistant.\n\nRules:\n1. If the user asks a conversational question (e.g., greetings, asking how you are, thanking you), respond politely and naturally. Set isConversational to true, noEvidence to false, and provide your response in the answer field.\n2. For all other questions, answer based ONLY on the provided document context below. Do not use prior knowledge. Set isConversational to false.\n3. If the answer to a document-related question is not found in the context, set noEvidence to true and set the answer field exactly to \"I couldn't find sufficient evidence in the provided document to answer this question.\"\n4. Be clear, concise, and helpful.\n\nYou MUST respond in the following JSON format:\n{\n  \"isConversational\": boolean,\n  \"noEvidence\": boolean,\n  \"answer\": \"your answer here\"\n}\n\nDocument Context:\n[Source 1 - pay-allowances-2023-24.pdf]:\n10\nShare\n of\n Major\n Components\n in\n Total\n Expenditure\n (in\n %)\n120.00 100.00\n15.42\n14.55\n13.75\n12.95\n12.51\n6.42\n6.33\n5.95\n5.56\n5.16\n80.00\n9.73\n11.59\n16.71\n21.04\n25.85\n60.00 40.00\n68.43\n67.53\n63.59\n60.45\n56.48\n20.00 0.00\n2019-20\n2020-21\n2021-22\n2022-23\n2023-24\n■Pay\n■DA\nHRA\n■Other\n Allowances\n\n[Source 2 - pay-allowances-2023-24.pdf]:\n18\nTOTAL EXPENDITURE ON PAY AND ALLOWANCES AND EXPENDITURE OF MAJOR MINISTRIES/\nDEPARTMENTS DURING THE LAST FIVE YEARS\n( in crore)\nYear All India Railways Defence\n(Civilian)\nPosts Home Affairs\n2019-20 225744.70 79144.11 28638.36 12644.97 63583.07\n2020-21 237055.09 84911.76 29248.30 13032.55 68283.64\n2021-22 256112.31 92624.45 31119.98 13978.43 73759.25\n2022-23 275083.75 100096.22 30960.80 13607.89 76694.72\n2023-24 288150.92 108924.18 32349.32 16078.56 88876.28\nSHARE OF MAJOR MINISTRIES/DEPARTMENTS IN TOTAL EXPENDITURE DURING LAST\nFIVE YEARS (Expressed as percentage to total)\nYear Railways Defence (Civilian) Home Affairs Posts\nOther Departments\nincluding UTs &\nMissions\nTotal\n2019-20 35.06 12.69 28.17 5.60 18.48 100.00\n2020-21 35.82 12.34 28.80 5.50 17.54 100.00\n2021-22 36.17 12.15 28.80 5.46 17.42 100.00\n2022-23 36.39 11.26 27.88 4.95 19.52 100.00\n2023-24 36.18 10.75 29.52 5.34 18.21 100.00\n\n[Source 3 - pay-allowances-2023-24.pdf]:\n9\nEXPENDITURE ON MAJOR COMPONENTS OF PAY AND ALLOWANCES OF THE CENTRAL GOVERNMENT\nCIVILIAN EMPLOYEES INCLUDING EMPLOYEES OF THE UNION TERRITORIES AND MISSIONS ABROAD FOR\nLAST FIVE YEARS\n(in crore)\nYear Pay DA Other Allowances Total\n2019-20 154469.85 21971.55 49303.30 225744.70\n2020-21 160074.56 27485.62 49494.91 237055.09\n2021-22 162861.85 42793.92 50456.54 256112.31\n2022-23 166279.08 57864.87 50939.80 275083.75\n2023-24 167134.97 76503.05 52274.52 295912.54\nTOTAL EXPENDITURE ON PAY AND ALLOWANCES - ALL INDIA ( in crore)\n295912.54\n300000 275083.75\n256112.31\n237055.09\n250000\n225744.70\n200000\n150000\n100000\n50000\n이\n2019-20 2020-21 2021-22 2022-23 2023-24\n\n[Source 4 - pay-allowances-2023-24.pdf]:\n8\nExpenditure on Pay and Allowances for Last Ten years (* in crore)\n% increase overSl. No. Year Expenditure\nPrevious year\n1 2014-15 139951.93 10.13\n2 2015-16 150028.57 7.20\n3 2016-17 182513.25 21.65\n4 2017-18 194591.98 6.62\n5 2018-19 208960.17 7.38\n6 2019-20 225744.70 8.03\n7 2020-21 237055.09 5.01\n8 2021-22 256112.31 8.04\n9 2022-23 275083.75 7.41\n10 2023-24 295912.54 7.57\nExpenditure on Pay and Allowances for Last Ten years (*in crore) 295912.54\n300000\n275083.75\n256112.31\n250000 237055.09\n225744.70\n208960.17\n194591.98\n200000\n182513.25\n150028.57\n150000 139951.93\n100000\n50000\n이\n2014-15 2015-16 2016-17 2017-18 2018-19 2019-20 2020-21 2021-22 2022-23 2023-24\n\n[Source 5 - pay-allowances-2023-24.pdf]:\n28\n\nEXPENDITURE ON PAY AND ALLOWANCES OF THE EMPLOYEES OF UNION TERRITORY ADMINISTRATIONS\n\n(® in crore)\nSI. No. Pay / Allowances 2019-20 2020-21 2021-22 2022-23 2023-24\n\n(1) (2) (3) (4) (5) (8) (7)\n1 Pay of Gazetted Officers 743,64 781.14 729.83 771.18 771,72\n2 Pay of Non-Gazetted Staff 2540.32 2600.12 2493.15 2634.41 2636.27\n3 Dearness Allowance 426.92 571,41 821.86 1260.07 1516.56\nSub-Total (i) 3710.88 3932.67 4044.84 4665.66 4924.55\n1 House Rent Allowance 213.78 224.95 215.7 227.92 228,08\n2 Overtime Allowance 2.98 3.05 2.92 3.09 3.09\n3 Transport Allowance 85.76 87,78 84.17 88.94 89.00\n4 Special Pay and Deput. (Duty) Allow. 3.03) 3.10 2.97 3.14 3.14\n5 Children Education Allowance 6.41 6.56 6.29 6.65 6.65\n6 Reimbursement of Medical Charges 45.72 46.80 44.87 47.42 47.45\n7 Leave Travel Concession 32.26 33.02 31.66 33,46 33.48\n8 Other Compensatory Allowances 471.42 482.52 462.67 488.87 399.00\nSub-Total (ii) 867.36 887.78 851.25 899.49 809.89\nGrand Total (i) + (ii) 4578.24 4820.45 4896.09 5565.15 5734.44\nTravelling Allowance 41.84 39.71 37.69 43.06 46.41\n\nNole:- Expenditure in respect of UT of J&« and UT of Ladakh in no!\n\nHome Affairs.\n\nt included above due ta pending manpower distribution. The expenditure is included in M/a\n",
+   "role": "system"
+  },
+  {
+   "content": "According to the five-year components table, how much more was spent on dearness allowance in 2023-24 than in 2019-20?",
+   "role": "user"
+  }
+ ],
+ "model": "openai/gpt-oss-20b",
+ "pacer_wait_s": 0.0,
+ "params": {
+  "max_completion_tokens": 1024,
+  "reasoning_effort": "low",
+  "temperature": 0
+ },
+ "rate_headers": {
+  "x-ratelimit-limit-requests": "1000",
+  "x-ratelimit-limit-tokens": "8000",
+  "x-ratelimit-remaining-requests": "970",
+  "x-ratelimit-remaining-tokens": "5783",
+  "x-ratelimit-reset-requests": "43m12s",
+  "x-ratelimit-reset-tokens": "16.627s"
+ },
+ "retries": [],
+ "served_model": "openai/gpt-oss-20b",
+ "usage": {
+  "completion_time": 0.129286448,
+  "completion_tokens": 123,
+  "completion_tokens_details": {
+   "reasoning_tokens": 40
+  },
+  "prompt_time": 0.118475684,
+  "prompt_tokens": 2098,
+  "queue_time": 0.36820677,
+  "total_time": 0.247762132,
+  "total_tokens": 2221
+ }
+}

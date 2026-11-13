@@ -1,0 +1,189 @@
+{
+  "label": "PILOT (n=20)",
+  "pipeline": "P2",
+  "n_selected": 20,
+  "n_completed": 20,
+  "n_answerable": 16,
+  "n_unanswerable": 4,
+  "generator_model": "openai/gpt-oss-20b",
+  "judge_model": "openai/gpt-oss-120b",
+  "correctness": {
+    "correct": 15,
+    "partial": 0,
+    "incorrect": 1,
+    "share_correct": 0.9375,
+    "share_correct_or_partial": 0.9375,
+    "n": 16
+  },
+  "faithfulness": {
+    "mean": 1.0,
+    "n": 15,
+    "note": "supported claims / total claims, over non-refusal answers with at least one claim"
+  },
+  "refusal": {
+    "accuracy_on_unanswerable": 1.0,
+    "n_unanswerable": 4,
+    "false_refusal_rate_on_answerable": 0.0625,
+    "n_answerable": 16,
+    "judge_vs_generator_flag_agreement": 1.0
+  },
+  "retrieval_hit_rate_on_answerable": 0.9375,
+  "tokens": {
+    "generator": {
+      "n_calls": 20,
+      "prompt_tokens": {
+        "mean": 2412.8,
+        "max": 5530,
+        "total": 48256
+      },
+      "completion_tokens": {
+        "mean": 101.1,
+        "max": 172,
+        "total": 2022
+      }
+    },
+    "judge": {
+      "n_calls": 20,
+      "prompt_tokens": {
+        "mean": 2743.95,
+        "max": 5841,
+        "total": 54879
+      },
+      "completion_tokens": {
+        "mean": 145.5,
+        "max": 213,
+        "total": 2910
+      }
+    }
+  },
+  "latency": {
+    "retrieval_ms": {
+      "p50": 5.856,
+      "p95": 6.517100000000001
+    },
+    "generator_groq_network_s": {
+      "p50": 0.79,
+      "p95": 4.038200000000001
+    },
+    "end_to_end_ms": {
+      "p50": 795.5350000000001,
+      "p95": 4045.7071000000005,
+      "definition": "retrieval + generator call; the generator part is Groq network time"
+    },
+    "n": 20
+  },
+  "cost_inr_per_query": {
+    "generation_mean": 0.019869711599999996,
+    "judge_mean": 0.046915850700000004,
+    "evaluation_total_mean": 0.0667855623,
+    "note": "a production query pays for generation only",
+    "usd_to_inr": {
+      "rate": 94.04,
+      "rate_date": "2026-11-12",
+      "fetched_on": "2026-11-13",
+      "source": "frankfurter",
+      "requested_url": "https://api.frankfurter.app/latest?from=USD&to=INR",
+      "final_url_after_redirect": "https://api.frankfurter.dev/v1/latest?from=USD&to=INR"
+    },
+    "prices_read_on": "2026-11-13"
+  },
+  "rate_limit_headers_seen": {
+    "generator": {
+      "limit_requests": [
+        "1000"
+      ],
+      "limit_tokens": [
+        "8000"
+      ],
+      "min_remaining_tokens_seen": 81
+    },
+    "judge": {
+      "limit_requests": [
+        "1000"
+      ],
+      "limit_tokens": [
+        "8000"
+      ],
+      "min_remaining_tokens_seen": 44
+    }
+  },
+  "retry_events": {
+    "judge:429": 2,
+    "generator:429": 1
+  },
+  "ids_completed": [
+    "q003",
+    "q010",
+    "q014",
+    "q015",
+    "q016",
+    "q019",
+    "q020",
+    "q024",
+    "q029",
+    "q030",
+    "q032",
+    "q039",
+    "q040",
+    "q046",
+    "q051",
+    "q054",
+    "q057",
+    "q061",
+    "q067",
+    "q070"
+  ],
+  "ids_pending": [],
+  "runs": [
+    {
+      "pipeline": "P2",
+      "ids_spec": "pilot",
+      "started_utc": "2026-11-13T00:06:14Z",
+      "wall_seconds": 544.5,
+      "api_calls": {
+        "openai/gpt-oss-20b": 20,
+        "openai/gpt-oss-120b": 20
+      },
+      "http_429": {
+        "openai/gpt-oss-120b": 2,
+        "openai/gpt-oss-20b": 1
+      },
+      "completed_this_invocation_total": 20,
+      "stopped_reason": "completed",
+      "max_calls": null,
+      "tpm_budget": 8000,
+      "note": "Initial pilot run. Its 20 judge responses were discarded afterwards (judge prompt wording changed, so the cache keys no longer match); its generator responses are still the ones in the cache."
+    },
+    {
+      "pipeline": "P2",
+      "ids_spec": "pilot",
+      "started_utc": "2026-11-13T00:15:57Z",
+      "wall_seconds": 41.0,
+      "api_calls": {},
+      "http_429": {},
+      "completed_this_invocation_total": 20,
+      "stopped_reason": "completed",
+      "max_calls": null,
+      "tpm_budget": 8000,
+      "note": "Cache-only rerun without an API key, to confirm that reruns make no calls."
+    },
+    {
+      "pipeline": "P2",
+      "ids_spec": "pilot",
+      "started_utc": "2026-11-13T00:21:12Z",
+      "wall_seconds": 470.7,
+      "api_calls": {
+        "openai/gpt-oss-120b": 20
+      },
+      "http_429": {
+        "openai/gpt-oss-120b": 2
+      },
+      "completed_this_invocation_total": 20,
+      "stopped_reason": "completed",
+      "max_calls": null,
+      "tpm_budget": 8000,
+      "note": "Judge re-run after a judge prompt wording change; generator responses came from the cache."
+    }
+  ],
+  "created_utc": "2026-11-13T00:29:04Z"
+}
