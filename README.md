@@ -132,14 +132,16 @@ python tests/test_backend.py
 
 **Retrieval results** (`eval/results/retrieval_full.json` and `.md`; 130 answerable items; run on 2026-11-13). recall@5 counts an item as a hit when its supporting quote, whitespace-normalised, appears in one of the top-5 returned units. Parents (up to 3,000 characters) are larger than P1's 800-character chunks, which favours them, so the mean context size is shown.
 
-| Pipeline | recall@5 | MRR@5 | mean context chars | latency p50 (ms), provisional | latency p95 (ms), provisional |
+| Pipeline | recall@5 | MRR@5 | mean context chars | latency p50 (ms) | latency p95 (ms) |
 |---|---|---|---|---|---|
 | P1 | 0.6308 | 0.4710 | 3220.0 | 5.8 | 7.6 |
-| P2 | 0.8000 | 0.6163 | 7176.8 | 5.8 | 7.2 |
-| P3 | 0.8692 | 0.7044 | 6895.1 | 12.4 | 18.4 |
-| P4 | 0.8692 | 0.7150 | 6679.7 | 1297.0 | 1771.4 |
+| P2 | 0.8000 | 0.6163 | 7176.8 | 5.6 | 6.7 |
+| P3 | 0.8692 | 0.7044 | 6895.1 | 11.6 | 14.8 |
+| P4 | 0.8692 | 0.7150 | 6679.7 | 1223.2 | 1590.3 |
 
-Latency is provisional: it was measured on a shared machine (Apple M4 Pro host, Docker container limited to 4 CPUs, other jobs running) and will be replaced by a run on an idle machine. It covers one retrieval call (query embedding, search, fusion, rerank, parent mapping) and excludes index building. The quality columns are deterministic. With 130 items one item is 0.77 points, so the P3 and P4 recall tie and small gaps between pipelines are not claims.
+Latency measured 2026-11-13 03:13 UTC on an Apple M4 Pro host with no other benchmark running; container limited to 4 CPUs (torch threads 4). It covers one retrieval call (query embedding, search, fusion, rerank, parent mapping) and excludes index building. The quality columns are deterministic. With 130 items one item is 0.77 points, so the P3 and P4 recall tie and small gaps between pipelines are not claims.
+
+Over the shipped design (P2), hybrid BM25+dense with RRF (P3) raised recall@5 from 0.8000 to 0.8692 and MRR@5 from 0.6163 to 0.7044 for +5.9 ms p50 retrieval latency; the cross-encoder (P4) added no recall@5 and about 1.2 s per query on CPU.
 
 **LLM-judged results.** The generation and judging run (generator `openai/gpt-oss-20b`, judge `openai/gpt-oss-120b`, `reasoning_effort` low, temperature 0) is in progress. Groq's free tier allows 200,000 tokens per day per model, so the full run takes several days; results will appear in `eval/results/llm_*.md`. No LLM-judged numbers are published until it finishes. Responses are cached under `eval/cache/`, so reruns and resumes cost nothing.
 

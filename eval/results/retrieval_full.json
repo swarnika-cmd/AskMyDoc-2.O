@@ -133,7 +133,7 @@
       "q149",
       "q150"
     ],
-    "note": "PROVISIONAL LATENCY: measured on a machine shared with other running jobs (container limited to 4 CPUs; an LLM run was active at the same time). Recall, MRR, context size and the other quality numbers are deterministic; the latency column will be replaced by an idle-machine re-run.",
+    "note": "Latency measured 2026-11-13 03:13 UTC on an Apple M4 Pro host with no other benchmark running; container limited to 4 CPUs (torch threads 4). Recall, MRR, context size and the other quality numbers are deterministic.",
     "latency_method": "time.perf_counter around pipeline.retrieve() only (query embedding, search, fusion, rerank, parent mapping); index build excluded. Warm-up: the first 3 questions are run once, untimed and discarded; then each question is run once and timed. Percentiles use linear interpolation. Single process, pipelines run one after another.",
     "parameters": {
       "top_k": 5,
@@ -155,8 +155,8 @@
       "vector_store": "chromadb EphemeralClient, default L2 space, normalised embeddings, HNSW {\"num_threads\": 1, \"max_neighbors\": 32, \"ef_construction\": 400, \"ef_search\": 400}"
     },
     "environment": {
-      "date_utc": "2026-11-13T00:59:51Z",
-      "vcs": "none: run from a build copy (not a git checkout)",
+      "date_utc": "2026-11-13T03:17:34Z",
+      "vcs": "d468fbc (clean working tree at run start; recorded by hand after the run because the container had no git; host_cpu and docker.host_note also filled in by hand)",
       "python": "3.11.18",
       "libraries": {
         "torch": "2.15.0+cpu",
@@ -190,7 +190,7 @@
         "affinity_cpus": 12,
         "cgroup_cpu_limit": 4.0,
         "torch_threads": 4,
-        "host_note": "Docker Desktop VM (12 CPUs, ~8 GB) on macOS arm64; container limited to 4 CPUs; machine shared with other jobs"
+        "host_note": "Docker Desktop VM (12 CPUs, ~8 GB) on macOS arm64; container limited to 4 CPUs; no other benchmark running"
       },
       "env": {
         "OMP_NUM_THREADS": "4",
@@ -209,9 +209,9 @@
         "mrr_at_5": 0.47102564102564115,
         "mean_context_chars": 3220.0384615384614,
         "latency_ms": {
-          "p50": 5.791083499843808,
-          "p95": 7.569893600611977,
-          "mean": 5.916894230827333,
+          "p50": 5.784833500001696,
+          "p95": 7.616146499185561,
+          "mean": 5.983035553897655,
           "n": 130
         }
       },
@@ -235,9 +235,9 @@
           "mrr_at_5": 0.5404761904761904,
           "mean_context_chars": 3348.1,
           "latency_ms": {
-            "p50": 5.5210830000760325,
-            "p95": 6.755151900460987,
-            "mean": 5.734013100027369,
+            "p50": 5.639812500703556,
+            "p95": 6.906456099932257,
+            "mean": 5.738221971452211,
             "n": 70
           }
         },
@@ -247,9 +247,9 @@
           "mrr_at_5": 0.33722222222222226,
           "mean_context_chars": 3179.4,
           "latency_ms": {
-            "p50": 6.01502050039926,
-            "p95": 7.4536248505410185,
-            "mean": 6.198550066801545,
+            "p50": 6.272166499911691,
+            "p95": 8.603687649610947,
+            "mean": 6.548344433394959,
             "n": 30
           }
         },
@@ -259,16 +259,16 @@
           "mrr_at_5": 0.44277777777777777,
           "mean_context_chars": 2961.866666666667,
           "latency_ms": {
-            "p50": 5.939374999798019,
-            "p95": 7.886327300184348,
-            "mean": 6.061961033386372,
+            "p50": 5.784395999398839,
+            "p95": 7.7032170006532406,
+            "mean": 5.988958366773052,
             "n": 30
           }
         }
       },
       "index": {
         "units": 1306,
-        "build_seconds": 24.86
+        "build_seconds": 22.69
       }
     },
     "P2": {
@@ -279,9 +279,9 @@
         "mrr_at_5": 0.6162820512820514,
         "mean_context_chars": 7176.823076923077,
         "latency_ms": {
-          "p50": 5.786417000308575,
-          "p95": 7.19234169991978,
-          "mean": 5.909390723088738,
+          "p50": 5.620521000309964,
+          "p95": 6.738154349659453,
+          "mean": 5.709532730823132,
           "n": 130
         }
       },
@@ -302,9 +302,9 @@
           "mrr_at_5": 0.6916666666666668,
           "mean_context_chars": 7137.528571428571,
           "latency_ms": {
-            "p50": 5.620561999876372,
-            "p95": 7.0557482499225435,
-            "mean": 5.743763714261669,
+            "p50": 5.526895500224782,
+            "p95": 6.3017748491802195,
+            "mean": 5.553698214290697,
             "n": 70
           }
         },
@@ -314,9 +314,9 @@
           "mrr_at_5": 0.4233333333333334,
           "mean_context_chars": 7281.966666666666,
           "latency_ms": {
-            "p50": 6.06149999975969,
-            "p95": 7.348917000126676,
-            "mean": 6.248741699982929,
+            "p50": 5.958166500022344,
+            "p95": 7.136937649738684,
+            "mean": 6.029927833393837,
             "n": 30
           }
         },
@@ -326,9 +326,9 @@
           "mrr_at_5": 0.6333333333333333,
           "mean_context_chars": 7163.366666666667,
           "latency_ms": {
-            "p50": 5.798083499939821,
-            "p95": 7.098464249884273,
-            "mean": 5.956502766791043,
+            "p50": 5.736854500355548,
+            "p95": 6.55751074955333,
+            "mean": 5.752751500161442,
             "n": 30
           }
         }
@@ -336,7 +336,7 @@
       "index": {
         "parents": 457,
         "children": 2689,
-        "build_seconds": 37.63
+        "build_seconds": 35.76
       }
     },
     "P3": {
@@ -347,9 +347,9 @@
         "mrr_at_5": 0.7043589743589745,
         "mean_context_chars": 6895.076923076923,
         "latency_ms": {
-          "p50": 12.381500000628876,
-          "p95": 18.416658550313514,
-          "mean": 12.984238430810645,
+          "p50": 11.565208001229621,
+          "p95": 14.790047399765172,
+          "mean": 13.522382399983494,
           "n": 130
         }
       },
@@ -370,9 +370,9 @@
           "mrr_at_5": 0.7611904761904762,
           "mean_context_chars": 7004.114285714286,
           "latency_ms": {
-            "p50": 11.487624999972468,
-            "p95": 17.396148099760467,
-            "mean": 12.293019028597232,
+            "p50": 11.075666499891668,
+            "p95": 14.360196050074592,
+            "mean": 14.689667285737025,
             "n": 70
           }
         },
@@ -382,9 +382,9 @@
           "mrr_at_5": 0.5011111111111111,
           "mean_context_chars": 7196.133333333333,
           "latency_ms": {
-            "p50": 13.458146000175475,
-            "p95": 17.721914550065776,
-            "mean": 13.814145866763283,
+            "p50": 12.318666499595565,
+            "p95": 15.061564799634652,
+            "mean": 12.619452733330641,
             "n": 30
           }
         },
@@ -394,9 +394,9 @@
           "mrr_at_5": 0.775,
           "mean_context_chars": 6339.6,
           "latency_ms": {
-            "p50": 13.041521000104694,
-            "p95": 18.616710449805396,
-            "mean": 13.7671762666893,
+            "p50": 10.959062499750871,
+            "p95": 17.209544050092525,
+            "mean": 11.70164733321144,
             "n": 30
           }
         }
@@ -404,7 +404,7 @@
       "index": {
         "parents": 457,
         "children": 2689,
-        "build_seconds": 1.14
+        "build_seconds": 1.13
       }
     },
     "P4": {
@@ -415,9 +415,9 @@
         "mrr_at_5": 0.715,
         "mean_context_chars": 6679.723076923077,
         "latency_ms": {
-          "p50": 1296.9793550000759,
-          "p95": 1771.3764861999152,
-          "mean": 1325.0427817076968,
+          "p50": 1223.1568134993722,
+          "p95": 1590.2533341506569,
+          "mean": 1270.4605095615154,
           "n": 130
         }
       },
@@ -438,9 +438,9 @@
           "mrr_at_5": 0.8702380952380953,
           "mean_context_chars": 6587.228571428572,
           "latency_ms": {
-            "p50": 1235.856042499563,
-            "p95": 1713.407755499838,
-            "mean": 1273.7380238142323,
+            "p50": 1183.3849175000068,
+            "p95": 1551.012550550331,
+            "mean": 1217.6029535428565,
             "n": 70
           }
         },
@@ -450,9 +450,9 @@
           "mrr_at_5": 0.44166666666666665,
           "mean_context_chars": 7255.4,
           "latency_ms": {
-            "p50": 1323.7830420002865,
-            "p95": 1964.430008849877,
-            "mean": 1415.2092368333495,
+            "p50": 1296.4301259989952,
+            "p95": 1804.3012632499085,
+            "mean": 1354.465017366662,
             "n": 30
           }
         },
@@ -462,9 +462,9 @@
           "mrr_at_5": 0.6261111111111112,
           "mean_context_chars": 6319.866666666667,
           "latency_ms": {
-            "p50": 1331.6780010000002,
-            "p95": 1707.7620190502785,
-            "mean": 1354.5874283334645,
+            "p50": 1290.2341250000973,
+            "p95": 1535.2437399508744,
+            "mean": 1309.7902991332376,
             "n": 30
           }
         }
